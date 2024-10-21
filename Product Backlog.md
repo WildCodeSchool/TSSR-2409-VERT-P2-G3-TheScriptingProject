@@ -1,6 +1,6 @@
 # Product Backlog
 
-#### Organisation de la semaine 1 / 4
+#### Organisation de la semaine 1 / semaine 4
 - Scrum Master : Camille
 - Product Owner : Julien
 
