@@ -1,5 +1,9 @@
 # Product Backlog
 
+#### Organisation de la semaine
+- Scrum Master : Camille
+- Product Owner : Julien
+
 ### 1. Configuration du labo
 
 - **Objectif** : Configurer les machines virtuelles (VM) avec les serveurs et les clients, en assurant la connexion entre les serveurs et les clients.
