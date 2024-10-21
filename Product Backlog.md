@@ -18,7 +18,9 @@ Serveur Windows : Nom : SRVWIN01 / Compte : Administrator / Mot de passe : Azert
 - Créer le pseudo code du script
 
 - Se répartir les tâches et faire un pseudo code de ses tâches
-3 : Script :  1 - 2 personnes sur Ubuntu et 2 personnes sur Windows ( chaque personne fait un bout de code sur la tâche a faire sur Ubuntu et Windows)
+
+  
+- 3 : Script :  1 - 2 personnes sur Ubuntu et 2 personnes sur Windows ( chaque personne fait un bout de code sur la tâche a faire sur Ubuntu et Windows)
 - Construction bout par bout 
 2- Faire un gros menu qui propose 
 
