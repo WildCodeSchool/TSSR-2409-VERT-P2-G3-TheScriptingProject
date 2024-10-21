@@ -30,17 +30,17 @@
     - Adresse IP fixe : `172.16.10.20/24`
       
 - **Action** : Assurer que chaque VM ait le bon nom et la bonne adresse IP, et établir la connexion entre les serveurs et les clients.
-
+---
 ### 2. Analyse du tableau Excel du projet 2
 
 - **Objectif** : Déchiffrer le contenu du tableau Excel pour comprendre les demandes.
 - **Tâches** :
   - Créer un pseudo-code général du script à développer.
-  - Répartir les tâches entre les membres de l'équipe et créer un pseudo-code pour chaque tâche spécifique.
-
+  - Répartir les tâches du script entre les membres de l'équipe et créer un pseudo-code pour chaque tâche spécifique.
+---
 ### 3. Développement du Script
 
-- **Objectif** : Développer un script avec 1 à 2 personnes sur Ubuntu et 2 personnes sur Windows.
+- **Objectif** : Développer un script avec 2 personnes sur Ubuntu et 2 personnes sur Windows.
 - **Tâches** :
   - Chaque membre doit coder sa partie pour les tâches spécifiques sur Ubuntu ou Windows.
   - Construction progressive par étapes.
