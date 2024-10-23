@@ -33,28 +33,28 @@ Ce projet vise à créer un script permettant d'exécuter des tâches d'automati
 
 | Membre     | Rôle         |
 |------------|--------------|
-|            |              |
-|            |              |
-|            |              |
+| Camille    |              |
+| Lionel     |              |
+| François   |              |
 |            |              |
 
 ### Semaine 3
 
 | Membre     | Rôle         |
 |------------|--------------|
-|            |              |
-|            |              |
-|            |              |
-|            |              |
+| Camille          |        |
+| Lionel           |        |
+| François         |        |
+| Julien           |        |
 
 ### Semaine 4
 
 | Membre     | Rôle         |
 |------------|--------------|
-|            |              |
-|            |              |
-|            |              |
-|            |              |
+| Camille          |        |
+| Lionel           |        |
+| François         |        |
+| Julien           |        |
 
 ## Fonctionnalités
 
