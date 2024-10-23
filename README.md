@@ -24,8 +24,8 @@ Ce projet vise à créer un script permettant d'exécuter des tâches d'automati
 | Membre     | Rôle         |
 |------------|--------------|
 | Camille    | SCRUM MASTER |
-| Lionel     |              |
-| François   |              |
+| Lionel     | Technicien   |
+| François   | Technicien   |
 | Julien     | Product Owner|
 
 
