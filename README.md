@@ -33,10 +33,10 @@ Ce projet vise à créer un script permettant d'exécuter des tâches d'automati
 
 | Membre     | Rôle         |
 |------------|--------------|
-| Camille    |              |
+| Camille    | Technicienne |
 | Lionel     |              |
 | François   |              |
-| Julien     |              |
+| Julien     | Technicien   |
 
 ### Semaine 3
 
