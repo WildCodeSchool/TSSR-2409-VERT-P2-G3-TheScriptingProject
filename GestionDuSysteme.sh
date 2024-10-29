@@ -24,7 +24,7 @@ do
 				echo "Le systeme est en cours d'arret..."
 				sleep 3
 				#Executer la commande d'arret du systeme
-				# sudo shutdown now	
+				sudo shutdown now	
 				exit 1
 			else 
 				echo "Erreur lors de la saisie"
@@ -44,7 +44,7 @@ do
 				echo "Le systeme est en cours de redemarrage..."
 				sleep 3
 				#Executer la commande de redemarrage du systeme
-				# sudo reboot
+				sudo reboot
 				exit 1
 			else 
 				echo "Erreur lors de la saisie"
