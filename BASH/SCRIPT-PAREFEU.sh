@@ -8,7 +8,7 @@ NC='\033[0m' # Aucune couleur
 
 # Boucle while true pour la gestion de pare-feu
 while true; do
-    echo -e "${GREEN}------ MENU GESTION LOGICIEL ------\n"
+    echo -e "${GREEN}------ MENU GESTION PARE-FEU ------"
     echo -e "${GREEN}[1]${NC} Définir les règles de pare-feu"
     echo -e "${GREEN}[2]${NC} Activer le pare-feu"
     echo -e "${GREEN}[3]${NC} Désactiver le pare-feu"
