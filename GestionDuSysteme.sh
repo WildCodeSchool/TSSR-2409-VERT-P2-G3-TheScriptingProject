@@ -35,7 +35,7 @@ do
 				exit 1
 			else 
 				echo -e "${RED}Erreur lors de la saisie"
-				read -p "${NC}Voulez-vous vraiment arreter le systeme? (oui/non)": reponse
+				read -p -e "${NC}Voulez-vous vraiment arreter le systeme? (oui/non)": reponse
 			fi
 		done
 		# Dans le cas ou reponse= non ou n, on retourne au menu précédent
@@ -55,7 +55,7 @@ do
 				exit 1
 			else 
 				echo -e "${RED}Erreur lors de la saisie"
-				read -p "${NC}Voulez-vous vraiment redemarrer le systeme? (oui/non)": reponse
+				read -p -e "${NC}Voulez-vous vraiment redemarrer le systeme? (oui/non)": reponse
 			fi
 		done
 		# Dans le cas ou reponse= non ou n, on retourne au menu précédent
@@ -83,7 +83,7 @@ do
 				sudo apt upgrade -y
 			else 
 				echo -e "${RED}Erreur lors de la saisie"
-				read -p "${NC}Voulez-vous installer les mises a jour? (oui/non)": reponse
+				read -p -e "${NC}Voulez-vous installer les mises a jour? (oui/non)": reponse
 			fi
 		done
 		# Dans le cas ou reponse= non ou n, on retourne au menu précédent
