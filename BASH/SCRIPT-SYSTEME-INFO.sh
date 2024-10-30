@@ -8,7 +8,7 @@ NC='\033[0m' # Aucune couleur
 
 # Boucle while true pour les informations systèmes
 while true; do
-    echo -e "${GREEN}------ MENU INFORMATION SYSTEME ------\n"
+    echo -e "${GREEN}------ MENU INFORMATION SYSTEME ------"
     echo -e "${GREEN}[1]${NC} Type de CPU, nombre de coeurs, etc.."
     echo -e "${GREEN}[2]${NC}  Mémoire RAM totale"
     echo -e "${GREEN}[3]${NC}  Utilisation de la RAM"
