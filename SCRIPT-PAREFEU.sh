@@ -8,12 +8,12 @@ NC='\033[0m' # Aucune couleur
 
 # Boucle while true pour la gestion de pare-feu
 while true; do
-    echo -e "${YELLOW}MENU GESTION PARE-FEU :"
-    echo -e "${GREEN}1) Définir les règles de pare-feu"
-    echo -e "${GREEN}2) Activer le pare-feu"
-    echo -e "${GREEN}3) Désactiver le pare-feu"
-    echo -e "${GREEN}4) Quitter"
-    echo -e "${YELLOW}Veuillez choisir une option : ${NC}"
+    echo -e "${GREEN}------ MENU GESTION LOGICIEL ------\n"
+    echo -e "${GREEN}[1]${NC} Définir les règles de pare-feu"
+    echo -e "${GREEN}[2]${NC} Activer le pare-feu"
+    echo -e "${GREEN}[3]${NC} Désactiver le pare-feu"
+    echo -e "${GREEN}[4]${NC} Quitter"
+    echo -e "${GREEN}Veuillez choisir une option : ${NC}"
     read choix
 
     case $choix in 
@@ -22,12 +22,12 @@ while true; do
          # Boucle while true pour les règles de pare-feu
          1) 
 while true; do
-    echo -e "${YELLOW}MENU DES RÈGLES PARE-FEU :"
-    echo -e "${GREEN}1) Ajouter une règle"
-    echo -e "${GREEN}2) Supprimer une règle"
-    echo -e "${GREEN}3) Afficher les règles actuelles"
-    echo -e "${GREEN}4) Retour au menu principal"
-    echo -e "${YELLOW}Veuillez choisir une option : ${NC}"
+    echo -e "${GREEN}------ MENU DES RÈGLES PARE-FEU ------\n"
+    echo -e "${GREEN}[1]${NC} Ajouter une règle"
+    echo -e "${GREEN}[2]${NC} Supprimer une règle"
+    echo -e "${GREEN}[3]${NC} Afficher les règles actuelles"
+    echo -e "${GREEN}[4]${NC} Retour au menu principal"
+    echo -e "${GREEN}Veuillez choisir une option : ${NC}"
     read choix_regles
     
     case $choix_regles in
