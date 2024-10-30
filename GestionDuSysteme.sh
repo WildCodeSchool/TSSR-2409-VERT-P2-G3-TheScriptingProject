@@ -11,12 +11,12 @@ statut=1
 
 while [ $statut = 1 ]
 do
-	echo -e "${GREEN}<<MENU GESTION DU SYSTEME>>"\n
-	echo -e "${RED}[1] Arreter le systeme"
-	echo -e "${RED}[2] Redemarrer le systeme"
-	echo -e "${RED}[3] Verrouiller le systeme"
-	echo -e "${RED}[4] Mettre à jour le systeme"
-	echo -e "${RED}[5] Retourner au menu principal"\n
+	echo -e "${GREEN}<< MENU GESTION DU SYSTEME >>\n"
+	echo -e "${RED}[1]${NC} Arreter le systeme"
+	echo -e "${RED}[2]${NC}  Redemarrer le systeme"
+	echo -e "${RED}[3]${NC}  Verrouiller le systeme"
+	echo -e "${RED}[4]${NC}  Mettre à jour le systeme"
+	echo -e "${RED}[5]${NC}  Retourner au menu principal\n"
 	echo "Veuillez choisir une option:"
 	read choix_option
 
