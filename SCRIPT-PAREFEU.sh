@@ -99,7 +99,7 @@ while true; do
         
         # Quitter le script
         4)
-            echo "Exit"
+            echo -e "${YELLOW}Exit${NC}"
 	    break
 	    ;;
         
