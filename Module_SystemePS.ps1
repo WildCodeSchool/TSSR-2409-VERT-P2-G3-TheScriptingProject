@@ -1,7 +1,3 @@
-
-#Rechercher les mises à jour: Get-WindowsUpdate
-#Installer les mises à jour: Install-WindowsUpdate
-
 $statut = $true
 
 while ($statut) {
@@ -15,7 +11,7 @@ while ($statut) {
 
     switch ($choix_option) {
         
-		"1" {
+	"1" {
             $reponse = Read-Host "Voulez-vous vraiment arreter le systeme? (oui/non)"
             while ($reponse -ne "non" -and $reponse -ne "n") {
                 if ($reponse -eq "oui" -or $reponse -eq "o") {
@@ -47,7 +43,7 @@ while ($statut) {
             Write-Host "Retour au menu des options du systeme"
         }
 		
-		"3" {
+	"3" {
             Write-Host "Verrouillage du systeme en cours..."
             Start-Sleep -Seconds 3
             # Executer la commande de verrouillage
@@ -72,7 +68,7 @@ while ($statut) {
             Write-Host "Retour au menu des options du systeme"
         }
 		
-		"5" {
+	"5" {
             $statut = $false
         }
     }
