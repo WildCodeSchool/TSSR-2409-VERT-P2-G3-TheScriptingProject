@@ -29,7 +29,7 @@ while true; do
           ;;
 	# Sortir du script 
         3)
-            echo "Exit"
+            echo -e "${YELLOW}Exit${NC}"
             break
             ;;
 	# Inique si erreur de saisie et relance le script    
