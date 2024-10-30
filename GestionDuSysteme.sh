@@ -11,12 +11,12 @@ statut=1
 
 while [ $statut = 1 ]
 do
-	echo -e "${GREEN}<< MENU GESTION DU SYSTEME >>\n"
-	echo -e "${RED}[1]${NC} Arreter le systeme"
-	echo -e "${RED}[2]${NC} Redemarrer le systeme"
-	echo -e "${RED}[3]${NC} Verrouiller le systeme"
-	echo -e "${RED}[4]${NC} Mettre à jour le systeme"
-	echo -e "${RED}[5]${NC} Retourner au menu principal\n"
+	echo -e "${GREEN}------ MENU GESTION DU SYSTEME ------\n"
+	echo -e "${YELLOW}[1]${NC} Arreter le systeme"
+	echo -e "${YELLOW}[2]${NC} Redemarrer le systeme"
+	echo -e "${YELLOW}[3]${NC} Verrouiller le systeme"
+	echo -e "${YELLOW}[4]${NC} Mettre à jour le systeme"
+	echo -e "${YELLOW}[5]${NC} Retourner au menu principal\n"
 	echo "Veuillez choisir une option:"
 	read choix_option
 
@@ -35,7 +35,7 @@ do
 				exit 1
 			else 
 				echo -e "${RED}Erreur lors de la saisie"
-				read -p "Voulez-vous vraiment arreter le systeme? (oui/non)": reponse
+				read -p "${NC}Voulez-vous vraiment arreter le systeme? (oui/non)": reponse
 			fi
 		done
 		# Dans le cas ou reponse= non ou n, on retourne au menu précédent
@@ -55,7 +55,7 @@ do
 				exit 1
 			else 
 				echo -e "${RED}Erreur lors de la saisie"
-				read -p "Voulez-vous vraiment redemarrer le systeme? (oui/non)": reponse
+				read -p "${NC}Voulez-vous vraiment redemarrer le systeme? (oui/non)": reponse
 			fi
 		done
 		# Dans le cas ou reponse= non ou n, on retourne au menu précédent
@@ -72,7 +72,7 @@ do
 		"4")
 		echo "Recherche des mises a jour disponibles..."
 		sudo apt update
-		echo -e "{YELLOW}Liste des mises a jour disponibles:"
+		echo -e "${YELLOW}Liste des mises a jour disponibles:"
 		apt list --upgradable
 		read -p "Voulez-vous installer les mises a jour? (oui/non)": reponse
 		while [ $reponse != "non" ] && [ $reponse != "n" ];
@@ -83,7 +83,7 @@ do
 				sudo apt upgrade -y
 			else 
 				echo -e "${RED}Erreur lors de la saisie"
-				read -p "Voulez-vous installer les mises a jour? (oui/non)": reponse
+				read -p "${NC}Voulez-vous installer les mises a jour? (oui/non)": reponse
 			fi
 		done
 		# Dans le cas ou reponse= non ou n, on retourne au menu précédent
