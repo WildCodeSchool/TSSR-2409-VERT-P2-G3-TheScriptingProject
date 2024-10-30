@@ -8,14 +8,14 @@ NC='\033[0m' # Aucune couleur
 
 # Boucle while true pour les informations systèmes
 while true; do
-    echo -e "${YELLOW}MENU INFORMATION SYSTEME :"
-    echo -e "${GREEN}1) Type de CPU, nombre de coeurs, etc.."
-    echo -e "${GREEN}2) Mémoire RAM totale"
-    echo -e "${GREEN}3) Utilisation de la RAM"
-    echo -e "${GREEN}4) Utilisation du disque"
-    echo -e "${GREEN}5) Utilisation du processeur "
-    echo -e "${GREEN}6) Quitter"
-    echo -e "${YELLOW}Veuillez choisir une option : ${NC}"
+    echo -e "${GREEN}MENU INFORMATION SYSTEME :"
+    echo -e "${GREEN}[1]${NC} Type de CPU, nombre de coeurs, etc.."
+    echo -e "${GREEN}[2]${NC}  Mémoire RAM totale"
+    echo -e "${GREEN}[3]${NC}  Utilisation de la RAM"
+    echo -e "${GREEN}[4]${NC}  Utilisation du disque"
+    echo -e "${GREEN}[5]${NC}  Utilisation du processeur "
+    echo -e "${GREEN}[6]${NC}  Quitter"
+    echo -e "${GREEN}Veuillez choisir une option : ${NC}"
     read choix
 
     case $choix in
@@ -47,7 +47,7 @@ while true; do
 
         # Quitter le script
         6)
-            echo "Exit"
+            echo -e "${YELLOW}Exit${NC}"
             break
             ;;
 
