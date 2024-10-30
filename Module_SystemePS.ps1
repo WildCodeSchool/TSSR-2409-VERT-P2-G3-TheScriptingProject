@@ -1,6 +1,7 @@
 $statut = $true
 
-while ($statut) {
+while ($statut) 
+{
     Write-Host "MENU GESTION DU SYSTEME"
     Write-Host "1- Arreter le systeme"
     Write-Host "2- Redemarrer le systeme"
@@ -9,17 +10,22 @@ while ($statut) {
     Write-Host "5- Retourner au menu principal"
     $choix_option = Read-Host "Veuillez choisir une option"
 
-    switch ($choix_option) {
+    switch ($choix_option) 
+    {
         
 	"1" {
             $reponse = Read-Host "Voulez-vous vraiment arreter le systeme? (oui/non)"
-            while ($reponse -ne "non" -and $reponse -ne "n") {
-                if ($reponse -eq "oui" -or $reponse -eq "o") {
+            while ($reponse -ne "non" -and $reponse -ne "n") 
+	    {
+                if ($reponse -eq "oui" -or $reponse -eq "o") 
+		{
                     Write-Host "Le systeme est en cours d'arret..."
                     Start-Sleep -Seconds 3
                     # Executer la commande d'arrêt du systeme
                     Stop-Computer -Force
-                } else {
+                } 
+		else 
+  		{
                     Write-Host "Erreur lors de la saisie"
                     $reponse = Read-Host "Voulez-vous vraiment arreter le systeme? (oui/non)"
                 }
@@ -29,13 +35,17 @@ while ($statut) {
 		
         "2" {
             $reponse = Read-Host "Voulez-vous vraiment redémarrer le systeme? (oui/non)"
-            while ($reponse -ne "non" -and $reponse -ne "n") {
-                if ($reponse -eq "oui" -or $reponse -eq "o") {
+            while ($reponse -ne "non" -and $reponse -ne "n") 
+	    {
+                if ($reponse -eq "oui" -or $reponse -eq "o") 
+		{
                     Write-Host "Le systeme est en cours de redemarrage..."
                     Start-Sleep -Seconds 3
                     # Executer la commande de redemarrage du systeme
                     Restart-Computer -Force
-                } else {
+                } 
+		else 
+  		{
                     Write-Host "Erreur lors de la saisie"
                     $reponse = Read-Host "Voulez-vous vraiment redemarrer le systeme? (oui/non)"
                 }
@@ -51,16 +61,19 @@ while ($statut) {
         }
 		
         "4" {
-            Write-Host "Recherche des mises a jour disponibles..."
-			Install-Module PSWindowsUpdate -Force -Scope CurrentUser
-			Write-Host "Liste des mises a jour disponibles:"
+	    Install-Module PSWindowsUpdate -Force -Scope CurrentUser
+	    Write-Host "Liste des mises a jour disponibles:"
             Get-WindowsUpdate
             $reponse = Read-Host "Voulez-vous installer les mises a jour? (oui/non)"
-            while ($reponse -ne "non" -and $reponse -ne "n") {
-                if ($reponse -eq "oui" -or $reponse -eq "o") {
+            while ($reponse -ne "non" -and $reponse -ne "n") 
+	    {
+                if ($reponse -eq "oui" -or $reponse -eq "o") 
+		{
                     # Executer la commande de mise a jour du systeme
                     Install-WindowsUpdate -AcceptAll -AutoReboot
-                } else {
+                } 
+		else 
+  		{
                     Write-Host "Erreur lors de la saisie"
                     $reponse = Read-Host "Voulez-vous installer les mises a jour? (oui/non)"
                 }
