@@ -1,15 +1,22 @@
 #!/bin/bash
 
+#couleur
+
+RED='\033[0;31m'
+GREEN='\033[0;32m'
+YELLOW='\033[0;33m'
+NC='\033[0m' # Aucune couleur
+
 statut=1
 
 while [ $statut = 1 ]
 do
-	echo "MENU GESTION DU SYSTEME"
-	echo "1- Arreter le systeme"
-	echo "2- Redemarrer le systeme"
-	echo "3- Verrouiller le systeme"
-	echo "4- Mettre à jour le systeme"
-	echo "5- Retourner au menu principal"
+	echo -e "${GREEN}<<MENU GESTION DU SYSTEME>>"\n
+	echo -e "${RED}[1] Arreter le systeme"
+	echo -e "${RED}[2] Redemarrer le systeme"
+	echo -e "${RED}[3] Verrouiller le systeme"
+	echo -e "${RED}[4] Mettre à jour le systeme"
+	echo -e "${RED}[5] Retourner au menu principal"\n
 	echo "Veuillez choisir une option:"
 	read choix_option
 
@@ -27,7 +34,7 @@ do
 				sudo shutdown now	
 				exit 1
 			else 
-				echo "Erreur lors de la saisie"
+				echo -e "${RED}Erreur lors de la saisie"
 				read -p "Voulez-vous vraiment arreter le systeme? (oui/non)": reponse
 			fi
 		done
@@ -47,7 +54,7 @@ do
 				sudo reboot
 				exit 1
 			else 
-				echo "Erreur lors de la saisie"
+				echo -e "${RED}Erreur lors de la saisie"
 				read -p "Voulez-vous vraiment redemarrer le systeme? (oui/non)": reponse
 			fi
 		done
@@ -65,7 +72,7 @@ do
 		"4")
 		echo "Recherche des mises a jour disponibles..."
 		sudo apt update
-		echo "Liste des mises a jour disponibles:"
+		echo -e "{YELLOW}Liste des mises a jour disponibles:"
 		apt list --upgradable
 		read -p "Voulez-vous installer les mises a jour? (oui/non)": reponse
 		while [ $reponse != "non" ] && [ $reponse != "n" ];
@@ -75,7 +82,7 @@ do
 				#Executer la commande de mise à jour du systeme
 				sudo apt upgrade -y
 			else 
-				echo "Erreur lors de la saisie"
+				echo -e "${RED}Erreur lors de la saisie"
 				read -p "Voulez-vous installer les mises a jour? (oui/non)": reponse
 			fi
 		done
