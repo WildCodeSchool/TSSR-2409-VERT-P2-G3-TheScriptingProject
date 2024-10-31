@@ -2,8 +2,7 @@
 #Le code dois:
 #1- demander sur qu'elle machine on se connecte
 #2- demander si on veut faire une action ou de la demande d'informations
-#3- excecuter 4 code en fonction des choix: action1, action2, information1, information2.
-# => rajouter fin du script partout
+#3- en fonction du script final on télécharge et on execute un script sur la machine distante
 
 # Variables
 user1="lbartaire@10.0.0.20"
