@@ -46,14 +46,13 @@
 ### **État des Livrables**
 
 1. **Développement du Script**
-   - **Scripts Bash et PowerShell** : Mise en place des scripts de base pour chaque plateforme.
-   - **Menu principal** : Début de la structure du menu pour permettre à l’utilisateur de naviguer facilement.
-   - **Fusion des Scripts** : Premières étapes de mise en commun, tests basiques de compatibilité effectués.
+   - **Scripts Bash et PowerShell** : Premières versions des scripts créées pour chaque plateforme, avec les fonctionnalités de base fonctionnelles.
+   - **Fusion des Scripts** : Mise en commun avec tests initiaux pour vérifier la compatibilité et les performances.
 
 2. **Documentation**
-   - **USER_GUIDE.md** : .
-   - **INSTALL.md** : .
-   - **README.md** : .
+   - **USER_GUIDE.md** : Première version avec captures d'écran pour la présentation des options, introduction et guide utilisateur en cours d'élaboration.
+   - **INSTALL.md** : Liste de prérequis et instructions générales prêtes ; sections spécifiques pour les plateformes Ubuntu et Windows à compléter.
+   - **README.md** : Structure de base et introduction rédigées ainsi que des liens vers les guides d’utilisation et d’installation.
 
 ---
 
