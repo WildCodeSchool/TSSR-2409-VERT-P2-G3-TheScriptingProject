@@ -6,9 +6,9 @@ GREEN='\033[0;32m'
 YELLOW='\033[0;33m'
 NC='\033[0m' # Aucune couleur
 
-# Boucle while true pour les informations systèmes
+# Boucle while true pour faire un menu sur les informations systèmes
 while true; do
-    echo -e "${GREEN}------ MENU INFORMATION SYSTEME ------"
+    echo -e "${GREEN}------ MENU INFORMATION SYSTEME ------\n"
     echo -e "${GREEN}[1]${NC} Type de CPU, nombre de coeurs, etc.."
     echo -e "${GREEN}[2]${NC}  Mémoire RAM totale"
     echo -e "${GREEN}[3]${NC}  Utilisation de la RAM"
@@ -17,15 +17,16 @@ while true; do
     echo -e "${GREEN}[6]${NC}  Quitter"
     echo -e "${GREEN}Veuillez choisir une option : ${NC}"
     read choix
-
+    
+    # Case pour faire un bloc avec les choix correspondants au menu 
     case $choix in
 
-         # Type de CPU, nombres de coeurs, etc..
-         1)
+       # Type de CPU, nombres de coeurs, etc..
+       1)
             lscpu
             ;;
 
-         # Mémoire totale de la RAM
+        # Mémoire totale de la RAM
         2)
             free -h | grep Mem | awk '{print $2}'
             ;;
@@ -35,7 +36,7 @@ while true; do
             free -h
             ;;
             
-       # Utilisation du disque
+        # Utilisation du disque
         4)
             df -h
             ;;
@@ -57,3 +58,4 @@ while true; do
             ;;
     esac
 done 
+# Fin du script
