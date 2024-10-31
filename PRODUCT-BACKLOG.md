@@ -28,8 +28,6 @@ Product Owner : Camille
 - Création Script PowerShell (action)  
 - Création Script PowerShell (information)  
 - Mise en commun des scripts  
-- Bash (action)  
-- PowerShell (en fonction des avancées)  
 
 ### Documentation :  
 - Commencer **UserGuide.md**  
