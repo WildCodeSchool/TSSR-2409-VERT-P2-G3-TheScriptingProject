@@ -42,10 +42,10 @@ Ce projet vise à créer un script permettant d'exécuter des tâches d'automati
 
 | Membre     | Rôle         |
 |------------|--------------|
-| Camille    |              |
-| Lionel     |              |
-| François   |              |
-| Julien     |              |
+| Camille    | Product Owner|
+| Lionel     | Technicien   |
+| François   | Technicien   |
+| Julien     | Scrum Master |
 
 ### Semaine 4
 
