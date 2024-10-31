@@ -1,8 +1,8 @@
 # PRODUCT BACKLOG
 
-#### Organisation de la semaine 1 / semaine 4
-- Scrum Master : Camille
-- Product Owner : Julien
+#### Organisation de la semaine 3 / semaine 4
+- Scrum Master : Julien
+- Product Owner : Camille
 
 ### 1. Configuration du labo
 
