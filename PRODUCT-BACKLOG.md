@@ -1,35 +1,69 @@
-# PRODUCT BACKLOG
+# **Product Backlog & Organisation - Semaine 3 / Semaine 4**
 
-**Organisation de la semaine 3 / semaine 4**  
-Scrum Master : Julien  
-Product Owner : Camille  
+**Scrum Master** : Julien  
+**Product Owner** : Camille  
 
-## 1. Développement du Script  
-**Objectif** : Développer un script avec 2 personnes sur Ubuntu et 2 personnes sur Windows.  
+---
 
-**Tâches** :  
-- Chaque membre développe sa partie spécifique sur Ubuntu et Windows.  
-- Construire le script de manière progressive, par étapes.  
-- Créer un menu principal avec différentes options pour l'utilisateur.
+## **Sprint Backlog - Semaine 3**
 
-## 2. Documentation  
-**Objectif** : Rédiger une documentation complète et claire pour les utilisateurs finaux.  
+### **Objectifs Généraux**
+1. **Développement du Script** : 
+   - Création des scripts BASH (Information).
+   - Création des scripts PowerShell (Action).
+   - Création des scripts PowerShell (Information).
+   - Mise en commun des scripts Bash (Action et Information) et des scripts PowerShell (en fonction des avancées).
 
-**Tâches** :  
-- Commencer la documentation **UserGuide.md**.  
-- Continuer la documentation **Install.md**.  
-- Finaliser le **README.md**.  
-- Assurer que tous les scripts soient bien documentés.  
+2. **Documentation** :
+   - Commencer la documentation utilisateur (USER_GUIDE.md).
+   - Continuer la documentation admin (INSTALL.md).
+   - Peaufiner le README.md.
 
-## Les tâches à faire
+---
 
-### Scripts :  
-- Création Script bash (information)  
-- Création Script PowerShell (action)  
-- Création Script PowerShell (information)  
-- Mise en commun des scripts  
+#### **Tâches de Développement** :
+| Tâche | Description | Détails |
+|-------|-------------|---------|
+| **Création Script Bash (Information)** | Écrire un script Bash sous Ubuntu pour afficher des informations. | - Utiliser des commandes système pour extraire des informations (ex. `uname`, `df`, `top`, etc.)<br> - Permettre une interaction utilisateur avec des options.
+| **Création Script PowerShell (Action)** | Écrire un script PowerShell sous Windows pour exécuter des actions spécifiques. | - Automatiser une tâche courante.<br> - Rendre les actions personnalisables pour l'utilisateur. |
+| **Création Script PowerShell (Information)** | Écrire un script PowerShell sous Windows pour afficher des informations système. | - Utiliser des cmdlets PowerShell pour récupérer des infos sur le système (ex. `Get-Process`, `Get-ComputerInfo`).<br>
+| **Mise en Commun des Scripts** | Fusionner les scripts écrit dans un script principal intégrant les différentes plateformes (Debian / Windows). | - Assurer une compatibilité multiplateforme et effectuer des tests basiques sur chaque OS. |
 
-### Documentation :  
-- Commencer **UserGuide.md**  
-- Continuer **Install.md**  
-- Peaufiner le **README.md**  
+---
+
+### **Documentation**
+
+| Tâche | Description | Détails |
+|-------|-------------|---------|
+| **USER_GUIDE.md** | Créer un guide utilisateur détaillé pour l'utilisation du script. | - Débuter par des captures d'écran de l'interface, des étapes d'utilisation de chaque fonctionnalité.<br> - Explication détaillée des options proposées dans le menu, avec des exemples concrets pour chaque OS |
+| **INSTALL.md** | Rédiger un guide d'installation pour les environnements Ubuntu et Windows. | - Lister les prérequis système.<br> - Instructions étape par étape pour installer et exécuter les scripts.<br> - Préciser les autorisations requises, chemins d'installation recommandés et éventuels problèmes de compatibilité. |
+| **README.md** | Finaliser le README pour la présentation du projet sur GitHub. | - Brève description du projet, ses objectifs et ses fonctionnalités.<br> - Liens vers les autres documents (USER_GUIDE.md et INSTALL.md) |
+
+---
+
+## **Sprint Review - Semaine 3**
+
+### **État des Livrables**
+
+1. **Développement du Script**
+   - **Scripts Bash et PowerShell** : Mise en place des scripts de base pour chaque plateforme.
+   - **Menu principal** : Début de la structure du menu pour permettre à l’utilisateur de naviguer facilement.
+   - **Fusion des Scripts** : Premières étapes de mise en commun, tests basiques de compatibilité effectués.
+
+2. **Documentation**
+   - **USER_GUIDE.md** : .
+   - **INSTALL.md** : .
+   - **README.md** : .
+
+---
+
+### **Feedback et Améliorations pour la Semaine 4**
+
+- **Développement** :
+   - Amélioration possible du système des couleurs du script.
+   - Ajouter des commentaires dans les scripts pour rendre le code plus clair.
+   - Pouvoir lancer et exécuter le script finale BASH depuis un serveur Windows et le script finale PowerShell depuis un serveur Debian.
+   
+- **Documentation** :
+   - Terminer les 3 livrables (README.md / INSTALL.md / USER_GUIDE.md).
+   - Vérifier et tester les scripts BASH et PowerShell pour que tout fonctionne correctement pour la démo finale.
