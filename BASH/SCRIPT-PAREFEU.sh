@@ -6,9 +6,9 @@ GREEN='\033[0;32m'
 YELLOW='\033[0;33m'
 NC='\033[0m' # Aucune couleur
 
-# Boucle while true pour la gestion de pare-feu
+# Boucle while true pour faire un menu sur la gestion du pare-feu
 while true; do
-    echo -e "${GREEN}------ MENU GESTION PARE-FEU ------"
+    echo -e "${GREEN}------ MENU GESTION PARE-FEU ------\n"
     echo -e "${GREEN}[1]${NC} Définir les règles de pare-feu"
     echo -e "${GREEN}[2]${NC} Activer le pare-feu"
     echo -e "${GREEN}[3]${NC} Désactiver le pare-feu"
@@ -16,11 +16,11 @@ while true; do
     echo -e "${GREEN}Veuillez choisir une option : ${NC}"
     read choix
 
+    # Case pour faire un sous-menu pour les règles du pare-feu
     case $choix in 
         
-         
-         # Boucle while true pour les règles de pare-feu
-         1) 
+         # Boucle while true pour faire un menu sur les règles du pare-feu
+         1)
 while true; do
     echo -e "${GREEN}------ MENU DES RÈGLES PARE-FEU ------\n"
     echo -e "${GREEN}[1]${NC} Ajouter une règle"
@@ -32,36 +32,46 @@ while true; do
     
     case $choix_regles in
 
-    		1)      # Règles de pare-feu
+    		       # Ajouter une règles de pare-feu
+                 1)     
                         echo -e "${GREEN}Entrer la règle à ajouter (ex: allow 22/tcp) : ${NC}"
                         read regle
                         sudo ufw $regle
                         echo -e "${GREEN}Règle ajoutée : $regle${NC}"
                         ;;
-                    2)
+
+                   # Supprimer une règle de pare-feu     
+                   2)
                         echo -e "${GREEN}Entrer la règle à supprimer (ex: allow 22/tcp) : ${NC}"
                         read regle
                         sudo ufw delete $regle
                         echo -e "${GREEN}Règle supprimée : $regle${NC}"
                         ;;
-                    3)
+
+                   # Voir les règles de pare-feu actuelle     
+                   3)
                         echo -e "${GREEN}Règles de pare-feu actuelles :${NC}"
                         sudo ufw status
                         ;;
-                    4)
+
+                   # Retour au menu principal     
+                   4)
                         echo -e "${YELLOW}Retour au menu principal.${NC}"
                         break
                         ;;
-                    *)
+
+                   # Indique une erreur de saisie et demande de réessayer une saisie valide     
+                   *)
                         echo -e "${RED}[Erreur]! Option invalide, veuillez réessayer !${NC}"
                         ;;
                 esac
             done
-            ;;              	 	
+            ;;
+            # Fin de la case                 	 	
             	            
-         # Activation du pare-feu          
+           # Activation du pare-feu          
            2)
-	       # Bloc pour activer le pare-feu
+	          # Activation du pare-feu
                echo -e "${GREEN}Voulez-vous activer le pare-feu ? : oui/non ${NC}"
                read oui
 
@@ -70,7 +80,9 @@ while true; do
                       echo -e "${RED}[ERREUR] Option invalide, veuillez entrer 'oui' ou 'non'.${NC}"
                       read -p "Entrer votre choix : " oui
                 done
+                # Fin de la boucle
 
+                # Si la valeur saisie est "oui" alors le pare-feu s'active sinon si la saisie est "non" alors rien ne se passe
                 if [ "$oui" = "oui" ]; then
                    sudo ufw enable
                    echo "Le pare-feu a bien été activé."
@@ -78,17 +90,20 @@ while true; do
                     echo "Le pare-feu n'a pas été activé."
                 fi
                 ;; 
-            3)
-	        # Bloc pour désactiver le pare-feu
+
+           3)
+	        # Désactivation du pare-feu
                 echo -e "${GREEN}Voulez-vous désactiver le pare-feu ? : oui/non ${NC}"
                 read oui
 
-                # Tant que l'entrée n'est pas "oui" ou "non", on redemande une saisie valide
+                # Boucle pour que tant que l'entrée n'est pas "oui" ou "non", on redemande une saisie valide
                 while [[ "$oui" != "oui" && "$oui" != "non" ]]; do
                       echo -e "${RED}[ERREUR] Option invalide, veuillez entrer 'oui' ou 'non'.${NC}"
                       read - p "Entrer votre choix : " oui
                 done
+                # Fin de la boucle
 
+                # Si la valeur saisie est "oui" alors le pare-feu se désactive sinon si la saisie est "non" alors rien ne se passe
                 if [ "$oui" = "oui" ]; then
                    sudo ufw disable
                    echo "Le pare-feu a bien été désactivé."
@@ -96,16 +111,18 @@ while true; do
                     echo "Le pare-feu n'a pas été désactivé."
                 fi
                 ;;    
-        
-        # Quitter le script
-        4)
+                # Quitter le script
+
+           # Sortir du script   
+           4)
             echo -e "${YELLOW}Exit${NC}"
-	    break
-	    ;;
+	        break
+	        ;;
         
-        # Inique si erreur de saisie et relance le script
-        *)
+           # Inique si erreur de saisie et relance le script
+           *)
             echo -e "${RED}[Erreur]! Option invalide, veuillez réessayer !${NC}"
             ;;
-    esac
+   esac
 done 
+# Fin du script
