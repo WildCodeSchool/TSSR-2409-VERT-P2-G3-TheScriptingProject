@@ -10,10 +10,11 @@ NC='\033[0m' # Aucune couleur
 while true; do
     echo -e "${GREEN}------ MENU INFORMATION SYSTEME ------\n"
     echo -e "${YELLOW}[1]${NC} Type de CPU, nombre de coeurs, etc.."
-    echo -e "${YELLOW}[2]${NC}  Mémoire RAM totale"
-    echo -e "${YELLOW}[3]${NC}  Utilisation de la RAM"
-    echo -e "${YELLOW}[4]${NC}  Utilisation du disque"
-    echo -e "${YELLOW}[5]${NC}  Utilisation du processeur "
+    echo -e "${YELLOW}[2]${NC} Mémoire RAM totale"
+    echo -e "${YELLOW}[3]${NC} Utilisation de la RAM"
+    echo -e "${YELLOW}[4]${NC} Utilisation du disque"
+    echo -e "${YELLOW}[5]${NC} Utilisation du processeur "
+    echo -e "${YELLOW}[6]${NC} Retour au menu principal"
     echo -e "${RED}[x]${NC}  Quitter\n"
     echo -e "${GREEN}Veuillez choisir une option : ${NC}"
     read choix
@@ -45,11 +46,16 @@ while true; do
         5)
             top
             ;;
+            
+        # Retour au menu principal
+        6)
+            break
+            ;;
 
         # Quitter le script
-        6)
+        x)
             echo -e "${YELLOW}Exit${NC}"
-            break
+            exit 0
             ;;
 
         # Inique si erreur de saisie et relance le script
