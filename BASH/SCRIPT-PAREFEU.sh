@@ -66,7 +66,7 @@ while true; do
 
                    # Quitter le script    
                    x)
-                        echo -e "${YELLOW}Exit.${NC}"
+                        echo -e "${YELLOW}Exit${NC}"
                         exit 0
                         ;;
 
