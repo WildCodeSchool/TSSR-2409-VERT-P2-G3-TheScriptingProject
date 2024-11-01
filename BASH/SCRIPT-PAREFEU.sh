@@ -12,7 +12,7 @@ while true; do
     echo -e "${YELLOW}[1]${NC} Définir les règles de pare-feu"
     echo -e "${YELLOW}[2]${NC} Activer le pare-feu"
     echo -e "${YELLOW}[3]${NC} Désactiver le pare-feu"
-    echo -e "${YELLOW}[4]${NC} Quitter"
+    echo -e "${RED}[x]${NC} Quitter\n"
     echo -e "${GREEN}Veuillez choisir une option : ${NC}"
     read choix
 
