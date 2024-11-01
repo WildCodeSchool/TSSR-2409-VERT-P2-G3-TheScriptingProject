@@ -11,7 +11,7 @@ while true; do
     echo -e "${GREEN}------ MENU GESTION LOGICIEL ------\n"
     echo -e "${YELLOW}[1]${NC} Installer un logiciel"
     echo -e "${YELLOW}[2]${NC} Désinstaller un logiciel"
-    echo -e "${YELLOW}[3]${NC} Quitter"
+    echo -e "${RED}[x]${NC} Quitter\n"
     echo -e "${GREEN}Veuillez choisir une option : ${NC}"
     read choix
 
