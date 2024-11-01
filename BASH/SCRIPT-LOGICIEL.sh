@@ -23,12 +23,31 @@ while true; do
             echo -e "${GREEN}Entrer le nom du logiciel à installer : ${NC}"
 	    read logiciel
             sudo apt install $logiciel -y
-            ;;
+
+            echo ""
+
+	    # Vérification de la procédure d'installation de logiciel
+            if [ $? -eq 0 ]; then
+                echo -e "${GREEN}*** Le logiciel $logiciel à été installé avec succés ***${NC}\n"
+            else
+                echo -e "${RED}*** ERREUR : Le logiciel $logiciel n'a pas été trouvé ou n'a pas pu être installé. ***${NC}\n"
+            fi
+          ;;
+	  
          # Choix pour désinstaller un logiciel   
          2)
             echo -e "${GREEN}Entrer le nom du logiciel à désinstaller : ${NC}"
             read logiciel
-            sudo apt remove $logiciel -y
+            sudo apt remove "$logiciel*" -y
+
+     	    echo ""
+
+	    # Vérification de la procédure de désinstallation de logiciel
+   	    if [ $? -eq 0 ]; then
+	    	echo -e "${GREEN}*** Le logiciel $logiciel à été désinstallé avec succés ***${NC}\n"
+            else
+                echo -e "${RED}*** ERREUR : Le logiciel $logiciel n'a pas été trouvé ou n'a pas pu être désinstallé. ***${NC}\n"
+            fi
           ;;
 
         # Retour au menu principale
