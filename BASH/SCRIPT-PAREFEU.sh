@@ -12,6 +12,7 @@ while true; do
     echo -e "${YELLOW}[1]${NC} Définir les règles de pare-feu"
     echo -e "${YELLOW}[2]${NC} Activer le pare-feu"
     echo -e "${YELLOW}[3]${NC} Désactiver le pare-feu"
+    echo -e "${YELLOW}[4]${NC} Retour au menu principal"
     echo -e "${RED}[x]${NC} Quitter\n"
     echo -e "${GREEN}Veuillez choisir une option : ${NC}"
     read choix
@@ -57,14 +58,13 @@ while true; do
 
                    # Retour au menu principal     
                    4)
-                        echo -e "${YELLOW}Retour au menu principal.${NC}"
                         break
                         ;;
 
                    # Quitter le script    
                    x)
                         echo -e "${YELLOW}Exit.${NC}"
-                        Exit 0
+                        exit 0
                         ;;
 
                    # Indique une erreur de saisie et demande de réessayer une saisie valide     
@@ -117,13 +117,17 @@ while true; do
                 else
                     echo "Le pare-feu n'a pas été désactivé."
                 fi
-                ;;    
-                # Quitter le script
-
-           # Sortir du script   
+                ;;   
+		
+           # Retour au menu principal  
            4)
-            echo -e "${YELLOW}Exit${NC}"
-	        break
+                break
+	        ;;
+	 
+           # Sortir du script   
+           x)
+                echo -e "${YELLOW}Exit${NC}"
+	        exit 0
 	        ;;
         
            # Inique si erreur de saisie et relance le script
