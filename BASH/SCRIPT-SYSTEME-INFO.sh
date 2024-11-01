@@ -14,7 +14,7 @@ while true; do
     echo -e "${YELLOW}[3]${NC}  Utilisation de la RAM"
     echo -e "${YELLOW}[4]${NC}  Utilisation du disque"
     echo -e "${YELLOW}[5]${NC}  Utilisation du processeur "
-    echo -e "${YELLOW}[6]${NC}  Quitter"
+    echo -e "${RED}[x]${NC}  Quitter\n"
     echo -e "${GREEN}Veuillez choisir une option : ${NC}"
     read choix
     
