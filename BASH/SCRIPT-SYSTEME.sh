@@ -65,7 +65,7 @@ while true; do
 
         # Inique si erreur de saisie et relance le script
         *)
-            echo -e "${RED}[Erreur]! Option invalide, veuillez réessayer !${NC}"
+            echo -e "${RED}[Erreur]! Option invalide, veuillez réessayer !${NC}\n"
             ;;
     esac
 done 
