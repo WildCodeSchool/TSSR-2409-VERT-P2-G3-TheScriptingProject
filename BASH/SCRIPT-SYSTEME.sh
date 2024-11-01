@@ -25,26 +25,31 @@ while true; do
        # Type de CPU, nombres de coeurs, etc..
        1)
             lscpu
+            echo ""
             ;;
 
         # Mémoire totale de la RAM
         2)
             free -h | grep Mem | awk '{print $2}'
+            echo ""
             ;;
 
         # Utilisation de la RAM
         3)
             free -h
+            echo ""
             ;;
             
         # Utilisation du disque
         4)
             df -h
+            echo ""
             ;;
             
         # Utilisation du processeur
         5)
-            top
+            top -b -n 1
+            echo ""
             ;;
             
         # Retour au menu principal
