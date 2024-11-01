@@ -40,6 +40,7 @@ while true; do
                         read regle
                         sudo ufw $regle
                         echo -e "${GREEN}Règle ajoutée : $regle${NC}"
+			echo ""
                         ;;
 
                    # Supprimer une règle de pare-feu     
@@ -48,12 +49,14 @@ while true; do
                         read regle
                         sudo ufw delete $regle
                         echo -e "${GREEN}Règle supprimée : $regle${NC}"
+			echo ""
                         ;;
 
                    # Voir les règles de pare-feu actuelle     
                    3)
-                        echo -e "${GREEN}Règles de pare-feu actuelles :${NC}"
+                        echo -e "${GREEN}Règles de pare-feu actuelles :${NC}\n"
                         sudo ufw status
+			echo ""
                         ;;
 
                    # Retour au menu principal     
@@ -69,7 +72,7 @@ while true; do
 
                    # Indique une erreur de saisie et demande de réessayer une saisie valide     
                    *)
-                        echo -e "${RED}[Erreur]! Option invalide, veuillez réessayer !${NC}"
+                        echo -e "${RED}[Erreur]! Option invalide, veuillez réessayer !${NC}\n"
                         ;;
                 esac
             done
@@ -92,9 +95,9 @@ while true; do
                 # Si la valeur saisie est "oui" alors le pare-feu s'active sinon si la saisie est "non" alors rien ne se passe
                 if [ "$oui" = "oui" ]; then
                    sudo ufw enable
-                   echo "Le pare-feu a bien été activé."
+                   echo -e "${YELLOW}Le pare-feu a bien été activé.${NC}\n"
                 else
-                    echo "Le pare-feu n'a pas été activé."
+                   echo -e "${YELLOW}Le pare-feu n'a pas été activé.${NC}\n"
                 fi
                 ;; 
 
@@ -113,9 +116,9 @@ while true; do
                 # Si la valeur saisie est "oui" alors le pare-feu se désactive sinon si la saisie est "non" alors rien ne se passe
                 if [ "$oui" = "oui" ]; then
                    sudo ufw disable
-                   echo "Le pare-feu a bien été désactivé."
+                   echo -e "${YELLOW}Le pare-feu a bien été désactivé.${NC}\n"
                 else
-                    echo "Le pare-feu n'a pas été désactivé."
+                   echo -e "${YELLOW}Le pare-feu n'a pas été désactivé.${NC}\n"
                 fi
                 ;;   
 		
@@ -132,7 +135,7 @@ while true; do
         
            # Inique si erreur de saisie et relance le script
            *)
-            echo -e "${RED}[Erreur]! Option invalide, veuillez réessayer !${NC}"
+            echo -e "${RED}[Erreur]! Option invalide, veuillez réessayer !${NC}\n"
             ;;
    esac
 done 
