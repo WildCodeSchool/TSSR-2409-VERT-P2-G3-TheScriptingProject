@@ -53,6 +53,7 @@ while true; do
         # Retour au menu principale
         3)
             break
+	    echo ""
             ;;
 	    
 	 # Sortir du script 
@@ -62,7 +63,7 @@ while true; do
             ;;
 	      # Inique si erreur de saisie et relance le script    
          4)
-            echo -e "${RED}[Erreur]! Option invalide, veuillez réessayer !${NC}"
+            echo -e "${RED}[Erreur]! Option invalide, veuillez réessayer !${NC}\n"
             ;;
     esac
 done 
