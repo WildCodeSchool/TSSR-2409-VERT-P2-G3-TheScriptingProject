@@ -27,6 +27,7 @@ while true; do
     echo -e "${YELLOW}[2]${NC} Supprimer une règle"
     echo -e "${YELLOW}[3]${NC} Afficher les règles actuelles"
     echo -e "${YELLOW}[4]${NC} Retour au menu principal"
+    echo -e "${RED}[x]${NC} Quitter"
     echo -e "${GREEN}Veuillez choisir une option : ${NC}"
     read choix_regles
     
@@ -58,6 +59,12 @@ while true; do
                    4)
                         echo -e "${YELLOW}Retour au menu principal.${NC}"
                         break
+                        ;;
+
+                   # Quitter le script    
+                   x)
+                        echo -e "${YELLOW}Exit.${NC}"
+                        Exit 0
                         ;;
 
                    # Indique une erreur de saisie et demande de réessayer une saisie valide     
