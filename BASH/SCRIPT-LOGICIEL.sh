@@ -53,7 +53,6 @@ while true; do
         # Retour au menu principale
         3)
             break
-	    echo ""
             ;;
 	    
 	 # Sortir du script 
