@@ -11,6 +11,7 @@ while true; do
     echo -e "${GREEN}------ MENU GESTION LOGICIEL ------\n"
     echo -e "${YELLOW}[1]${NC} Installer un logiciel"
     echo -e "${YELLOW}[2]${NC} Désinstaller un logiciel"
+    echo -e "${YELLOW}[3]${NC} Retour au menu principal"
     echo -e "${RED}[x]${NC} Quitter\n"
     echo -e "${GREEN}Veuillez choisir une option : ${NC}"
     read choix
@@ -29,10 +30,16 @@ while true; do
             read logiciel
             sudo apt remove $logiciel -y
           ;;
-	      # Sortir du script 
-         3)
-            echo -e "${YELLOW}Exit${NC}"
+
+        # Retour au menu principale
+        3)
             break
+            ;;
+	    
+	 # Sortir du script 
+         x)
+            echo -e "${YELLOW}Exit${NC}"
+            exit 0
             ;;
 	      # Inique si erreur de saisie et relance le script    
          4)
