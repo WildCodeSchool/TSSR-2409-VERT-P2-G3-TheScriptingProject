@@ -66,7 +66,7 @@ while ($true) {
         }
         # Indique si erreur de saisie et relance le script    
         default {
-            Write-Host "[ERREUR]! Option invalide, veuillez réessayer !" -f $RED
+            Write-Host "[ERREUR]! Option invalide, veuillez réessayer !`n" -f $RED
         }
     }
 }
