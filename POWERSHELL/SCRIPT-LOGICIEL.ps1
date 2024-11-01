@@ -16,18 +16,41 @@ while ($true) {
     # Bloc pour choix installation ou désinstallation logiciel
     switch ($choix) {
     
-         # Installer un logiciel
+        # Installer un logiciel
         "1" {
-            Write-Host "Entrer le nom du logiciel à installer : " -f $GREEN 
+            Write-Host "Entrer le nom du logiciel à installer : `n" -f $GREEN 
             $logiciel = Read-Host "Nom du logiciel"
-            Start-Process -FilePath "winget" -ArgumentList "install", $logiciel, "-y" -NoNewWindow -Wait
+
+            Write-Host ""
+
+            $chocoPath = "C:\ProgramData\chocolatey\bin\choco.exe"
+            $process = Start-Process -FilePath $chocoPath -ArgumentList "install", $logiciel, "-y" -NoNewWindow -Wait -PassThru
+
+            if ($process.ExitCode -eq 0) {
+            Write-Host "$logiciel a été installé avec succès.`n" -f $GREEN
+            } 
+              else {
+                   Write-Host "Erreur lors de l'installation de $logiciel." -f $RED
+            }
         }
 
         # Désinstaller un logiciel
         "2" {
-            Write-Host "Entrer le nom du logiciel à désinstaller : " -f $GREEN
+            Write-Host "Entrer le nom du logiciel à désinstaller : `n" -f $GREEN
             $logiciel = Read-Host "Nom du logiciel"
-            Start-Process -FilePath "winget" -ArgumentList "remove", $logiciel, "-y" -NoNewWindow -Wait
+
+            Write-Host ""
+
+            $chocoPath = "C:\ProgramData\chocolatey\bin\choco.exe"
+            $process = Start-Process -FilePath "$chocoPath" -ArgumentList "uninstall", $logiciel, "-y"-NoNewWindow -Wait -PassThru
+
+
+            if ($process.ExitCode -eq 0) {
+            Write-Host "$logiciel a été désinstallé avec succès.`n" -f $GREEN
+            }
+                else {
+                Write-Host "Erreur lors de l'désinstallation de $logiciel." -f $RED
+            }
         }
         
         # Retour au menu principal 
