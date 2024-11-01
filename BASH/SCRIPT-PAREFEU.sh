@@ -27,7 +27,7 @@ while true; do
     echo -e "${YELLOW}[2]${NC} Supprimer une règle"
     echo -e "${YELLOW}[3]${NC} Afficher les règles actuelles"
     echo -e "${YELLOW}[4]${NC} Retour au menu principal"
-    echo -e "${RED}[x]${NC} Quitter"
+    echo -e "${RED}[x]${NC} Quitter\n"
     echo -e "${GREEN}Veuillez choisir une option : ${NC}"
     read choix_regles
     
