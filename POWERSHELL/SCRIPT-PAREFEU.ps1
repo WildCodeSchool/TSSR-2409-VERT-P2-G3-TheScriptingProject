@@ -7,11 +7,11 @@ $NC= " White" # Aucune couleur
 # Boucle while true pour faire un menu sur la gestion du pare-feu
 while ($true) {
     Write-Host "------ MENU GESTION PARE-FEU ------`n" -f $GREEN
-    Write-Host "[1]" -f $YELLOW -nonewline; Write-Host "Définir les règles de pare-feu" -f $NC
-    Write-Host "[2]" -f $YELLOW -nonewline; Write-Host "Activer le pare-feu" -f $NC
-    Write-Host "[3]" -f $YELLOW -nonewline; Write-Host "Désactiver le pare-feu" -f $NC
-    Write-Host "[4]" -f $YELLOW -nonewline; Write-Host "Retour au menu principal" -f $NC
-    Write-Host "[x]" -f $YELLOW -nonewline; Write-Host "Quitter`n" -f $NC
+    Write-Host "[1] " -f $YELLOW -nonewline; Write-Host "Définir les règles de pare-feu" -f $NC
+    Write-Host "[2] " -f $YELLOW -nonewline; Write-Host "Activer le pare-feu" -f $NC
+    Write-Host "[3] " -f $YELLOW -nonewline; Write-Host "Désactiver le pare-feu" -f $NC
+    Write-Host "[4]  -f $YELLOW -nonewline; Write-Host "Retour au menu principal" -f $NC
+    Write-Host "[x] " -f $YELLOW -nonewline; Write-Host "Quitter`n" -f $NC
     $choix = Read-Host "Veuillez choisir une option  "
 
     # Switch pour faire un sous-menu pour les règles du pare-feu
@@ -21,11 +21,11 @@ while ($true) {
          "1"
     while ($true) {
       Write-Host "------ MENU DES RÈGLES PARE-FEU ------`n" -f $GREEN
-      Write-Host "[1]" -f $YELLOW -nonewline; Write-Host "Ajouter une règle" -f $NC
-      Write-Host "[2]" -f $YELLOW -nonewline; Write-Host "Supprimer une règle" -f $NC
-      Write-Host "[3]" -f $YELLOW -nonewline; Write-Host "Afficher les règles actuelles" -f $NC
-      Write-Host "[4]" -f $YELLOW -nonewline; Write-Host "Retour au menu principal" -f $NC
-      Write-Host "[x]" -f $YELLOW -nonewline; Write-Host "Quitter`n" -f $NC
+      Write-Host "[1] " -f $YELLOW -nonewline; Write-Host "Ajouter une règle" -f $NC
+      Write-Host "[2] " -f $YELLOW -nonewline; Write-Host "Supprimer une règle" -f $NC
+      Write-Host "[3] " -f $YELLOW -nonewline; Write-Host "Afficher les règles actuelles" -f $NC
+      Write-Host "[4] " -f $YELLOW -nonewline; Write-Host "Retour au menu principal" -f $NC
+      Write-Host "[x] " -f $YELLOW -nonewline; Write-Host "Quitter`n" -f $NC
       $choix_regles = Read-Host "Veuillez choisir une option  "
     
     switch ($choix_regles) {
