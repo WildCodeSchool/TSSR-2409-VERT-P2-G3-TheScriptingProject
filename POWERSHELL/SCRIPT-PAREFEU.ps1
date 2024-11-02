@@ -24,9 +24,12 @@ function Menu-ReglesPareFeu {
 
                 $ruleName = "NomDeLaRegle"
                 $ruleDescription = "Description de la règle"
-                $port = "8080" 
+                $port = "Ex port 8080"
+                $direction = "Ex Inbound ou Outbound"
+                $protocol = "Ex TCP"
+                $action = "Ex : Allow"
 
-                New-NetFirewallRule -DisplayName $ruleName -Description $ruleDescription -Direction Inbound -Protocol TCP -LocalPort $port -Action Allow
+                New-NetFirewallRule -DisplayName $ruleName -Description $ruleDescription -Direction $direction -Protocol $protocol -LocalPort $port -Action $action
             }
 
             # Supprimer une règle de pare-feu
