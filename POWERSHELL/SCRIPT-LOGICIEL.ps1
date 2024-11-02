@@ -49,7 +49,7 @@ while ($true) {
             Write-Host "$logiciel a été désinstallé avec succès.`n" -f $GREEN
             }
                 else {
-                Write-Host "Erreur lors de l'désinstallation de $logiciel." -f $RED
+                Write-Host "Erreur lors de l'désinstallation de $logiciel.`n" -f $RED
             }
         }
         
