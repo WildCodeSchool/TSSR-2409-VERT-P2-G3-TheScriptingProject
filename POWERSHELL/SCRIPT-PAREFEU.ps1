@@ -12,7 +12,7 @@ while ($true) {
     Write-Host "[3]" -f $YELLOW -nonewline; Write-Host "Désactiver le pare-feu" -f $NC
     Write-Host "[4]" -f $YELLOW -nonewline; Write-Host "Retour au menu principal" -f $NC
     Write-Host "[x]" -f $YELLOW -nonewline; Write-Host "Quitter`n" -f $NC
-    $choix = Read-Host "Veuillez choisir une option : "
+    $choix = Read-Host "Veuillez choisir une option  "
 
     # Switch pour faire un sous-menu pour les règles du pare-feu
     switch ($choix) { 
@@ -26,7 +26,7 @@ while ($true) {
       Write-Host "[3]" -f $YELLOW -nonewline; Write-Host "Afficher les règles actuelles" -f $NC
       Write-Host "[4]" -f $YELLOW -nonewline; Write-Host "Retour au menu principal" -f $NC
       Write-Host "[x]" -f $YELLOW -nonewline; Write-Host "Quitter`n" -f $NC
-      $choix_regles = Read-Host "Veuillez choisir une option : "
+      $choix_regles = Read-Host "Veuillez choisir une option  "
     
     switch ($choix_regles) {
 
@@ -84,7 +84,7 @@ while ($true) {
                 # Tant que l'entrée n'est pas "oui" ou "non", on redemande une saisie valide
                 while ($oui -ne "oui" -and $oui -ne "non") {
                       Write-Host "[ERREUR] Option invalide, veuillez entrer 'oui' ou 'non'." -f $RED
-                      $oui = Read-Host "Entrer votre choix : "
+                      $oui = Read-Host "Entrer votre choix  "
                 }
                 # Fin de la boucle
 
@@ -105,7 +105,7 @@ while ($true) {
                 # Boucle pour que tant que l'entrée n'est pas "oui" ou "non", on redemande une saisie valide
                 while ($oui -ne "oui" -and $oui -ne "non") {
                       Write-Host "[ERREUR] Option invalide, veuillez entrer 'oui' ou 'non'." -f $RED
-                      $oui = Read-Host "Entrer votre choix : " 
+                      $oui = Read-Host "Entrer votre choix  " 
                       }
                 # Fin de la boucle
 
