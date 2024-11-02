@@ -63,7 +63,7 @@ while ($true) {
             
         # Retour au menu principal
         "6" {
-            return
+            break
             }
 
         # Quitter le script
