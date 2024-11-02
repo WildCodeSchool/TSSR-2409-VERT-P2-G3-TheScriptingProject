@@ -46,7 +46,7 @@ while ($true) {
             
         # Utilisation du disque
         "4" {
-            Get-WmiObject Win32_LogicalDisk | Select-Object DeviceID, FreeSpace, Size, VolumeName
+            Get-WmiObject Win32_LogicalDisk | Select-Object -Property DeviceID, FreeSpace, Size, VolumeName
             Write-Host ""
             }
             
@@ -54,7 +54,6 @@ while ($true) {
         "5" {
              Get-CimInstance -ClassName Win32_Processor | ForEach-Object {
              "Utilisation du processeur : {0}%" -f $_.LoadPercentage
-             Start-Sleep -Seconds 1
             }
 
             Write-Host ""
