@@ -110,7 +110,7 @@ while ($true) {
 
         # Retour au menu principal
         "4" {
-            return
+            break
             }
 
         # Quitte le script
