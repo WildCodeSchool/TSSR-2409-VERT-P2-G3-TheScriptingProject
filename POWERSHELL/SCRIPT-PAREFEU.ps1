@@ -69,7 +69,7 @@ while ($true) {
 
         # Activation du pare-feu          
         "2" {
-            $oui = Read-Host "Voulez-vous activer le pare-feu ? : oui/non "
+            $oui = Read-Host "Voulez-vous activer le pare-feu ? oui/non "
 
             while ($oui -ne "oui" -and $oui -ne "non") {
                 Write-Host "[ERREUR] Option invalide, veuillez entrer 'oui' ou 'non'." -f $RED
@@ -78,6 +78,7 @@ while ($true) {
 
             if ($oui -eq "oui") {
                 # Activer le pare-feu ici
+                Set-NetFirewallProfile -Profile * -Enabled True
                 Write-Host "$Le pare-feu a bien été activé.`n" -f $GREEN
             } else {
                 Write-Host "Le pare-feu n'a pas été activé.`n" -f $RED
@@ -95,6 +96,7 @@ while ($true) {
 
             if ($oui -eq "oui") {
                 # Désactiver le pare-feu ici
+                Set-NetFirewallProfile -Profile * -Enabled False
                 Write-Host "Le pare-feu a bien été désactivé.`n" -f $GREEN
             } else {
                 Write-Host "Le pare-feu n'a pas été désactivé.`n" -f $RED
@@ -108,7 +110,7 @@ while ($true) {
 
         # Sortir du script   
         "x" {
-            Write-Host "Exit" -f $YELLOW
+            Write-Host "Exit`n" -f $YELLOW
             exit
         }
 
