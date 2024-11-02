@@ -7,13 +7,13 @@ $NC = "White" # Aucune couleur
 # Boucle while true pour faire un menu sur les informations systèmes
 while ($true) {
     Write-Host "------ MENU INFORMATION SYSTEME ------`n" -f $GREEN
-    Write-Host "[1]" -f $YELLOW -nonewline; Write-Host "Type de CPU, nombre de coeurs, etc.." -f $NC
-    Write-Host "[2]" -f $YELLOW -nonewline; Write-Host "Mémoire RAM totale" -f $NC
-    Write-Host "[3]" -f $YELLOW -nonewline; Write-Host "Utilisation de la RAM" -f $NC
-    Write-Host "[4]" -f $YELLOW -nonewline; Write-Host "Utilisation du disque" -f $NC
-    Write-Host "[5]" -f $YELLOW -nonewline; Write-Host "Utilisation du processeur " -f $NC
-    Write-Host "[6]" -f $YELLOW -nonewline; Write-Host "Retour au menu principal" -f $NC
-    Write-Host "[x]" -f $RED -nonewline; Write-Host "Quitter`n" -f $NC
+    Write-Host "[1] " -f $YELLOW -nonewline; Write-Host "Type de CPU, nombre de coeurs, etc.." -f $NC
+    Write-Host "[2] " -f $YELLOW -nonewline; Write-Host "Mémoire RAM totale" -f $NC
+    Write-Host "[3] " -f $YELLOW -nonewline; Write-Host "Utilisation de la RAM" -f $NC
+    Write-Host "[4] " -f $YELLOW -nonewline; Write-Host "Utilisation du disque" -f $NC
+    Write-Host "[5] " -f $YELLOW -nonewline; Write-Host "Utilisation du processeur " -f $NC
+    Write-Host "[6] " -f $YELLOW -nonewline; Write-Host "Retour au menu principal" -f $NC
+    Write-Host "[x] " -f $RED -nonewline; Write-Host "Quitter`n" -f $NC
     $choix = Read-Host "Veuillez choisir une option  "
     
     # Bloc pour faire un bloc avec les choix correspondants au menu 
