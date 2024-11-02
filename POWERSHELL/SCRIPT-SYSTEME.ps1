@@ -16,7 +16,7 @@ while ($true) {
     Write-Host "[x] " -f $RED -nonewline; Write-Host "Quitter`n" -f $NC
     $choix = Read-Host "Veuillez choisir une option  "
     
-    # Bloc pour faire un bloc avec les choix correspondants au menu 
+    # Switch pour faire un bloc avec les choix correspondants au menu 
     switch ($choix) {
 
        # Type de CPU, nombres de coeurs, etc..
@@ -63,7 +63,7 @@ while ($true) {
             
         # Retour au menu principal
         "6" {
-            break
+            return
             }
 
         # Quitter le script
