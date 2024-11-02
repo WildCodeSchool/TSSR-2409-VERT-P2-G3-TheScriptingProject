@@ -42,7 +42,7 @@ while ($true) {
             Write-Host ""
 
             $chocoPath = "C:\ProgramData\chocolatey\bin\choco.exe"
-            $process = Start-Process -FilePath "$chocoPath" -ArgumentList "uninstall", $logiciel, "-y"-NoNewWindow -Wait -PassThru
+            $process = Start-Process -FilePath "$chocoPath" -ArgumentList "uninstall", $logiciel, "-y" -NoNewWindow -Wait -PassThru
 
 
             if ($process.ExitCode -eq 0) {
