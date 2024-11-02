@@ -21,31 +21,43 @@ while ($true) {
 
        # Type de CPU, nombres de coeurs, etc..
        "1" {
-            lscpu
+            Get-WmiObject -Class Win32_Processor | Select-Object -Property Name, NumberOfCores, NumberOfEnableCore, NumberOfLogicalProcessors, Manufacturer
             Write-Host ""
             }
 
         # Mémoire totale de la RAM
         "2" {
-            free -h | grep Mem | awk '{print $2}'
+            $ramTotal = [math]::Floor((Get-CimInstance -ClassName Win32_ComputerSystem).TotalPhysicalMemory / 1GB * 10) / 10
+            "La mémoire totale de la RAM est de {0} Go" -f $ramTotal
+
             Write-Host ""
             }
 
         # Utilisation de la RAM
         "3" {
-            free -h
-            Write-Host ""
-            }
+             Get-CimInstance -ClassName Win32_OperatingSystem | ForEach-Object {
+             $usedMemory = ($_.TotalVisibleMemorySize - $_.FreePhysicalMemory) / 1MB
+             $totalMemory = $_.TotalVisibleMemorySize / 1MB
+             "Utilisation de la mémoire : {0:N1} Go sur {1:N1} Go" -f $usedMemory, $totalMemory
+             Start-Sleep -Seconds 1
+             }
+
+             Write-Host ""
+             }
             
         # Utilisation du disque
         "4" {
-            df -h
+            Get-WmiObject Win32_LogicalDisk | Select-Object DeviceID, FreeSpace, Size, VolumeName
             Write-Host ""
             }
             
         # Utilisation du processeur
         "5" {
-            top -b -n 1
+             Get-CimInstance -ClassName Win32_Processor | ForEach-Object {
+             "Utilisation du processeur : {0}%" -f $_.LoadPercentage
+             Start-Sleep -Seconds 1
+            }
+
             Write-Host ""
             }
             
