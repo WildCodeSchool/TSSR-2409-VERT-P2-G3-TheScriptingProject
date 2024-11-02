@@ -27,7 +27,7 @@ while ($true) {
 
         # Mémoire totale de la RAM
         "2" {
-            $ramTotal = ((Get-CimInstance -ClassName Win32_ComputerSystem).TotalPhysicalMemory / 1GB * 10) / 10
+            $ramTotal = ((Get-CimInstance -ClassName Win32_ComputerSystem).TotalPhysicalMemory / 1GB
             "La mémoire totale de la RAM est de {0.0} Go" -f $ramTotal
 
             Write-Host ""
