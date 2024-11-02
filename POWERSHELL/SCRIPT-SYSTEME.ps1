@@ -39,7 +39,6 @@ while ($true) {
              $usedMemory = ($_.TotalVisibleMemorySize - $_.FreePhysicalMemory) / 1MB
              $totalMemory = $_.TotalVisibleMemorySize / 1MB
              "Utilisation de la mémoire : {0:N1} Go sur {1:N1} Go" -f $usedMemory, $totalMemory
-             Start-Sleep -Seconds 1
              }
 
              Write-Host ""
