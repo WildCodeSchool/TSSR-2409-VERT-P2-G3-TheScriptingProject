@@ -30,7 +30,7 @@ while ($true) {
             Write-Host "$logiciel a été installé avec succès.`n" -f $GREEN
             } 
               else {
-                   Write-Host "Erreur lors de l'installation de $logiciel." -f $RED
+                   Write-Host "Erreur lors de l'installation de $logiciel.`n" -f $RED
             }
         }
 
