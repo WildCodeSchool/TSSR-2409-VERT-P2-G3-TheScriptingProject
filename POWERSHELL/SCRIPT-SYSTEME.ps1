@@ -6,7 +6,7 @@ $NC = "White" # Aucune couleur
 
 # Boucle while true pour faire un menu sur les informations systèmes
 while ($true) {
-    Write-Host "------ MENU INFORMATION SYSTEME ------`n" -f $NC
+    Write-Host "------ MENU INFORMATION SYSTEME ------`n" -f $GREEN
     Write-Host "[1]" -f $YELLOW -nonewline; Write-Host "Type de CPU, nombre de coeurs, etc.." -f $NC
     Write-Host "[2]" -f $YELLOW -nonewline; Write-Host "Mémoire RAM totale" -f $NC
     Write-Host "[3]" -f $YELLOW -nonewline; Write-Host "Utilisation de la RAM" -f $NC
