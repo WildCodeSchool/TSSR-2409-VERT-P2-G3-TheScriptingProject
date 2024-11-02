@@ -12,28 +12,34 @@ function Menu-ReglesPareFeu {
         Write-Host "[3] " -ForegroundColor $YELLOW -NoNewline; Write-Host "Afficher les règles actuelles" -f $NC
         Write-Host "[4] " -ForegroundColor $YELLOW -NoNewline; Write-Host "Retour au menu principal" -f $NC
         Write-Host "[x] " -ForegroundColor $RED -NoNewline; Write-Host "Quitter`n" -f $NC
-        $choix_regles = Read-Host "Veuillez choisir une option"
+        $choix_regles = Read-Host "Veuillez choisir une option "
 
         switch ($choix_regles) {
             "1" {
                 $regle = Read-Host "Entrer la règle à ajouter (ex: allow 22/tcp) : " -f $GREEN
                 Write-Host "Règle ajoutée : $regle`n" -f $GREEN
             }
+
             "2" {
                 $regle = Read-Host "Entrer la règle à supprimer (ex: allow 22/tcp) : " -f $GREEN
                 Write-Host "Règle supprimée : $regle`n" -f $GREEN
             }
+
             "3" {
                 Write-Host "Règles de pare-feu actuelles :`n" -f $GREEN
                 # Afficher les règles ici
             }
+
+            # Retour au menu principal
             "4" {
-                return  # Retourne au menu principal
+                return 
             }
+
             "x" {
                 Write-Host "Exit" -f $YELLOW
                 exit
             }
+
             default {
                 Write-Host "[Erreur]! Option invalide, veuillez réessayer !`n" -f $RED
             }
@@ -48,12 +54,14 @@ while ($true) {
     Write-Host "[2] " -ForegroundColor $YELLOW -NoNewline; Write-Host "Activer le pare-feu" -f $NC
     Write-Host "[3] " -ForegroundColor $YELLOW -NoNewline; Write-Host "Désactiver le pare-feu" -f $NC
     Write-Host "[x] " -ForegroundColor $RED -NoNewline; Write-Host "Quitter`n" -f $NC
-    $choix = Read-Host "Veuillez choisir une option"
+    $choix = Read-Host "Veuillez choisir une option "
 
     switch ($choix) {
         "1" {
-            Menu-ReglesPareFeu  # Appelle la fonction pour les règles de pare-feu
+            Menu-ReglesPareFeu  # Appelle la fonction pour le menu des règles de pare-feu
         }
+
+        # Activation du pare-feu
         "2" {
             $oui = Read-Host "Voulez-vous activer le pare-feu ? oui/non "
             while ($oui -ne "oui" -and $oui -ne "non") {
@@ -67,6 +75,8 @@ while ($true) {
                 Write-Host "Le pare-feu n'a pas été activé.`n" -f $RED
             }
         }
+
+        # Désactivation du pare-feu
         "3" {
             $oui = Read-Host "Voulez-vous désactiver le pare-feu ? : oui/non "
             while ($oui -ne "oui" -and $oui -ne "non") {
@@ -80,10 +90,14 @@ while ($true) {
                 Write-Host "Le pare-feu n'a pas été désactivé.`n" -f $RED
             }
         }
+
+        # Quitte le script
         "x" {
             Write-Host "Exit" -f $YELLOW
             exit
         }
+
+        # Affiche erreur de saisie
         default {
             Write-Host "[Erreur]! Option invalide, veuillez réessayer !`n" -f $RED
         }
