@@ -16,18 +16,30 @@ function Menu-ReglesPareFeu {
 
         switch ($choix_regles) {
             "1" {
-                $regle = Read-Host "Entrer la règle à ajouter (ex: allow 22/tcp) : " -f $GREEN
+                $regle = Read-Host "Entrer la règle à ajouter" 
                 Write-Host "Règle ajoutée : $regle`n" -f $GREEN
+
+                # Ajouter une règle de pare-feu
+                $ruleName = "NomDeLaRegle"
+                $ruleDescription = "Description de la règle"
+                $port = "8080" # Modifier le port selon vos besoins
+
+                New-NetFirewallRule -DisplayName $ruleName -Description $ruleDescription -Direction Inbound -Protocol TCP -LocalPort $port -Action Allow
             }
 
             "2" {
-                $regle = Read-Host "Entrer la règle à supprimer (ex: allow 22/tcp) : " -f $GREEN
+                $regle = Read-Host "Entrer la règle à supprimer"
                 Write-Host "Règle supprimée : $regle`n" -f $GREEN
+
+                # Supprimer une règle de pare-feu
+                $ruleName = "NomDeLaRegle"
+
+                Remove-NetFirewallRule -DisplayName $ruleName
             }
 
             "3" {
                 Write-Host "Règles de pare-feu actuelles :`n" -f $GREEN
-                # Afficher les règles ici
+                Get-NetFirewallRule | Format-Table -Property DisplayName, Enabled, Action, Direction
             }
 
             # Retour au menu principal
@@ -53,6 +65,7 @@ while ($true) {
     Write-Host "[1] " -ForegroundColor $YELLOW -NoNewline; Write-Host "Définir les règles de pare-feu" -f $NC
     Write-Host "[2] " -ForegroundColor $YELLOW -NoNewline; Write-Host "Activer le pare-feu" -f $NC
     Write-Host "[3] " -ForegroundColor $YELLOW -NoNewline; Write-Host "Désactiver le pare-feu" -f $NC
+    Write-Host "[4] " -ForegroundColor $YELLOW -NoNewline; Write-Host "Retour au menu principal" -f $NC
     Write-Host "[x] " -ForegroundColor $RED -NoNewline; Write-Host "Quitter`n" -f $NC
     $choix = Read-Host "Veuillez choisir une option "
 
@@ -90,6 +103,11 @@ while ($true) {
                 Write-Host "Le pare-feu n'a pas été désactivé.`n" -f $RED
             }
         }
+
+        # Retour au menu principal
+        "4" {
+            return
+            }
 
         # Quitte le script
         "x" {
