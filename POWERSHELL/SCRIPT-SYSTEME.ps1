@@ -14,7 +14,7 @@ while ($true) {
     Write-Host "[5]" -f $YELLOW -nonewline; Write-Host "Utilisation du processeur " -f $NC
     Write-Host "[6]" -f $YELLOW -nonewline; Write-Host "Retour au menu principal" -f $NC
     Write-Host "[x]" -f $RED -nonewline; Write-Host "Quitter`n" -f $NC
-    $choix = Read-Host "Veuillez choisir une option : "
+    $choix = Read-Host "Veuillez choisir une option  "
     
     # Bloc pour faire un bloc avec les choix correspondants au menu 
     switch ($choix) {
