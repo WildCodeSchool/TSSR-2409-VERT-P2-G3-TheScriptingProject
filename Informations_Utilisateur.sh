@@ -10,7 +10,8 @@ NC='\033[0m' # Aucune couleur
 read -p "Entrez le nom de l'utilisateur : " Utilisateur
 
 # Vérifie qu'un nom d'utilisateur a été fourni
-if [ -z "$USER" ]; then
+if [ -z "$USER" ]; 
+then
     echo -e "${RED}Erreur: Aucun nom d'utilisateur saisie${NC}"
     read -p "Entrez le nom de l'utilisateur : " Utilisateur
 fi
@@ -82,8 +83,8 @@ do
       		read -p "Entrez le chemin complet du dossier : " CHEMIN_DOSSIER
         	if [ -d "$CHEMIN_DOSSIER" ]; 
 		then
-           		 sudo -u "$Utilisateur" [ -r "$CHEMIN_DOSSIER" ] && echo "Lecture : Oui" || echo "Lecture : Non"
-           		 sudo -u "$Utilisateur" [ -w "$CHEMIN_DOSSIER" ] && echo "Écriture : Oui" || echo "Écriture : Non"
+           		sudo -u "$Utilisateur" [ -r "$CHEMIN_DOSSIER" ] && echo "Lecture : Oui" || echo "Lecture : Non"
+           		sudo -u "$Utilisateur" [ -w "$CHEMIN_DOSSIER" ] && echo "Écriture : Oui" || echo "Écriture : Non"
             		sudo -u "$Utilisateur" [ -x "$CHEMIN_DOSSIER" ] && echo "Exécution : Oui" || echo "Exécution : Non"
         	else
             		echo "Le dossier n'existe pas."
