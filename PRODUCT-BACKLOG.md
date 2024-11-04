@@ -1,56 +1,68 @@
-# PRODUCT BACKLOG
+# **Product Backlog & Organisation - Semaine 3 / Semaine 4**
 
-#### Organisation de la semaine 1 / semaine 4
-- Scrum Master : Camille
-- Product Owner : Julien
+**Scrum Master** : Julien  
+**Product Owner** : Camille  
 
-### 1. Configuration du labo
-
-- **Objectif** : Configurer les machines virtuelles (VM) avec les serveurs et les clients, en assurant la connexion entre les serveurs et les clients.
-- **VM à configurer** :
-  
-  - **Serveur Debian 12** : 
-    - Nom : `SRVLX01`
-    - Compte : `root`
-    - Mot de passe : `Azerty1*`
-    - Adresse IP fixe : `172.16.10.10/24`
-      
-  - **Client Ubuntu** : 
-    - Nom : `CLILIN01`
-    - Compte utilisateur : `wilder`
-    - Mot de passe : `Azerty1*`
-    - Adresse IP fixe : `172.16.10.30/24`
-      
-  - **Serveur Windows Server 2022** : 
-    - Nom : `SRVWIN01`
-    - Compte : `Administrator`
-    - Mot de passe : `Azerty1*`
-    - Adresse IP fixe : `172.16.10.5/24`
-      
-  - **Client Windows** : 
-    - Nom : `CLIWIN01`
-    - Compte utilisateur : `wilder`
-    - Mot de passe : `Azerty1*`
-    - Adresse IP fixe : `172.16.10.20/24`
-      
-- **Action** : Assurer que chaque VM ait le bon nom et la bonne adresse IP, et établir la connexion entre les serveurs et les clients.
 ---
-### 2. Analyse du tableau Excel du projet 2
 
-- **Objectif** : Déchiffrer le contenu du tableau Excel pour comprendre les demandes.
-- **Tâches** :
-  - Créer un pseudo-code général du script à développer.
-  - Répartir les tâches du script entre les membres de l'équipe et créer un pseudo-code pour chaque tâche spécifique.
+## **Sprint Backlog - Semaine 3**
+
+### **Objectifs Généraux**
+1. **Développement du Script** : 
+   - Création des scripts BASH (Information).
+   - Création des scripts PowerShell (Action).
+   - Création des scripts PowerShell (Information).
+   - Mise en commun des scripts Bash (Action et Information) et des scripts PowerShell (en fonction des avancées).
+
+2. **Documentation** :
+   - Commencer la documentation utilisateur (USER_GUIDE.md).
+   - Continuer la documentation admin (INSTALL.md).
+   - Peaufiner le README.md.
+
 ---
-### 3. Développement du Script
 
-- **Objectif** : Développer un script avec 2 personnes sur Ubuntu et 2 personnes sur Windows.
-- **Tâches** :
-  - Chaque membre doit coder sa partie pour les tâches spécifiques sur Ubuntu ou Windows.
-  - Construction progressive par étapes.
-  - Créer un menu principal offrant différentes options pour l'utilisateur.
+#### **Tâches de Développement** :
+| Tâche | Description | Détails |
+|-------|-------------|---------|
+| **Création Script Bash (Information)** | Écrire un script Bash sous Ubuntu pour afficher des informations. | - Utiliser des commandes système pour extraire des informations (ex. `uname`, `df`, `top`, etc.)<br> - Permettre une interaction utilisateur avec des options.
+| **Création Script PowerShell (Action)** | Écrire un script PowerShell sous Windows pour exécuter des actions spécifiques. | - Automatiser une tâche courante.<br> - Rendre les actions personnalisables pour l'utilisateur. |
+| **Création Script PowerShell (Information)** | Écrire un script PowerShell sous Windows pour afficher des informations système. | - Utiliser des cmdlets PowerShell pour récupérer des infos sur le système (ex. `Get-Process`, `Get-ComputerInfo`).<br>
+| **Mise en Commun des Scripts** | Fusionner les scripts écrit dans un script principal intégrant les différentes plateformes (Debian / Windows). | - Assurer une compatibilité multiplateforme et effectuer des tests basiques sur chaque OS. |
 
-### 4. Documentation
+---
 
-- **Objectif** : Rédiger la documentation des livrables.
-- **Tâches** : Rassembler toutes les informations nécessaires et s'assurer que la documentation soit complète et claire pour les utilisateurs finaux.
+### **Documentation**
+
+| Tâche | Description | Détails |
+|-------|-------------|---------|
+| **USER_GUIDE.md** | Créer un guide utilisateur détaillé pour l'utilisation du script. | - Débuter par des captures d'écran de l'interface, des étapes d'utilisation de chaque fonctionnalité.<br> - Explication détaillée des options proposées dans le menu, avec des exemples concrets pour chaque OS |
+| **INSTALL.md** | Rédiger un guide d'installation pour les environnements Ubuntu et Windows. | - Lister les prérequis système.<br> - Instructions étape par étape pour installer et exécuter les scripts.<br> - Préciser les autorisations requises, chemins d'installation recommandés et éventuels problèmes de compatibilité. |
+| **README.md** | Finaliser le README pour la présentation du projet sur GitHub. | - Brève description du projet, ses objectifs et ses fonctionnalités.<br> - Liens vers les autres documents (USER_GUIDE.md et INSTALL.md) |
+
+---
+
+## **Sprint Review - Semaine 3**
+
+### **État des Livrables**
+
+1. **Développement du Script**
+   - **Scripts Bash et PowerShell** : Premières versions des scripts créées pour chaque plateforme, avec les fonctionnalités de base fonctionnelles.
+   - **Fusion des Scripts** : Mise en commun avec tests initiaux pour vérifier la compatibilité et les performances.
+
+2. **Documentation**
+   - **USER_GUIDE.md** : Première version avec captures d'écran pour la présentation des options, introduction et guide utilisateur en cours d'élaboration.
+   - **INSTALL.md** : Liste de prérequis et instructions générales prêtes ; sections spécifiques pour les plateformes Ubuntu et Windows à compléter.
+   - **README.md** : Structure de base et introduction rédigées ainsi que des liens vers les guides d’utilisation et d’installation.
+
+---
+
+### **Feedback et Améliorations pour la Semaine 4**
+
+- **Développement** :
+   - Amélioration possible du système des couleurs du script.
+   - Ajouter des commentaires dans les scripts pour rendre le code plus clair.
+   - Pouvoir lancer et exécuter le script finale BASH depuis un serveur Windows et le script finale PowerShell depuis un serveur Debian.
+   
+- **Documentation** :
+   - Terminer les 3 livrables (README.md / INSTALL.md / USER_GUIDE.md).
+   - Vérifier et tester les scripts BASH et PowerShell pour que tout fonctionne correctement pour la démo finale.
