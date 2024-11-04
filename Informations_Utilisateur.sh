@@ -33,7 +33,7 @@ do
     echo -e "${YELLOW}[5]${NC} Historique des commandes"
     echo -e "${YELLOW}[6]${NC} Droits sur un dossier"
     echo -e "${YELLOW}[7]${NC} Droits sur un fichier"
-	echo -e "${YELLOW}[8]${NC} Retour au menu precedent"
+    echo -e "${YELLOW}[8]${NC} Retour au menu precedent"
     echo -e "${YELLOW}[X]${NC} Quitter\n"
     read -p "Veuillez choisir une option: " CHOIX
 
@@ -42,13 +42,13 @@ do
 		# Date de dernière connexion d’un utilisateur
 		"1")
 		 echo -e "\nDate de dernière connexion de $Utilisateur:"
-         lastlog -u "$Utilisateur"
+        	 lastlog -u "$Utilisateur"
 		;;
 		
 		# Date de dernière modification du mot de passe
 		"2")
 		echo -e "\nDate de dernière modification du mot de passe :"
-        chage -l "$Utilisateur" | grep "Last password change"
+        	chage -l "$Utilisateur" | grep "Last password change"
 		;;
 
 		# Liste des sessions ouvertes par l'utilisateur
@@ -79,21 +79,21 @@ do
 		# Droits/permissions de l’utilisateur sur un dossier
 		"6")
 		echo -e "\nDroits sur un dossier spécifique :"
-        read -p "Entrez le chemin complet du dossier : " CHEMIN_DOSSIER
-        if [ -d "$CHEMIN_DOSSIER" ]; 
+      		read -p "Entrez le chemin complet du dossier : " CHEMIN_DOSSIER
+        	if [ -d "$CHEMIN_DOSSIER" ]; 
 		then
-            sudo -u "$Utilisateur" [ -r "$CHEMIN_DOSSIER" ] && echo "Lecture : Oui" || echo "Lecture : Non"
-            sudo -u "$Utilisateur" [ -w "$CHEMIN_DOSSIER" ] && echo "Écriture : Oui" || echo "Écriture : Non"
-            sudo -u "$Utilisateur" [ -x "$CHEMIN_DOSSIER" ] && echo "Exécution : Oui" || echo "Exécution : Non"
-        else
-            echo "Le dossier n'existe pas."
-        fi
+           		 sudo -u "$Utilisateur" [ -r "$CHEMIN_DOSSIER" ] && echo "Lecture : Oui" || echo "Lecture : Non"
+           		 sudo -u "$Utilisateur" [ -w "$CHEMIN_DOSSIER" ] && echo "Écriture : Oui" || echo "Écriture : Non"
+            		sudo -u "$Utilisateur" [ -x "$CHEMIN_DOSSIER" ] && echo "Exécution : Oui" || echo "Exécution : Non"
+        	else
+            		echo "Le dossier n'existe pas."
+        	fi
 		;;
 
 		# Droits/permissions de l’utilisateur sur un fichier
 		"7")
 		echo -e "\nDroits sur un fichier spécifique :"
-        read -p "Entrez le chemin complet du fichier : " CHEMIN_FICHIER
+       		read -p "Entrez le chemin complet du fichier : " CHEMIN_FICHIER
 		if [ -f "$CHEMIN_FICHIER" ]; then
 			sudo -u "$Utilisateur" [ -r "$CHEMIN_FICHIER" ] && echo "Lecture : Oui" || echo "Lecture : Non"
 			sudo -u "$Utilisateur" [ -w "$CHEMIN_FICHIER" ] && echo "Écriture : Oui" || echo "Écriture : Non"
