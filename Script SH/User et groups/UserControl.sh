@@ -1,6 +1,6 @@
 #!/bin/bash
 # Script projet 2 Lionel => partie utilisateur
-# connexion ssh a une machine distante en amont via un le script connexion.sh
+# connexion ssh a une machine distante en amont via un le script MainScript.sh
 
 # choix des sections avec boucle while
 
