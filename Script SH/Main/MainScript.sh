@@ -16,18 +16,20 @@ user1="lbartaire@10.0.0.20"
 user2="lbartaire@10.0.0.21"
 
 # Variables ACTION
-Exe_script_User="chmod +x /tmp/UserControl.sh && /tmp/UserControl.sh && rm /tmp/UserControl.sh"
+Exe_script_User="chmod +x /tmp/UserControl.sh && ./UserControl.sh && rm /tmp/UserControl.sh"
 Exe_script_Group="chmod +x /tmp/GroupControl.sh && ./GroupControl.sh && rm /tmp/GroupControl.sh"
 Exe_script_System="chmod +x /tmp/GestionDuSysteme.sh && ./GestionDuSysteme.sh && rm /tmp/GestionDuSysteme.sh"
 Exe_script_Logiciel="chmod +x /tmp/GestionLogiciel.sh && ./GestionLogiciel.sh && rm /tmp/GestionLogiciel.sh"
 Exe_script_Parefeu="chmod +x /tmp/GestionParefeu.sh && ./GestionParefeu.sh && rm /tmp/GestionParefeu.sh"
-Exe_script_Systeme="chmod +x /tmp/InfoDuSysteme.sh && ./InfoDuSysteme.sh && rm /tmp/InfoDuSysteme.sh"
 Exe_script_Repertoire="chmod +x /tmp/GestionDesRepertoires.sh && ./GestionDesRepertoires.sh && rm /tmp/GestionDesRepertoires.sh"
 
-# Variables collecte information
-Exe_script_Systeme="chmod +x ~/InfoDuSysteme.sh && ./InfoDuSysteme.sh && rm ~/InfoDuSysteme.sh"
+# Variables COLLECTE INFORMATION
+Exe_script_InfoUser="chmod +x /tmp/InfoUtilisateur.sh && ./InfoUtilisateur.sh && rm /tmp/InfoUtilisateur.sh"
+Exe_script_InfoSoftware="chmod +x /tmp/InfoDuSystemeSoftware.sh && ./InfoDuSystemeSoftware.sh && rm /tmp/InfoDuSystemeSoftware.sh"
+Exe_script_InfoHardware="chmod +x /tmp/InfoDuSystemeHardware.sh && ./InfoDuSystemeHardware.sh && rm /tmp/InfoDuSystemeHardware.sh"
 
-# Menu principal
+
+# Menu principal choix machine
 while true; do
     echo -e "${GREEN}        Choisissez la machine sur laquelle vous voulez vous connecter :\n"
     echo -e "${YELLOW}[1]${NC} Ubuntu 1"
@@ -36,7 +38,7 @@ while true; do
     read -p "Votre choix : " machine
 
     case $machine in
-        1)      # Menu dans Ubuntu 1
+        1)      # Menu dans Ubuntu 1 choix action ou information
             while true; do
                 echo -e "${GREEN}      \n Menu Ubuntu 1:\n"
                 echo -e "${YELLOW}[1]${NC} Actions"
@@ -56,8 +58,7 @@ while true; do
                             echo -e "${YELLOW}[5]${NC} Prise en main CLI"
                             echo -e "${YELLOW}[6]${NC} Gestion Logiciel"
                             echo -e "${YELLOW}[7]${NC} Gestion du Parefeu"
-                            echo -e "${YELLOW}[8]${NC} Information du Système"
-                            echo -e "${YELLOW}[9]${NC} Retour au menu précédent"
+                            echo -e "${YELLOW}[8]${NC} Retour au menu précédent"
                             echo -e "${YELLOW}[x]${NC} Fin du script"
                             read -p "Votre choix : " gestion
 
@@ -88,18 +89,10 @@ while true; do
                                 7)          #gestions Parefeu
                                     scp ~/script_action/GestionParefeu.sh $user1:~
                                     ssh -t $user1 "$Exe_script_Parefeu"
-                                    ;;                                
-                                8)          #Information Système => a mettre dans information
-                                    scp ~/script_action/InfoDuSysteme.sh $user1:~
-                                    ssh -t $user1 "$Exe_script_Systeme"
-                                    ;;                                           
-                                9)          #sortie  
+                                    ;;                                                                          
+                                8)          #sortie  
                                     echo "Retour au menu précédent"
                                     break
-                                    ;;
-                                10)     # Fin du script
-                                    echo "fin du script"
-                                    exit 0
                                     ;;
                                 x)      #Fin du script
                                     echo "Fin du script"
@@ -112,8 +105,39 @@ while true; do
                         done
                         ;;
                     2)      # Informations dans Ubuntu 1
-                         
-                        echo "${GREEN}      Informations sur Ubuntu 1: \n"
+                        while true; do
+                            echo "${GREEN}     Menu Informations sur Ubuntu 1: \n"
+                            echo -e "${YELLOW}[1]${NC} Informations Utilisateur"
+                            echo -e "${YELLOW}[2]${NC} Informations Systeme Software"
+                            echo -e "${YELLOW}[3]${NC} Informations Systeme Hardware"
+                            echo -e "${YELLOW}[4]${NC} Retour au menu précédent"
+                            echo -e "${YELLOW}[x]${NC} Fin du script"
+                            read -p "Votre choix : " information
+
+                       case $information in
+                        1)    #Informations Utilisateur
+                            scp ~/script_information/InfoUtilisateur.sh $user1:~
+                            ssh -t $user1 "$Exe_script_InfoUser"
+                        2)    #Information Systeme Software
+                            scp ~/script_information/InfoDuSystemeSoftware.sh $user1:~
+                            ssh -t $user1 "$Exe_script_InfoSoftware"
+                        3)    #Information Système Hardware
+                            scp ~/script_information/InfoDuSystemeHardware.sh $user1:~
+                            ssh -t $user1 "$Exe_script_InfoHardware"
+                            ;; 
+                        4)    #sortie  
+                            echo "Retour au menu précédent"
+                            break
+                            ;;
+                        x)    #Fin du script
+                            echo "Fin du script"
+                            exit 0
+                            ;;
+                        *)    #Erreur
+                            echo -e "${RED}[Erreur]! Option invalide, veuillez réessayer !${NC}"
+                            ;;
+                            esac
+                        done
                         ;;
                     3)      # retour au Menu De Ubuntu 1
                         echo "Retour au menu principal"
