@@ -107,25 +107,25 @@ Modifier les paramètres IP en ajoutant :
 ## 3.1 Configuration SSH sur les Machines Linux (Debian et Ubuntu)
 
 ### Vérification de l'installation de SSH
-1. Vérifiez si OpenSSH est installé :
-   `sshd -V ` # Vérifier la version SSH
+1. Vérifiez si OpenSSH est installé :<br>
+   `sshd -V ` # Vérifier la version SSH<br>
    `sudo apt install openssh-server`  # Installer OpenSSH si nécessaire
 
-2. Activez le démarrage automatique du service SSH :
-   `sudo systemctl enable ssh`  # Activation au démarrage
-   `sudo systemctl start ssh`   # Démarrage du service SSH
+2. Activez le démarrage automatique du service SSH :<br>
+   `sudo systemctl enable ssh`  # Activation au démarrage<br>
+   `sudo systemctl start ssh`   # Démarrage du service SSH<br>
    `sudo systemctl status ssh`  # Vérification du statut du service
 
 ### Déploiement des Clés SSH pour un Accès Sans Mot de Passe
 
 #### Sur le Serveur Linux
-1. Générer une clé SSH sur le serveur :
+1. Générer une clé SSH sur le serveur :<br>
    `ssh-keygen -t ecdsa`  # Acceptez les options par défaut
 
-2. Copier la clé publique vers le client :
+2. Copier la clé publique vers le client :<br>
    `ssh-copy-id -i ~/.ssh/id_ecdsa.pub client@172.16.10.x`  # Remplacer x par l’IP du client
 
-3. Vérification de la connexion SSH sans mot de passe :
+3. Vérification de la connexion SSH sans mot de passe :<br>
    `ssh client@172.16.10.x`  # Vérifier l'accès sans mot de passe
 
 ---
@@ -137,8 +137,8 @@ Modifier les paramètres IP en ajoutant :
 2. Si le serveur SSH n'est pas installé, installez-le via **Paramètres > Applications > Fonctionnalités facultatives**.
 
 ### Activation du Service OpenSSH sur le Client Windows
-1. Pour activer OpenSSH sur le client Windows, ouvrez PowerShell en tant qu'administrateur et exécutez les commandes suivantes :
-   `Get-Service sshd | Set-Service -StartupType Automatic`  # Activation au démarrage
+1. Pour activer OpenSSH sur le client Windows, ouvrez PowerShell en tant qu'administrateur et exécutez les commandes suivantes :<br>
+   `Get-Service sshd | Set-Service -StartupType Automatic`  # Activation au démarrage<br>
    `Restart-Service sshd`  # Redémarrage du service SSH
 
 ---
@@ -146,18 +146,18 @@ Modifier les paramètres IP en ajoutant :
 ## 3.3 Déploiement des Clés SSH sur Windows
 
 ### Génération d’une Clé SSH sur le Serveur Windows
-1. Ouvrez PowerShell sur le serveur Windows et générez une clé SSH :
+1. Ouvrez PowerShell sur le serveur Windows et générez une clé SSH :<br>
    `ssh-keygen -t ecdsa`
 
 ### Copie de la Clé Publique vers le Client Windows
-1. Copiez la clé publique vers le client Windows en exécutant cette commande :
+1. Copiez la clé publique vers le client Windows en exécutant cette commande :<br>
    `Get-Content -path .\.ssh\id_ecdsa.pub | ssh client@172.16.10.x "echo $(cat ~/.ssh/id_ecdsa.pub) >> ~/.ssh/authorized_keys"`
 
 ### Désactivation de la Demande de Mot de Passe sur le Client Windows
-1. Ouvrez le fichier `C:\ProgramData\ssh\sshd_config` et commentez la ligne suivante :
+1. Ouvrez le fichier `C:\ProgramData\ssh\sshd_config` et commentez la ligne suivante :<br>
    # Match Group administrators
 
-2. Redémarrez le service SSH pour appliquer les changements :
+2. Redémarrez le service SSH pour appliquer les changements :<br>
    `Restart-Service sshd`
 
 ---
@@ -165,15 +165,15 @@ Modifier les paramètres IP en ajoutant :
 ## 3.4 Connexions SSH Inter-Systèmes (Linux ↔ Windows)
 
 ### Vérification des Connexions SSH pour Toutes les Combinaisons Serveur-Client
-1. Testez la connexion SSH pour chaque combinaison de serveur et client. Par exemple, pour tester une connexion client vers serveur :
+1. Testez la connexion SSH pour chaque combinaison de serveur et client. Par exemple, pour tester une connexion client vers serveur :<br>
   `ssh client@172.16.10.x`
 
 2. Si la configuration est correcte, aucune demande de mot de passe ne devrait apparaître.
 
 ### Gestion des Clés entre Ubuntu et Windows
-1. Pour déployer une clé SSH d'Ubuntu vers Windows :
+1. Pour déployer une clé SSH d'Ubuntu vers Windows :<br>
    `ssh-copy-id -i ~/.ssh/id_ecdsa.pub client@172.16.10.x`  # Remplacer x par l'IP du client Windows
    
-2. Pour déployer une clé SSH de Windows vers Ubuntu :
+2. Pour déployer une clé SSH de Windows vers Ubuntu :<br>
    `Get-Content -path .\.ssh\id_ecdsa.pub | ssh client@172.16.10.30 "echo $(cat ~/.ssh/id_ecdsa.pub) >> ~/.ssh/authorized_keys"`
 
