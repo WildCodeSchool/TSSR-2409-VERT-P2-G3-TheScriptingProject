@@ -6,6 +6,7 @@
 RED='\033[0;31m'
 GREEN='\033[0;32m'
 YELLOW='\033[0;33m'
+CYAN='\033[0;36m'
 NC='\033[0m' # Aucune couleur
 
 
@@ -33,11 +34,11 @@ function showPartsByDisks {
 
 function showInstalledAppPackages {
 
-    echo -e " ${GREEN}<< AFFICHER DES EXECUTABLES >>${NC} \n \n Souhaitez-vous afficher les paquets installés ou les applications installées \n Choisir le chiffre correspondant à l'option: \n \n ${RED}[1]${NC} paquets installés \n ${RED}[2]${NC} applications installées \n ${RED}[x]${NC} Retour au menu précédent \n"
+    echo -e " ${GREEN}<< AFFICHER DES EXECUTABLES >>${NC} \n \n Souhaitez-vous afficher les paquets installés ou les applications installées \n Choisir le chiffre correspondant à l'option: \n \n ${CYAN}[1]${NC} paquets installés \n ${CYAN}[2]${NC} applications installées \n ${CYAN}[3]${NC} Retour au menu précédent \n"
 
     read userChoiceInfoApp
 
-    while [[ $userChoiceInfoApp != "x" ]]; do
+    while [[ $userChoiceInfoApp != "3" ]]; do
 
         if [[ $userChoiceInfoApp == "1" ]]; then
 
@@ -90,7 +91,7 @@ userChoiceDir=""
 
 while [[ $userChoiceDir != "x" ]]; do
 
-    echo -e "\n ${GREEN}------INFORMATION SYSTEME------${NC} \n \n Choisir le chiffre correspondant à l'option: \n \n ${RED}[1]${NC} Afficher la version de l'OS \n ${RED}[2]${NC} Afficher le nombre de disques \n ${RED}[3]${NC} Afficher les partitions par disque \n ${RED}[4]${NC} Afficher la liste des applications/paquets installés \n ${RED}[5]${NC} Afficher la liste des services en cours d'exécution \n ${RED}[6]${NC} Afficher la liste des utilisateurs locaux \n ${RED}[x]${NC} Revenir au menu précédent" 
+    echo -e "\n ${GREEN}------INFORMATION SYSTEME------${NC} \n \n Choisir le chiffre correspondant à l'option: \n \n ${CYAN}[1]${NC} Afficher la version de l'OS \n ${CYAN}[2]${NC} Afficher le nombre de disques \n ${CYAN}[3]${NC} Afficher les partitions par disque \n ${CYAN}[4]${NC} Afficher la liste des applications/paquets installés \n ${CYAN}[5]${NC} Afficher la liste des services en cours d'exécution \n ${CYAN}[6]${NC} Afficher la liste des utilisateurs locaux \n ${CYAN}[7]${NC} Revenir au menu précédent" 
     read userChoiceDir
 
     case "$userChoiceDir" in 
@@ -113,8 +114,9 @@ while [[ $userChoiceDir != "x" ]]; do
         6)
             showLocalUsers
             ;;
-        x)
+        7)
             echo "Retour au menu précédent"
+            break
             ;;
         *)
             echo -e "\n Veuillez choisir une option valide \n"
