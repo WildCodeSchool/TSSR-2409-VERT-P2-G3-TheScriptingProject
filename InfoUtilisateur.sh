@@ -4,6 +4,7 @@
 RED='\033[0;31m'
 GREEN='\033[0;32m'
 YELLOW='\033[0;33m'
+CYAN='\033[0;36m'
 NC='\033[0m' # Aucune couleur
 
 # Demande le nom d'utilisateur
@@ -16,29 +17,24 @@ then
     read -p "Entrez le nom de l'utilisateur : " Utilisateur
 fi
 
-RED='\033[0;31m'
-GREEN='\033[0;32m'
-YELLOW='\033[0;33m'
-NC='\033[0m' # Aucune couleur
-
 statut=1
 
 # Boucle pour afficher le menu et gérer les choix de l'utilisateur
 while [ $statut = 1 ]
 do
     echo -e "\n${GREEN}----- MENU INFORMATIONS UTILISATEUR -----\n"
-    echo -e "${YELLOW}[1]${NC} Date de dernière connexion"
-    echo -e "${YELLOW}[2]${NC} Date de dernière modification du mot de passe"
-    echo -e "${YELLOW}[3]${NC} Liste des sessions ouvertes"
-    echo -e "${YELLOW}[4]${NC} Groupes d'appartenance"
-    echo -e "${YELLOW}[5]${NC} Historique des commandes"
-    echo -e "${YELLOW}[6]${NC} Droits sur un dossier"
-    echo -e "${YELLOW}[7]${NC} Droits sur un fichier"
-    echo -e "${YELLOW}[8]${NC} Retour au menu precedent"
-    echo -e "${YELLOW}[X]${NC} Quitter\n"
-    read -p "Veuillez choisir une option: " CHOIX
-
-	case $CHOIX in
+    echo -e "${CYAN}[1]${NC} Date de dernière connexion"
+    echo -e "${CYAN}[2]${NC} Date de dernière modification du mot de passe"
+    echo -e "${CYAN}[3]${NC} Liste des sessions ouvertes"
+    echo -e "${CYAN}[4]${NC} Groupes d'appartenance"
+    echo -e "${CYAN}[5]${NC} Historique des commandes"
+    echo -e "${CYAN}[6]${NC} Droits sur un dossier"
+    echo -e "${CYAN}[7]${NC} Droits sur un fichier"
+    echo -e "${CYAN}[8]${NC} Retour au menu precedent\n"
+    echo -e "${GREEN}Veuillez choisir une option :${NC}" 
+    read CHOIX
+    
+    case $CHOIX in
 
 		# Date de dernière connexion d’un utilisateur
 		"1")
@@ -108,13 +104,7 @@ do
 		"8")
 		statut=0
 		;;
-		
-		# Quitter le script
-		"X")
-		echo "A bientot"
-		exit 0
-		;;
-		
+
 		*)
 		echo -e "\n${RED}Erreur: Veuillez choisir une des options suivantes"
 		;;
