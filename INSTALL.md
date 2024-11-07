@@ -155,7 +155,7 @@ Modifier les paramètres IP en ajoutant :
 
 ### Désactivation de la Demande de Mot de Passe sur le Client Windows
 1. Ouvrez le fichier `C:\ProgramData\ssh\sshd_config` et commentez la ligne suivante :<br>
-   # Match Group administrators
+`Match Group administrators`
 
 2. Redémarrez le service SSH pour appliquer les changements :<br>
    `Restart-Service sshd`
