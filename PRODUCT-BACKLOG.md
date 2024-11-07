@@ -14,7 +14,8 @@
    - **Script PowerShell (Information)** : Récupérer des informations système sous Windows.
    
 2. **Mise en Commun des Scripts** :
-   - Fusionner les scripts Bash (Action et Information) et PowerShell (Action et Information) en un script principal fonctionnant sur les deux systèmes (Ubuntu et Windows) sans logs pour le moment.
+   - Fusionner les scripts Bash (Action et Information) et faire en sorte que tout fonctionne bien.
+   - Avancer sur les scripts PowerShell (Action et Information).
 
 3. **Documentation** :
    - **USER_GUIDE.md** : Démarrer le guide utilisateur avec des captures d'écran et des explications pour chaque OS.
