@@ -56,13 +56,13 @@
 
 ---
 
-### **Feedback et Améliorations pour la Semaine 4**
+### **Sprint Retrospective**
 
 - **Développement** :
-   - Amélioration possible du système des couleurs du script.
-   - Ajouter des commentaires dans les scripts pour rendre le code plus clair.
-   - Pouvoir lancer et exécuter le script finale BASH depuis un serveur Windows et le script finale PowerShell depuis un serveur Debian.
+   - Implémenter dans les scripts: l'**enregistrement des informations** dans un dossier spécifique et la **journalisation**
+   - Finaliser la mise en page des scripts: couleurs... 
+   - Améliorer la clarté des scripts avec l'**ajout de commentaires**
+   - Réaliser l'objectif secondaire: lancer et exécuter le script finale **BASH depuis un serveur Windows** et le script finale **PowerShell depuis un serveur Debian**.
    
 - **Documentation** :
-   - Terminer les 3 livrables (README.md / INSTALL.md / USER_GUIDE.md).
-   - Vérifier et tester les scripts BASH et PowerShell pour que tout fonctionne correctement pour la démo finale.
+   - Terminer les 3 livrables (README.md / INSTALL.md / USER_GUIDE.md)
