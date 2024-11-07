@@ -4,7 +4,7 @@
 - **Product Owner ``Camille``**
 - **Scrum Master ``Julien``**
 - **Techniciens ``Lionel et François``**
-- 
+
 ## **Sprint Planning - Semaine 3**
 
 ### **Tâches du Sprint**
