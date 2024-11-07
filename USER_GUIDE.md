@@ -266,18 +266,24 @@
 - **Exemples de commandes** :
 
   - **Linux (Ubuntu/Debian)** :  
-    `commande à mettre`
+    `sudo apt install $logiciel -y`
 
   - **Windows** :  
     `commande à mettre` 
 
-- **Illustration** : *(espace pour capture d’écran de l'installation d'un logiciel)*
+- **Ubuntu/Debian** :
+ 
+![MENU-GESTION-LOGICIEL](https://github.com/user-attachments/assets/3dbfc696-ad1e-436c-9d47-496a5ad633c1)<br>
+![INSTALL-LOGICIEL1](https://github.com/user-attachments/assets/a1b64f17-0c34-442c-9a15-d547e561af05)<br>
+![INSTALL-LOGICIEL2](https://github.com/user-attachments/assets/2b9de809-5799-4bfb-9047-bbf601cc533d)
+
+- **Windows** :
 
 ---
 
 ### 2.12 Désinstallation de logiciel
 - **Description** : Désinstaller un logiciel ou une application de la machine.
-- **Système** : Linux, Windows
+- **Système** : Linux, Windows(
 - **Exemples de commandes** :
 
   - **Linux (Ubuntu/Debian)** :  
