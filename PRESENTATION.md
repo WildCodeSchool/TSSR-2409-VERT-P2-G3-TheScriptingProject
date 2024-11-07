@@ -1,3 +1,5 @@
+## Introduction :
+
 **Camille (Product Owner)** :  
 Bonjour à tous et merci d’être présents. Cette semaine, nous allons vous présenter l’avancement de notre projet. Je vais d'abord vous expliquer les rôles de chacun dans notre équipe pour cette semaine, puis nous passerons à la présentation des résultats du sprint 3. L’objectif aujourd’hui est de faire un point sur ce que nous avions prévu de faire, ce que nous avons réussi à accomplir, et ce qui reste à faire. Nous allons aussi vous montrer les scripts PowerShell que nous avons développés et discuter des défis rencontrés. À la fin, nous ferons un point sur le prochain sprint et les actions à entreprendre. Je vais maintenant donner la parole à Julien, notre Scrum Master cette semaine, pour qu’il nous parle du sprint 3.
 
