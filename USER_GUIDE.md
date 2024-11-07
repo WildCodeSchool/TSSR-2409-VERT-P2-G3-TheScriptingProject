@@ -1,4 +1,4 @@
-# USER_GUIDE.md
+# Documentation Utilisateur
 
 ---
 
