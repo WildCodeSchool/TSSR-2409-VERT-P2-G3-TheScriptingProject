@@ -1,4 +1,4 @@
-# INSTALL.md
+# Installation et configuration Admin
 
 ## Machines Virtuelles Requises
 
