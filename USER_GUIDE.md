@@ -493,7 +493,10 @@
   - **Windows** :  
     `commande à mettre`
 
-- **Illustration** : *(Espace pour capture d’écran montrant les détails du CPU, nombre de cœurs, etc.)*
+- **Ubuntu/Debian** :
+![MENU-INFO-SYSTEME](https://github.com/user-attachments/assets/868377df-f7f0-4107-92f4-1d161aede583)
+
+- **Windows** : *(Espace pour capture d’écran montrant l'utilisation du disque et l'espace disponible)*
 
 ---
 
@@ -506,7 +509,10 @@
   - **Windows** :  
     `commande à mettre`
 
-- **Illustration** : *(Espace pour capture d’écran montrant la quantité totale de RAM)*
+- **Ubuntu/Debian** :
+![MENU-INFO-SYSTEME](https://github.com/user-attachments/assets/ecca50a9-e8c8-453e-8d41-2faf458bc26e)
+
+- **Windows** : *(Espace pour capture d’écran montrant l'utilisation du disque et l'espace disponible)*
 
 ---
 
@@ -519,7 +525,10 @@
   - **Windows** :  
     `commande à mettre`
 
-- **Illustration** : *(Espace pour capture d’écran montrant l'utilisation de la mémoire RAM)*
+- **Ubuntu/Debian** :
+![MENU-INFO-SYSTEME](https://github.com/user-attachments/assets/3cfa1bcf-904c-422b-8ebd-27bf9042d4d9)
+
+- **Windows** : *(Espace pour capture d’écran montrant l'utilisation du disque et l'espace disponible)*
 
 ---
 
@@ -532,7 +541,10 @@
   - **Windows** :  
     `commande à mettre`
 
-- **Illustration** : *(Espace pour capture d’écran montrant l'utilisation du disque et l'espace disponible)*
+- **Ubuntu/Debian** :
+![MENU-INFO-SYSTEME](https://github.com/user-attachments/assets/f050f447-9199-491b-9cba-af5fdfc45530)
+
+- **Windows** : *(Espace pour capture d’écran montrant l'utilisation du disque et l'espace disponible)*
 
 ---
 
@@ -545,7 +557,10 @@
   - **Windows** :  
     `commande à mettre`
 
-- **Illustration** : *(Espace pour capture d’écran montrant l'utilisation du processeur)*
+- **Ubuntu/Debian** :
+![MENU-INFO-SYSTEME](https://github.com/user-attachments/assets/ec2ba3d7-6a98-4aa4-87b4-94de327ab6db)
+
+- **Windows** : *(Espace pour capture d’écran montrant l'utilisation du processeur)*
   
 ---
 
