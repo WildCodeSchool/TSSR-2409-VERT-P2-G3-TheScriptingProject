@@ -4,16 +4,16 @@
 RED='\033[0;31m'
 GREEN='\033[0;32m'
 YELLOW='\033[0;33m'
+CYAN='\033[0;36m'
 NC='\033[0m' # Aucune couleur
 
 # Boucle while true pour faire un menu sur la gestion du pare-feu
 while true; do
-    echo -e "${GREEN}------ MENU GESTION PARE-FEU ------\n"
-    echo -e "${YELLOW}[1]${NC} Définir les règles de pare-feu"
-    echo -e "${YELLOW}[2]${NC} Activer le pare-feu"
-    echo -e "${YELLOW}[3]${NC} Désactiver le pare-feu"
-    echo -e "${YELLOW}[4]${NC} Retour au menu principal"
-    echo -e "${RED}[x]${NC} Quitter\n"
+    echo -e "\n${GREEN}------ MENU GESTION PARE-FEU ------\n"
+    echo -e "${CYAN}[1]${NC} Définir les règles de pare-feu"
+    echo -e "${CYAN}[2]${NC} Activer le pare-feu"
+    echo -e "${CYAN}[3]${NC} Désactiver le pare-feu"
+    echo -e "${CYAN}[4]${NC} Retour au menu principal\n"
     echo -e "${GREEN}Veuillez choisir une option : ${NC}"
     read choix
 
@@ -21,18 +21,18 @@ while true; do
     case $choix in 
         
          # Boucle while true pour faire un menu sur les règles du pare-feu
-         1)
-while true; do
-    echo -e "${GREEN}------ MENU DES RÈGLES PARE-FEU ------\n"
-    echo -e "${YELLOW}[1]${NC} Ajouter une règle"
-    echo -e "${YELLOW}[2]${NC} Supprimer une règle"
-    echo -e "${YELLOW}[3]${NC} Afficher les règles actuelles"
-    echo -e "${YELLOW}[4]${NC} Retour au menu principal"
-    echo -e "${RED}[x]${NC} Quitter\n"
-    echo -e "${GREEN}Veuillez choisir une option : ${NC}"
-    read choix_regles
+     1)
+          while true; do
+          echo -e "${GREEN}------ MENU DES RÈGLES PARE-FEU ------\n"
+          echo -e "${CYAN}[1]${NC} Ajouter une règle"
+          echo -e "${CYAN}[2]${NC} Supprimer une règle"
+          echo -e "${CYAN}[3]${NC} Afficher les règles actuelles"
+          echo -e "${CYAN}[4]${NC} Retour au menu principal"
+          echo -e "${CYAN}[x]${NC} Quitter\n"
+          echo -e "${GREEN}Veuillez choisir une option : ${NC}"
+          read choix_regles
     
-    case $choix_regles in
+          case $choix_regles in
 
     		       # Ajouter une règles de pare-feu
                  1)     
@@ -126,14 +126,8 @@ while true; do
            4)
                 break
 	        ;;
-	 
-           # Sortir du script   
-           x)
-                echo -e "${YELLOW}Exit${NC}"
-	        exit 0
-	        ;;
-        
-           # Inique si erreur de saisie et relance le script
+       
+           # Indique si erreur de saisie et relance le script 
            *)
             echo -e "${RED}[Erreur]! Option invalide, veuillez réessayer !${NC}\n"
             ;;
