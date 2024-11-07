@@ -436,3 +436,18 @@
     `commande à mettre`
 
 - **Illustration** : *(espace pour capture d’écran des résultats de recherche)*
+
+---
+
+### 4.2 Recherche des événements dans le fichier log_evt.log pour un ordinateur
+- **Description** : Recherche des événements relatifs à un ordinateur dans le fichier `log_evt.log`.
+- **Système** : Linux, Windows
+- **Exemples de commandes** :
+
+  - **Linux (Ubuntu/Debian)** :  
+    `commande à mettre`
+
+  - **Windows** :  
+    `commande à mettre`
+
+- **Illustration** : *(espace pour capture d’écran des résultats de recherche)*
