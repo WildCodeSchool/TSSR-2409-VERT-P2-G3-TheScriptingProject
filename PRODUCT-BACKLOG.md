@@ -56,7 +56,7 @@
 
 ---
 
-### **Sprint Retrospective**
+## **Sprint Retrospective**
 
 - **Développement** :
    - Implémenter dans les scripts: l'**enregistrement des informations** dans un dossier spécifique et la **journalisation**
