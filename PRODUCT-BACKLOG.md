@@ -1,56 +1,55 @@
-# PRODUCT BACKLOG
+# **Product Backlog & Organisation - Semaine 3 / Semaine 4**
 
-#### Organisation de la semaine 1 / semaine 4
-- Scrum Master : Camille
-- Product Owner : Julien
+### **Rôles de l'Équipe**
+- **Product Owner ``Camille``**
+- **Scrum Master ``Julien``**
+- **Techniciens ``Lionel et François``**
+- 
+## **Sprint Planning - Semaine 3**
 
-### 1. Configuration du labo
+### **Tâches du Sprint**
+1. **Création des Scripts** :
+   - **Script Bash (Information)** : Développer un script pour afficher des informations sous Ubuntu.
+   - **Script PowerShell (Action)** : Automatiser des tâches spécifiques sous Windows.
+   - **Script PowerShell (Information)** : Récupérer des informations système sous Windows.
+   
+2. **Mise en Commun des Scripts** :
+   - Fusionner les scripts Bash (Action et Information) et PowerShell (Action et Information) en un script principal fonctionnant sur les deux systèmes (Ubuntu et Windows) sans logs pour le moment.
 
-- **Objectif** : Configurer les machines virtuelles (VM) avec les serveurs et les clients, en assurant la connexion entre les serveurs et les clients.
-- **VM à configurer** :
-  
-  - **Serveur Debian 12** : 
-    - Nom : `SRVLX01`
-    - Compte : `root`
-    - Mot de passe : `Azerty1*`
-    - Adresse IP fixe : `172.16.10.10/24`
-      
-  - **Client Ubuntu** : 
-    - Nom : `CLILIN01`
-    - Compte utilisateur : `wilder`
-    - Mot de passe : `Azerty1*`
-    - Adresse IP fixe : `172.16.10.30/24`
-      
-  - **Serveur Windows Server 2022** : 
-    - Nom : `SRVWIN01`
-    - Compte : `Administrator`
-    - Mot de passe : `Azerty1*`
-    - Adresse IP fixe : `172.16.10.5/24`
-      
-  - **Client Windows** : 
-    - Nom : `CLIWIN01`
-    - Compte utilisateur : `wilder`
-    - Mot de passe : `Azerty1*`
-    - Adresse IP fixe : `172.16.10.20/24`
-      
-- **Action** : Assurer que chaque VM ait le bon nom et la bonne adresse IP, et établir la connexion entre les serveurs et les clients.
+3. **Documentation** :
+   - **USER_GUIDE.md** : Démarrer le guide utilisateur avec des captures d'écran et des explications pour chaque OS.
+   - **INSTALL.md** : Continuer la rédaction des instructions d'installation pour Ubuntu et Windows.
+   - **README.md** : Peaufiner le fichier README pour un aperçu du projet.
+
 ---
-### 2. Analyse du tableau Excel du projet 2
 
-- **Objectif** : Déchiffrer le contenu du tableau Excel pour comprendre les demandes.
-- **Tâches** :
-  - Créer un pseudo-code général du script à développer.
-  - Répartir les tâches du script entre les membres de l'équipe et créer un pseudo-code pour chaque tâche spécifique.
+## **Sprint Review - Semaine 3**
+
+### **État des Livrables**
+
+1. **Développement du Script** :
+   - **Scripts Bash et PowerShell** : Les premières versions des scripts ont été créées pour chaque plateforme, avec les fonctionnalités de base en place.
+   - **Fusion des Scripts** : Les scripts Bash et PowerShell ont été intégrés dans un script principal, avec des tests de compatibilité initiaux réalisés.
+
+2. **Documentation** :
+   - **USER_GUIDE.md** : Une première version du guide utilisateur a été rédigée, incluant des captures d'écran et des étapes d’utilisation de base.
+   - **INSTALL.md** : Liste des prérequis et instructions générales terminées. Sections spécifiques pour Ubuntu et Windows en cours de rédaction.
+   - **README.md** : Structure de base rédigée, avec une introduction au projet et des liens vers les guides d’utilisation et d’installation.
+
 ---
-### 3. Développement du Script
 
-- **Objectif** : Développer un script avec 2 personnes sur Ubuntu et 2 personnes sur Windows.
-- **Tâches** :
-  - Chaque membre doit coder sa partie pour les tâches spécifiques sur Ubuntu ou Windows.
-  - Construction progressive par étapes.
-  - Créer un menu principal offrant différentes options pour l'utilisateur.
+## **Sprint Retrospective**
 
-### 4. Documentation
+### **Analyse et Améliorations possibles**
 
-- **Objectif** : Rédiger la documentation des livrables.
-- **Tâches** : Rassembler toutes les informations nécessaires et s'assurer que la documentation soit complète et claire pour les utilisateurs finaux.
+- **Développement** :
+   - **Compléter les scripts** : Finaliser les scripts Bash et PowerShell, en ajoutant la gestion des actions et informations pour chaque plateforme.
+   - **Ajout des logs** : Implémenter l'enregistrement des informations dans un dossier spécifique et la journalisation dans les deux scripts.
+   - **Mise en page des scripts** : Finaliser la mise en page des scripts (par exemple, l’ajout de couleurs pour améliorer la lisibilité).
+   - **Améliorer la clarté des scripts** : Ajouter des commentaires dans le code pour rendre les scripts plus lisibles et compréhensibles.
+   - **Objectif secondaire** : Tester et valider le lancement des scripts Bash depuis un serveur Windows et des scripts PowerShell depuis un serveur Debian.
+
+- **Documentation** :
+   - **Finaliser les livrables** :
+     - Compléter la rédaction des trois documents : **README.md**, **USER_GUIDE.md**, et **INSTALL.md**. 
+     - Terminer les sections restantes, en s'assurant que chaque guide soit complet et facile à suivre pour l'utilisateur et l'administrateur.
