@@ -8,7 +8,7 @@
 - **Exemples de commandes** :
 
   - **Linux (Ubuntu/Debian)** :  
-    `commande à mettre`
+    `sudo adduser $new_user`
 
   - **Windows** :  
     `commande à mettre`
@@ -25,7 +25,7 @@
 - **Exemples de commandes** :
 
   - **Linux (Ubuntu/Debian)** :  
-    `commande à mettre`
+    `sudo passwd $userpasswd_change`
 
   - **Windows** :  
     `commande à mettre`
@@ -42,7 +42,7 @@
 - **Exemples de commandes** :
 
   - **Linux (Ubuntu/Debian)** :  
-    `commande à mettre`
+    `sudo userdel $delete_user`
 
   - **Windows** :  
     `commande à mettre`
@@ -59,7 +59,7 @@
 - **Exemples de commandes** :
 
   - **Linux (Ubuntu/Debian)** :  
-    `commande à mettre`
+    `sudo chage -E 0 $desactivate_user`
 
   - **Windows** :  
     `commande à mettre`
@@ -75,7 +75,7 @@
 - **Exemples de commandes** :
 
   - **Linux (Ubuntu/Debian)** :  
-    `commande à mettre`
+    `sudo usermod -aG add_group $USER`
 
   - **Windows** :  
     `commande à mettre`
@@ -92,7 +92,7 @@
 - **Exemples de commandes** :
 
   - **Linux (Ubuntu/Debian)** :  
-    `commande à mettre`
+    `sudo gpasswd -d $USER $(id -gn)`
 
   - **Windows** :  
     `commande à mettre`
@@ -111,7 +111,7 @@
 - **Exemples de commandes** :
 
   - **Linux (Ubuntu/Debian)** :  
-    `commande à mettre`
+    `sudo shutdown now`
 
   - **Windows** :  
     `commande à mettre`
@@ -128,7 +128,7 @@
 - **Exemples de commandes** :
 
   - **Linux (Ubuntu/Debian)** :  
-    `commande à mettre`
+    `sudo reboot`
 
   - **Windows** :  
     `commande à mettre`
@@ -145,7 +145,7 @@
 - **Exemples de commandes** :
 
   - **Linux (Ubuntu/Debian)** :  
-    `commande à mettre`
+    `loginctl lock-session`
 
   - **Windows** :  
     `commande à mettre`
@@ -162,7 +162,7 @@
 - **Exemples de commandes** :
 
   - **Linux (Ubuntu/Debian)** :  
-    `commande à mettre`
+    `sudo apt upgrade -y`
 
   - **Windows** :  
     `commande à mettre`
@@ -179,7 +179,7 @@
 - **Exemples de commandes** :
 
   - **Linux (Ubuntu/Debian)** :  
-    `commande à mettre`
+    `mkdir "$newDirectory"`
 
   - **Windows** :  
     `commande à mettre`
@@ -196,7 +196,7 @@
 - **Exemples de commandes** :
 
   - **Linux (Ubuntu/Debian)** :  
-    `commande à mettre`
+    `mv "$userDirLocation" "$userDirPath"/"$userModDir"`
 
   - **Windows** :  
     `commande à mettre`
@@ -213,7 +213,7 @@
 - **Exemples de commandes** :
 
   - **Linux (Ubuntu/Debian)** :  
-    `commande à mettre`
+    `rm -r "$userDirLocation"`
 
   - **Windows** :  
     `commande à mettre`
@@ -231,7 +231,7 @@
 - **Exemples de commandes** :
 
   - **Linux (Ubuntu/Debian)** :  
-    `commande à mettre`
+    `ssh -t $user1`
 
   - **Windows** :  
     `commande à mettre` 
@@ -265,7 +265,7 @@
 - **Exemples de commandes** :
 
   - **Linux (Ubuntu/Debian)** :  
-    `commande à mettre`
+    `sudo ufw enable`
 
   - **Windows** :  
     `commande à mettre`
@@ -282,7 +282,7 @@
 - **Exemples de commandes** :
 
   - **Linux (Ubuntu/Debian)** :  
-    `commande à mettre`
+    `sudo ufw disable`
 
   - **Windows** :  
     `commande à mettre`
@@ -342,7 +342,8 @@
 - **Exemples de commandes** :
 
   - **Linux (Ubuntu/Debian)** :  
-    `commande à mettre`
+    `scp ~/script_action/UserControl.sh $user1:/tmp`<br>
+    `ssh -t $user1 "$Exe_script_User"`
 
   - **Windows** :  
     `commande à mettre` 
@@ -359,7 +360,7 @@
 - **Description** : Cette information montre la date et l'heure de la dernière connexion d'un utilisateur sur le système. Cela permet de savoir quand un utilisateur s'est connecté pour la dernière fois.
   
   - **Linux (Ubuntu/Debian)** :  
-    `commande à mettre`
+    `lastlog -u "$Utilisateur"`
   
   - **Windows** :  
     `commande à mettre`
@@ -374,7 +375,7 @@
 - **Description** : Cette information permet de connaître la dernière fois qu'un utilisateur a modifié son mot de passe.
   
   - **Linux (Ubuntu/Debian)** :  
-    `commande à mettre`
+    `chage -l "$Utilisateur" | grep "Last password change"`
   
   - **Windows** :  
     `commande à mettre`
@@ -389,7 +390,7 @@
 - **Description** : Affiche toutes les sessions actuellement ouvertes par un utilisateur donné.
   
   - **Linux (Ubuntu/Debian)** :  
-    `commande à mettre`
+    `who | grep "$Utilisateur" || echo "Aucune session ouverte."`
   
   - **Windows** :  
     `commande à mettre`
@@ -404,7 +405,7 @@
 - **Description** : Indique à quels groupes appartient un utilisateur donné.
   
   - **Linux (Ubuntu/Debian)** :  
-    `commande à mettre`
+    `groups "$Utilisateur"`
   
   - **Windows** :  
     `commande à mettre`
@@ -419,7 +420,7 @@
 - **Description** : Affiche un historique des commandes exécutées par un utilisateur dans le terminal.
   
   - **Linux (Ubuntu/Debian)** :  
-    `commande à mettre`
+    `tail -n 20 "$HIST_FILE"`
   
   - **Windows** :  
     `commande à mettre`
@@ -434,7 +435,9 @@
 - **Description** : Permet de voir les permissions d'un utilisateur sur un dossier spécifique.
   
   - **Linux (Ubuntu/Debian)** :  
-    `commande à mettre`
+    `sudo -u "$Utilisateur" [ -r "$CHEMIN_DOSSIER" ] && echo "Lecture : Oui" || echo "Lecture : Non" `<br>
+    `sudo -u "$Utilisateur" [ -w "$CHEMIN_DOSSIER" ] && echo "Écriture : Oui" || echo "Écriture : Non" `<br>
+    `sudo -u "$Utilisateur" [ -x "$CHEMIN_DOSSIER" ] && echo "Exécution : Oui" || echo "Exécution : Non"`
   
   - **Windows** :  
     `commande à mettre`
@@ -449,7 +452,9 @@
 - **Description** : Affiche les permissions d'un utilisateur sur un fichier donné.
   
   - **Linux (Ubuntu/Debian)** :  
-    `commande à mettre`
+    `sudo -u "$Utilisateur" [ -r "$CHEMIN_FICHIER" ] && echo "Lecture : Oui" || echo "Lecture : Non"`<br>
+		`sudo -u "$Utilisateur" [ -w "$CHEMIN_FICHIER" ] && echo "Écriture : Oui" || echo "Écriture : Non"`<br>
+		`sudo -u "$Utilisateur" [ -x "$CHEMIN_FICHIER" ] && echo "Exécution : Oui" || echo "Exécution : Non"`
   
   - **Windows** :  
     `commande à mettre`
@@ -466,7 +471,7 @@
 - **Description** : Affiche la version du système d'exploitation en cours d'exécution.
   
   - **Linux (Ubuntu/Debian)** :  
-    `commande à mettre`
+    `grep '^PRETTY_NAME=' /etc/os-release | sed 's/^PRETTY_NAME="//;s/"$//'`
   
   - **Windows** :  
     `commande à mettre`
@@ -481,7 +486,7 @@
 - **Description** : Affiche le nombre de disques physiques présents sur le système.
   
   - **Linux (Ubuntu/Debian)** :  
-    `commande à mettre`
+    `lsblk -d -n -p | grep ' disk ' | wc -l`
   
   - **Windows** :  
     `commande à mettre`
@@ -496,7 +501,7 @@
 - **Description** : Affiche les partitions d'un disque avec leur nom, type de système de fichiers et leur taille.
   
   - **Linux (Ubuntu/Debian)** :  
-    `commande à mettre`
+    `lsblk -o NAME,SIZE,TYPE,MOUNTPOINT | grep -E 'disk|part'`
   
   - **Windows** :  
     `commande à mettre`
@@ -511,7 +516,7 @@
 - **Description** : Affiche toutes les applications ou paquets installés sur le système.
   
   - **Linux (Ubuntu/Debian)** :  
-    `commande à mettre`
+    ` dpkg --get-selections | grep -v deinstall`
   
   - **Windows** :  
     `commande à mettre`
@@ -526,7 +531,7 @@
 - **Description** : Affiche tous les services actuellement en cours d'exécution sur l'ordinateur.
   
   - **Linux (Ubuntu/Debian)** :  
-    `commande à mettre`
+    ` systemctl list-units --type=service --state=running --no-pager --quiet --plain | awk '{print $1}'`
   
   - **Windows** :  
     `commande à mettre`
@@ -541,7 +546,7 @@
 - **Description** : Affiche tous les utilisateurs locaux sur l'ordinateur.
   
   - **Linux (Ubuntu/Debian)** :  
-    `commande à mettre`
+    `awk -F: '$3 >= 1000 && $6 ~ /^\/home/ {print $1}' /etc/passwd`
   
   - **Windows** :  
     `commande à mettre`
