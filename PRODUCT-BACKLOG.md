@@ -26,8 +26,6 @@
 
 ## **Sprint Review - Semaine 3**
 
-### **État des Livrables**
-
 1. **Développement du Script** :
    - **Scripts Bash et PowerShell** : Les premières versions des scripts ont été créées pour chaque plateforme, avec les fonctionnalités de base en place.
    - **Fusion des Scripts** : Les scripts Bash et PowerShell ont été intégrés dans un script principal, avec des tests de compatibilité initiaux réalisés.
