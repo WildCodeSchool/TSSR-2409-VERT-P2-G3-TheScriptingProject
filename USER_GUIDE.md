@@ -1,4 +1,4 @@
-# Documentation des Actions et Scripts pour les Utilisateurs
+# Documentation des Actions et Informations des Scripts pour les Utilisateurs
 
 ## Introduction
 Cette documentation vise à expliquer les différentes actions et commandes disponibles pour l'administration des utilisateurs et des ordinateurs clients sur des systèmes Linux (Ubuntu/Debian) et Windows. Elle permet de comprendre comment créer, modifier, et gérer des comptes utilisateurs locaux, ainsi que comment gérer les ordinateurs clients (arrêt, redémarrage, installation de logiciels, etc.).
