@@ -95,101 +95,85 @@ Démarrez la VM avec l’ISO de Windows Server 2022 et suivez les étapes d’in
 
 Modifier les paramètres IP en ajoutant :
 
-auto eth0 iface eth0 inet static 
-            address 172.16.10.x # Remplacer x par l'IP de la machine 
-            netmask 255.255.255.0
+`auto eth0 iface eth0 inet static`<br> 
+`address 172.16.10.x` # Remplacer x par l'IP de la machine<br> 
+`netmask 255.255.255.0`
 
 
-Activer le démarrage automatique du service SSH :
+---
 
-`sudo systemctl enable ssh` # Activation au démarrage 
-`sudo systemctl start ssh` # Démarrage du service SSH 
-`sudo systemctl status ssh` # Vérification du statut
+# Étape 3 : Configuration SSH et Accès Sans Mot de Passe
 
+## 3.1 Configuration SSH sur les Machines Linux (Debian et Ubuntu)
+
+### Vérification de l'installation de SSH
+1. Vérifiez si OpenSSH est installé :
+   sshd -V  # Vérifier la version SSH
+   sudo apt install openssh-server  # Installer OpenSSH si nécessaire
+
+2. Activez le démarrage automatique du service SSH :
+   sudo systemctl enable ssh  # Activation au démarrage
+   sudo systemctl start ssh   # Démarrage du service SSH
+   sudo systemctl status ssh  # Vérification du statut du service
 
 ### Déploiement des Clés SSH pour un Accès Sans Mot de Passe
 
 #### Sur le Serveur Linux
-Générer une Clé SSH sur le Serveur :
+1. Générer une clé SSH sur le serveur :
+   ssh-keygen -t ecdsa  # Acceptez les options par défaut
 
-ssh-keygen -t ecdsa # Accepter les options par défaut
+2. Copier la clé publique vers le client :
+   ssh-copy-id -i ~/.ssh/id_ecdsa.pub client@172.16.10.x  # Remplacer x par l’IP du client
 
-arduino
-Copier le code
+3. Vérification de la connexion SSH sans mot de passe :
+   ssh client@172.16.10.x  # Vérifier l'accès sans mot de passe
 
-Copier la Clé Publique vers le Client :
+---
 
-ssh-copy-id -i ~/.ssh/id_ecdsa.pub client@172.16.10.x # Remplacer x par l’IP du client
+## 3.2 Configuration SSH sur Windows (Client et Serveur Windows)
 
-Copier le code
+### Vérification des Services SSH
+1. Le client SSH est présent par défaut dans les Fonctionnalités facultatives de Windows.
+2. Si le serveur SSH n'est pas installé, installez-le via **Paramètres > Applications > Fonctionnalités facultatives**.
 
-Connexion de Vérification :
+### Activation du Service OpenSSH sur le Client Windows
+1. Pour activer OpenSSH sur le client Windows, ouvrez PowerShell en tant qu'administrateur et exécutez les commandes suivantes :
+   get-service sshd | Set-Service -StartupType Automatic  # Activation au démarrage
+   Restart-Service sshd  # Redémarrage du service SSH
 
-ssh client@172.16.10.x # Vérifier l'accès sans mot de passe
+---
 
-yaml
-Copier le code
+## 3.3 Déploiement des Clés SSH sur Windows
 
-### Configuration SSH sur Windows (Client et Serveur Windows)
+### Génération d’une Clé SSH sur le Serveur Windows
+1. Ouvrez PowerShell sur le serveur Windows et générez une clé SSH :
+   ssh-keygen -t ecdsa
 
-Vérification des Services SSH :
+### Copie de la Clé Publique vers le Client Windows
+1. Copiez la clé publique vers le client Windows en exécutant cette commande :
+   get-content -path .\.ssh\id_ecdsa.pub | ssh client@172.16.10.x "echo $(cat ~/.ssh/id_ecdsa.pub) >> ~/.ssh/authorized_keys"
 
-Le client SSH est présent par défaut dans les Fonctionnalités facultatives.
-Serveur SSH : Installer via Paramètres > Applications > Fonctionnalités facultatives si non installé.
+### Désactivation de la Demande de Mot de Passe sur le Client Windows
+1. Ouvrez le fichier `C:\ProgramData\ssh\sshd_config` et commentez la ligne suivante :
+   # Match Group administrators
 
-Activation du Service OpenSSH sur le Client Windows :
+2. Redémarrez le service SSH pour appliquer les changements :
+   Restart-Service sshd
 
-get-service sshd | Set-Service -StartupType Automatic # Démarrage automatique Restart-Service sshd # Redémarrage du service
+---
 
-shell
-Copier le code
+## 3.4 Connexions SSH Inter-Systèmes (Linux ↔ Windows)
 
-### Déploiement des Clés SSH sur Windows
+### Vérification des Connexions SSH pour Toutes les Combinaisons Serveur-Client
+1. Testez la connexion SSH pour chaque combinaison de serveur et client. Par exemple, pour tester une connexion client vers serveur :
+   ssh client@172.16.10.x
 
-Génération d’une Clé SSH sur le Serveur Windows :
-
-ssh-keygen -t ecdsa
-
-arduino
-Copier le code
-
-Copie de la Clé Publique vers le Client Windows :
-
-get-content -path ..ssh\id_ecdsa.pub | ssh client@172.16.10.x "echo $(cat ~/.ssh/id_ecdsa.pub) >> ~/.ssh/authorized_keys"
-
-r
-Copier le code
-
-Désactivation de la Demande de Mot de Passe sur le Client Windows :
-
-Ouvrir le fichier `C:\ProgramData\ssh\sshd_config` et commenter la ligne :
-
-Match Group administrators
-mathematica
-Copier le code
-
-Redémarrer le service pour appliquer les changements :
-
-Restart-Service sshd
-
-shell
-Copier le code
-
-### Connexions SSH Inter-Systèmes (Linux ↔ Windows)
-
-#### Vérification des Connexions SSH pour Toutes les Combinaisons Serveur-Client
-
-Testez la connexion SSH pour chaque combinaison de serveur et client :
-
-ssh client@172.16.10.x
-
-perl
-Copier le code
-
-Si la configuration est correcte, aucune demande de mot de passe ne devrait apparaître.
+2. Si la configuration est correcte, aucune demande de mot de passe ne devrait apparaître.
 
 ### Gestion des Clés entre Ubuntu et Windows
+1. Pour déployer une clé SSH d'Ubuntu vers Windows :
+   ssh-copy-id -i ~/.ssh/id_ecdsa.pub client@172.16.10.x  # Remplacer x par l'IP du client Windows
+   
+2. Pour déployer une clé SSH de Windows vers Ubuntu :
+   get-content -path .\.ssh\id_ecdsa.pub | ssh client@172.16.10.30 "echo $(cat ~/.ssh/id_ecdsa.pub) >> ~/.ssh/authorized_keys"
 
-Pour déployer une clé SSH de Windows vers Ubuntu :
-
-get-content -path ..ssh\id_ecdsa.pub | ssh client@172.16.10.30 "echo $(cat ~/.ssh/id_ecdsa.pub) >> ~/.ssh/authorized_keys"
