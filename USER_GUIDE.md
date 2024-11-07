@@ -1,7 +1,5 @@
 # Documentation Utilisateur
 
----
-
 ## 1. Actions sur les utilisateurs
 
 ### 1.1 Création de compte utilisateur local
