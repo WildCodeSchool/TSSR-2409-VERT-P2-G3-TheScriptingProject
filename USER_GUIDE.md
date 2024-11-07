@@ -15,6 +15,8 @@
 
 - **Illustration** : *(espace pour capture d’écran du processus)*
 
+- **Windows** : *(espace pour capture d’écran)*
+
 ---
 
 ### 1.2 Changement de mot de passe
@@ -29,6 +31,8 @@
     `commande à mettre`
 
 - **Illustration** : *(espace pour capture d’écran du changement de mot de passe)*
+
+- **Windows** : *(espace pour capture d’écran)*
 
 ---
 
@@ -45,6 +49,8 @@
 
 - **Illustration** : *(espace pour capture d’écran de la suppression du compte)*
 
+- **Windows** : *(espace pour capture d’écran)*
+
 ---
 
 ### 1.4 Désactivation de compte utilisateur local
@@ -60,6 +66,7 @@
 
 - **Illustration** : *(espace pour capture d’écran de la désactivation)*
 
+- **Windows** : *(espace pour capture d’écran)*
 ---
 
 ### 1.5 Ajout à un groupe local
@@ -75,6 +82,8 @@
 
 - **Illustration** : *(espace pour capture d’écran de l’ajout au groupe)*
 
+- **Windows** : *(espace pour capture d’écran)*
+
 ---
 
 ### 1.6 Sortie d’un groupe local
@@ -89,6 +98,8 @@
     `commande à mettre`
 
 - **Illustration** : *(espace pour capture d’écran de la sortie du groupe)*
+
+- **Windows** : *(espace pour capture d’écran)*
 
 ---
 
@@ -107,6 +118,8 @@
 
 - **Illustration** : *(espace pour capture d’écran de l’arrêt)*
 
+- **Windows** : *(espace pour capture d’écran)*
+
 ---
 
 ### 2.2 Redémarrage
@@ -121,6 +134,8 @@
     `commande à mettre`
 
 - **Illustration** : *(espace pour capture d’écran du redémarrage)*
+
+- **Windows** : *(espace pour capture d’écran)*
 
 ---
 
@@ -137,6 +152,8 @@
 
 - **Illustration** : *(espace pour capture d’écran du verrouillage)*
 
+- **Windows** : *(espace pour capture d’écran)*
+
 ---
 
 ### 2.4 Mise-à-jour du système
@@ -151,6 +168,8 @@
     `commande à mettre`
 
 - **Illustration** : *(espace pour capture d’écran de la mise à jour)*
+
+- **Windows** : *(espace pour capture d’écran)*
 
 ---
 
@@ -167,6 +186,8 @@
 
 - **Illustration** : *(espace pour capture d’écran de la création du répertoire)*
 
+- **Windows** : *(espace pour capture d’écran)*
+
 ---
 
 ### 2.5 Modification de répertoire
@@ -181,6 +202,8 @@
     `commande à mettre`
 
 - **Illustration** : *(espace pour capture d’écran de la modification de répertoire)*
+
+- **Windows** : *(espace pour capture d’écran)*
   
 ---
 
@@ -196,6 +219,8 @@
     `commande à mettre`
 
 - **Illustration** : *(espace pour capture d’écran de la suppression)*
+
+- **Windows** : *(espace pour capture d’écran)*
 
 
 ---
@@ -213,6 +238,8 @@
 
 - **Illustration** : *(espace pour capture d’écran de connexion distante)*
 
+- **Windows** : *(espace pour capture d’écran)*
+
 ---
 
 ### 2.8 Définition de règles de pare-feu
@@ -227,6 +254,8 @@
     `commande à mettre`
 
 - **Illustration** : *(espace pour capture d’écran de configuration du pare-feu)*
+
+- **Windows** : *(espace pour capture d’écran)*
 
 ---
 
@@ -243,6 +272,8 @@
 
 - **Illustration** : *(espace pour capture d’écran de l'activation du pare-feu)*
 
+- **Windows** : *(espace pour capture d’écran)*
+
 ---
 
 ### 2.10 Désactivation du pare-feu
@@ -257,6 +288,8 @@
     `commande à mettre`
 
 - **Illustration** : *(espace pour capture d’écran de la désactivation du pare-feu)*
+
+- **Windows** : *(espace pour capture d’écran)*
 
 ---
 
@@ -277,7 +310,7 @@
 ![INSTALL-LOGICIEL1](https://github.com/user-attachments/assets/a1b64f17-0c34-442c-9a15-d547e561af05)<br>
 ![INSTALL-LOGICIEL2](https://github.com/user-attachments/assets/2b9de809-5799-4bfb-9047-bbf601cc533d)
 
-- **Windows** :
+- **Windows** : *(espace pour capture d’écran)*
 
 ---
 
@@ -287,12 +320,19 @@
 - **Exemples de commandes** :
 
   - **Linux (Ubuntu/Debian)** :  
-    `commande à mettre`
+    `sudo apt remove "$logiciel*" -y`
 
   - **Windows** :  
     `commande à mettre` 
 
-- **Illustration** : *(espace pour capture d’écran de la désinstallation d'un logiciel)*
+- **Ubuntu/Debian** :
+
+![MENU-GESTION-LOGICIEL](https://github.com/user-attachments/assets/f2634f0a-149a-45a9-a654-c9ccd737add1)<br>
+![DELETE-LOGICIEL1](https://github.com/user-attachments/assets/89bcf57c-ad5a-4523-b68e-bb199afb8cc9)<br>
+![DELETE-LOGICIEL2](https://github.com/user-attachments/assets/a30ff1ab-0ec5-48d8-b07f-3fdaff70b0a6)
+
+
+- **Windows** : *(espace pour capture d’écran)*
 
 ---
 
@@ -309,6 +349,8 @@
 
 - **Illustration** : *(espace pour capture d’écran de l'exécution du script à distance)*
 
+- **Windows** : *(espace pour capture d’écran)*
+
 ---
 
 # Informations sur l'utilisateur et l'ordinateur client
@@ -324,6 +366,8 @@
 
 - **Illustration** : *(Espace pour capture d’écran montrant la date et l'heure de la dernière connexion de l'utilisateur)*
 
+- **Windows** : *(espace pour capture d’écran)*
+
 ---
 
 ## 2. Date de dernière modification du mot de passe
@@ -336,6 +380,8 @@
     `commande à mettre`
 
 - **Illustration** : *(Espace pour capture d’écran montrant la dernière modification du mot de passe de l'utilisateur)*
+
+- **Windows** : *(espace pour capture d’écran)*
 
 ---
 
@@ -350,6 +396,8 @@
 
 - **Illustration** : *(Espace pour capture d’écran montrant les sessions ouvertes par l'utilisateur)*
 
+- **Windows** : *(espace pour capture d’écran)*
+
 ---
 
 ## 4. Groupe d’appartenance d’un utilisateur
@@ -362,6 +410,8 @@
     `commande à mettre`
 
 - **Illustration** : *(Espace pour capture d’écran montrant les groupes auxquels l'utilisateur appartient)*
+
+- **Windows** : *(espace pour capture d’écran)*
 
 ---
 
@@ -376,6 +426,8 @@
 
 - **Illustration** : *(Espace pour capture d’écran montrant l'historique des commandes de l'utilisateur)*
 
+- **Windows** : *(espace pour capture d’écran)*
+
 ---
 
 ## 6. Droits/permissions de l’utilisateur sur un dossier
@@ -389,6 +441,8 @@
 
 - **Illustration** : *(Espace pour capture d’écran montrant les permissions de l'utilisateur sur un dossier)*
 
+- **Windows** : *(espace pour capture d’écran)*
+
 ---
 
 ## 7. Droits/permissions de l’utilisateur sur un fichier
@@ -401,6 +455,8 @@
     `commande à mettre`
 
 - **Illustration** : *(Espace pour capture d’écran montrant les permissions de l'utilisateur sur un fichier)*
+
+- **Windows** : *(espace pour capture d’écran)*
 
 ---
 
@@ -417,6 +473,8 @@
 
 - **Illustration** : *(Espace pour capture d’écran montrant la version de l'OS)*
 
+- **Windows** : *(espace pour capture d’écran)*
+
 ---
 
 ## 2. Nombre de disques
@@ -429,6 +487,8 @@
     `commande à mettre`
 
 - **Illustration** : *(Espace pour capture d’écran montrant le nombre de disques présents)*
+
+- **Windows** : *(espace pour capture d’écran)*
 
 ---
 
@@ -443,6 +503,8 @@
 
 - **Illustration** : *(Espace pour capture d’écran montrant les partitions d'un disque avec leurs détails)*
 
+- **Windows** : *(espace pour capture d’écran)*
+
 ---
 
 ## 4. Liste des applications/paquets installées
@@ -455,6 +517,8 @@
     `commande à mettre`
 
 - **Illustration** : *(Espace pour capture d’écran montrant les applications ou paquets installés)*
+
+- **Windows** : *(espace pour capture d’écran)*
 
 ---
 
@@ -469,6 +533,8 @@
 
 - **Illustration** : *(Espace pour capture d’écran montrant les services en cours d'exécution sur le système)*
 
+- **Windows** : *(espace pour capture d’écran)*
+
 ---
 
 ## 6. Liste des utilisateurs locaux
@@ -481,6 +547,8 @@
     `commande à mettre`
 
 - **Illustration** : *(Espace pour capture d’écran montrant la liste des utilisateurs locaux)*
+
+- **Windows** : *(espace pour capture d’écran)*
 
 ---
 
@@ -505,14 +573,16 @@
 - **Description** : Affiche la quantité totale de mémoire RAM sur l'ordinateur.
   
   - **Linux (Ubuntu/Debian)** :  
-    `commande à mettre`
+    `free -h | grep Mem | awk '{print $2}'`
   
   - **Windows** :  
     `commande à mettre`
 
 - **Ubuntu/Debian** :
   
-![MENU-INFO-SYSTEME](https://github.com/user-attachments/assets/ecca50a9-e8c8-453e-8d41-2faf458bc26e)
+![MENU-INFO-SYSTEME](https://github.com/user-attachments/assets/ecca50a9-e8c8-453e-8d41-2faf458bc26e)<br>
+![MEMORY-RAM](https://github.com/user-attachments/assets/f7a90a03-608b-4664-a11a-cd92c6fc04e1)
+
 
 - **Windows** : *(Espace pour capture d’écran montrant l'utilisation du disque et l'espace disponible)*
 
@@ -546,7 +616,9 @@
 
 - **Ubuntu/Debian** :
   
-![MENU-INFO-SYSTEME](https://github.com/user-attachments/assets/f050f447-9199-491b-9cba-af5fdfc45530)
+![MENU-INFO-SYSTEME](https://github.com/user-attachments/assets/f050f447-9199-491b-9cba-af5fdfc45530)<br>
+![USE-DISK](https://github.com/user-attachments/assets/fd2b05f1-ee67-4861-b2b1-b4a68d41b1cb)
+
 
 - **Windows** : *(Espace pour capture d’écran montrant l'utilisation du disque et l'espace disponible)*
 
@@ -584,6 +656,8 @@
 
 - **Illustration** : *(espace pour capture d’écran des résultats de recherche)*
 
+- **Windows** : *(espace pour capture d’écran)*
+
 ---
 
 ### 4.2 Recherche des événements dans le fichier log_evt.log pour un ordinateur
@@ -598,3 +672,5 @@
     `commande à mettre`
 
 - **Illustration** : *(espace pour capture d’écran des résultats de recherche)*
+
+- **Windows** : *(espace pour capture d’écran)*
