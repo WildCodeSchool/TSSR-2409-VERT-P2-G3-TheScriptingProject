@@ -410,21 +410,6 @@
 
 ---
 
-### 3.2 Version de l'OS
-- **Description** : Afficher la version du système d’exploitation de l’ordinateur client.
-- **Système** : Linux, Windows
-- **Exemples de commandes** :
-
-  - **Linux (Ubuntu/Debian)** :  
-    `commande à mettre`
-
-  - **Windows** :  
-    `commande à mettre`
-
-- **Illustration** : *(espace pour capture d’écran des détails de l’OS)*
-
----
-
 ## 4. Recherche d'événements dans le fichier log
 
 ### 4.1 Recherche des événements dans le fichier log_evt.log pour un utilisateur
