@@ -184,19 +184,263 @@
 
 ---
 
-## 3. Informations sur l'utilisateur et l'ordinateur client
+# Informations sur l'utilisateur et l'ordinateur client
 
-### 3.1 Date de dernière connexion d’un utilisateur
-- **Description** : Afficher la date et l'heure de la dernière connexion de l'utilisateur.
-- **Exemples de commandes** :
-
+## 1. Date de dernière connexion d’un utilisateur
+- **Description** : Cette information montre la date et l'heure de la dernière connexion d'un utilisateur sur le système. Cela permet de savoir quand un utilisateur s'est connecté pour la dernière fois.
+  
   - **Linux (Ubuntu/Debian)** :  
-    `commande à mettre`
-
+    Commande à mettre :  
+    _(Espace pour la commande à ajouter)_
+  
   - **Windows** :  
-    `commande à mettre`
+    Commande à mettre :  
+    _(Espace pour la commande à ajouter)_
 
-- **Illustration** : *(espace pour capture d’écran de l'information affichée)*
+  _(Espace pour une capture d’écran de l'information affichée)_
+
+---
+
+## 2. Date de dernière modification du mot de passe
+- **Description** : Cette information permet de connaître la dernière fois qu'un utilisateur a modifié son mot de passe.
+  
+  - **Linux (Ubuntu/Debian)** :  
+    Commande à mettre :  
+    _(Espace pour la commande à ajouter)_
+  
+  - **Windows** :  
+    Commande à mettre :  
+    _(Espace pour la commande à ajouter)_
+
+  _(Espace pour une capture d’écran de l'information affichée)_
+
+---
+
+## 3. Liste des sessions ouvertes par l'utilisateur
+- **Description** : Affiche toutes les sessions actuellement ouvertes par un utilisateur donné.
+  
+  - **Linux (Ubuntu/Debian)** :  
+    Commande à mettre :  
+    _(Espace pour la commande à ajouter)_
+  
+  - **Windows** :  
+    Commande à mettre :  
+    _(Espace pour la commande à ajouter)_
+
+  _(Espace pour une capture d’écran de l'information affichée)_
+
+---
+
+## 4. Groupe d’appartenance d’un utilisateur
+- **Description** : Indique à quels groupes appartient un utilisateur donné.
+  
+  - **Linux (Ubuntu/Debian)** :  
+    Commande à mettre :  
+    _(Espace pour la commande à ajouter)_
+  
+  - **Windows** :  
+    Commande à mettre :  
+    _(Espace pour la commande à ajouter)_
+
+  _(Espace pour une capture d’écran de l'information affichée)_
+
+---
+
+## 5. Historique des commandes exécutées par l'utilisateur
+- **Description** : Affiche un historique des commandes exécutées par un utilisateur dans le terminal.
+  
+  - **Linux (Ubuntu/Debian)** :  
+    Commande à mettre :  
+    _(Espace pour la commande à ajouter)_
+  
+  - **Windows** :  
+    Commande à mettre :  
+    _(Espace pour la commande à ajouter)_
+
+  _(Espace pour une capture d’écran de l'information affichée)_
+
+---
+
+## 6. Droits/permissions de l’utilisateur sur un dossier
+- **Description** : Permet de voir les permissions d'un utilisateur sur un dossier spécifique.
+  
+  - **Linux (Ubuntu/Debian)** :  
+    Commande à mettre :  
+    _(Espace pour la commande à ajouter)_
+  
+  - **Windows** :  
+    Commande à mettre :  
+    _(Espace pour la commande à ajouter)_
+
+  _(Espace pour une capture d’écran de l'information affichée)_
+
+---
+
+## 7. Droits/permissions de l’utilisateur sur un fichier
+- **Description** : Affiche les permissions d'un utilisateur sur un fichier donné.
+  
+  - **Linux (Ubuntu/Debian)** :  
+    Commande à mettre :  
+    _(Espace pour la commande à ajouter)_
+  
+  - **Windows** :  
+    Commande à mettre :  
+    _(Espace pour la commande à ajouter)_
+
+  _(Espace pour une capture d’écran de l'information affichée)_
+
+---
+
+# Informations sur l'ordinateur client
+
+## 1. Version de l'OS
+- **Description** : Affiche la version du système d'exploitation en cours d'exécution.
+  
+  - **Linux (Ubuntu/Debian)** :  
+    Commande à mettre :  
+    _(Espace pour la commande à ajouter)_
+  
+  - **Windows** :  
+    Commande à mettre :  
+    _(Espace pour la commande à ajouter)_
+
+  _(Espace pour une capture d’écran de l'information affichée)_
+
+---
+
+## 2. Nombre de disques
+- **Description** : Affiche le nombre de disques physiques présents sur le système.
+  
+  - **Linux (Ubuntu/Debian)** :  
+    Commande à mettre :  
+    _(Espace pour la commande à ajouter)_
+  
+  - **Windows** :  
+    Commande à mettre :  
+    _(Espace pour la commande à ajouter)_
+
+  _(Espace pour une capture d’écran de l'information affichée)_
+
+---
+
+## 3. Partition (nombre, nom, système de fichiers, taille) par disque
+- **Description** : Affiche les partitions d'un disque avec leur nom, type de système de fichiers et leur taille.
+  
+  - **Linux (Ubuntu/Debian)** :  
+    Commande à mettre :  
+    _(Espace pour la commande à ajouter)_
+  
+  - **Windows** :  
+    Commande à mettre :  
+    _(Espace pour la commande à ajouter)_
+
+  _(Espace pour une capture d’écran de l'information affichée)_
+
+---
+
+## 4. Liste des applications/paquets installées
+- **Description** : Affiche toutes les applications ou paquets installés sur le système.
+  
+  - **Linux (Ubuntu/Debian)** :  
+    Commande à mettre :  
+    _(Espace pour la commande à ajouter)_
+  
+  - **Windows** :  
+    Commande à mettre :  
+    _(Espace pour la commande à ajouter)_
+
+  _(Espace pour une capture d’écran de l'information affichée)_
+
+---
+
+## 5. Liste des services en cours d'exécution
+- **Description** : Affiche tous les services actuellement en cours d'exécution sur l'ordinateur.
+  
+  - **Linux (Ubuntu/Debian)** :  
+    Commande à mettre :  
+    _(Espace pour la commande à ajouter)_
+  
+  - **Windows** :  
+    Commande à mettre :  
+    _(Espace pour la commande à ajouter)_
+
+  _(Espace pour une capture d’écran de l'information affichée)_
+
+---
+
+## 6. Liste des utilisateurs locaux
+- **Description** : Affiche tous les utilisateurs locaux sur l'ordinateur.
+  
+  - **Linux (Ubuntu/Debian)** :  
+    Commande à mettre :  
+    _(Espace pour la commande à ajouter)_
+  
+  - **Windows** :  
+    Commande à mettre :  
+    _(Espace pour la commande à ajouter)_
+
+  _(Espace pour une capture d’écran de l'information affichée)_
+
+---
+
+## 7. Type de CPU, nombre de cœurs, etc.
+- **Description** : Donne des informations sur le processeur de l'ordinateur, notamment le type et le nombre de cœurs.
+  
+  - **Linux (Ubuntu/Debian)** :  
+    Commande à mettre :  
+    _(Espace pour la commande à ajouter)_
+  
+  - **Windows** :  
+    Commande à mettre :  
+    _(Espace pour la commande à ajouter)_
+
+  _(Espace pour une capture d’écran de l'information affichée)_
+
+---
+
+## 8. Mémoire RAM totale
+- **Description** : Affiche la quantité totale de mémoire RAM sur l'ordinateur.
+  
+  - **Linux (Ubuntu/Debian)** :  
+    Commande à mettre :  
+    _(Espace pour la commande à ajouter)_
+  
+  - **Windows** :  
+    Commande à mettre :  
+    _(Espace pour la commande à ajouter)_
+
+  _(Espace pour une capture d’écran de l'information affichée)_
+
+---
+
+## 9. Utilisation de la RAM
+- **Description** : Affiche l'utilisation actuelle de la mémoire RAM.
+  
+  - **Linux (Ubuntu/Debian)** :  
+    Commande à mettre :  
+    _(Espace pour la commande à ajouter)_
+  
+  - **Windows** :  
+    Commande à mettre :  
+    _(Espace pour la commande à ajouter)_
+
+  _(Espace pour une capture d’écran de l'information affichée)_
+
+---
+
+## 10. Utilisation du disque
+- **Description** : Affiche l'utilisation actuelle du disque, y compris l'espace libre et utilisé.
+  
+  - **Linux (Ubuntu/Debian)** :  
+    Commande à mettre :  
+    _(Espace pour la commande à ajouter)_
+  
+  - **Windows** :  
+    Commande à mettre :  
+    _(Espace pour la commande à ajouter)_
+
+  _(Espace pour une capture d’écran de l'information affichée)_
+
 
 ---
 
