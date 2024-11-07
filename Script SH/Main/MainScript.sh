@@ -16,18 +16,17 @@ user1="lbartaire@10.0.0.20"
 user2="lbartaire@10.0.0.21"
 
 # Variables ACTION
-Exe_script_User="chmod +x /tmp/UserControl.sh && ./UserControl.sh && rm /tmp/UserControl.sh"
-Exe_script_Group="chmod +x /tmp/GroupControl.sh && ./GroupControl.sh && rm /tmp/GroupControl.sh"
-Exe_script_System="chmod +x /tmp/GestionDuSysteme.sh && ./GestionDuSysteme.sh && rm /tmp/GestionDuSysteme.sh"
-Exe_script_Logiciel="chmod +x /tmp/GestionLogiciel.sh && ./GestionLogiciel.sh && rm /tmp/GestionLogiciel.sh"
-Exe_script_Parefeu="chmod +x /tmp/GestionParefeu.sh && ./GestionParefeu.sh && rm /tmp/GestionParefeu.sh"
-Exe_script_Repertoire="chmod +x /tmp/GestionDesRepertoires.sh && ./GestionDesRepertoires.sh && rm /tmp/GestionDesRepertoires.sh"
+Exe_script_User="chmod +x /tmp/UserControl.sh && /tmp/UserControl.sh && rm /tmp/UserControl.sh"
+Exe_script_Group="chmod +x /tmp/GroupControl.sh && /tmp/GroupControl.sh && rm /tmp/GroupControl.sh"
+Exe_script_System="chmod +x /tmp/GestionDuSysteme.sh && /tmp/GestionDuSysteme.sh && rm /tmp/GestionDuSysteme.sh"
+Exe_script_Logiciel="chmod +x /tmp/GestionLogiciel.sh && /tmp/GestionLogiciel.sh && rm /tmp/GestionLogiciel.sh"
+Exe_script_Parefeu="chmod +x /tmp/GestionParefeu.sh && /tmp/GestionParefeu.sh && rm /tmp/GestionParefeu.sh"
+Exe_script_Repertoire="chmod +x /tmp/GestionDesRepertoires.sh && /tmpGestionDesRepertoires.sh && rm /tmp/GestionDesRepertoires.sh"
 
 # Variables COLLECTE INFORMATION
-Exe_script_InfoUser="chmod +x /tmp/InfoUtilisateur.sh && ./InfoUtilisateur.sh && rm /tmp/InfoUtilisateur.sh"
-Exe_script_InfoSoftware="chmod +x /tmp/InfoDuSystemeSoftware.sh && ./InfoDuSystemeSoftware.sh && rm /tmp/InfoDuSystemeSoftware.sh"
-Exe_script_InfoHardware="chmod +x /tmp/InfoDuSystemeHardware.sh && ./InfoDuSystemeHardware.sh && rm /tmp/InfoDuSystemeHardware.sh"
-
+Exe_script_InfoUser="chmod +x /tmp/InfoUtilisateur.sh && /tmp/InfoUtilisateur.sh && rm /tmp/InfoUtilisateur.sh"
+Exe_script_InfoSoftware="chmod +x /tmp/InfoDuSystemeSoftware.sh && /tmp/InfoDuSystemeSoftware.sh && rm /tmp/InfoDuSystemeSoftware.sh"
+Exe_script_InfoHardware="chmod +x /tmp/InfoDuSystemeHardware.sh && /tmp/InfoDuSystemeHardware.sh && rm /tmp/InfoDuSystemeHardware.sh"
 
 # Menu principal choix machine
 while true; do
@@ -106,7 +105,7 @@ while true; do
                         ;;
                     2)      # Informations dans Ubuntu 1
                         while true; do
-                            echo "${GREEN}     Menu Informations sur Ubuntu 1: \n"
+                            echo -e "${GREEN}  \n   Menu Informations sur Ubuntu 1:\n"
                             echo -e "${YELLOW}[1]${NC} Informations Utilisateur"
                             echo -e "${YELLOW}[2]${NC} Informations Systeme Software"
                             echo -e "${YELLOW}[3]${NC} Informations Systeme Hardware"
@@ -118,9 +117,11 @@ while true; do
                         1)    #Informations Utilisateur
                             scp ~/script_information/InfoUtilisateur.sh $user1:/tmp
                             ssh -t $user1 "$Exe_script_InfoUser"
+                            ;;
                         2)    #Information Systeme Software
                             scp ~/script_information/InfoDuSystemeSoftware.sh $user1:/tmp
                             ssh -t $user1 "$Exe_script_InfoSoftware"
+                            ;;
                         3)    #Information Système Hardware
                             scp ~/script_information/InfoDuSystemeHardware.sh $user1:/tmp
                             ssh -t $user1 "$Exe_script_InfoHardware"
@@ -180,37 +181,33 @@ while true; do
 
                             case $gestion in
                                 1)      #gestions des utilisateurs
-                                    scp ~/script_action/UserControl.sh $user2:~
+                                    scp ~/script_action/UserControl.sh $user2:/tmp
                                     ssh -t $user2 "$Exe_script_User"
                                     ;; 
                                 2)      #gestions des Groupes 
-                                    scp ~/script_action/GroupControl.sh $user2:~
+                                    scp ~/script_action/GroupControl.sh $user2:/tmp
                                     ssh -t $user2 "$Exe_script_Group"
                                     ;;                                    
                                 3)      #gestions système
-                                    scp ~/script_action/GestionDuSysteme.sh $user2:~
+                                    scp ~/script_action/GestionDuSysteme.sh $user2:/tmp
                                     ssh -t $user2 "$Exe_script_System"
                                     ;;                                     
                                 4)      #gestions Répertoires
-                                    scp ~/script_action/GestionDesRepertoires.sh $user2:~
+                                    scp ~/script_action/GestionDesRepertoires.sh $user2:/tmp
                                     ssh -t $user2 "$Exe_script_Repertoire"
                                     ;;                                    
                                 5)      #Prise en main CLI
                                     ssh -t $user2
                                     ;;
                                 6)      #gestions logiciel
-                                    scp ~/script_action/GestionLogiciel.sh $user2:~
+                                    scp ~/script_action/GestionLogiciel.sh $user2:/tmp
                                     ssh -t $user2 "$Exe_script_Logiciel"
                                     ;;
                                 7)      #gestions Parefeu
-                                    scp ~/script_action/GestionParefeu.sh $user2:~
+                                    scp ~/script_action/GestionParefeu.sh $user2:/tmp
                                     ssh -t $user2 "$Exe_script_Parefeu"
                                     ;;
-                                8)      #Information Système
-                                    scp ~/script_action/InfoDuSysteme.sh $user2:~
-                                    ssh -t $user2 "$Exe_script_Systeme"
-                                    ;;          
-                                9)      #Retour au menu précédent
+                                8)      #Retour au menu précédent
                                     echo "Retour au menu précédent"
                                     break
                                     ;;
@@ -225,7 +222,42 @@ while true; do
                         done
                         ;;
                     2)      # Informations dans Ubuntu 2 
-                         
+                        while true; do
+                            echo -e "${GREEN}  \n   Menu Informations sur Ubuntu 1:\n"
+                            echo -e "${YELLOW}[1]${NC} Informations Utilisateur"
+                            echo -e "${YELLOW}[2]${NC} Informations Systeme Software"
+                            echo -e "${YELLOW}[3]${NC} Informations Systeme Hardware"
+                            echo -e "${YELLOW}[4]${NC} Retour au menu précédent"
+                            echo -e "${YELLOW}[x]${NC} Fin du script"
+                            read -p "Votre choix : " information
+
+                       case $information in
+                        1)    #Informations Utilisateur
+                            scp ~/script_information/InfoUtilisateur.sh $user1:/tmp
+                            ssh -t $user2 "$Exe_script_InfoUser"
+                            ;;
+                        2)    #Information Systeme Software
+                            scp ~/script_information/InfoDuSystemeSoftware.sh $user1:/tmp
+                            ssh -t $user2 "$Exe_script_InfoSoftware"
+                            ;;
+                        3)    #Information Système Hardware
+                            scp ~/script_information/InfoDuSystemeHardware.sh $user1:/tmp
+                            ssh -t $user2 "$Exe_script_InfoHardware"
+                            ;; 
+                        4)    #sortie  
+                            echo "Retour au menu précédent"
+                            break
+                            ;;
+                        x)    #Fin du script
+                            echo "Fin du script"
+                            exit 0
+                            ;;
+                        *)    #Erreur
+                            echo -e "${RED}[Erreur]! Option invalide, veuillez réessayer !${NC}"
+                            ;;
+                            esac
+                        done
+                        ;;
                         ;;
                     3)      # Retour au Menu Ubuntu 2
                         echo "Retour au menu principal"
@@ -250,3 +282,4 @@ while true; do
             ;;
     esac
 done
+
