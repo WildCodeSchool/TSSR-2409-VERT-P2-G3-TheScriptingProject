@@ -43,7 +43,8 @@
 
 - **Développement** :
    - **Compléter les scripts** : Finaliser les scripts Bash et PowerShell, en ajoutant la gestion des actions et informations pour chaque plateforme.
-   - **Ajout des logs** : Implémenter l'enregistrement des informations dans un dossier spécifique et la journalisation dans les deux scripts.
+   - **Export des informations** : Implémenter l'enregistrement des informations dans un dossier spécifique.
+   - **Ajout des logs** : Suivi des activités de l'utilisateur dans les scripts Bash et PowerShell.
    - **Mise en page des scripts** : Finaliser la mise en page des scripts (par exemple, l’ajout de couleurs pour améliorer la lisibilité).
    - **Améliorer la clarté des scripts** : Ajouter des commentaires dans le code pour rendre les scripts plus lisibles et compréhensibles.
    - **Objectif secondaire** : Tester et valider le lancement des scripts Bash depuis un serveur Windows et des scripts PowerShell depuis un serveur Debian.
