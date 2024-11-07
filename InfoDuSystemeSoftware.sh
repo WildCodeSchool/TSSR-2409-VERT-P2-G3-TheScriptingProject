@@ -91,7 +91,7 @@ userChoiceDir=""
 
 while [[ $userChoiceDir != "x" ]]; do
 
-    echo -e "\n ${GREEN}------INFORMATION SYSTEME------${NC} \n \n Choisir le chiffre correspondant à l'option: \n \n ${CYAN}[1]${NC} Afficher la version de l'OS \n ${CYAN}[2]${NC} Afficher le nombre de disques \n ${CYAN}[3]${NC} Afficher les partitions par disque \n ${CYAN}[4]${NC} Afficher la liste des applications/paquets installés \n ${CYAN}[5]${NC} Afficher la liste des services en cours d'exécution \n ${CYAN}[6]${NC} Afficher la liste des utilisateurs locaux \n ${CYAN}[7]${NC} Revenir au menu précédent" 
+    echo -e "\n ${GREEN}------ MENU INFORMATION SOFTWARE ------${NC} \n \n ${CYAN}[1]${NC} Afficher la version de l'OS \n ${CYAN}[2]${NC} Afficher le nombre de disques \n ${CYAN}[3]${NC} Afficher les partitions par disque \n ${CYAN}[4]${NC} Afficher la liste des applications/paquets installés \n ${CYAN}[5]${NC} Afficher la liste des services en cours d'exécution \n ${CYAN}[6]${NC} Afficher la liste des utilisateurs locaux \n ${CYAN}[7]${NC} Revenir au menu précédent \n \n ${GREEN}Veuillez choisir une option :${NC}"
     read userChoiceDir
 
     case "$userChoiceDir" in 
