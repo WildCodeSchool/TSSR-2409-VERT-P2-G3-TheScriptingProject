@@ -27,12 +27,12 @@
 ## **Sprint Review - Semaine 3**
 
 1. **Développement du Script** :
-   - **Scripts Bash et PowerShell** : Les premières versions des scripts ont été créées pour chaque plateforme, avec les fonctionnalités de base en place.
-   - **Fusion des Scripts** : Les scripts Bash et PowerShell ont été intégrés dans un script principal, avec des tests de compatibilité initiaux réalisés.
+   - **Scripts Bash et PowerShell** : Les versions de scripts Bash ont été créées. Les versions de scripts PowerShell sont en cours de crétions.
+   - **Fusion des Scripts** : Les scripts Bash sont joignable via un script principal. Pour la version PowerShell, en attente de finalisation et de test.
 
 2. **Documentation** :
    - **USER_GUIDE.md** : Une première version du guide utilisateur a été rédigée, incluant des captures d'écran et des étapes d’utilisation de base.
-   - **INSTALL.md** : Liste des prérequis et instructions générales terminées. Sections spécifiques pour Ubuntu et Windows en cours de rédaction.
+   - **INSTALL.md** : Liste des prérequis et instructions en cours avec également sections spécifiques pour Ubuntu et Windows en cours de rédaction.
    - **README.md** : Structure de base rédigée, avec une introduction au projet et des liens vers les guides d’utilisation et d’installation.
 
 ---
