@@ -126,6 +126,8 @@ Modifier les paramètres IP en ajoutant :
    `ssh-copy-id -i ~/.ssh/id_ecdsa.pub client@172.16.10.x`  # Remplacer x par l’IP du client
 
 3. Vérification de la connexion SSH sans mot de passe :<br>
+   `cat /home/wcs/.ssh/id_ecdsa.pub` # Sur le serveur<br>
+   `cat .ssh/auhorized-keys` # Sur le client<br>
    `ssh client@172.16.10.x`  # Vérifier l'accès sans mot de passe
 
 ---
@@ -147,11 +149,15 @@ Modifier les paramètres IP en ajoutant :
 
 ### Génération d’une Clé SSH sur le Serveur Windows
 1. Ouvrez PowerShell sur le serveur Windows et générez une clé SSH :<br>
-   `ssh-keygen -t ecdsa`
-
+   `ssh-keygen -t ecdsa` # Génére la clé SSH<br>
+   `Set-Location c:\Users\client\.ssh\` # On va vérifier ou est la clé et si tout est ok<br>
+   `Get ChildItem` # On vérifie la clé
+   
 ### Copie de la Clé Publique vers le Client Windows
 1. Copiez la clé publique vers le client Windows en exécutant cette commande :<br>
-   `Get-Content -path .\.ssh\id_ecdsa.pub | ssh client@172.16.10.x "echo $(cat ~/.ssh/id_ecdsa.pub) >> ~/.ssh/authorized_keys"`
+   `Get-Content -path .\.ssh\id_ecdsa.pub
+   ssh client@172.16.10.x
+   "echo $(cat ~/.ssh/id_ecdsa.pub) >> ~/.ssh/authorized_keys"`
 
 ### Désactivation de la Demande de Mot de Passe sur le Client Windows
 1. Ouvrez le fichier `C:\ProgramData\ssh\sshd_config` et commentez la ligne suivante :<br>
