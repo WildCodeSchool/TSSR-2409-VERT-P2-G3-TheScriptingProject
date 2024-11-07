@@ -155,9 +155,7 @@ Modifier les paramètres IP en ajoutant :
    
 ### Copie de la Clé Publique vers le Client Windows
 1. Copiez la clé publique vers le client Windows en exécutant cette commande :<br>
-   `Get-Content -path .\.ssh\id_ecdsa.pub
-   ssh client@172.16.10.x
-   "echo $(cat ~/.ssh/id_ecdsa.pub) >> ~/.ssh/authorized_keys"`
+   `Get-Content -path .\.ssh\id_ecdsa.pub | ssh client@172.16.10.x | "echo $(cat ~/.ssh/id_ecdsa.pub) >> ~/.ssh/authorized_keys"`
 
 ### Désactivation de la Demande de Mot de Passe sur le Client Windows
 1. Ouvrez le fichier `C:\ProgramData\ssh\sshd_config` et commentez la ligne suivante :<br>
