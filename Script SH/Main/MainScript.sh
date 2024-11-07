@@ -68,26 +68,26 @@ while true; do
                                     ssh -t $user1 "$Exe_script_User"
                                     ;;                                
                                 2)         #gestions groupes (code a modifier)
-                                    scp ~/script_action/GroupControl.sh $user1:~
+                                    scp ~/script_action/GroupControl.sh $user1:/tmp
                                     ssh -t $user1 "$Exe_script_Group"
                                     ;; 
                                 3)          #gestions système
-                                    scp ~/script_action/GestionDuSysteme.sh $user1:~
+                                    scp ~/script_action/GestionDuSysteme.sh $user1:/tmp
                                     ssh -t $user1 "$Exe_script_System"
                                     ;; 
                                 4)          #gestions Répertoires
-                                    scp ~/script_action/GestionDesRepertoires.sh $user1:~
+                                    scp ~/script_action/GestionDesRepertoires.sh $user1:/tmp
                                     ssh -t $user1 "$Exe_script_Repertoire"
                                     ;; 
                                 5)          #Prise en main CLI
                                     ssh -t $user1
                                     ;;
                                 6)          #gestions logiciel 
-                                    scp ~/script_action/GestionLogiciel.sh $user1:~
+                                    scp ~/script_action/GestionLogiciel.sh $user1:/tmp
                                     ssh -t $user1 "$Exe_script_Logiciel"
                                     ;;
                                 7)          #gestions Parefeu
-                                    scp ~/script_action/GestionParefeu.sh $user1:~
+                                    scp ~/script_action/GestionParefeu.sh $user1:/tmp
                                     ssh -t $user1 "$Exe_script_Parefeu"
                                     ;;                                                                          
                                 8)          #sortie  
@@ -116,13 +116,13 @@ while true; do
 
                        case $information in
                         1)    #Informations Utilisateur
-                            scp ~/script_information/InfoUtilisateur.sh $user1:~
+                            scp ~/script_information/InfoUtilisateur.sh $user1:/tmp
                             ssh -t $user1 "$Exe_script_InfoUser"
                         2)    #Information Systeme Software
-                            scp ~/script_information/InfoDuSystemeSoftware.sh $user1:~
+                            scp ~/script_information/InfoDuSystemeSoftware.sh $user1:/tmp
                             ssh -t $user1 "$Exe_script_InfoSoftware"
                         3)    #Information Système Hardware
-                            scp ~/script_information/InfoDuSystemeHardware.sh $user1:~
+                            scp ~/script_information/InfoDuSystemeHardware.sh $user1:/tmp
                             ssh -t $user1 "$Exe_script_InfoHardware"
                             ;; 
                         4)    #sortie  
