@@ -190,14 +190,12 @@
 - **Description** : Cette information montre la date et l'heure de la dernière connexion d'un utilisateur sur le système. Cela permet de savoir quand un utilisateur s'est connecté pour la dernière fois.
   
   - **Linux (Ubuntu/Debian)** :  
-    Commande à mettre :  
-    _(Espace pour la commande à ajouter)_
+    `commande à mettre`
   
   - **Windows** :  
-    Commande à mettre :  
-    _(Espace pour la commande à ajouter)_
+    `commande à mettre`
 
-  _(Espace pour une capture d’écran de l'information affichée)_
+- **Illustration** : *(Espace pour capture d’écran montrant la date et l'heure de la dernière connexion de l'utilisateur)*
 
 ---
 
@@ -205,14 +203,12 @@
 - **Description** : Cette information permet de connaître la dernière fois qu'un utilisateur a modifié son mot de passe.
   
   - **Linux (Ubuntu/Debian)** :  
-    Commande à mettre :  
-    _(Espace pour la commande à ajouter)_
+    `commande à mettre`
   
   - **Windows** :  
-    Commande à mettre :  
-    _(Espace pour la commande à ajouter)_
+    `commande à mettre`
 
-  _(Espace pour une capture d’écran de l'information affichée)_
+- **Illustration** : *(Espace pour capture d’écran montrant la dernière modification du mot de passe de l'utilisateur)*
 
 ---
 
@@ -220,14 +216,12 @@
 - **Description** : Affiche toutes les sessions actuellement ouvertes par un utilisateur donné.
   
   - **Linux (Ubuntu/Debian)** :  
-    Commande à mettre :  
-    _(Espace pour la commande à ajouter)_
+    `commande à mettre`
   
   - **Windows** :  
-    Commande à mettre :  
-    _(Espace pour la commande à ajouter)_
+    `commande à mettre`
 
-  _(Espace pour une capture d’écran de l'information affichée)_
+- **Illustration** : *(Espace pour capture d’écran montrant les sessions ouvertes par l'utilisateur)*
 
 ---
 
@@ -235,14 +229,12 @@
 - **Description** : Indique à quels groupes appartient un utilisateur donné.
   
   - **Linux (Ubuntu/Debian)** :  
-    Commande à mettre :  
-    _(Espace pour la commande à ajouter)_
+    `commande à mettre`
   
   - **Windows** :  
-    Commande à mettre :  
-    _(Espace pour la commande à ajouter)_
+    `commande à mettre`
 
-  _(Espace pour une capture d’écran de l'information affichée)_
+- **Illustration** : *(Espace pour capture d’écran montrant les groupes auxquels l'utilisateur appartient)*
 
 ---
 
@@ -250,14 +242,12 @@
 - **Description** : Affiche un historique des commandes exécutées par un utilisateur dans le terminal.
   
   - **Linux (Ubuntu/Debian)** :  
-    Commande à mettre :  
-    _(Espace pour la commande à ajouter)_
+    `commande à mettre`
   
   - **Windows** :  
-    Commande à mettre :  
-    _(Espace pour la commande à ajouter)_
+    `commande à mettre`
 
-  _(Espace pour une capture d’écran de l'information affichée)_
+- **Illustration** : *(Espace pour capture d’écran montrant l'historique des commandes de l'utilisateur)*
 
 ---
 
@@ -265,14 +255,12 @@
 - **Description** : Permet de voir les permissions d'un utilisateur sur un dossier spécifique.
   
   - **Linux (Ubuntu/Debian)** :  
-    Commande à mettre :  
-    _(Espace pour la commande à ajouter)_
+    `commande à mettre`
   
   - **Windows** :  
-    Commande à mettre :  
-    _(Espace pour la commande à ajouter)_
+    `commande à mettre`
 
-  _(Espace pour une capture d’écran de l'information affichée)_
+- **Illustration** : *(Espace pour capture d’écran montrant les permissions de l'utilisateur sur un dossier)*
 
 ---
 
@@ -280,14 +268,12 @@
 - **Description** : Affiche les permissions d'un utilisateur sur un fichier donné.
   
   - **Linux (Ubuntu/Debian)** :  
-    Commande à mettre :  
-    _(Espace pour la commande à ajouter)_
+    `commande à mettre`
   
   - **Windows** :  
-    Commande à mettre :  
-    _(Espace pour la commande à ajouter)_
+    `commande à mettre`
 
-  _(Espace pour une capture d’écran de l'information affichée)_
+- **Illustration** : *(Espace pour capture d’écran montrant les permissions de l'utilisateur sur un fichier)*
 
 ---
 
@@ -297,14 +283,12 @@
 - **Description** : Affiche la version du système d'exploitation en cours d'exécution.
   
   - **Linux (Ubuntu/Debian)** :  
-    Commande à mettre :  
-    _(Espace pour la commande à ajouter)_
+    `commande à mettre`
   
   - **Windows** :  
-    Commande à mettre :  
-    _(Espace pour la commande à ajouter)_
+    `commande à mettre`
 
-  _(Espace pour une capture d’écran de l'information affichée)_
+- **Illustration** : *(Espace pour capture d’écran montrant la version de l'OS)*
 
 ---
 
@@ -312,14 +296,12 @@
 - **Description** : Affiche le nombre de disques physiques présents sur le système.
   
   - **Linux (Ubuntu/Debian)** :  
-    Commande à mettre :  
-    _(Espace pour la commande à ajouter)_
+    `commande à mettre`
   
   - **Windows** :  
-    Commande à mettre :  
-    _(Espace pour la commande à ajouter)_
+    `commande à mettre`
 
-  _(Espace pour une capture d’écran de l'information affichée)_
+- **Illustration** : *(Espace pour capture d’écran montrant le nombre de disques présents)*
 
 ---
 
@@ -327,14 +309,12 @@
 - **Description** : Affiche les partitions d'un disque avec leur nom, type de système de fichiers et leur taille.
   
   - **Linux (Ubuntu/Debian)** :  
-    Commande à mettre :  
-    _(Espace pour la commande à ajouter)_
+    `commande à mettre`
   
   - **Windows** :  
-    Commande à mettre :  
-    _(Espace pour la commande à ajouter)_
+    `commande à mettre`
 
-  _(Espace pour une capture d’écran de l'information affichée)_
+- **Illustration** : *(Espace pour capture d’écran montrant les partitions d'un disque avec leurs détails)*
 
 ---
 
@@ -342,14 +322,12 @@
 - **Description** : Affiche toutes les applications ou paquets installés sur le système.
   
   - **Linux (Ubuntu/Debian)** :  
-    Commande à mettre :  
-    _(Espace pour la commande à ajouter)_
+    `commande à mettre`
   
   - **Windows** :  
-    Commande à mettre :  
-    _(Espace pour la commande à ajouter)_
+    `commande à mettre`
 
-  _(Espace pour une capture d’écran de l'information affichée)_
+- **Illustration** : *(Espace pour capture d’écran montrant les applications ou paquets installés)*
 
 ---
 
@@ -357,14 +335,12 @@
 - **Description** : Affiche tous les services actuellement en cours d'exécution sur l'ordinateur.
   
   - **Linux (Ubuntu/Debian)** :  
-    Commande à mettre :  
-    _(Espace pour la commande à ajouter)_
+    `commande à mettre`
   
   - **Windows** :  
-    Commande à mettre :  
-    _(Espace pour la commande à ajouter)_
+    `commande à mettre`
 
-  _(Espace pour une capture d’écran de l'information affichée)_
+- **Illustration** : *(Espace pour capture d’écran montrant les services en cours d'exécution sur le système)*
 
 ---
 
@@ -372,14 +348,12 @@
 - **Description** : Affiche tous les utilisateurs locaux sur l'ordinateur.
   
   - **Linux (Ubuntu/Debian)** :  
-    Commande à mettre :  
-    _(Espace pour la commande à ajouter)_
+    `commande à mettre`
   
   - **Windows** :  
-    Commande à mettre :  
-    _(Espace pour la commande à ajouter)_
+    `commande à mettre`
 
-  _(Espace pour une capture d’écran de l'information affichée)_
+- **Illustration** : *(Espace pour capture d’écran montrant la liste des utilisateurs locaux)*
 
 ---
 
@@ -387,14 +361,12 @@
 - **Description** : Donne des informations sur le processeur de l'ordinateur, notamment le type et le nombre de cœurs.
   
   - **Linux (Ubuntu/Debian)** :  
-    Commande à mettre :  
-    _(Espace pour la commande à ajouter)_
+    `commande à mettre`
   
   - **Windows** :  
-    Commande à mettre :  
-    _(Espace pour la commande à ajouter)_
+    `commande à mettre`
 
-  _(Espace pour une capture d’écran de l'information affichée)_
+- **Illustration** : *(Espace pour capture d’écran montrant les détails du CPU, nombre de cœurs, etc.)*
 
 ---
 
@@ -402,14 +374,12 @@
 - **Description** : Affiche la quantité totale de mémoire RAM sur l'ordinateur.
   
   - **Linux (Ubuntu/Debian)** :  
-    Commande à mettre :  
-    _(Espace pour la commande à ajouter)_
+    `commande à mettre`
   
   - **Windows** :  
-    Commande à mettre :  
-    _(Espace pour la commande à ajouter)_
+    `commande à mettre`
 
-  _(Espace pour une capture d’écran de l'information affichée)_
+- **Illustration** : *(Espace pour capture d’écran montrant la quantité totale de RAM)*
 
 ---
 
@@ -417,14 +387,12 @@
 - **Description** : Affiche l'utilisation actuelle de la mémoire RAM.
   
   - **Linux (Ubuntu/Debian)** :  
-    Commande à mettre :  
-    _(Espace pour la commande à ajouter)_
+    `commande à mettre`
   
   - **Windows** :  
-    Commande à mettre :  
-    _(Espace pour la commande à ajouter)_
+    `commande à mettre`
 
-  _(Espace pour une capture d’écran de l'information affichée)_
+- **Illustration** : *(Espace pour capture d’écran montrant l'utilisation de la mémoire RAM)*
 
 ---
 
@@ -432,14 +400,12 @@
 - **Description** : Affiche l'utilisation actuelle du disque, y compris l'espace libre et utilisé.
   
   - **Linux (Ubuntu/Debian)** :  
-    Commande à mettre :  
-    _(Espace pour la commande à ajouter)_
+    `commande à mettre`
   
   - **Windows** :  
-    Commande à mettre :  
-    _(Espace pour la commande à ajouter)_
+    `commande à mettre`
 
-  _(Espace pour une capture d’écran de l'information affichée)_
+- **Illustration** : *(Espace pour capture d’écran montrant l'utilisation du disque et l'espace disponible)*
 
 
 ---
