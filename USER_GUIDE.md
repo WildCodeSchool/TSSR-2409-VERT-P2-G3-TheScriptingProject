@@ -169,6 +169,21 @@
 
 ---
 
+### 2.5 Modification de répertoire
+- **Description** : Modification de répertoire (dossier).
+- **Système** : Linux, Windows
+- **Exemples de commandes** :
+
+  - **Linux (Ubuntu/Debian)** :  
+    `commande à mettre`
+
+  - **Windows** :  
+    `commande à mettre`
+
+- **Illustration** : *(espace pour capture d’écran de la modification de répertoire)*
+  
+---
+
 ### 2.6 Suppression de répertoire
 - **Description** : Supprimer un répertoire (dossier).
 - **Système** : Linux, Windows
@@ -181,6 +196,112 @@
     `commande à mettre`
 
 - **Illustration** : *(espace pour capture d’écran de la suppression)*
+
+
+---
+
+### 2.7 Prise de main à distance (CLI)
+- **Description** : Prendre le contrôle d'une machine distante via la ligne de commande (CLI).
+- **Système** : Linux, Windows
+- **Exemples de commandes** :
+
+  - **Linux (Ubuntu/Debian)** :  
+    `commande à mettre`
+
+  - **Windows** :  
+    `commande à mettre` 
+
+- **Illustration** : *(espace pour capture d’écran de connexion distante)*
+
+---
+
+### 2.8 Définition de règles de pare-feu
+- **Description** : Configurer des règles de pare-feu pour autoriser ou bloquer des connexions réseau.
+- **Système** : Linux, Windows
+- **Exemples de commandes** :
+
+  - **Linux (Ubuntu/Debian)** :  
+    `commande à mettre` 
+
+  - **Windows** :  
+    `commande à mettre`
+
+- **Illustration** : *(espace pour capture d’écran de configuration du pare-feu)*
+
+---
+
+### 2.9 Activation du pare-feu
+- **Description** : Activer le pare-feu pour protéger la machine des connexions non autorisées.
+- **Système** : Linux, Windows
+- **Exemples de commandes** :
+
+  - **Linux (Ubuntu/Debian)** :  
+    `commande à mettre`
+
+  - **Windows** :  
+    `commande à mettre`
+
+- **Illustration** : *(espace pour capture d’écran de l'activation du pare-feu)*
+
+---
+
+### 2.10 Désactivation du pare-feu
+- **Description** : Désactiver temporairement le pare-feu pour des tests ou diagnostics.
+- **Système** : Linux, Windows
+- **Exemples de commandes** :
+
+  - **Linux (Ubuntu/Debian)** :  
+    `commande à mettre`
+
+  - **Windows** :  
+    `commande à mettre`
+
+- **Illustration** : *(espace pour capture d’écran de la désactivation du pare-feu)*
+
+---
+
+### 2.11 Installation de logiciel
+- **Description** : Installer un logiciel ou une application sur la machine.
+- **Système** : Linux, Windows
+- **Exemples de commandes** :
+
+  - **Linux (Ubuntu/Debian)** :  
+    `commande à mettre`
+
+  - **Windows** :  
+    `commande à mettre` 
+
+- **Illustration** : *(espace pour capture d’écran de l'installation d'un logiciel)*
+
+---
+
+### 2.12 Désinstallation de logiciel
+- **Description** : Désinstaller un logiciel ou une application de la machine.
+- **Système** : Linux, Windows
+- **Exemples de commandes** :
+
+  - **Linux (Ubuntu/Debian)** :  
+    `commande à mettre`
+
+  - **Windows** :  
+    `commande à mettre` 
+
+- **Illustration** : *(espace pour capture d’écran de la désinstallation d'un logiciel)*
+
+---
+
+### 2.13 Exécution de script sur la machine distante
+- **Description** : Lancer un script ou une commande spécifique sur une machine distante.
+- **Système** : Linux, Windows
+- **Exemples de commandes** :
+
+  - **Linux (Ubuntu/Debian)** :  
+    `commande à mettre`
+
+  - **Windows** :  
+    `commande à mettre` 
+
+- **Illustration** : *(espace pour capture d’écran de l'exécution du script à distance)*
 
 ---
 
