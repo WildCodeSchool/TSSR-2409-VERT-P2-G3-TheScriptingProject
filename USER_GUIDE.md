@@ -407,7 +407,19 @@
 
 - **Illustration** : *(Espace pour capture d’écran montrant l'utilisation du disque et l'espace disponible)*
 
+---
 
+## 11. Utilisation du processeur
+- **Description** : Affiche l'utilisation actuelle du processeur.
+  
+  - **Linux (Ubuntu/Debian)** :  
+    `commande à mettre`
+  
+  - **Windows** :  
+    `commande à mettre`
+
+- **Illustration** : *(Espace pour capture d’écran montrant l'utilisation du processeur)*
+  
 ---
 
 ## 4. Recherche d'événements dans le fichier log
