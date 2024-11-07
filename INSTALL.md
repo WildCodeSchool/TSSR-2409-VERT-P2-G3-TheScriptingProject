@@ -91,7 +91,7 @@ Démarrez la VM avec l’ISO de Windows Server 2022 et suivez les étapes d’in
 ### Configuration des IPs sous Debian et Ubuntu
 1. **Ouvrir le fichier de configuration réseau :**
 
-   `sudo nano /etc/network/interfaces`
+`sudo nano /etc/network/interfaces`
 
 Modifier les paramètres IP en ajoutant :
 
