@@ -152,7 +152,7 @@
 
 
 
-- **Windows** : *(espace pour capture d’écran)*
+- **Windows** : 
 
 ![MENU-GESTION-PAREFEU1](https://github.com/user-attachments/assets/6b59dd62-e7e5-4f45-b926-d45c44632167)
 
@@ -166,7 +166,7 @@
 
 
 
-- **Windows** : *(espace pour capture d’écran)*
+- **Windows** : 
 
 ![MENU-GESTION-PAREFEU1](https://github.com/user-attachments/assets/6b59dd62-e7e5-4f45-b926-d45c44632167)<br>
 ![ACTIVE-FIREWALL](https://github.com/user-attachments/assets/cff3ed09-f99c-4497-8c15-690f5dc17faa)
