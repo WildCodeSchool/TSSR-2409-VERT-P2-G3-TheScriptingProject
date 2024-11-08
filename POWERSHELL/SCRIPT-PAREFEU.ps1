@@ -11,8 +11,7 @@ function Menu-ReglesPareFeu {
         Write-Host "[1] " -ForegroundColor $YELLOW -NoNewline; Write-Host "Ajouter une règle" -f $NC
         Write-Host "[2] " -ForegroundColor $YELLOW -NoNewline; Write-Host "Supprimer une règle" -f $NC
         Write-Host "[3] " -ForegroundColor $YELLOW -NoNewline; Write-Host "Afficher les règles actuelles" -f $NC
-        Write-Host "[4] " -ForegroundColor $YELLOW -NoNewline; Write-Host "Retour au menu principal" -f $NC
-        Write-Host "[x] " -ForegroundColor $RED -NoNewline; Write-Host "Quitter`n" -f $NC
+        Write-Host "[4] " -ForegroundColor $YELLOW -NoNewline; Write-Host "Retour au menu principal`n" -f $NC
         $choix_regles = Read-Host "Veuillez choisir une option "
 
         switch ($choix_regles) {
@@ -52,10 +51,6 @@ function Menu-ReglesPareFeu {
                 return 
             }
 
-            # Quitte le script
-            "x" {
-                Write-Host "Exit" -f $YELLOW
-                exit
             }
 
             # Inique si erreur de saisie et relance le script
@@ -72,8 +67,7 @@ while ($true) {
     Write-Host "[1] " -ForegroundColor $YELLOW -NoNewline; Write-Host "Définir les règles de pare-feu" -f $NC
     Write-Host "[2] " -ForegroundColor $YELLOW -NoNewline; Write-Host "Activer le pare-feu" -f $NC
     Write-Host "[3] " -ForegroundColor $YELLOW -NoNewline; Write-Host "Désactiver le pare-feu" -f $NC
-    Write-Host "[4] " -ForegroundColor $YELLOW -NoNewline; Write-Host "Retour au menu principal" -f $NC
-    Write-Host "[x] " -ForegroundColor $RED -NoNewline; Write-Host "Quitter`n" -f $NC
+    Write-Host "[4] " -ForegroundColor $YELLOW -NoNewline; Write-Host "Retour au menu principal`n" -f $NC
     $choix = Read-Host "Veuillez choisir une option "
 
     switch ($choix) {
@@ -115,12 +109,6 @@ while ($true) {
         "4" {
             break
             }
-
-        # Quitte le script
-        "x" {
-            Write-Host "Exit" -f $YELLOW
-            exit
-        }
 
         # Inique si erreur de saisie et relance le script
         default {
