@@ -168,7 +168,7 @@
 
 - **Windows** : *(espace pour capture d’écran)*
 
-![MENU-GESTION-PAREFEU1](https://github.com/user-attachments/assets/6b59dd62-e7e5-4f45-b926-d45c44632167)
+![MENU-GESTION-PAREFEU1](https://github.com/user-attachments/assets/6b59dd62-e7e5-4f45-b926-d45c44632167)<br>
 ![ACTIVE-FIREWALL](https://github.com/user-attachments/assets/cff3ed09-f99c-4497-8c15-690f5dc17faa)
 
 
@@ -185,7 +185,7 @@
 
 - **Windows** : 
 
-![MENU-GESTION-PAREFEU1](https://github.com/user-attachments/assets/6b59dd62-e7e5-4f45-b926-d45c44632167)
+![MENU-GESTION-PAREFEU1](https://github.com/user-attachments/assets/6b59dd62-e7e5-4f45-b926-d45c44632167)<br>
 ![DESACTIVE FIREWALL](https://github.com/user-attachments/assets/74ad8b47-084a-43f6-85eb-541ac37be250)
 
 
