@@ -12,8 +12,7 @@ while ($true) {
     Write-Host "[3] " -f $YELLOW -nonewline; Write-Host "Utilisation de la RAM" -f $NC
     Write-Host "[4] " -f $YELLOW -nonewline; Write-Host "Utilisation du disque" -f $NC
     Write-Host "[5] " -f $YELLOW -nonewline; Write-Host "Utilisation du processeur " -f $NC
-    Write-Host "[6] " -f $YELLOW -nonewline; Write-Host "Retour au menu principal" -f $NC
-    Write-Host "[x] " -f $RED -nonewline; Write-Host "Quitter`n" -f $NC
+    Write-Host "[6] " -f $YELLOW -nonewline; Write-Host "Retour au menu principal`n" -f $NC
     $choix = Read-Host "Veuillez choisir une option  "
     
     # Switch pour faire un bloc avec les choix correspondants au menu 
@@ -63,13 +62,7 @@ while ($true) {
         "6" {
             break
             }
-
-        # Quitter le script
-        "x" {
-            Write-Host "Exit" -f $YELLOW
-            exit
-            }
-
+            
         # Inique si erreur de saisie et relance le script
         default {
             Write-Host "[Erreur]! Option invalide, veuillez réessayer !`n" -f $RED
