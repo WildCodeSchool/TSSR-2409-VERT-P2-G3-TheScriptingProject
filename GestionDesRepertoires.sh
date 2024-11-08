@@ -2,25 +2,24 @@
 
 # MODULE GESTION DES REPERTOIRES
 
-#couleur
-
+#Définir les couleurs des variables
 RED='\033[0;31m'
 GREEN='\033[0;32m'
 YELLOW='\033[0;33m'
+CYAN='\033[0;36m'
 NC='\033[0m' # Aucune couleur
-
-
+5
 function dirCreation()
 {
     cheminActuel=$PWD
     userChoiceDirLocation="" # la variable qui stocke le choix d'emplacement de l'utilisateur
-    echo -e " ${GREEN}<< CREER UN REPERTOIRE >>${NC} \n \n Souhaitez-vous créer votre dossier dans le répertoire courant ($cheminActuel) ou dans un autre emplacemcent? \n Choisir le chiffre correspondant à l'option: \n \n ${RED}[1]${NC} Emplacement actuel \n ${RED}[2]${NC} Autre emplacement \n ${RED}[x]${NC} Retour au menu précédent \n"
+    echo -e " ${GREEN}\n<< CREER UN REPERTOIRE >>${NC} \n \n Souhaitez-vous créer votre dossier dans le répertoire courant ($cheminActuel) ou dans un autre emplacemcent? \n \n ${CYAN}[1]${NC} Emplacement actuel \n ${CYAN}[2]${NC} Autre emplacement \n ${CYAN}[3]${NC} Retour au menu précédent \n \n ${GREEN}Choisir le chiffre correspondant à l'option: ${NC}"
 
 
 
     read userChoiceDirLocation
 
-    while [[ $userChoiceDirLocation != "x" ]]; do
+    while [[ $userChoiceDirLocation != "3" ]]; do
 
 
         if [[ $userChoiceDirLocation == 1 ]]; then
@@ -65,7 +64,7 @@ function dirCreation()
         fi
 
         # Relecture ici pour relancer la boucle
-        echo -e " ${GREEN}<< CREER UN REPERTOIRE >>${NC} \n \n Souhaitez-vous créer votre dossier dans le répertoire courant ($cheminActuel) ou dans un autre emplacemcent? \n Choisir le chiffre correspondant à l'option: \n \n ${RED}[1]${NC} Emplacement actuel \n ${RED}[2]${NC} Autre emplacement \n ${RED}[x]${NC} Retour au menu précédent \n"
+        echo -e " ${GREEN}\n<< CREER UN REPERTOIRE >>${NC} \n \n Souhaitez-vous créer votre dossier dans le répertoire courant ($cheminActuel) ou dans un autre emplacemcent? \n \n ${CYAN}[1]${NC} Emplacement actuel \n ${CYAN}[2]${NC} Autre emplacement \n ${CYAN}[3]${NC} Retour au menu précédent \n \n ${GREEN}Choisir le chiffre correspondant à l'option: ${NC}"
 
         read userChoiceDirLocation
 
@@ -129,9 +128,9 @@ function dirDeletion()
 
 userChoiceDir=""
 
-while [[ $userChoiceDir != "x" ]]; do
+while [[ $userChoiceDir != "4" ]]; do
 
-    echo -e "\n ${GREEN}------GESTION DES REPERTOIRES------${NC} \n \n Choisir le chiffre correspondant à l'option: \n \n ${RED}[1]${NC} Création de répertoire \n ${RED}[2]${NC} Modification de répertoire \n ${RED}[3]${NC} Suppression de répertoire \n ${RED}[x]${NC} Retour au menu précédent" 
+    echo -e "\n ${GREEN}------GESTION DES REPERTOIRES------${NC} \n \n ${CYAN}[1]${NC} Création de répertoire \n ${CYAN}[2]${NC} Modification de répertoire \n ${CYAN}[3]${NC} Suppression de répertoire \n ${CYAN}[4]${NC} Retour au menu précédent \n \n ${GREEN}Veuillez choisir une option:${NC}" 
     read userChoiceDir
 
     case "$userChoiceDir" in 
@@ -145,7 +144,7 @@ while [[ $userChoiceDir != "x" ]]; do
         3)
             dirDeletion
             ;;
-        x)
+        4)
             echo "Retour dans le menu précédent"
             ;;
         *)
@@ -153,3 +152,4 @@ while [[ $userChoiceDir != "x" ]]; do
             ;;
     esac
 done
+
