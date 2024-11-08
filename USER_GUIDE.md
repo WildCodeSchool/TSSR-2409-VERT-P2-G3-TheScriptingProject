@@ -148,9 +148,13 @@
 - **Description** : Configurer des règles de pare-feu pour autoriser ou bloquer des connexions réseau.
 - **Système** : Linux, Windows
 
-- **Illustration** : *(espace pour capture d’écran de configuration du pare-feu)*
+- **Ubuntu/Debian** :
+
+
 
 - **Windows** : *(espace pour capture d’écran)*
+
+![MENU-GESTION-PAREFEU1](https://github.com/user-attachments/assets/6b59dd62-e7e5-4f45-b926-d45c44632167)
 
 ---
 
@@ -158,9 +162,15 @@
 - **Description** : Activer le pare-feu pour protéger la machine des connexions non autorisées.
 - **Système** : Linux, Windows
 
-- **Illustration** : *(espace pour capture d’écran de l'activation du pare-feu)*
+- **Ubuntu/Debian** :
+
+
 
 - **Windows** : *(espace pour capture d’écran)*
+
+![MENU-GESTION-PAREFEU1](https://github.com/user-attachments/assets/6b59dd62-e7e5-4f45-b926-d45c44632167)
+![ACTIVE-FIREWALL](https://github.com/user-attachments/assets/cff3ed09-f99c-4497-8c15-690f5dc17faa)
+
 
 ---
 
@@ -168,9 +178,16 @@
 - **Description** : Désactiver temporairement le pare-feu pour des tests ou diagnostics.
 - **Système** : Linux, Windows
 
-- **Illustration** : *(espace pour capture d’écran de la désactivation du pare-feu)*
+- **Ubuntu/Debian** :
 
-- **Windows** : *(espace pour capture d’écran)*
+
+
+
+- **Windows** : 
+
+![MENU-GESTION-PAREFEU1](https://github.com/user-attachments/assets/6b59dd62-e7e5-4f45-b926-d45c44632167)
+![DESACTIVE FIREWALL](https://github.com/user-attachments/assets/74ad8b47-084a-43f6-85eb-541ac37be250)
+
 
 ---
 
@@ -351,7 +368,8 @@
 
 - **Windows** :
 
-![MENU-INFO-SYSTEME1](https://github.com/user-attachments/assets/f8181b9f-d237-42ef-9044-45880226bd71)
+![MENU-INFO-SYSTEME1](https://github.com/user-attachments/assets/f8181b9f-d237-42ef-9044-45880226bd71)<br>
+![CPU1](https://github.com/user-attachments/assets/3c6236af-c07b-42d1-ba6c-8c7c2491e513)
 
 
 ---
