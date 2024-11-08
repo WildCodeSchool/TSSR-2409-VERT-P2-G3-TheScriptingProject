@@ -367,7 +367,7 @@
 
 - **Windows** :
 
-![MENU-INFO-SYSTEME1](https://github.com/user-attachments/assets/6481f20f-1dc4-4232-bc0c-09adb7e535ae)
+![MENU-INFO-SYSTEME1](https://github.com/user-attachments/assets/6481f20f-1dc4-4232-bc0c-09adb7e535ae)<br>
 ![RAM1](https://github.com/user-attachments/assets/9b3c9076-ae0e-4835-b0ab-be4471939de0)
 
 
@@ -382,7 +382,7 @@
 
 - **Windows** :
 
-![MENU-INFO-SYSTEME1](https://github.com/user-attachments/assets/6481f20f-1dc4-4232-bc0c-09adb7e535ae)
+![MENU-INFO-SYSTEME1](https://github.com/user-attachments/assets/6481f20f-1dc4-4232-bc0c-09adb7e535ae)<br>
 ![USE-RAM1](https://github.com/user-attachments/assets/ab7790b4-489a-4b2b-9087-5dcf7e491608)
 
 
@@ -399,7 +399,7 @@
 
 - **Windows** :
 
-![MENU-INFO-SYSTEME1](https://github.com/user-attachments/assets/6481f20f-1dc4-4232-bc0c-09adb7e535ae)
+![MENU-INFO-SYSTEME1](https://github.com/user-attachments/assets/6481f20f-1dc4-4232-bc0c-09adb7e535ae)<br>
 ![USE-DISK1](https://github.com/user-attachments/assets/b274d21e-2d4c-4d07-9362-764ff8ae297d)
 
 
