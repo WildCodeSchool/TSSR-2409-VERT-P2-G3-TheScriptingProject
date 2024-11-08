@@ -349,7 +349,10 @@
 
 ![MENU-INFO-SYSTEME](https://github.com/user-attachments/assets/868377df-f7f0-4107-92f4-1d161aede583)
 
-- **Windows** : *(Espace pour capture d’écran montrant l'utilisation du disque et l'espace disponible)*
+- **Windows** :
+
+![MENU-INFO-SYSTEME1](https://github.com/user-attachments/assets/f8181b9f-d237-42ef-9044-45880226bd71)
+
 
 ---
 
@@ -362,7 +365,10 @@
 ![MEMORY-RAM](https://github.com/user-attachments/assets/f7a90a03-608b-4664-a11a-cd92c6fc04e1)
 
 
-- **Windows** : *(Espace pour capture d’écran montrant l'utilisation du disque et l'espace disponible)*
+- **Windows** :
+
+![MENU-INFO-SYSTEME1](https://github.com/user-attachments/assets/6481f20f-1dc4-4232-bc0c-09adb7e535ae)
+
 
 ---
 
@@ -373,7 +379,9 @@
   
 ![MENU-INFO-SYSTEME](https://github.com/user-attachments/assets/3cfa1bcf-904c-422b-8ebd-27bf9042d4d9)
 
-- **Windows** : *(Espace pour capture d’écran montrant l'utilisation du disque et l'espace disponible)*
+- **Windows** :
+
+![MENU-INFO-SYSTEME1](https://github.com/user-attachments/assets/6481f20f-1dc4-4232-bc0c-09adb7e535ae)
 
 ---
 
@@ -386,7 +394,9 @@
 ![USE-DISK](https://github.com/user-attachments/assets/fd2b05f1-ee67-4861-b2b1-b4a68d41b1cb)
 
 
-- **Windows** : *(Espace pour capture d’écran montrant l'utilisation du disque et l'espace disponible)*
+- **Windows** :
+
+![MENU-INFO-SYSTEME1](https://github.com/user-attachments/assets/6481f20f-1dc4-4232-bc0c-09adb7e535ae)
 
 ---
 
@@ -397,7 +407,9 @@
   
 ![MENU-INFO-SYSTEME](https://github.com/user-attachments/assets/ec2ba3d7-6a98-4aa4-87b4-94de327ab6db)
 
-- **Windows** : *(Espace pour capture d’écran montrant l'utilisation du processeur)*
+- **Windows** :
+
+![MENU-INFO-SYSTEME1](https://github.com/user-attachments/assets/6481f20f-1dc4-4232-bc0c-09adb7e535ae)
   
 ---
 
