@@ -57,3 +57,10 @@ Ce projet a pour but de créer un script d'automatisation multi-plateformes, cap
 
 - **Services requis** :
   - **SSH Server** activé sur les clients (Windows et Linux) pour les connexions à distance.
+
+ ---
+
+## Liens direct vers la documentation Admin et Utilisateur :
+
+ - [Guide d'installation](https://github.com/WildCodeSchool/TSSR-2409-VERT-P2-G3-TheScriptingProject/blob/main/INSTALL_GUIDE.md)
+ - [Guide utilisateur](https://github.com/WildCodeSchool/TSSR-2409-VERT-P2-G3-TheScriptingProject/blob/main/USER_GUIDE.md)
