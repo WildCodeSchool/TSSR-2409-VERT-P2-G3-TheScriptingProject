@@ -6,19 +6,25 @@
 - **Description** : Créer un nouveau compte utilisateur local sur la machine.
 - **Système** : Linux, Windows
 
-- **Illustration** : *(espace pour capture d’écran du processus)*
+- **Ubuntu/Debian** : 
 
-- **Windows** : *(espace pour capture d’écran)*
+![USER CONTROL](https://github.com/user-attachments/assets/fa43ca1e-bf2f-4903-a9fa-fec8c99dacbc)
 
+
+- **Windows** :
+  
 ---
 
 ### 1.2 Changement de mot de passe
 - **Description** : Modifier le mot de passe d’un utilisateur.
 - **Système** : Linux, Windows
 
-- **Illustration** : *(espace pour capture d’écran du changement de mot de passe)*
+- **Ubuntu/Debian** : 
 
-- **Windows** : *(espace pour capture d’écran)*
+![USER CONTROL](https://github.com/user-attachments/assets/dd344dec-3c72-4e2f-b2c0-ea7d10307392)
+
+
+- **Windows** : 
 
 ---
 
@@ -26,9 +32,12 @@
 - **Description** : Supprimer un utilisateur local du système.
 - **Système** : Linux, Windows
 
-- **Illustration** : *(espace pour capture d’écran de la suppression du compte)*
+- **Ubuntu/Debian** : 
 
-- **Windows** : *(espace pour capture d’écran)*
+![USER CONTROL](https://github.com/user-attachments/assets/0593b0b2-ee50-48af-bf2e-91a9ee4e36ad)
+
+
+- **Windows** :
 
 ---
 
@@ -36,18 +45,21 @@
 - **Description** : Désactiver un compte utilisateur local (empêche la connexion sans le supprimer).
 - **Système** : Linux, Windows
 
-- **Illustration** : *(espace pour capture d’écran de la désactivation)*
+- **Ubuntu/Debian** : 
 
-- **Windows** : *(espace pour capture d’écran)*
+![USER CONTROL](https://github.com/user-attachments/assets/b143e3e2-bb0d-4606-9245-c10dc0351313)
+
+
+- **Windows** : 
 ---
 
 ### 1.5 Ajout à un groupe local
 - **Description** : Ajouter un utilisateur à un groupe local.
 - **Système** : Linux, Windows
 
-- **Illustration** : *(espace pour capture d’écran de l’ajout au groupe)*
+- **Ubuntu/Debian** : 
 
-- **Windows** : *(espace pour capture d’écran)*
+- **Windows** : 
 
 ---
 
@@ -55,9 +67,9 @@
 - **Description** : Retirer un utilisateur d’un groupe local.
 - **Système** : Linux, Windows
 
-- **Illustration** : *(espace pour capture d’écran de la sortie du groupe)*
+- **Ubuntu/Debian** : 
 
-- **Windows** : *(espace pour capture d’écran)*
+- **Windows** : 
 
 ---
 
@@ -67,9 +79,12 @@
 - **Description** : Éteindre l'ordinateur client.
 - **Système** : Linux, Windows
 
-- **Illustration** : *(espace pour capture d’écran de l’arrêt)*
+- **Ubuntu/Debian** : 
 
-- **Windows** : *(espace pour capture d’écran)*
+![SYSTEME](https://github.com/user-attachments/assets/b3ddf92b-263b-40cb-a32a-574087a51765)
+
+
+- **Windows** : 
 
 ---
 
@@ -77,9 +92,12 @@
 - **Description** : Redémarrer l'ordinateur client.
 - **Système** : Linux, Windows
 
-- **Illustration** : *(espace pour capture d’écran du redémarrage)*
+- **Ubuntu/Debian** :
 
-- **Windows** : *(espace pour capture d’écran)*
+![SYSTEME](https://github.com/user-attachments/assets/21b9b68e-3d46-4874-a4b6-561056d32f18)
+
+
+- **Windows** :
 
 ---
 
@@ -87,9 +105,12 @@
 - **Description** : Verrouiller l'ordinateur client (empêche l'accès sans mot de passe).
 - **Système** : Linux, Windows
 
-- **Illustration** : *(espace pour capture d’écran du verrouillage)*
+- **Ubuntu/Debian** : 
 
-- **Windows** : *(espace pour capture d’écran)*
+![SYSTEME](https://github.com/user-attachments/assets/93f1706b-ad17-425a-9b1e-67837f9db8a6)
+
+
+- **Windows** :
 
 ---
 
@@ -97,9 +118,15 @@
 - **Description** : Mettre à jour le système avec les derniers correctifs et paquets.
 - **Système** : Linux, Windows
 
-- **Illustration** : *(espace pour capture d’écran de la mise à jour)*
+- **Ubuntu/Debian** : 
 
-- **Windows** : *(espace pour capture d’écran)*
+![SYSTEME](https://github.com/user-attachments/assets/a09b10d4-5673-4579-8bf1-e5971f6e483d)<br>
+![UPDATE1](https://github.com/user-attachments/assets/de6b08e2-12c8-41d0-b732-34b5488efe36)<br>
+![UPDATE2](https://github.com/user-attachments/assets/e8f8ac3d-9f9c-464a-b32f-76f4def85590)
+
+
+
+- **Windows** :
 
 ---
 
@@ -107,9 +134,9 @@
 - **Description** : Créer un répertoire (dossier) dans le système de fichiers.
 - **Système** : Linux, Windows
   
-- **Illustration** : *(espace pour capture d’écran de la création du répertoire)*
+- **Ubuntu/Debian** : 
 
-- **Windows** : *(espace pour capture d’écran)*
+- **Windows** : 
 
 ---
 
@@ -117,9 +144,9 @@
 - **Description** : Modification de répertoire (dossier).
 - **Système** : Linux, Windows
 
-- **Illustration** : *(espace pour capture d’écran de la modification de répertoire)*
+- **Ubuntu/Debian** : 
 
-- **Windows** : *(espace pour capture d’écran)*
+- **Ubuntu/Debian** :
   
 ---
 
@@ -127,10 +154,9 @@
 - **Description** : Supprimer un répertoire (dossier).
 - **Système** : Linux, Windows
 
-- **Illustration** : *(espace pour capture d’écran de la suppression)*
+- **Ubuntu/Debian** : 
 
-- **Windows** : *(espace pour capture d’écran)*
-
+- **Windows** : 
 
 ---
 
@@ -138,9 +164,9 @@
 - **Description** : Prendre le contrôle d'une machine distante via la ligne de commande (CLI).
 - **Système** : Linux, Windows
 
-- **Illustration** : *(espace pour capture d’écran de connexion distante)*
+- **Ubuntu/Debian** : 
 
-- **Windows** : *(espace pour capture d’écran)*
+- **Windows** : 
 
 ---
 
@@ -149,6 +175,11 @@
 - **Système** : Linux, Windows
 
 - **Ubuntu/Debian** :
+
+![MENU FIREWALL2](https://github.com/user-attachments/assets/d0694d4c-18e8-4288-a020-e784b9376f92)<br>
+![RULE FIREWALL2](https://github.com/user-attachments/assets/4e5ed9c7-3361-494c-a60b-8bb19d1d4320)<br>
+![RULE FIREWALL3](https://github.com/user-attachments/assets/d8d7d026-7ea1-44f5-b98f-fa11863208df)<br>
+![RULE FIREWALL4](https://github.com/user-attachments/assets/c65bb09c-8202-442f-a8c1-b7fc632f30a3)
 
 
 
@@ -165,6 +196,8 @@
 
 - **Ubuntu/Debian** :
 
+![MENU FIREWALL](https://github.com/user-attachments/assets/21ccb3c5-e6d9-4c51-b169-3af224380f91)<br>
+![ENABLE FIREWALL](https://github.com/user-attachments/assets/776eb008-020d-4506-a1f2-245ec982d2cb)
 
 
 - **Windows** : 
@@ -181,6 +214,8 @@
 
 - **Ubuntu/Debian** :
 
+![MENU FIREWALL](https://github.com/user-attachments/assets/8f768db8-15ec-44d1-b1e2-d841735cc430)<br>
+![DISABLE FIREWALL](https://github.com/user-attachments/assets/ea1aa253-b6eb-486a-a418-8cfbb0fb4211)
 
 
 
@@ -233,9 +268,9 @@
 - **Description** : Lancer un script ou une commande spécifique sur une machine distante.
 - **Système** : Linux, Windows
 
-- **Illustration** : *(espace pour capture d’écran de l'exécution du script à distance)*
+- **Ubuntu/Debian** : 
 
-- **Windows** : *(espace pour capture d’écran)*
+- **Windows** : 
 
 ---
 
@@ -244,63 +279,61 @@
 ## 1. Date de dernière connexion d’un utilisateur
 - **Description** : Cette information montre la date et l'heure de la dernière connexion d'un utilisateur sur le système. Cela permet de savoir quand un utilisateur s'est connecté pour la dernière fois.
 
-- **Illustration** : *(Espace pour capture d’écran montrant la date et l'heure de la dernière connexion de l'utilisateur)*
+- **Ubuntu/Debian** : 
 
-- **Windows** : *(espace pour capture d’écran)*
+- **Windows** : 
 
 ---
 
 ## 2. Date de dernière modification du mot de passe
 - **Description** : Cette information permet de connaître la dernière fois qu'un utilisateur a modifié son mot de passe.
 
-- **Illustration** : *(Espace pour capture d’écran montrant la dernière modification du mot de passe de l'utilisateur)*
+- **Ubuntu/Debian** : 
 
-- **Windows** : *(espace pour capture d’écran)*
-
+- **Windows** : 
 ---
 
 ## 3. Liste des sessions ouvertes par l'utilisateur
 - **Description** : Affiche toutes les sessions actuellement ouvertes par un utilisateur donné.
   
-- **Illustration** : *(Espace pour capture d’écran montrant les sessions ouvertes par l'utilisateur)*
+- **Ubuntu/Debian** :
 
-- **Windows** : *(espace pour capture d’écran)*
+- **Windows** :
 
 ---
 
 ## 4. Groupe d’appartenance d’un utilisateur
 - **Description** : Indique à quels groupes appartient un utilisateur donné.
   
-- **Illustration** : *(Espace pour capture d’écran montrant les groupes auxquels l'utilisateur appartient)*
+- **Ubuntu/Debian** : 
 
-- **Windows** : *(espace pour capture d’écran)*
-
+- **Windows** : 
 ---
 
 ## 5. Historique des commandes exécutées par l'utilisateur
 - **Description** : Affiche un historique des commandes exécutées par un utilisateur dans le terminal.
   
-- **Illustration** : *(Espace pour capture d’écran montrant l'historique des commandes de l'utilisateur)*
+- **Ubuntu/Debian** : 
 
-- **Windows** : *(espace pour capture d’écran)*
+- **Windows** :
 
 ---
 
 ## 6. Droits/permissions de l’utilisateur sur un dossier
 - **Description** : Permet de voir les permissions d'un utilisateur sur un dossier spécifique.
 
-- **Illustration** : *(Espace pour capture d’écran montrant les permissions de l'utilisateur sur un dossier)*
+- **Ubuntu/Debian** : 
 
-- **Windows** : *(espace pour capture d’écran)*
+- **Windows** : 
 
 ---
 
 ## 7. Droits/permissions de l’utilisateur sur un fichier
 - **Description** : Affiche les permissions d'un utilisateur sur un fichier donné.
   
-- **Illustration** : *(Espace pour capture d’écran montrant les permissions de l'utilisateur sur un fichier)*
+- **Ubuntu/Debian** :
 
-- **Windows** : *(espace pour capture d’écran)*
+- **Windows** : 
 
 ---
 
@@ -309,54 +342,53 @@
 ## 1. Version de l'OS
 - **Description** : Affiche la version du système d'exploitation en cours d'exécution.
 
-- **Illustration** : *(Espace pour capture d’écran montrant la version de l'OS)*
+- **Ubuntu/Debian** : 
 
-- **Windows** : *(espace pour capture d’écran)*
+- **Windows** : 
 
 ---
 
 ## 2. Nombre de disques
 - **Description** : Affiche le nombre de disques physiques présents sur le système.
 
-- **Illustration** : *(Espace pour capture d’écran montrant le nombre de disques présents)*
+- **Ubuntu/Debian** :
 
-- **Windows** : *(espace pour capture d’écran)*
-
+- **Windows** : 
 ---
 
 ## 3. Partition (nombre, nom, système de fichiers, taille) par disque
 - **Description** : Affiche les partitions d'un disque avec leur nom, type de système de fichiers et leur taille.
   
-- **Illustration** : *(Espace pour capture d’écran montrant les partitions d'un disque avec leurs détails)*
+- **Ubuntu/Debian** : 
 
-- **Windows** : *(espace pour capture d’écran)*
+- **Windows** : 
 
 ---
 
 ## 4. Liste des applications/paquets installées
 - **Description** : Affiche toutes les applications ou paquets installés sur le système.
   
-- **Illustration** : *(Espace pour capture d’écran montrant les applications ou paquets installés)*
+- **Ubuntu/Debian** :
 
-- **Windows** : *(espace pour capture d’écran)*
+- **Windows** : 
 
 ---
 
 ## 5. Liste des services en cours d'exécution
 - **Description** : Affiche tous les services actuellement en cours d'exécution sur l'ordinateur.
   
-- **Illustration** : *(Espace pour capture d’écran montrant les services en cours d'exécution sur le système)*
+- **Ubuntu/Debian** : 
 
-- **Windows** : *(espace pour capture d’écran)*
+- **Windows** : 
 
 ---
 
 ## 6. Liste des utilisateurs locaux
 - **Description** : Affiche tous les utilisateurs locaux sur l'ordinateur.
   
-- **Illustration** : *(Espace pour capture d’écran montrant la liste des utilisateurs locaux)*
+- **Ubuntu/Debian** : 
 
-- **Windows** : *(espace pour capture d’écran)*
+- **Windows** : 
 
 ---
 
@@ -452,9 +484,9 @@
 - **Description** : Recherche des événements relatifs à un utilisateur dans le fichier `log_evt.log`.
 - **Système** : Linux, Windows
 
-- **Illustration** : *(espace pour capture d’écran des résultats de recherche)*
+- **Ubuntu/Debian** : 
 
-- **Windows** : *(espace pour capture d’écran)*
+- **Windows** : 
 
 ---
 
@@ -462,6 +494,6 @@
 - **Description** : Recherche des événements relatifs à un ordinateur dans le fichier `log_evt.log`.
 - **Système** : Linux, Windows
 
-- **Illustration** : *(espace pour capture d’écran des résultats de recherche)*
+- **Ubuntu/Debian** : 
 
-- **Windows** : *(espace pour capture d’écran)*
+- **Windows** : 
