@@ -1,5 +1,12 @@
 # Projet : Script d'Automatisation Multiplateformes
 
+## Liens direct vers la documentation Admin et Utilisateur :
+
+ - [Guide d'installation](https://github.com/WildCodeSchool/TSSR-2409-VERT-P2-G3-TheScriptingProject/blob/main/INSTALL.md)
+ - [Guide utilisateur](https://github.com/WildCodeSchool/TSSR-2409-VERT-P2-G3-TheScriptingProject/blob/main/USER_GUIDE.md)
+
+---
+
 Ce projet a pour but de créer un script d'automatisation multi-plateformes, capable d'exécuter des tâches sur différents environnements. Voici les combinaisons principales :
 
 1. **Windows Server 2022 vers Windows 10 Pro**
@@ -60,7 +67,11 @@ Ce projet a pour but de créer un script d'automatisation multi-plateformes, cap
 
  ---
 
-## Liens direct vers la documentation Admin et Utilisateur :
+# **Fonctionnalités et Améliorations Potentielles**
 
- - [Guide d'installation](https://github.com/WildCodeSchool/TSSR-2409-VERT-P2-G3-TheScriptingProject/blob/main/INSTALL.md)
- - [Guide utilisateur](https://github.com/WildCodeSchool/TSSR-2409-VERT-P2-G3-TheScriptingProject/blob/main/USER_GUIDE.md)
+1. **FAQ et Dépannage**
+   - Créer une section FAQ dans le guide utilisateur pour couvrir les erreurs courantes et leurs solutions.
+   - Documenter les étapes de dépannage pour les problèmes les plus fréquents, tels que les erreurs de connexion SSH par exemple.
+  
+2. **Amélioration des Scripts d’Exportation**
+   - Adapter les scripts d’exportation pour générer des fichiers de rapports dans plusieurs formats (PDF, CSV, JSON) pour faciliter l’analyse et l’archivage.
