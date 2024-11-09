@@ -154,7 +154,8 @@
 
 - **Windows** : 
 
-![MENU-GESTION-PAREFEU1](https://github.com/user-attachments/assets/6b59dd62-e7e5-4f45-b926-d45c44632167)
+![FIREWALL1](https://github.com/user-attachments/assets/f40d6800-af7c-492d-9895-0926808cdc73)
+
 
 ---
 
@@ -364,7 +365,9 @@
   
 - **Ubuntu/Debian** :
 
-![MENU-INFO-SYSTEME](https://github.com/user-attachments/assets/868377df-f7f0-4107-92f4-1d161aede583)
+![MENU-INFO-SYSTEME](https://github.com/user-attachments/assets/868377df-f7f0-4107-92f4-1d161aede583)<br>
+![CPU](https://github.com/user-attachments/assets/fb26a832-34a1-4574-a7d1-c233005e9737)
+
 
 - **Windows** :
 
@@ -396,7 +399,9 @@
   
 - **Ubuntu/Debian** :
   
-![MENU-INFO-SYSTEME](https://github.com/user-attachments/assets/3cfa1bcf-904c-422b-8ebd-27bf9042d4d9)
+![MENU-INFO-SYSTEME](https://github.com/user-attachments/assets/3cfa1bcf-904c-422b-8ebd-27bf9042d4d9)<br>
+![USE MEMORY](https://github.com/user-attachments/assets/f536296f-efe9-48fa-bf4f-608b160411e7)
+
 
 - **Windows** :
 
@@ -429,7 +434,9 @@
   
 - **Ubuntu/Debian** :
   
-![MENU-INFO-SYSTEME](https://github.com/user-attachments/assets/ec2ba3d7-6a98-4aa4-87b4-94de327ab6db)
+![MENU-INFO-SYSTEME](https://github.com/user-attachments/assets/ec2ba3d7-6a98-4aa4-87b4-94de327ab6db)<br>
+![USE PROCESSEUR](https://github.com/user-attachments/assets/758833a0-6218-464d-bcb8-14ba74a149ae)
+
 
 - **Windows** :
 
