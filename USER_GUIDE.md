@@ -59,7 +59,7 @@
 - **Système** : Linux, Windows
 
 - **Ubuntu/Debian** :
-- 
+
 ![GROUP1](https://github.com/user-attachments/assets/39e28c73-8905-4a0e-aa72-feeb2758b67c)
 
 
@@ -72,7 +72,9 @@
 - **Description** : Retirer un utilisateur d’un groupe local.
 - **Système** : Linux, Windows
 
-- **Ubuntu/Debian** : 
+- **Ubuntu/Debian** :
+
+![GROUP1](https://github.com/user-attachments/assets/39e28c73-8905-4a0e-aa72-feeb2758b67c)
 
 - **Windows** : 
 
