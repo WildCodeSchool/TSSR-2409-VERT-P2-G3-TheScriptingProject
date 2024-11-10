@@ -8,7 +8,8 @@
 
 - **Ubuntu/Debian** : 
 
-![USER CONTROL](https://github.com/user-attachments/assets/fa43ca1e-bf2f-4903-a9fa-fec8c99dacbc)
+![USER CONTROL](https://github.com/user-attachments/assets/fa43ca1e-bf2f-4903-a9fa-fec8c99dacbc)<br>
+![USER2](https://github.com/user-attachments/assets/8b531965-8f3f-48c3-9b3e-e1dc0e763f2e)
 
 
 - **Windows** :
@@ -21,8 +22,8 @@
 
 - **Ubuntu/Debian** : 
 
-![USER CONTROL](https://github.com/user-attachments/assets/dd344dec-3c72-4e2f-b2c0-ea7d10307392)
-
+![USER CONTROL](https://github.com/user-attachments/assets/dd344dec-3c72-4e2f-b2c0-ea7d10307392)<br>
+![USER3](https://github.com/user-attachments/assets/ec96729f-5545-4c00-9ca8-8323764b7d86)
 
 - **Windows** : 
 
@@ -34,8 +35,8 @@
 
 - **Ubuntu/Debian** : 
 
-![USER CONTROL](https://github.com/user-attachments/assets/0593b0b2-ee50-48af-bf2e-91a9ee4e36ad)
-
+![USER CONTROL](https://github.com/user-attachments/assets/0593b0b2-ee50-48af-bf2e-91a9ee4e36ad)<br>
+![USER4](https://github.com/user-attachments/assets/5823b578-65f7-41dd-a9ba-8802d2b2a71f)
 
 - **Windows** :
 
@@ -47,8 +48,8 @@
 
 - **Ubuntu/Debian** : 
 
-![USER CONTROL](https://github.com/user-attachments/assets/b143e3e2-bb0d-4606-9245-c10dc0351313)
-
+![USER CONTROL](https://github.com/user-attachments/assets/b143e3e2-bb0d-4606-9245-c10dc0351313)<br>
+![USER5](https://github.com/user-attachments/assets/7083c59b-f5bd-40b8-b2f3-74ed668d55ec)
 
 - **Windows** : 
 ---
@@ -57,7 +58,12 @@
 - **Description** : Ajouter un utilisateur à un groupe local.
 - **Système** : Linux, Windows
 
-- **Ubuntu/Debian** : 
+- **Ubuntu/Debian** :
+- 
+![GROUP1](https://github.com/user-attachments/assets/39e28c73-8905-4a0e-aa72-feeb2758b67c)<br>
+.<br>
+![GROUP3](https://github.com/user-attachments/assets/fbbaa368-45da-496b-add6-f9c5006056b2)
+
 
 - **Windows** : 
 
