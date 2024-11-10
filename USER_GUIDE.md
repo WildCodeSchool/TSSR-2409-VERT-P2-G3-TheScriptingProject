@@ -185,7 +185,9 @@
 
 - **Windows** : 
 
-![FIREWALL1](https://github.com/user-attachments/assets/f40d6800-af7c-492d-9895-0926808cdc73)
+![FIREWALL1](https://github.com/user-attachments/assets/f40d6800-af7c-492d-9895-0926808cdc73)<br>
+![FIREWALL1](https://github.com/user-attachments/assets/1cc09496-959a-4b8c-8c3a-ce40fe4e6d9a)<br>
+![FIREWALL2](https://github.com/user-attachments/assets/e1722744-ab6d-4e8f-8eb6-6d9d175a6c25)
 
 
 ---
