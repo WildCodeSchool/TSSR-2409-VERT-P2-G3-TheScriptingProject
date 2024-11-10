@@ -60,9 +60,8 @@
 
 - **Ubuntu/Debian** :
 - 
-![GROUP1](https://github.com/user-attachments/assets/39e28c73-8905-4a0e-aa72-feeb2758b67c)<br>
-.<br>
-![GROUP3](https://github.com/user-attachments/assets/fbbaa368-45da-496b-add6-f9c5006056b2)
+![GROUP1](https://github.com/user-attachments/assets/39e28c73-8905-4a0e-aa72-feeb2758b67c)
+
 
 
 - **Windows** : 
