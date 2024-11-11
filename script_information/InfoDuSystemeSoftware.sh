@@ -9,27 +9,58 @@ YELLOW='\033[0;33m'
 CYAN='\033[0;36m'
 NC='\033[0m' # Aucune couleur
 
+function gatherInfo {
 
+
+    local infoType=$1 # variable qui récupère le type d'info récolté
+    local target=$2 # le type de cible, user = 1 (true) ou host = 0 (false)
+    local date=$3 # va récupérer la date à laquelle est exécutée la commande
+    local commandLine=$4 # va contenir la ligne de commande dont on a besoin à deux reprises, à la fois pour afficher le résultat direct et pour l'enregistrer
+
+    # l'information concerne la cible utilisateur ou ordinateur
+    if [[ $target -eq 1 ]]; then
+        target=$USER # si target est vrai, alors on récupère l'utilisateur courant
+    elif [[ $target -eq 0 ]]; then
+        target=$HOSTNAME # si target est faux, alors on récupère l'hôte
+    else 
+        echo -e "La cible n'est pas  valide, elle doit être à 0 (hôte) ou à 1 (utilisateur) \n"
+        return 1
+    fi
+
+    # générer le fichier
+    local fileName="$HOME/Documents/${infoType}_${target}_$(date +%Y-%m-%d).txt"
+
+    # récupérer la sortie et l'insérer dans le fichier texte
+    echo "$commandLine" > "$fileName"
+    echo -e "Informations concernant $infoType ont été enregistrées dans $fileName"
+}
 
 
 function showOsVersion {
 
     # filtre en conservant la première ligne du fichier os-release, puis sed s'occupe de traiter le texte d'affichage et supprime le texte corrsponsant à PRETTY_NAME et aux guillements
 
-    grep '^PRETTY_NAME=' /etc/os-release | sed 's/^PRETTY_NAME="//;s/"$//'
-
+    local commandLine=$(grep '^PRETTY_NAME=' /etc/os-release | sed 's/^PRETTY_NAME="//;s/"$//')
+    echo -e "$commandLine"
+    gatherInfo "infoOsVersion" 0 "$(date +%Y-%m-%d)" "$commandLine"
 }
 
 function showNbDisks {
 
     # lsblk liste les périphériques de stockage, ces options ne retiennent que les disques en affichant le path complet sur lequel on applique un filtre pour ne conserver que les "disk", ensuite wc compte son apparition.
-    lsblk -d -n -p | grep ' disk ' | wc -l
+    
+    local commandLine=$(lsblk -d -n -p | grep ' disk ' | wc -l)
+    echo -e "$commandLine"
+    gatherInfo "infoNbDisks" 0 "$(date +%Y-%m-%d)" "$commandLine"
 }
 
 function showPartsByDisks {
 
     # même principe, mais le filtre conserve les partitions relatives au ou aux disque(s)
-    lsblk -o NAME,SIZE,TYPE,MOUNTPOINT | grep -E 'disk|part'
+    
+    local commandLine=$(lsblk -o NAME,SIZE,TYPE,MOUNTPOINT | grep -E 'disk|part')
+    echo -e "$commandLine"
+    gatherInfo "infoPartsByDisks" 0 "$(date +%Y-%m-%d)" "$commandLine"
 }
 
 function showInstalledAppPackages {
@@ -43,24 +74,32 @@ function showInstalledAppPackages {
         if [[ $userChoiceInfoApp == "1" ]]; then
 
             # liste uniquement les paquets installés en excluant ceux prêts à être désinstallés.
-            dpkg --get-selections | grep -v deinstall
+            local commandLine=$(dpkg --get-selections | grep -v deinstall)
+            echo -e "$commandLine"
             if [[ $? = 0 ]]; then
+                gatherInfo "infoInstalledPack" 0 "$(date +%Y-%m-%d)" "$commandLine"
                 break
             else
                 echo -e "une erreur est survenue"
                 break
             fi
+
+            
 
         elif [[ $userChoiceInfoApp == "2" ]]; then
 
             # liste les applications avec interface graphique (exécutables à destination d'utilisateur) tout en retirant la partie texte de l'extension de fichier .desktop
-            ls /usr/share/applications/ | sed 's/\.desktop$//'
+            local commandLine=$(ls /usr/share/applications/ | sed 's/\.desktop$//')
+            echo -e "$commandLine"
             if [[ $? = 0 ]]; then
+                gatherInfo "infoInstalledApp" 0 "$(date +%Y-%m-%d)" "$commandLine"
                 break
             else
                 echo -e "une erreur est survenue"
                 break
             fi
+            
+            
 
         else 
             echo -e "Veuillez saisir une option valide \n"
@@ -73,7 +112,9 @@ function showInstalledAppPackages {
 function showRunningServices {
 
     # récupère la liste des type services, état en cours, désactive la pagination de sortie, quiet pour ne conserver que l'essentiel des lignes, plain pour enlever le formatage de sortie. Enfin awk ne conserve que la première colonne de sortie correspondant au nom dans les résultats de systemctl
-    systemctl list-units --type=service --state=running --no-pager --quiet --plain | awk '{print $1}'
+    local commandLine=$(systemctl list-units --type=service --state=running --no-pager --quiet --plain | awk '{print $1}')
+    echo -e "$commandLine"
+    gatherInfo "infoServices" 0 "$(date +%Y-%m-%d)" "$commandLine"
 
     #systemctl list-units --type=service --state=running
 }
@@ -81,7 +122,10 @@ function showRunningServices {
 function showLocalUsers {
 
     # on récupère le champ 3 de la liste dans /etc/passwd, qui correspond à l'UID de l'utilisateur. Comme les utilisateurs dont l'UID est supérieur ou égal à 1000 ne sont pas des utilisateurs "système" mais plutôt ceux nécessitant d'ouvrir une session, ou en d'autres termes des humains, pour les distinguer d'une autre liste. En champ 6 on filtre ceux disposant d'un répertoire /home et on finit par récupérer uniquement le début de la ligne pour obtenir uniquement le nom de l'utilisateur. Le filtre de l'UID permet d'éviter d'obtenir des utilisateurs tels que "syslog" ou "cups-pk-helper" qui ne seraient pas pertinents.
-    awk -F: '$3 >= 1000 && $6 ~ /^\/home/ {print $1}' /etc/passwd
+    local commandLine=$(awk -F: '$3 >= 1000 && $6 ~ /^\/home/ {print $1}' /etc/passwd)
+    echo -e "$commandLine"
+    gatherInfo "infoLocalUsers" 0 "$(date +%Y-%m-%d)" "$commandLine"
+
 
 
 }
