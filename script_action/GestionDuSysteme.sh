@@ -21,7 +21,8 @@ do
 	read choix_option
 
 	case $choix_option in
-	
+
+ 		# case: Arrêt du systeme
 		"1")
 		echo ""
 		read -p "Voulez-vous vraiment arreter le systeme? (oui/non)": reponse
@@ -40,11 +41,13 @@ do
 			fi
 		done
 		# Dans le cas ou reponse= non ou n, on retourne au menu précédent
-		echo "\nRetour au menu des options du systeme"
+		echo -e "\nRetour au menu des options du systeme"
 		;;
-		
+
+  		#case: Redemarrage du systeme
 		"2") 
-		read -p "\nVoulez-vous vraiment redemarrer le systeme? (oui/non)": reponse
+  		echo ""
+		read -p "Voulez-vous vraiment redemarrer le systeme? (oui/non)": reponse
 		while [ $reponse != "non" ] && [ $reponse != "n" ];
 		do
 			if [ $reponse = "oui" ] || [ $reponse = "o" ]
@@ -62,14 +65,16 @@ do
 		# Dans le cas ou reponse= non ou n, on retourne au menu précédent
 		echo -e "\nRetour au menu des options du systeme"
 		;;
-		
+
+  		#case: Verrouillage du systeme
 		"3")
 		echo -e "\nVerouillage du systeme en cours..."
 		sleep 3
 		loginctl lock-session
 		exit 1
 		;;
-		
+
+  		# case: Mise à jour du systeme
 		"4")
 		echo -e "\nRecherche des mises a jour disponibles..."
 		sudo apt update
