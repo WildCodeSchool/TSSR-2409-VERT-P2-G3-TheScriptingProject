@@ -58,9 +58,11 @@ while ($true) {
 
     switch ($machine) {
 
+        # Menu pour Ubuntu 1
         "1" {
-            # Menu pour Ubuntu 1
-            while ($true) {
+            # Variable pour retourner au menu précédent
+            $continueUbuntu1 = $true
+            while ($continueUbuntu1) {
 
                 Write-Host "`nMenu Client UBUNTU 1 :`n" -f $GREEN
                 Write-Host "[1] " -f $YELLOW -NoNewline; Write-Host "Actions" -f $NC
@@ -71,9 +73,11 @@ while ($true) {
 
                 switch ($action) {
 
+                    # Menu actions pour Ubuntu 1
                     "1" {
-                        # Menu actions pour Ubuntu 1
-                        while ($true) {
+                        # Variable pour retourner au menu précédent
+                        $continueActions = $true
+                        while ($continueActions) {
 
                             Write-Host "`nMenu action Client UBUNTU 1 :`n" -f $GREEN
                             Write-Host "[1] " -f $YELLOW -NoNewline; Write-Host "Gestion utilisateurs" -f $NC
@@ -113,7 +117,6 @@ while ($true) {
                                 }
                                 "6" { 
                                     scp C:\script_action\GestionLogiciel.ps1 ${user1}:/C:/Windows/Temp/GestionLogiciel.ps1
-                                    ssh -t $user1 $Exe_script_Logiciel
                                     ssh -t $user1 "powershell.exe -Command $Exe_script_Logiciel"
                                     ssh -t $user1 "powershell.exe -Command $Delete_Logiciel" 
                                 }
@@ -124,8 +127,7 @@ while ($true) {
                                 }
 
                                 "8" { 
-                                    Write-Host "Retour au menu précédent"
-                                    break 
+                                    $continueActions = $false
                                 }
                                 "x" { 
                                     Write-Host "`nExit`n" -f $YELLOW
@@ -140,8 +142,10 @@ while ($true) {
 
                     # Menu informations pour Ubuntu 1
                     "2" {
-
-                        while ($true) {
+                        
+                        # Variable pour retourner au menu précédent
+                        $continueInformations = $true
+                        while ($continueInformations) {
 
                             Write-Host "`nMenu informations Client UBUNTU 1 :`n" -f $GREEN
                             Write-Host "[1] " -f $YELLOW -NoNewline; Write-Host "Informations Utilisateur" -f $NC
@@ -168,8 +172,7 @@ while ($true) {
                                     ssh -t $user1 "powershell.exe -Command $Delete_InfoHardware"
                                 }
                                 "4" { 
-                                    Write-Host "Retour au menu précédent"
-                                    break 
+                                    $continueInformations = $false
                                 }
                                 "x" { 
                                     Write-Host "`nExit`n" -f $YELLOW
@@ -183,8 +186,7 @@ while ($true) {
                     }
 
                     "3" {
-                        Write-Host "`nRetour au menu principal`n" -f $YELLOW
-                        break
+                        $continueUbuntu1 = $false
                     }
                     "x" {
                         Write-Host "`nExit`n" -f $YELLOW
@@ -198,8 +200,9 @@ while ($true) {
         }
 
         "2" {
-            # Menu pour Ubuntu 2
-            while ($true) {
+            # Variable pour retourner au menu précédent
+            $continueUbuntu2 = $true
+            while ($continueUbuntu2) {
 
                 Write-Host "`nMenu Client UBUNTU 2 :`n" -f $GREEN
                 Write-Host "[1] " -f $YELLOW -NoNewline; Write-Host "Actions" -f $NC
@@ -211,8 +214,9 @@ while ($true) {
                 switch ($action) {
 
                     "1" {
-                        # Menu actions pour Ubuntu 2
-                        while ($true) {
+                        # Variable pour retourner au menu précédent
+                        $continueActions = $true
+                        while ($continueActions) {
 
                             Write-Host "`nMenu action Client UBUNTU 2 :`n" -f $GREEN
                             Write-Host "[1] " -f $YELLOW -NoNewline; Write-Host "Gestion utilisateurs" -f $NC
@@ -222,8 +226,7 @@ while ($true) {
                             Write-Host "[5] " -f $YELLOW -NoNewline; Write-Host "Prise en main CLI" -f $NC
                             Write-Host "[6] " -f $YELLOW -NoNewline; Write-Host "Gestion Logiciel" -f $NC
                             Write-Host "[7] " -f $YELLOW -NoNewline; Write-Host "Gestion du Parefeu" -f $NC
-                            Write-Host "[8] " -f $YELLOW -NoNewline; Write-Host "Information du Système" -f $NC
-                            Write-Host "[9] " -f $YELLOW -NoNewline; Write-Host "Retour au menu précédent" -f $NC
+                            Write-Host "[8] " -f $YELLOW -NoNewline; Write-Host "Retour au menu précédent" -f $NC
                             Write-Host "[x] " -f $YELLOW -NoNewline; Write-Host "Fin du script`n" -f $NC
                             $gestion = Read-Host "Votre choix "
 
@@ -263,8 +266,7 @@ while ($true) {
                                 }
 
                                 "8" { 
-                                    Write-Host "Retour au menu précédent"
-                                    break 
+                                    $continueActions = $false
                                 }
                                 "x" { 
                                     Write-Host "`nExit`n" -f $YELLOW
@@ -279,8 +281,9 @@ while ($true) {
 
                     # Menu informations pour Ubuntu 2
                     "2" {
-
-                        while ($true) {
+                        # Variable pour retourner au menu précédent
+                        $continueInformations = $true
+                        while ($continueInformations) {
 
                             Write-Host "`nMenu informations Client UBUNTU 2 :`n" -f $GREEN
                             Write-Host "[1] " -f $YELLOW -NoNewline; Write-Host "Informations Utilisateur" -f $NC
@@ -307,8 +310,7 @@ while ($true) {
                                     ssh -t $user1 "powershell.exe -Command $Delete_InfoHardware"
                                 }
                                 "4" { 
-                                    Write-Host "Retour au menu précédent"
-                                    break 
+                                    $continueInformations = $false
                                 }
                                 "x" { 
                                     Write-Host "`nExit`n" -f $YELLOW
@@ -322,8 +324,7 @@ while ($true) {
                     }
 
                     "3" {
-                        Write-Host "`nRetour au menu principal`n" -f $YELLOW
-                        break
+                        $continueUbuntu2 = $false
                     }
                     "x" {
                         Write-Host "`nExit`n" -f $YELLOW
