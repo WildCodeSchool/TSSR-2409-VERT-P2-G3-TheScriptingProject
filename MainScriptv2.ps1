@@ -77,8 +77,8 @@ while ($true) {
             WriteLog "Connexion au client CLIWIN01"
 
             # Variable pour retourner au menu précédent
-            $continueUbuntu1 = $true
-            while ($continueUbuntu1) {
+            $continueCLIWIN01 = $true
+            while ($continueCLIWIN01) {
 
                 Write-Host "`nMenu Client CLIWIN01 :`n" -f $GREEN
                 Write-Host "[1] " -f $YELLOW -NoNewline; Write-Host "Actions" -f $NC
@@ -217,7 +217,7 @@ while ($true) {
                     }
 
                     "3" {
-                        $continueInformations = $false
+                        $continueCLIWIN01 = $false
                     }
                     "x" {
                         WriteLog "********EndScript********"
@@ -236,8 +236,8 @@ while ($true) {
             WriteLog "Connexion au client CLIWIN02"
 
             # Variable pour retourner au menu précédent
-            $continueUbuntu2 = $true
-            while ($continueUbuntu2) {
+            $continueCLIWIN02 = $true
+            while ($continueCLIWIN02) {
 
                 Write-Host "`nMenu Client CLIWIN02 :`n" -f $GREEN
                 Write-Host "[1] " -f $YELLOW -NoNewline; Write-Host "Actions" -f $NC
@@ -376,7 +376,7 @@ while ($true) {
                     }
 
                     "3" {
-                        $continueUbuntu2 = $false
+                        $continueCLIWIN02 = $false
                     }
                     
                     "x" {
