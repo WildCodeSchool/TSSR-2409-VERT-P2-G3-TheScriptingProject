@@ -143,6 +143,8 @@
 - **Ubuntu/Debian** :
 
 ![MENU REPERTOIRES](https://github.com/user-attachments/assets/cd8c67c0-b211-48bb-8d4d-14944db1f483)<br>
+![CREATE DOSSIER](https://github.com/user-attachments/assets/03a545c5-f75d-4bd0-bb8e-4ea5bd0d02ea)
+
 
 
 - **Windows** : 
@@ -156,6 +158,8 @@
 - **Ubuntu/Debian** : 
 
 ![MENU REPERTOIRES](https://github.com/user-attachments/assets/af2a3320-3f00-4e95-9ecb-e46447c7648a)<br>
+![MODIF DOSSIER](https://github.com/user-attachments/assets/9b24d2f6-d91f-45f9-8fdc-faad0739db28)
+
 
 - **Ubuntu/Debian** :
   
@@ -168,6 +172,8 @@
 - **Ubuntu/Debian** :
 
 ![MENU REPERTOIRES](https://github.com/user-attachments/assets/eefdcd36-af15-4393-b936-01922a72c702)<br>
+![DELETE DOSSIER](https://github.com/user-attachments/assets/89841268-4b02-443b-bccf-0407b346d730)
+
 
 
 - **Windows** : 
