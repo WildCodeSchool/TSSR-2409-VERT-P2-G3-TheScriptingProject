@@ -82,7 +82,7 @@
 
 ## 2. Actions sur les ordinateurs clients
 
-### 2.1 Arrêt
+### 2.0 Arrêt
 - **Description** : Éteindre l'ordinateur client.
 - **Système** : Linux, Windows
 
@@ -95,7 +95,7 @@
 
 ---
 
-### 2.2 Redémarrage
+### 2.1 Redémarrage
 - **Description** : Redémarrer l'ordinateur client.
 - **Système** : Linux, Windows
 
@@ -108,7 +108,7 @@
 
 ---
 
-### 2.3 Verrouillage
+### 2.2 Verrouillage
 - **Description** : Verrouiller l'ordinateur client (empêche l'accès sans mot de passe).
 - **Système** : Linux, Windows
 
@@ -121,7 +121,7 @@
 
 ---
 
-### 2.4 Mise-à-jour du système
+### 2.3 Mise-à-jour du système
 - **Description** : Mettre à jour le système avec les derniers correctifs et paquets.
 - **Système** : Linux, Windows
 
@@ -137,7 +137,7 @@
 
 ---
 
-### 2.5 Création de répertoire
+### 2.4 Création de répertoire
 - **Description** : Créer un répertoire (dossier) dans le système de fichiers.
 - **Système** : Linux, Windows
   
@@ -167,17 +167,7 @@
 
 ---
 
-### 2.7 Prise de main à distance (CLI)
-- **Description** : Prendre le contrôle d'une machine distante via la ligne de commande (CLI).
-- **Système** : Linux, Windows
-
-- **Ubuntu/Debian** : 
-
-- **Windows** : 
-
----
-
-### 2.8 Définition de règles de pare-feu
+### 2.7 Définition de règles de pare-feu
 - **Description** : Configurer des règles de pare-feu pour autoriser ou bloquer des connexions réseau.
 - **Système** : Linux, Windows
 
@@ -199,7 +189,7 @@
 
 ---
 
-### 2.9 Activation du pare-feu
+### 2.8 Activation du pare-feu
 - **Description** : Activer le pare-feu pour protéger la machine des connexions non autorisées.
 - **Système** : Linux, Windows
 
@@ -217,7 +207,7 @@
 
 ---
 
-### 2.10 Désactivation du pare-feu
+### 2.9 Désactivation du pare-feu
 - **Description** : Désactiver temporairement le pare-feu pour des tests ou diagnostics.
 - **Système** : Linux, Windows
 
@@ -236,7 +226,7 @@
 
 ---
 
-### 2.11 Installation de logiciel
+### 2.10 Installation de logiciel
 - **Description** : Installer un logiciel ou une application sur la machine.
 - **Système** : Linux, Windows
 
@@ -254,7 +244,7 @@
 
 ---
 
-### 2.12 Désinstallation de logiciel
+### 2.11 Désinstallation de logiciel
 - **Description** : Désinstaller un logiciel ou une application de la machine.
 - **Système** : Linux, Windows
 
@@ -270,16 +260,6 @@
 ![MENU-LOGICIEL](https://github.com/user-attachments/assets/1d570762-3aa2-4d9f-8b02-c25388e8ab8d)<br>
 ![DELETE-LOGICIEL3](https://github.com/user-attachments/assets/8bc76154-9aab-43eb-a3db-b682c0704ae3)
 
-
----
-
-### 2.13 Exécution de script sur la machine distante
-- **Description** : Lancer un script ou une commande spécifique sur une machine distante.
-- **Système** : Linux, Windows
-
-- **Ubuntu/Debian** : 
-
-- **Windows** : 
 
 ---
 
