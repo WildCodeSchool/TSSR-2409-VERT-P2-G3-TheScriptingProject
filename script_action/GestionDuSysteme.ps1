@@ -72,8 +72,8 @@ while ($statut)
         "4" 
 	{
             Write-Host "`nRecherche des mises a jour disponibles..."
-			Install-Module PSWindowsUpdate -Force -Scope CurrentUser
-			Write-Host "`nListe des mises a jour disponibles:"
+	    Install-Module PSWindowsUpdate -Force -Scope CurrentUser
+	    Write-Host "`nListe des mises a jour disponibles:"
             Get-WindowsUpdate
             $reponse = Read-Host "`nVoulez-vous installer les mises a jour? (oui/non)"
             while ($reponse -ne "non" -and $reponse -ne "n") 
