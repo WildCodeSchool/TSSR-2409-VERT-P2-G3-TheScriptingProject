@@ -290,6 +290,10 @@
 
 - **Ubuntu/Debian** : 
 
+![MENU INFO USER](https://github.com/user-attachments/assets/95fce835-0ddc-431a-a18c-16507e2ac7bb)<br>
+![LAST CO](https://github.com/user-attachments/assets/f686e3ad-555c-4d9a-ab17-0357e5ba38fe)
+
+
 - **Windows** : 
 
 ---
@@ -299,6 +303,10 @@
 
 - **Ubuntu/Debian** : 
 
+![MENU INFO USER](https://github.com/user-attachments/assets/be48a6d8-464a-464c-8178-cba2a1f7adfd)<br>
+![LAST MDP](https://github.com/user-attachments/assets/f72e8282-ae19-439d-9c9d-11f58d1d74e9)
+
+
 - **Windows** : 
 ---
 
@@ -306,6 +314,10 @@
 - **Description** : Affiche toutes les sessions actuellement ouvertes par un utilisateur donné.
   
 - **Ubuntu/Debian** :
+
+![MENU INFO USER](https://github.com/user-attachments/assets/f83fb3ee-04e8-4164-92c9-597d8f226f70)<br>
+![SESSION OPEN](https://github.com/user-attachments/assets/90f37b61-c389-480c-bf40-2ba9b2a8912c)
+
 
 - **Windows** :
 
@@ -316,13 +328,21 @@
   
 - **Ubuntu/Debian** : 
 
+![MENU INFO USER](https://github.com/user-attachments/assets/cb1c7d21-4d71-4561-8487-15db355b6894)<br>
+![GROUP](https://github.com/user-attachments/assets/af5eed7f-ff91-4a86-a2ff-406a9c3a59bd)
+
+
 - **Windows** : 
 ---
 
 ## 5. Historique des commandes exécutées par l'utilisateur
 - **Description** : Affiche un historique des commandes exécutées par un utilisateur dans le terminal.
   
-- **Ubuntu/Debian** : 
+- **Ubuntu/Debian** :
+
+![MENU INFO USER](https://github.com/user-attachments/assets/15a72056-fd1a-45c0-9b36-f61a28071bd3)<br>
+![HISTORIQUE](https://github.com/user-attachments/assets/39c39821-869b-4ecc-b591-56903cdf61ca)
+
 
 - **Windows** :
 
@@ -331,7 +351,11 @@
 ## 6. Droits/permissions de l’utilisateur sur un dossier
 - **Description** : Permet de voir les permissions d'un utilisateur sur un dossier spécifique.
 
-- **Ubuntu/Debian** : 
+- **Ubuntu/Debian** :
+
+![MENU INFO USER](https://github.com/user-attachments/assets/f63cc030-cbdd-41c1-aaee-691daf734752)<br>
+![DROITS DOSSIER](https://github.com/user-attachments/assets/c773c1c1-1331-4bc7-9cc5-548cfa933698)
+
 
 - **Windows** : 
 
@@ -342,6 +366,11 @@
   
 - **Ubuntu/Debian** :
 
+![MENU INFO USER](https://github.com/user-attachments/assets/18d2c57b-d044-47e3-881f-1f75e7b72dd1)<br>
+![DROITS FICHIER](https://github.com/user-attachments/assets/3a2746a3-3e50-434a-a017-72dce79121f6)
+
+
+
 - **Windows** : 
 
 ---
@@ -351,7 +380,11 @@
 ## 1. Version de l'OS
 - **Description** : Affiche la version du système d'exploitation en cours d'exécution.
 
-- **Ubuntu/Debian** : 
+- **Ubuntu/Debian** :
+
+![MENU SOFT](https://github.com/user-attachments/assets/50ecdea0-f5cf-4408-bcfe-a2657b151036)<br>
+![VERSION OS](https://github.com/user-attachments/assets/d5c62bfa-21e1-4503-9e57-cdec27c052e8)
+
 
 - **Windows** : 
 
@@ -362,13 +395,21 @@
 
 - **Ubuntu/Debian** :
 
+![MENU SOFT](https://github.com/user-attachments/assets/a8f385ec-0c9a-4f24-85dc-2ef535b60a05)<br>
+![NOMBRE DISQUE](https://github.com/user-attachments/assets/8035722e-b6e0-4126-9ac1-7be237d9186e)
+
+
 - **Windows** : 
 ---
 
 ## 3. Partition (nombre, nom, système de fichiers, taille) par disque
 - **Description** : Affiche les partitions d'un disque avec leur nom, type de système de fichiers et leur taille.
   
-- **Ubuntu/Debian** : 
+- **Ubuntu/Debian** :
+
+![MENU SOFT](https://github.com/user-attachments/assets/ab17320a-0590-4532-9f94-568bab374ed1)<br>
+![PARTITIONS](https://github.com/user-attachments/assets/b21068d7-1851-4632-9488-60aa3adcdbd1)
+
 
 - **Windows** : 
 
@@ -379,6 +420,11 @@
   
 - **Ubuntu/Debian** :
 
+![MENU SOFT](https://github.com/user-attachments/assets/f15bf405-36e9-4fa7-acee-a009f1898f66)<br>
+![PAQUETS INSTALL](https://github.com/user-attachments/assets/661acb90-f967-4a07-9b3c-16e6a10f0667)<br>
+![APPLI INSTALL](https://github.com/user-attachments/assets/206b3732-1ec9-46ec-97cb-d21fec5e92c4)
+
+
 - **Windows** : 
 
 ---
@@ -386,7 +432,11 @@
 ## 5. Liste des services en cours d'exécution
 - **Description** : Affiche tous les services actuellement en cours d'exécution sur l'ordinateur.
   
-- **Ubuntu/Debian** : 
+- **Ubuntu/Debian** :
+
+![MENU SOFT](https://github.com/user-attachments/assets/e16aec94-3c8b-4a84-8f93-b9c48d347269)<br>
+![SERVICES EN COURS](https://github.com/user-attachments/assets/02316c7a-655c-4665-87cc-7f14430614cd)
+
 
 - **Windows** : 
 
@@ -396,6 +446,10 @@
 - **Description** : Affiche tous les utilisateurs locaux sur l'ordinateur.
   
 - **Ubuntu/Debian** : 
+
+![MENU SOFT](https://github.com/user-attachments/assets/37c6c759-4636-4817-82a3-dfa271b59a20)<br>
+![USER LOCAUX](https://github.com/user-attachments/assets/8d2955d8-efad-4b33-9863-393ab19fcef7)
+
 
 - **Windows** : 
 
