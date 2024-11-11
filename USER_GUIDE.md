@@ -90,7 +90,10 @@
 
 ![SYSTEME](https://github.com/user-attachments/assets/b3ddf92b-263b-40cb-a32a-574087a51765)<br>
 
-- **Windows** : 
+- **Windows** :
+
+![MENU GESTION SYSTEME](https://github.com/user-attachments/assets/b707661b-f0c6-4f87-a0ad-9eac322136a1)<br>
+  
 
 ---
 
@@ -105,6 +108,8 @@
 
 - **Windows** :
 
+![MENU GESTION SYSTEME](https://github.com/user-attachments/assets/2be7adc2-26bf-4044-9746-9fb7aaf84b3e)<br>
+
 ---
 
 ### 2.2 Verrouillage
@@ -117,6 +122,8 @@
 
 
 - **Windows** :
+
+![MENU GESTION SYSTEME](https://github.com/user-attachments/assets/4a0046c1-7089-4406-9fe0-6e6c95af6f63)<br>
 
 ---
 
@@ -133,6 +140,8 @@
 
 
 - **Windows** :
+
+![MENU GESTION SYSTEME](https://github.com/user-attachments/assets/5ecbb24b-a6ba-4c80-ae79-d1e5f453e133)<br>
 
 ---
 
