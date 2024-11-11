@@ -7,6 +7,34 @@ YELLOW='\033[0;33m'
 CYAN='\033[0;36m'
 NC='\033[0m' # Aucune couleur
 
+
+function gatherInfo {
+
+
+    local infoType=$1 # variable qui récupère le type d'info récolté
+    local target=$2 # le type de cible, user = 1 (true) ou host = 0 (false)
+    local date=$3 # va récupérer la date à laquelle est exécutée la commande
+    local commandLine=$4 # va contenir la ligne de commande dont on a besoin à deux reprises, à la fois pour afficher le résultat direct et pour l'enregistrer
+
+    # l'information concerne la cible utilisateur ou ordinateur
+    if [[ $target -eq 1 ]]; then
+        target=$USER # si target est vrai, alors on récupère l'utilisateur courant
+    elif [[ $target -eq 0 ]]; then
+        target=$HOSTNAME # si target est faux, alors on récupère l'hôte
+    else 
+        echo -e "La cible n'est pas  valide, elle doit être à 0 (hôte) ou à 1 (utilisateur) \n"
+        return 1
+    fi
+
+    # générer le fichier
+    local fileName="$HOME/Documents/${infoType}_${target}_$(date +%Y-%m-%d).txt"
+
+    # récupérer la sortie et l'insérer dans le fichier texte
+    echo "$commandLine" > "$fileName"
+    echo -e "\nInformations concernant $infoType ont été enregistrées dans $fileName"
+}
+
+
 # Boucle while true pour faire un menu sur les informations systèmes
 while true; do
     echo -e "\n${GREEN}------ MENU INFORMATION SYSTEME HARDWARE ------\n"
@@ -24,31 +52,41 @@ while true; do
 
        # Type de CPU, nombres de coeurs, etc..
        1)
-            lscpu
+            commandLine=$(lscpu)
+            echo -e "$commandLine"
+            gatherInfo "infoSysComponents" 0 "$(date +%Y-%m-%d)" "$commandLine"
             echo ""
             ;;
 
         # Mémoire totale de la RAM
         2)
-            free -h | grep Mem | awk '{print $2}'
+            commandLine=$(free -h | grep Mem | awk '{print $2}')
+            echo -e "$commandLine"
+            gatherInfo "infoMemoRam" 0 "$(date +%Y-%m-%d)" "$commandLine"
             echo ""
             ;;
 
         # Utilisation de la RAM
         3)
-            free -h
+            commandLine=$(free -h)
+            echo -e "$commandLine"
+            gatherInfo "infoMemoRamUsage" 0 "$(date +%Y-%m-%d)" "$commandLine"
             echo ""
             ;;
             
         # Utilisation du disque
         4)
-            df -h
+            commandLine=$(df -h)
+            echo -e "$commandLine"
+            gatherInfo "infoDiskUsage" 0 "$(date +%Y-%m-%d)" "$commandLine"
             echo ""
             ;;
             
         # Utilisation du processeur
         5)
-            top -b -n 1
+            commandLine=$(top -b -n 1)
+            echo -e "$commandLine"
+            gatherInfo "infoProcUsage" 0 "$(date +%Y-%m-%d)" "$commandLine"
             echo ""
             ;;
             

@@ -32,7 +32,7 @@ function gatherInfo {
 
     # récupérer la sortie et l'insérer dans le fichier texte
     echo "$commandLine" > "$fileName"
-    echo -e "Informations concernant $infoType ont été enregistrées dans $fileName"
+    echo -e "\nInformations concernant $infoType ont été enregistrées dans $fileName"
 }
 
 

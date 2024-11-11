@@ -7,6 +7,32 @@ YELLOW='\033[0;33m'
 CYAN='\033[0;36m'
 NC='\033[0m' # Aucune couleur
 
+function gatherInfo {
+
+
+    local infoType=$1 # variable qui récupère le type d'info récolté
+    local target=$2 # le type de cible, user = 1 (true) ou host = 0 (false)
+    local date=$3 # va récupérer la date à laquelle est exécutée la commande
+    local commandLine=$4 # va contenir la ligne de commande dont on a besoin à deux reprises, à la fois pour afficher le résultat direct et pour l'enregistrer
+
+    # l'information concerne la cible utilisateur ou ordinateur
+    if [[ $target -eq 1 ]]; then
+        target=$USER # si target est vrai, alors on récupère l'utilisateur courant
+    elif [[ $target -eq 0 ]]; then
+        target=$HOSTNAME # si target est faux, alors on récupère l'hôte
+    else 
+        echo -e "La cible n'est pas  valide, elle doit être à 0 (hôte) ou à 1 (utilisateur) \n"
+        return 1
+    fi
+
+    # générer le fichier
+    local fileName="$HOME/Documents/${infoType}_${target}_$(date +%Y-%m-%d).txt"
+
+    # récupérer la sortie et l'insérer dans le fichier texte
+    echo "$commandLine" > "$fileName"
+    echo -e "\nInformations concernant $infoType ont été enregistrées dans $fileName"
+}
+
 # Demande le nom d'utilisateur
 read -p "Entrez le nom de l'utilisateur : " Utilisateur
 
@@ -38,26 +64,34 @@ do
 
 		# Date de dernière connexion d’un utilisateur
 		"1")
-		 echo -e "\nDate de dernière connexion de $Utilisateur:"
-        	 lastlog -u "$Utilisateur"
+			echo -e "\nDate de dernière connexion de $Utilisateur:"
+			commandLine=$(lastlog -u "$Utilisateur")
+			echo -e "$commandLine"
+			gatherInfo "infoLastLog" 1 "$(date +%Y-%m-%d)" "$commandLine"
 		;;
 		
 		# Date de dernière modification du mot de passe
 		"2")
-		echo -e "\nDate de dernière modification du mot de passe :"
-        	chage -l "$Utilisateur" | grep "Last password change"
+			echo -e "\nDate de dernière modification du mot de passe :"
+        	commandLine=$(chage -l "$Utilisateur" | grep "Last password change")
+			echo -e "$commandLine"
+    		gatherInfo "infoLastPswd" 1 "$(date +%Y-%m-%d)" "$commandLine"
 		;;
 
 		# Liste des sessions ouvertes par l'utilisateur
 		"3")
-		echo -e "\nSessions ouvertes par l'utilisateur $Utilisateur:"
-		who | grep "$Utilisateur" || echo "Aucune session ouverte."
+			echo -e "\nSessions ouvertes par l'utilisateur $Utilisateur:"
+			commandLine=$(who | grep "$Utilisateur" || echo "Aucune session ouverte.")
+			echo -e "$commandLine"
+			gatherInfo "infoOpenSess" 1 "$(date +%Y-%m-%d)" "$commandLine"
 		;;
 
 		# Groupe d’appartenance d’un utilisateur
 		"4")
-		echo -e "\nGroupes d'appartenance:"
-		groups "$Utilisateur"
+			echo -e "\nGroupes d'appartenance:"
+			commandLine=$(groups "$Utilisateur")
+			echo -e "$commandLine"
+			gatherInfo "infoBlgGroups" 1 "$(date +%Y-%m-%d)" "$commandLine"
 		;;
 
 		# Historique des commandes exécutées par l'utilisateur
@@ -67,7 +101,9 @@ do
 		if [ -f "$HIST_FILE" ]; 
 		then
 			echo -e "\nHistorique des 20 dernières commandes :"
-			tail -n 20 "$HIST_FILE" # Affiche les 20 dernières commandes pour limiter la sortie
+			commandLine=$(tail -n 20 "$HIST_FILE") # Affiche les 20 dernières commandes pour limiter la sortie
+			echo -e "$commandLine"
+    		gatherInfo "infoCmdHist" 1 "$(date +%Y-%m-%d)" "$commandLine"
 		else
 			echo "Historique indisponible ou l'utilisateur $Utilisateur n'a pas de fichier .bash_history."
 		fi
@@ -77,11 +113,24 @@ do
 		"6")
 		echo -e "\nDroits sur un dossier spécifique :"
       		read -p "Entrez le chemin complet du dossier : " CHEMIN_DOSSIER
-        	if [ -d "$CHEMIN_DOSSIER" ]; 
-		then
-           		sudo -u "$Utilisateur" [ -r "$CHEMIN_DOSSIER" ] && echo "Lecture : Oui" || echo "Lecture : Non"
-           		sudo -u "$Utilisateur" [ -w "$CHEMIN_DOSSIER" ] && echo "Écriture : Oui" || echo "Écriture : Non"
-            		sudo -u "$Utilisateur" [ -x "$CHEMIN_DOSSIER" ] && echo "Exécution : Oui" || echo "Exécution : Non"
+        	if [ -d "$CHEMIN_DOSSIER" ]; then
+		
+				commandLine="Dossier: $CHEMIN_DOSSIER"
+				
+				# Vérification des droits de lecture
+				r_permission=$(sudo -u "$Utilisateur" [ -r "$CHEMIN_DOSSIER" ] && echo -e "\nLecture : Oui \n" || echo -e "\nLecture : Non\n")
+				commandLine="$commandLine$r_permission"  # Ajoute/concatène le résultat de la lecture
+				
+				# Vérification des droits d'écriture
+				w_permission=$(sudo -u "$Utilisateur" [ -w "$CHEMIN_DOSSIER" ] && echo -e "\nÉcriture : Oui\n" || echo -e "\nÉcriture : Non\n")
+				commandLine="$commandLine$w_permission"  # Ajoute/concatène le résultat de l'écriture
+				
+				# Vérification des droits d'exécution
+				e_permission=$(sudo -u "$Utilisateur" [ -x "$CHEMIN_DOSSIER" ] && echo -e "\nExécution : Oui\n" || echo -e "\nExécution : Non\n")
+				commandLine="$commandLine$e_permission"  # Ajoute/concatène le résultat de l'exécution
+				
+				# Passer l'ensemble de la sortie à gatherInfo
+				gatherInfo "infoFolderPermissions" 1 "$(date +%Y-%m-%d)" "$commandLine"
         	else
             		echo "Le dossier n'existe pas."
         	fi
@@ -92,9 +141,23 @@ do
 		echo -e "\nDroits sur un fichier spécifique :"
        		read -p "Entrez le chemin complet du fichier : " CHEMIN_FICHIER
 		if [ -f "$CHEMIN_FICHIER" ]; then
-			sudo -u "$Utilisateur" [ -r "$CHEMIN_FICHIER" ] && echo "Lecture : Oui" || echo "Lecture : Non"
-			sudo -u "$Utilisateur" [ -w "$CHEMIN_FICHIER" ] && echo "Écriture : Oui" || echo "Écriture : Non"
-			sudo -u "$Utilisateur" [ -x "$CHEMIN_FICHIER" ] && echo "Exécution : Oui" || echo "Exécution : Non"
+
+				commandLine="Fichier: $CHEMIN_FICHIER"
+				
+				# Vérification des droits de lecture
+				r_permission=$(sudo -u "$Utilisateur" [ -r "$CHEMIN_FICHIER" ] && echo -e "\nLecture : Oui \n" || echo -e "\nLecture : Non\n")
+				commandLine="$commandLine$r_permission"  # Ajoute/concatène le résultat de la lecture
+				
+				# Vérification des droits d'écriture
+				w_permission=$(sudo -u "$Utilisateur" [ -w "$CHEMIN_FICHIER" ] && echo -e "\nÉcriture : Oui\n" || echo -e "\nÉcriture : Non\n")
+				commandLine="$commandLine$w_permission"  # Ajoute/concatène le résultat de l'écriture
+				
+				# Vérification des droits d'exécution
+				e_permission=$(sudo -u "$Utilisateur" [ -x "$CHEMIN_FICHIER" ] && echo -e "\nExécution : Oui\n" || echo -e "\nExécution : Non\n")
+				commandLine="$commandLine$e_permission"  # Ajoute/concatène le résultat de l'exécution
+				
+				# Passer l'ensemble de la sortie à gatherInfo
+				gatherInfo "infoFilePermissions" 1 "$(date +%Y-%m-%d)" "$commandLine"
 		else
 			echo "Le fichier n'existe pas."
 		fi
