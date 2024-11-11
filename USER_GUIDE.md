@@ -60,7 +60,7 @@
 
 - **Ubuntu/Debian** :
 
-![GROUP1](https://github.com/user-attachments/assets/39e28c73-8905-4a0e-aa72-feeb2758b67c)
+![GROUP1](https://github.com/user-attachments/assets/39e28c73-8905-4a0e-aa72-feeb2758b67c)<br>
 
 
 
@@ -74,7 +74,7 @@
 
 - **Ubuntu/Debian** :
 
-![GROUP1](https://github.com/user-attachments/assets/39e28c73-8905-4a0e-aa72-feeb2758b67c)
+![GROUP1](https://github.com/user-attachments/assets/39e28c73-8905-4a0e-aa72-feeb2758b67c)<br>
 
 - **Windows** : 
 
@@ -88,8 +88,7 @@
 
 - **Ubuntu/Debian** : 
 
-![SYSTEME](https://github.com/user-attachments/assets/b3ddf92b-263b-40cb-a32a-574087a51765)
-
+![SYSTEME](https://github.com/user-attachments/assets/b3ddf92b-263b-40cb-a32a-574087a51765)<br>
 
 - **Windows** : 
 
@@ -101,7 +100,7 @@
 
 - **Ubuntu/Debian** :
 
-![SYSTEME](https://github.com/user-attachments/assets/21b9b68e-3d46-4874-a4b6-561056d32f18)
+![SYSTEME](https://github.com/user-attachments/assets/21b9b68e-3d46-4874-a4b6-561056d32f18)<br>
 
 
 - **Windows** :
@@ -114,7 +113,7 @@
 
 - **Ubuntu/Debian** : 
 
-![SYSTEME](https://github.com/user-attachments/assets/93f1706b-ad17-425a-9b1e-67837f9db8a6)
+![SYSTEME](https://github.com/user-attachments/assets/93f1706b-ad17-425a-9b1e-67837f9db8a6)<br>
 
 
 - **Windows** :
@@ -141,7 +140,10 @@
 - **Description** : Créer un répertoire (dossier) dans le système de fichiers.
 - **Système** : Linux, Windows
   
-- **Ubuntu/Debian** : 
+- **Ubuntu/Debian** :
+
+![MENU REPERTOIRES](https://github.com/user-attachments/assets/cd8c67c0-b211-48bb-8d4d-14944db1f483)<br>
+
 
 - **Windows** : 
 
@@ -153,6 +155,8 @@
 
 - **Ubuntu/Debian** : 
 
+![MENU REPERTOIRES](https://github.com/user-attachments/assets/af2a3320-3f00-4e95-9ecb-e46447c7648a)<br>
+
 - **Ubuntu/Debian** :
   
 ---
@@ -161,7 +165,10 @@
 - **Description** : Supprimer un répertoire (dossier).
 - **Système** : Linux, Windows
 
-- **Ubuntu/Debian** : 
+- **Ubuntu/Debian** :
+
+![MENU REPERTOIRES](https://github.com/user-attachments/assets/eefdcd36-af15-4393-b936-01922a72c702)<br>
+
 
 - **Windows** : 
 
