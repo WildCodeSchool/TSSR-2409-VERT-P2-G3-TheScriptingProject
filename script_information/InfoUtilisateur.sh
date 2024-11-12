@@ -5,12 +5,15 @@ RED='\033[0;31m'
 GREEN='\033[0;32m'
 YELLOW='\033[0;33m'
 CYAN='\033[0;36m'
+GREY='\033[0;30m'
 NC='\033[0m' # Aucune couleur
+
+# la fonction gatherInfo permet de récupérer les informations demandées et de les stocker dans fichier texte dans les Documents de l'utilisateur.
 
 function gatherInfo {
 
 
-    local infoType=$1 # variable qui récupère le type d'info récolté
+    local infoType=$1 # variable qui récupère le type d'info récolté. Les variables locales ont une portée limitée, l'attribution d'une valeur n'est valable que dans la fonction, localement, où elles sont définies.
     local target=$2 # le type de cible, user = 1 (true) ou host = 0 (false)
     local date=$3 # va récupérer la date à laquelle est exécutée la commande
     local commandLine=$4 # va contenir la ligne de commande dont on a besoin à deux reprises, à la fois pour afficher le résultat direct et pour l'enregistrer
@@ -30,7 +33,7 @@ function gatherInfo {
 
     # récupérer la sortie et l'insérer dans le fichier texte
     echo "$commandLine" > "$fileName"
-    echo -e "\nInformations concernant $infoType ont été enregistrées dans $fileName"
+    echo -e "\n${YELLOW}Les informations concernant ${GREY}$infoType${NC}${YELLOW} ont été enregistrées dans ${GREY}$fileName${NC}"
 }
 
 # Demande le nom d'utilisateur
