@@ -86,6 +86,30 @@ Démarrez la VM avec l’ISO de Windows Server 2022 et suivez les étapes d’in
 
 ---
 
+### 1.4 Client Windows 10 PRO
+Créez une nouvelle VM avec les paramètres suivants :
+
+| **Paramètre**       | **Valeur**               |
+|---------------------|--------------------------|
+| **Nom**             | `CLIWIN01`               |
+| **OS**              | Windows 10 PRO      |
+| **PROC**            | 2 coeurs                 |
+| **RAM**             | 2 Go                     |
+| **Disque**          | 25 Go                    |
+| **Carte réseau 1**  | PONT                     |
+| **Carte réseau 2**  | Interne (nom : `Intnet`) |
+
+Une fois la machine créée, configurez les éléments suivants :
+- **Compte utilisateur** : `wilder` (dans le groupe des admins locaux)
+- **Mot de passe** : `Azerty1*`
+- **Adresse IP fixe** : `172.16.10.20/24`
+
+Démarrez la VM avec l’ISO de Windows Server 2022 et suivez les étapes d’installation. Configurez l’adresse IP statique :
+- **IP** : `172.16.10.20`
+- **Masque** : `255.255.255.0`
+
+---
+  
 ## Étape 2 : Configuration des IPs Statiques
 
 ### Configuration des IPs sous Debian et Ubuntu
