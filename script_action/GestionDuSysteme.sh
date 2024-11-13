@@ -31,7 +31,6 @@ do
 			if [ $reponse = "oui" ] || [ $reponse = "o" ]
 			then 
 				echo -e "\nLe systeme est en cours d'arret..."
-				sleep 3
 				#Executer la commande d'arret du systeme
 				sudo shutdown now	
 				exit 1
@@ -53,7 +52,6 @@ do
 			if [ $reponse = "oui" ] || [ $reponse = "o" ]
 			then 
 				echo -e "\nLe systeme est en cours de redemarrage..."
-				sleep 3
 				#Executer la commande de redemarrage du systeme
 				sudo reboot
 				exit 1
@@ -78,10 +76,16 @@ do
 		"4")
 		echo -e "\nRecherche des mises a jour disponibles..."
 		sudo apt update
-		echo -e "${YELLOW}\nListe des mises a jour disponibles:"
-		apt list --upgradable
-		echo ""
-		read -p "Voulez-vous installer les mises a jour? (oui/non)": reponse
+  		UPGRADABLE=$(apt list --upgradable 2>/dev/null | grep -v "Listing..." | wc -l)
+
+		if [ $UPGRADABLE -eq 0 ]; then
+			echo -e "${YELLOW}\nAucune mise à jour n'est disponible${NC}"
+		else
+			echo -e "${YELLOW}\nListe des mises a jour disponibles:"
+			apt list --upgradable
+			echo ""
+			read -p "Voulez-vous installer les mises a jour? (oui/non)": reponse
+   
 		while [ $reponse != "non" ] && [ $reponse != "n" ];
 		do
 			if [ $reponse = "oui" ] || [ $reponse = "o" ]
