@@ -84,7 +84,7 @@ do
 		# Liste des sessions ouvertes par l'utilisateur
 		"3")
 			echo -e "\nSessions ouvertes par l'utilisateur $Utilisateur:"
-			commandLine=$(who | grep "$Utilisateur" || echo "Aucune session ouverte.")
+			commandLine=$(who | grep "$Utilisateur" || echo -e "\nAucune session ouverte")
 			echo -e "$commandLine"
 			gatherInfo "infoOpenSess" 1 "$(date +%Y-%m-%d)" "$commandLine"
 		;;
@@ -103,12 +103,13 @@ do
 		HIST_FILE="/home/$Utilisateur/.bash_history"
 		if [ -f "$HIST_FILE" ]; 
 		then
-			echo -e "\nHistorique des 20 dernières commandes :"
+			echo -e "\nHistorique des 20 dernières commandes hors script:"
 			commandLine=$(tail -n 20 "$HIST_FILE") # Affiche les 20 dernières commandes pour limiter la sortie
 			echo -e "$commandLine"
+			echo -e "\n${YELLOW}En cours de developpement: Historique complete des commandes${NC}"
     		gatherInfo "infoCmdHist" 1 "$(date +%Y-%m-%d)" "$commandLine"
 		else
-			echo "Historique indisponible ou l'utilisateur $Utilisateur n'a pas de fichier .bash_history."
+			echo -e "\nHistorique indisponible ou l'utilisateur $Utilisateur n'a pas de fichier .bash_history"
 		fi
 		;;
 
@@ -135,7 +136,7 @@ do
 				# Passer l'ensemble de la sortie à gatherInfo
 				gatherInfo "infoFolderPermissions" 1 "$(date +%Y-%m-%d)" "$commandLine"
         	else
-            		echo "Le dossier n'existe pas."
+            		echo -e "\nLe dossier n'existe pas"
         	fi
 		;;
 
@@ -162,7 +163,7 @@ do
 				# Passer l'ensemble de la sortie à gatherInfo
 				gatherInfo "infoFilePermissions" 1 "$(date +%Y-%m-%d)" "$commandLine"
 		else
-			echo "Le fichier n'existe pas."
+			echo -e "\nLe fichier n'existe pas"
 		fi
 		;;
 		
