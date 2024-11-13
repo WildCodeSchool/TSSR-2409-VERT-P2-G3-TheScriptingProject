@@ -98,7 +98,7 @@ while ($true) {
                                     ssh -t $user1 "powershell.exe -Command $Delete_User" 
                                 }
                                 "2" { 
-                                    scp C:\script_action\GroupControl.sh ${user1}:/C:/Windows/Temp/GroupControl.ps1
+                                    scp C:\script_action\GroupControl.ps1 ${user1}:/C:/Windows/Temp/GroupControl.ps1
                                     ssh -t $user1 "powershell.exe -Command $Exe_script_Group"
                                     ssh -t $user1 "powershell.exe -Command $Delete_Group"
                                 }
