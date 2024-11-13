@@ -25,7 +25,7 @@ WriteLog "********StartScriptGroupControl********"
 # Fonction pour lister les groupes
 function GroupsList {
     Get-LocalGroup | Select-Object -ExpandProperty Name
-    WriteLog "Consulattion de la liste des groupes"
+    WriteLog "Consultation de la liste des groupes"
 }
 
 # Fonction pour ajouter un utilisateur à un groupe
