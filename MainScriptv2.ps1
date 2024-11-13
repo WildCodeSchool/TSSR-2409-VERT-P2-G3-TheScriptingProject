@@ -129,7 +129,7 @@ while ($true) {
                                 "2" { 
                                     # Exécution du script distant
                                     WriteLog "Navigation dans le menu de Gestion des groupes"
-                                    scp C:\script_action\GroupControl.sh ${user1}:/C:/Windows/Temp/GroupControl.sh
+                                    scp C:\script_action\GroupControl.ps1 ${user1}:/C:/Windows/Temp/GroupControl.ps1
                                     ssh -t $user1 "powershell.exe -Command $Exe_script_Group"
                                     # Récupération du log du client
                                     scp ${user1}:/C:/Windows/Temp/log-remote.log C:\Windows\Temp\log-remote.log
