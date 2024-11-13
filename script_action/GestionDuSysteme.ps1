@@ -5,7 +5,21 @@ $White = "White"
 $Red = "Red"
 $Cyan= "Cyan"
 
+# Fonction log
+$Logfile = "C:\Windows\Temp\log-remote.log"
+function WriteLog
+{
+Param ([string]$LogString)
+$Stamp = (Get-Date).toString("yyyy/MM/dd HH:mm:ss")
+$User = $env:USERNAME
+$LogMessage = "$Stamp-$User-$LogString"
+Add-content $LogFile -value $LogMessage
+}
+
 $statut = $true
+
+# log lancement du script
+WriteLog "********StartScriptGestionDuSysteme********"
 
 while ($statut) 
 {
@@ -22,7 +36,8 @@ while ($statut)
         
 	"1" 
 	{
-            $reponse = Read-Host "`nVoulez-vous vraiment arreter le systeme? (oui/non)"
+            WriteLog "Action d'arret du systeme"
+	    $reponse = Read-Host "`nVoulez-vous vraiment arreter le systeme? (oui/non)"
             while ($reponse -ne "non" -and $reponse -ne "n") 
             {
                 if ($reponse -eq "oui" -or $reponse -eq "o") 
@@ -30,7 +45,6 @@ while ($statut)
                     Write-Host "`nLe systeme est en cours d'arret...`n"          
                     # Executer la commande d'arret du systeme
                     Stop-Computer -Force
-
                 } 
                 else 
                 {
@@ -43,13 +57,13 @@ while ($statut)
 		
         "2" 
 	{
-            $reponse = Read-Host "`nVoulez-vous vraiment redemarrer le systeme? (oui/non)"
+            WriteLog "Action de redemarrer du systeme"
+	    $reponse = Read-Host "`nVoulez-vous vraiment redemarrer le systeme? (oui/non)"
             while ($reponse -ne "non" -and $reponse -ne "n") 
             {
                 if ($reponse -eq "oui" -or $reponse -eq "o") 
                 {
                     Write-Host "`nLe systeme est en cours de redemarrage..."
-                    Start-Sleep -Seconds 3
                     # Executer la commande de redemarrage du systeme
                     Restart-Computer -Force
                 } 
@@ -64,14 +78,17 @@ while ($statut)
 		
 	"3" 
 	{
-            Write-Host "`nVerrouillage du systeme en cours..."
-            # Utiliser psshutdown.exe pour verrouiller la session
-            psshutdown /accepteula -l
+            WriteLog "Action de verrouillage du systeme"
+            Write-Host "`nFonctionnalite en cours de developpement" -f $Yellow
+            #Write-Host "`nVerrouillage du systeme en cours..."
+            # Utiliser psshutdown.exe pour verrouiller la session           
+            #psshutdown /accepteula -l
         }
 		
         "4" 
 	{
-            Write-Host "`nRecherche des mises a jour disponibles..."
+            WriteLog "Action de recherche de mises a jour"
+	    Write-Host "`nRecherche des mises a jour disponibles..."
 	    Install-Module PSWindowsUpdate -Force -Scope CurrentUser
 	    Write-Host "`nListe des mises a jour disponibles:"
             Get-WindowsUpdate
@@ -80,7 +97,8 @@ while ($statut)
             {
                 if ($reponse -eq "oui" -or $reponse -eq "o") 
                 {
-                    # Executer la commande de mise a jour du systeme
+                    WriteLog "Installation des mises a jour"
+		    # Executer la commande de mise a jour du systeme
                     Install-WindowsUpdate -AcceptAll -AutoReboot
                 } 
                 else 
@@ -94,7 +112,8 @@ while ($statut)
 		
 	"5" 
 	{
-            $statut = $false
+            WriteLog "********EndScriptGestionDuSysteme********"
+	    $statut = $false
         }
     }
 }
