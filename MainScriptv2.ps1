@@ -63,12 +63,13 @@ WriteLog "********StartScript********"
 # Menu principal
 while ($true) {
 
-    Write-Host "`nChoisissez la machine sur laquelle vous voulez vous connecter :`n" -f $GREEN
+    Write-Host "`n<=== Choisissez la machine sur laquelle vous voulez vous connecter : ===>`n" -f $GREEN
     Write-Host "[1] " -f $YELLOW -NoNewline; Write-Host "CLIWIN01" -f $NC
     Write-Host "[2] " -f $YELLOW -NoNewline; Write-Host "CLIWIN02" -f $NC
     Write-Host "[x] " -f $YELLOW -NoNewline; Write-Host "Quitter`n" -f $NC
 
     $machine = Read-Host "Veuillez choisir une option "
+    Write-Host ""
 
     switch ($machine) {
 
@@ -80,12 +81,13 @@ while ($true) {
             $continueCLIWIN01 = $true
             while ($continueCLIWIN01) {
 
-                Write-Host "`nMenu Client CLIWIN01 :`n" -f $GREEN
+                Write-Host "`n=== Menu Client CLIWIN01 : ===`n" -f $GREEN
                 Write-Host "[1] " -f $YELLOW -NoNewline; Write-Host "Actions" -f $NC
                 Write-Host "[2] " -f $YELLOW -NoNewline; Write-Host "Informations" -f $NC
                 Write-Host "[3] " -f $YELLOW -NoNewline; Write-Host "Retour au menu principal" -f $NC
                 Write-Host "[x] " -f $YELLOW -NoNewline; Write-Host "Quitter le script`n" -f $NC
                 $action = Read-Host "Veuillez choisir une option "
+		Write-Host ""
 
                 switch ($action) {
 
@@ -97,7 +99,7 @@ while ($true) {
                         $continueActions = $true
                         while ($continueActions) {
 
-                            Write-Host "`nMenu action Client CLIWIN01 :`n" -f $GREEN
+                            Write-Host "`n=== Menu action Client CLIWIN01 : ===`n" -f $GREEN
                             Write-Host "[1] " -f $YELLOW -NoNewline; Write-Host "Gestion utilisateurs" -f $NC
                             Write-Host "[2] " -f $YELLOW -NoNewline; Write-Host "Gestion des groupes" -f $NC
                             Write-Host "[3] " -f $YELLOW -NoNewline; Write-Host "Gestion du systeme" -f $NC
@@ -108,6 +110,7 @@ while ($true) {
                             Write-Host "[8] " -f $YELLOW -NoNewline; Write-Host "Retour au menu precedent" -f $NC
                             Write-Host "[x] " -f $YELLOW -NoNewline; Write-Host "Fin du script`n" -f $NC
                             $gestion = Read-Host "Veuillez choisir une option "
+			    Write-Host ""
 
                             switch ($gestion) {
                             
@@ -147,11 +150,11 @@ while ($true) {
                                     scp C:\script_action\GestionDuSysteme.ps1 ${user1}:/C:/Windows/Temp/GestionDuSysteme.ps1
                                     ssh -t $user1 "powershell.exe -Command $Exe_script_System"
                                     # Récupération du log du client
-                                    scp ${user1}:/C:/Windows/Temp/log-remote.log C:\Windows\Temp\log-remote.log
+                                    scp ${user1}:/C:/Windows/Temp/log-remote.log C:/Windows/Temp/log-remote.log
                                     # Ajouter le contenu du fichier temporaire dans le fichier principal log-evt.log
-                                    Get-Content C:\Windows\Temp\log-remote.log | Add-Content C:\Windows\System32\LogFiles\log-evt.log
+                                    Get-Content C:/Windows/Temp/log-remote.log | Add-Content C:/Windows/System32/LogFiles/log-evt.log
                                     # Suppression du fichier temporaire local après l'ajout
-                                    Remove-Item C:\Windows\Temp\log-remote.log
+                                    Remove-Item C:/Windows/Temp/log-remote.log
                                     # Suppression du log et du script sur le client après transfert
                                     ssh -t $user1 "powershell.exe -Command $Delete_System" 
                                 }
@@ -231,13 +234,14 @@ while ($true) {
                         $continueInformations = $true
                         while ($continueInformations) {
 
-                            Write-Host "`nMenu informations Client CLIWIN01 :`n" -f $GREEN
+                            Write-Host "`n=== Menu informations Client CLIWIN01 : ===`n" -f $GREEN
                             Write-Host "[1] " -f $YELLOW -NoNewline; Write-Host "Informations Utilisateur" -f $NC
                             Write-Host "[2] " -f $YELLOW -NoNewline; Write-Host "Informations Systeme Software" -f $NC
                             Write-Host "[3] " -f $YELLOW -NoNewline; Write-Host "Informations Systeme Hardware" -f $NC
                             Write-Host "[4] " -f $YELLOW -NoNewline; Write-Host "Retour au menu precedent" -f $NC
                             Write-Host "[x] " -f $YELLOW -NoNewline; Write-Host "Fin du script`n" -f $NC
                             $information = Read-Host "Votre choix "
+			    Write-Host ""
 
                             switch ($information) {
                                 "1" { 
@@ -325,12 +329,13 @@ while ($true) {
             $continueCLIWIN02 = $true
             while ($continueCLIWIN02) {
 
-                Write-Host "`nMenu Client CLIWIN02 :`n" -f $GREEN
+                Write-Host "`n=== Menu Client CLIWIN02 : ===`n" -f $GREEN
                 Write-Host "[1] " -f $YELLOW -NoNewline; Write-Host "Actions" -f $NC
                 Write-Host "[2] " -f $YELLOW -NoNewline; Write-Host "Informations" -f $NC
                 Write-Host "[3] " -f $YELLOW -NoNewline; Write-Host "Retour au menu principal" -f $NC
                 Write-Host "[x] " -f $YELLOW -NoNewline; Write-Host "Quitter le script`n" -f $NC
                 $action = Read-Host "Choisissez une option "
+		Write-Host ""
 
                 switch ($action) {
 
@@ -342,7 +347,7 @@ while ($true) {
                         $continueActions = $true
                         while ($continueActions) {
 
-                            Write-Host "`nMenu action Client CLIWIN02 :`n" -f $GREEN
+                            Write-Host "`n=== Menu action Client CLIWIN02 : ===`n" -f $GREEN
                             Write-Host "[1] " -f $YELLOW -NoNewline; Write-Host "Gestion utilisateurs" -f $NC
                             Write-Host "[2] " -f $YELLOW -NoNewline; Write-Host "Gestion des groupes" -f $NC
                             Write-Host "[3] " -f $YELLOW -NoNewline; Write-Host "Gestion du systeme" -f $NC
@@ -353,6 +358,7 @@ while ($true) {
                             Write-Host "[8] " -f $YELLOW -NoNewline; Write-Host "Retour au menu precedent" -f $NC
                             Write-Host "[x] " -f $YELLOW -NoNewline; Write-Host "Fin du script`n" -f $NC
                             $gestion = Read-Host "Votre choix "
+			    Write-Host ""
 
                             switch ($gestion) {
                             
@@ -476,13 +482,14 @@ while ($true) {
                         $continueInformations = $true
                         while ($continueInformations) {
 
-                            Write-Host "`nMenu informations Client CLIWIN02 :`n" -f $GREEN
+                            Write-Host "`n=== Menu informations Client CLIWIN02 : ===`n" -f $GREEN
                             Write-Host "[1] " -f $YELLOW -NoNewline; Write-Host "Informations Utilisateur" -f $NC
                             Write-Host "[2] " -f $YELLOW -NoNewline; Write-Host "Informations Systeme Software" -f $NC
                             Write-Host "[3] " -f $YELLOW -NoNewline; Write-Host "Informations Systeme Hardware" -f $NC
                             Write-Host "[4] " -f $YELLOW -NoNewline; Write-Host "Retour au menu precedent" -f $NC
                             Write-Host "[x] " -f $YELLOW -NoNewline; Write-Host "Fin du script`n" -f $NC
                             $information = Read-Host "Votre choix "
+			    Write-Host ""
 
                             switch ($information) {
                                 "1" { 
