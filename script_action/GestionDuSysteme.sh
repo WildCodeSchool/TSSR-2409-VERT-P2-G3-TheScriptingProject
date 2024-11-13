@@ -76,28 +76,30 @@ do
 		"4")
 		echo -e "\nRecherche des mises a jour disponibles..."
 		sudo apt update
-  		UPGRADABLE=$(apt list --upgradable 2>/dev/null | grep -v "Listing..." | wc -l)
+		UPGRADABLE=$(apt list --upgradable 2>/dev/null | grep -v "Listing..." | wc -l)
 
-		if [ $UPGRADABLE -eq 0 ]; then
+		if [ "$UPGRADABLE" -eq 0 ]; 
+		then
 			echo -e "${YELLOW}\nAucune mise à jour n'est disponible${NC}"
 		else
 			echo -e "${YELLOW}\nListe des mises a jour disponibles:"
 			apt list --upgradable
 			echo ""
-			read -p "Voulez-vous installer les mises a jour? (oui/non)": reponse
+			read -p "Voulez-vous installer les mises a jour? (oui/non): " reponse
    
-		while [ $reponse != "non" ] && [ $reponse != "n" ];
-		do
-			if [ $reponse = "oui" ] || [ $reponse = "o" ]
-			then 
-				#Executer la commande de mise à jour du systeme
-				sudo apt upgrade -y
-			else 
-				echo -e "${RED}\nErreur lors de la saisie\n${NC}"
-				read -p "Voulez-vous installer les mises a jour? (oui/non)": reponse
-			fi
-		done
-		# Dans le cas ou reponse= non ou n, on retourne au menu précédent
+			while [ "$reponse" != "non" ] && [ "$reponse" != "n" ];
+			do
+				if [ "$reponse" = "oui" ] || [ "$reponse" = "o" ]
+				then 
+					# Exécuter la commande de mise à jour du système
+					sudo apt upgrade -y
+					break
+				else 
+					echo -e "${RED}\nErreur lors de la saisie\n${NC}"
+					read -p "Voulez-vous installer les mises a jour? (oui/non): " reponse
+				fi
+			done
+		fi
 		echo -e "\nRetour au menu des options du systeme"
 		;;
 
