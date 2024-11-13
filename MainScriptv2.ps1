@@ -110,6 +110,7 @@ while ($true) {
                             $gestion = Read-Host "Veuillez choisir une option "
 
                             switch ($gestion) {
+                            
                                 "1" { 
                                     # Exécution du script distant
                                     WriteLog "Navigation dans le menu de Gestion uilisateurs"
@@ -124,6 +125,7 @@ while ($true) {
                                     # Suppression du log et du script sur le client après transfert
                                     ssh -t $user1 "powershell.exe -Command $Delete_User" 
                                 }
+                                
                                 "2" { 
                                     # Exécution du script distant
                                     WriteLog "Navigation dans le menu de Gestion des groupes"
@@ -138,10 +140,12 @@ while ($true) {
                                     # Suppression du log et du script sur le client après transfert
                                     ssh -t $user1 "powershell.exe -Command $Delete_Group"
                                 }
+                                
                                 "3" { 
                                     # Exécution du script distant
                                     WriteLog "Navigation dans le menu de Gestion du systeme"
                                     scp C:\script_action\GestionDuSysteme.ps1 ${user1}:/C:/Windows/Temp/GestionDuSysteme.ps1
+                                    ssh -t $user1 "powershell.exe -Command $Exe_script_System"
                                     # Récupération du log du client
                                     scp ${user1}:/C:/Windows/Temp/log-remote.log C:\Windows\Temp\log-remote.log
                                     # Ajouter le contenu du fichier temporaire dans le fichier principal log-evt.log
@@ -149,9 +153,9 @@ while ($true) {
                                     # Suppression du fichier temporaire local après l'ajout
                                     Remove-Item C:\Windows\Temp\log-remote.log
                                     # Suppression du log et du script sur le client après transfert
-                                    ssh -t $user1 "powershell.exe -Command $Exe_script_System"
                                     ssh -t $user1 "powershell.exe -Command $Delete_System" 
                                 }
+                                
                                 "4" { 
                                     # Exécution du script distant
                                     WriteLog "Navigation dans le menu de Gestion des repertoires"
@@ -166,10 +170,12 @@ while ($true) {
                                     # Suppression du log et du script sur le client après transfert
                                     ssh -t $user1 "powershell.exe -Command $Delete_Repertoire" 
                                 }
+                                
                                 "5" { 
                                     WriteLog "Prise de main à distance (CLI) du client CLIWIN01"
                                     ssh -t $user1 
                                 }
+                                
                                 "6" { 
                                     # Exécution du script distant
                                     WriteLog "Navigation dans le menu de Gestion Logiciel"
@@ -184,6 +190,7 @@ while ($true) {
                                     # Suppression du log et du script sur le client après transfert
                                     ssh -t $user1 "powershell.exe -Command $Delete_Logiciel" 
                                 }
+                                
                                 "7" { 
                                     # Exécution du script distant
                                     WriteLog "Navigation dans le menu de Gestion Parefeu"
@@ -202,11 +209,13 @@ while ($true) {
                                 "8" { 
                                     $continueActions = $false
                                 }
+                                
                                 "x" { 
                                     WriteLog "********EndScript********"
                                     Write-Host "`nExit`n" -f $YELLOW
                                     exit 
                                 }
+                                
                                 default { 
                                     Write-Host "`n[Erreur]! Option invalide, veuillez reessayer !`n" -f $RED 
                                 }
@@ -245,6 +254,7 @@ while ($true) {
                                     # Suppression du log et du script sur le client après transfert
                                     ssh -t $user1 "powershell.exe -Command $Delete_InfoUser"
                                 }
+                                
                                 "2" { 
                                     # Exécution du script distant
                                     WriteLog "Navigation dans le menu des Informations Systeme Software"
@@ -259,6 +269,7 @@ while ($true) {
                                     # Suppression du log et du script sur le client après transfert
                                     ssh -t $user1 "powershell.exe -Command $Delete_InfoSoftware"
                                 }
+                                
                                 "3" { 
                                     # Exécution du script distant
                                     WriteLog "Navigation dans le menu des Informations Systeme Hardware"
@@ -273,9 +284,11 @@ while ($true) {
                                     # Suppression du log et du script sur le client après transfert
                                     ssh -t $user1 "powershell.exe -Command $Delete_InfoHardware"
                                 }
+                                
                                 "4" { 
                                     $continueInformations = $false
                                 }
+                                
                                 "x" { 
                                     WriteLog "********EndScript********"
                                     Write-Host "`nExit`n" -f $YELLOW
@@ -291,6 +304,7 @@ while ($true) {
                     "3" {
                         $continueCLIWIN01 = $false
                     }
+                    
                     "x" {
                         WriteLog "********EndScript********"
                         Write-Host "`nExit`n" -f $YELLOW
@@ -341,6 +355,7 @@ while ($true) {
                             $gestion = Read-Host "Votre choix "
 
                             switch ($gestion) {
+                            
                                 "1" { 
                                     # Exécution du script distant
                                     WriteLog "Navigation dans le menu de Gestion uilisateurs"
@@ -355,6 +370,7 @@ while ($true) {
                                     # Suppression du log et du script sur le client après transfert
                                     ssh -t $user2 "powershell.exe -Command $Delete_User"
                                 }
+                                
                                 "2" { 
                                     # Exécution du script distant
                                     WriteLog "Navigation dans le menu de Gestion des groupes"
@@ -369,6 +385,7 @@ while ($true) {
                                     # Suppression du log et du script sur le client après transfert
                                     ssh -t $user2 "powershell.exe -Command $Delete_Group"
                                 }
+                                
                                 "3" { 
                                     # Exécution du script distant
                                     WriteLog "Navigation dans le menu de Gestion du systeme"
@@ -383,6 +400,7 @@ while ($true) {
                                     # Suppression du log et du script sur le client après transfert
                                     ssh -t $user2 "powershell.exe -Command $Delete_System"
                                 }
+                                
                                 "4" { 
                                     # Exécution du script distant
                                     WriteLog "Navigation dans le menu de Gestion des repertoires"
@@ -397,10 +415,12 @@ while ($true) {
                                     # Suppression du log et du script sur le client après transfert
                                     ssh -t $user2 "powershell.exe -Command $Delete_Repertoire"
                                 }
+                                
                                 "5" { 
                                     WriteLog "Prise de main à distance (CLI) du client CLIWIN02"
                                     ssh -t $user2 
                                 }
+                                
                                 "6" { 
                                     # Exécution du script distant
                                     WriteLog "Navigation dans le menu de Gestion Logiciel"
@@ -415,6 +435,7 @@ while ($true) {
                                     # Suppression du log et du script sur le client après transfert
                                     ssh -t $user2 "powershell.exe -Command $Delete_Logiciel"
                                 }
+                                
                                 "7" { 
                                     # Exécution du script distant
                                     WriteLog "Navigation dans le menu de Gestion Parefeu"
@@ -433,11 +454,13 @@ while ($true) {
                                 "8" { 
                                     $continueActions = $false
                                 }
+                                
                                 "x" { 
                                     WriteLog "********EndScript********"
                                     Write-Host "`nExit`n" -f $YELLOW
                                     exit 
                                 }
+                                
                                 default { 
                                     Write-Host "`n[Erreur]! Option invalide, veuillez reessayer !`n" -f $RED 
                                 }
@@ -476,6 +499,7 @@ while ($true) {
                                     # Suppression du log et du script sur le client après transfert
                                     ssh -t $user2 "powershell.exe -Command $Delete_InfoUser"
                                 }
+                                
                                 "2" {
                                     # Exécution du script distant
                                     WriteLog "Navigation dans le menu des Informations Systeme Software"
@@ -490,6 +514,7 @@ while ($true) {
                                     # Suppression du log et du script sur le client après transfert
                                     ssh -t $user2 "powershell.exe -Command $Delete_InfoSoftware" 
                                 }
+                                
                                 "3" { 
                                     # Exécution du script distant
                                     WriteLog "Navigation dans le menu des Informations Systeme Hardware"
@@ -504,9 +529,11 @@ while ($true) {
                                     # Suppression du log et du script sur le client après transfert
                                     ssh -t $user2 "powershell.exe -Command $Delete_InfoHardware"
                                 }
+                                
                                 "4" { 
                                     $continueInformations = $false
                                 }
+                                
                                 "x" { 
                                     WriteLog "********EndScript********"
                                     Write-Host "`nExit`n" -f $YELLOW
@@ -528,6 +555,7 @@ while ($true) {
                         Write-Host "`nExit`n" -f $YELLOW
                         exit
                     }
+                    
                     default { 
                         Write-Host "`n[Erreur]! Option invalide, veuillez reessayer !`n" -f $RED 
                     }
