@@ -36,13 +36,13 @@ while ($statut)
         
 	"1" 
 	{
-            WriteLog "Action d'arret du systeme"
 	    $reponse = Read-Host "`nVoulez-vous vraiment arreter le systeme? (oui/non)"
             while ($reponse -ne "non" -and $reponse -ne "n") 
             {
                 if ($reponse -eq "oui" -or $reponse -eq "o") 
                 {
-                    Write-Host "`nLe systeme est en cours d'arret...`n"          
+                    Write-Host "`nLe systeme est en cours d'arret...`n"  
+		    WriteLog "Demande d'arret du systeme"
                     # Executer la commande d'arret du systeme
                     Stop-Computer -Force
                 } 
@@ -57,13 +57,13 @@ while ($statut)
 		
         "2" 
 	{
-            WriteLog "Action de redemarrer du systeme"
 	    $reponse = Read-Host "`nVoulez-vous vraiment redemarrer le systeme? (oui/non)"
             while ($reponse -ne "non" -and $reponse -ne "n") 
             {
                 if ($reponse -eq "oui" -or $reponse -eq "o") 
                 {
                     Write-Host "`nLe systeme est en cours de redemarrage..."
+		    WriteLog "Demande de redemarrage du systeme"
                     # Executer la commande de redemarrage du systeme
                     Restart-Computer -Force
                 } 
@@ -78,7 +78,7 @@ while ($statut)
 		
 	"3" 
 	{
-            WriteLog "Action de verrouillage du systeme"
+	    WriteLog "Demande de verrouillage de la session en cours"
             Write-Host "`nFonctionnalite en cours de developpement" -f $Yellow
             #Write-Host "`nVerrouillage du systeme en cours..."
             # Utiliser psshutdown.exe pour verrouiller la session           
@@ -87,7 +87,7 @@ while ($statut)
 		
         "4" 
 	{
-            WriteLog "Action de recherche de mises a jour"
+            WriteLog "Demande de recherche de mises a jour"
 	    Write-Host "`nRecherche des mises a jour disponibles..."
 	    Install-Module PSWindowsUpdate -Force -Scope CurrentUser
 	    Write-Host "`nListe des mises a jour disponibles:"
@@ -97,7 +97,7 @@ while ($statut)
             {
                 if ($reponse -eq "oui" -or $reponse -eq "o") 
                 {
-                    WriteLog "Installation des mises a jour"
+                    WriteLog "Demande d'installation des mises a jour"
 		    # Executer la commande de mise a jour du systeme
                     Install-WindowsUpdate -AcceptAll -AutoReboot
                 } 
