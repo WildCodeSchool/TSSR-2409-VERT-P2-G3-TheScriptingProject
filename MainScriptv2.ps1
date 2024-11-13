@@ -10,41 +10,41 @@ $user2 = "lbartaire@10.0.0.21"
 
 # Variables ACTION
 $Exe_script_User = 'powershell -ExecutionPolicy Bypass -File "C:\Windows\Temp\UserControl.ps1"'
-$Delete_User = 'Remove-Item "C:\Windows\Temp\UserControl.ps1"'
+$Delete_User = 'Remove-Item "C:\Windows\Temp\UserControl.ps1", "C:\Windows\Temp\log-remote.log"'
 
 $Exe_script_Group = 'powershell -ExecutionPolicy Bypass -File "C:\Windows\Temp\GroupControl.ps1"'
-$Delete_Group = 'Remove-Item "C:\Windows\Temp\GroupControl.ps1"'
+$Delete_Group = 'Remove-Item "C:\Windows\Temp\GroupControl.ps1", "C:\Windows\Temp\log-remote.log"'
 
 $Exe_script_System = 'powershell -ExecutionPolicy Bypass -File "C:\Windows\Temp\GestionDuSysteme.ps1"'
-$Delete_System = 'Remove-Item "C:\Windows\Temp\GestionDuSysteme.ps1"'
+$Delete_System = 'Remove-Item "C:\Windows\Temp\GestionDuSysteme.ps1", "C:\Windows\Temp\log-remote.log"'
 
 $Exe_script_Logiciel = 'powershell -ExecutionPolicy Bypass -File "C:\Windows\Temp\GestionLogiciel.ps1"'
-$Delete_Logiciel = 'Remove-Item "C:\Windows\Temp\GestionLogiciel.ps1"'
+$Delete_Logiciel = 'Remove-Item "C:\Windows\Temp\GestionLogiciel.ps1", "C:\Windows\Temp\log-remote.log"'
 
 $Exe_script_Parefeu = 'powershell -ExecutionPolicy Bypass -File "C:\Windows\Temp\GestionParefeu.ps1"'
-$Delete_Parefeu = 'Remove-Item "C:\Windows\Temp\GestionParefeu.ps1"'
+$Delete_Parefeu = 'Remove-Item "C:\Windows\Temp\GestionParefeu.ps1", "C:\Windows\Temp\log-remote.log"'
 
 $Exe_script_Repertoire = 'powershell -ExecutionPolicy Bypass -File "C:\Windows\Temp\GestionDesRepertoires.ps1"'
-$Delete_Repertoire = 'Remove-Item "C:\Windows\Temp\GestionDesRepertoires.ps1"'
+$Delete_Repertoire = 'Remove-Item "C:\Windows\Temp\GestionDesRepertoires.ps1", "C:\Windows\Temp\log-remote.log"'
 
 $Exe_script_InfoUser = 'powershell -ExecutionPolicy Bypass -File "C:\Windows\Temp\InfoUtilisateur.ps1"'
-$Delete_InfoUser = 'Remove-Item "C:\Windows\Temp\InfoUtilisateur.ps1"'
+$Delete_InfoUser = 'Remove-Item "C:\Windows\Temp\InfoUtilisateur.ps1", "C:\Windows\Temp\log-remote.log"'
 
 $Exe_script_InfoSoftware = 'powershell -ExecutionPolicy Bypass -File "C:\Windows\Temp\InfoDuSystemeSoftware.ps1"'
-$Delete_InfoSoftware = 'Remove-Item "C:\Windows\Temp\InfoDuSystemeSoftware.ps1"'
+$Delete_InfoSoftware = 'Remove-Item "C:\Windows\Temp\InfoDuSystemeSoftware.ps1", "C:\Windows\Temp\log-remote.log"'
 
 $Exe_script_InfoHardware = 'powershell -ExecutionPolicy Bypass -File "C:\Windows\Temp\InfoDuSystemeHardware.ps1"'
-$Delete_InfoHardware = 'Remove-Item "C:\Windows\Temp\InfoDuSystemeHardware.ps1"'
+$Delete_InfoHardware = 'Remove-Item "C:\Windows\Temp\InfoDuSystemeHardware.ps1", "C:\Windows\Temp\log-remote.log"'
 
 # Variables COLLECTE INFORMATION
 $Exe_script_InfoUser = 'powershell -ExecutionPolicy Bypass -File "C:\Windows\Temp\InfoUtilisateur.ps1"'
-$Delete_InfoUser = 'Remove-Item "C:\Windows\Temp\InfoUtilisateur.ps1"'
+$Delete_InfoUser = 'Remove-Item "C:\Windows\Temp\InfoUtilisateur.ps1", "C:\Windows\Temp\log-remote.log"'
 
 $Exe_script_InfoSoftware = 'powershell -ExecutionPolicy Bypass -File "C:\Windows\Temp\InfoDuSystemeSoftware.ps1"'
-$Delete_InfoSoftware = 'Remove-Item "C:\Windows\Temp\InfoDuSystemeSoftware.ps1"'
+$Delete_InfoSoftware = 'Remove-Item "C:\Windows\Temp\InfoDuSystemeSoftware.ps1", "C:\Windows\Temp\log-remote.log"'
 
 $Exe_script_InfoHardware = 'powershell -ExecutionPolicy Bypass -File "C:\Windows\Temp\InfoDuSystemeHardware.ps1"'
-$Delete_InfoHardware = 'Remove-Item "C:\Windows\Temp\InfoDuSystemeHardware.ps1"'
+$Delete_InfoHardware = 'Remove-Item "C:\Windows\Temp\InfoDuSystemeHardware.ps1", "C:\Windows\Temp\log-remote.log"'
 
 # Fonction log
 $Logfile = "C:\Windows\System32\LogFiles\log-evt.log"
@@ -68,7 +68,7 @@ while ($true) {
     Write-Host "[2] " -f $YELLOW -NoNewline; Write-Host "CLIWIN02" -f $NC
     Write-Host "[x] " -f $YELLOW -NoNewline; Write-Host "Quitter`n" -f $NC
 
-    $machine = Read-Host "Votre choix "
+    $machine = Read-Host "Veuillez choisir une option "
 
     switch ($machine) {
 
@@ -85,7 +85,7 @@ while ($true) {
                 Write-Host "[2] " -f $YELLOW -NoNewline; Write-Host "Informations" -f $NC
                 Write-Host "[3] " -f $YELLOW -NoNewline; Write-Host "Retour au menu principal" -f $NC
                 Write-Host "[x] " -f $YELLOW -NoNewline; Write-Host "Quitter le script`n" -f $NC
-                $action = Read-Host "Choisissez une option "
+                $action = Read-Host "Veuillez choisir une option "
 
                 switch ($action) {
 
@@ -107,31 +107,63 @@ while ($true) {
                             Write-Host "[7] " -f $YELLOW -NoNewline; Write-Host "Gestion du Parefeu" -f $NC
                             Write-Host "[8] " -f $YELLOW -NoNewline; Write-Host "Retour au menu precedent" -f $NC
                             Write-Host "[x] " -f $YELLOW -NoNewline; Write-Host "Fin du script`n" -f $NC
-                            $gestion = Read-Host "Votre choix "
+                            $gestion = Read-Host "Veuillez choisir une option "
 
                             switch ($gestion) {
                                 "1" { 
+                                    # Exécution du script distant
                                     WriteLog "Navigation dans le menu de Gestion uilisateurs"
                                     scp C:\script_action\UserControl.ps1 ${user1}:/C:/Windows/Temp/UserControl.ps1
                                     ssh -t $user1 "powershell.exe -Command $Exe_script_User"
+                                    # Récupération du log du client
+                                    scp ${user1}:/C:/Windows/Temp/log-remote.log C:\Windows\Temp\log-remote.log
+                                    # Ajouter le contenu du fichier temporaire dans le fichier principal log-evt.log
+                                    Get-Content C:\Windows\Temp\log-remote.log | Add-Content C:\Windows\System32\LogFiles\log-evt.log
+                                    # Suppression du fichier temporaire local après l'ajout
+                                    Remove-Item C:\Windows\Temp\log-remote.log
+                                    # Suppression du log et du script sur le client après transfert
                                     ssh -t $user1 "powershell.exe -Command $Delete_User" 
                                 }
                                 "2" { 
+                                    # Exécution du script distant
                                     WriteLog "Navigation dans le menu de Gestion des groupes"
                                     scp C:\script_action\GroupControl.sh ${user1}:/C:/Windows/Temp/GroupControl.sh
                                     ssh -t $user1 "powershell.exe -Command $Exe_script_Group"
+                                    # Récupération du log du client
+                                    scp ${user1}:/C:/Windows/Temp/log-remote.log C:\Windows\Temp\log-remote.log
+                                    # Ajouter le contenu du fichier temporaire dans le fichier principal log-evt.log
+                                    Get-Content C:\Windows\Temp\log-remote.log | Add-Content C:\Windows\System32\LogFiles\log-evt.log
+                                    # Suppression du fichier temporaire local après l'ajout
+                                    Remove-Item C:\Windows\Temp\log-remote.log
+                                    # Suppression du log et du script sur le client après transfert
                                     ssh -t $user1 "powershell.exe -Command $Delete_Group"
                                 }
                                 "3" { 
+                                    # Exécution du script distant
                                     WriteLog "Navigation dans le menu de Gestion du systeme"
                                     scp C:\script_action\GestionDuSysteme.ps1 ${user1}:/C:/Windows/Temp/GestionDuSysteme.ps1
+                                    # Récupération du log du client
+                                    scp ${user1}:/C:/Windows/Temp/log-remote.log C:\Windows\Temp\log-remote.log
+                                    # Ajouter le contenu du fichier temporaire dans le fichier principal log-evt.log
+                                    Get-Content C:\Windows\Temp\log-remote.log | Add-Content C:\Windows\System32\LogFiles\log-evt.log
+                                    # Suppression du fichier temporaire local après l'ajout
+                                    Remove-Item C:\Windows\Temp\log-remote.log
+                                    # Suppression du log et du script sur le client après transfert
                                     ssh -t $user1 "powershell.exe -Command $Exe_script_System"
                                     ssh -t $user1 "powershell.exe -Command $Delete_System" 
                                 }
                                 "4" { 
+                                    # Exécution du script distant
                                     WriteLog "Navigation dans le menu de Gestion des repertoires"
                                     scp C:\script_action\GestionDesRepertoires.ps1 ${user1}:/C:/Windows/Temp/GestionDesRepertoires.ps1
                                     ssh -t $user1 "powershell.exe -Command $Exe_script_Repertoire"
+                                    # Récupération du log du client
+                                    scp ${user1}:/C:/Windows/Temp/log-remote.log C:\Windows\Temp\log-remote.log
+                                    # Ajouter le contenu du fichier temporaire dans le fichier principal log-evt.log
+                                    Get-Content C:\Windows\Temp\log-remote.log | Add-Content C:\Windows\System32\LogFiles\log-evt.log
+                                    # Suppression du fichier temporaire local après l'ajout
+                                    Remove-Item C:\Windows\Temp\log-remote.log
+                                    # Suppression du log et du script sur le client après transfert
                                     ssh -t $user1 "powershell.exe -Command $Delete_Repertoire" 
                                 }
                                 "5" { 
@@ -139,15 +171,31 @@ while ($true) {
                                     ssh -t $user1 
                                 }
                                 "6" { 
+                                    # Exécution du script distant
                                     WriteLog "Navigation dans le menu de Gestion Logiciel"
                                     scp C:\script_action\GestionLogiciel.ps1 ${user1}:/C:/Windows/Temp/GestionLogiciel.ps1
                                     ssh -t $user1 "powershell.exe -Command $Exe_script_Logiciel"
+                                    # Récupération du log du client
+                                    scp ${user1}:/C:/Windows/Temp/log-remote.log C:\Windows\Temp\log-remote.log
+                                    # Ajouter le contenu du fichier temporaire dans le fichier principal log-evt.log
+                                    Get-Content C:\Windows\Temp\log-remote.log | Add-Content C:\Windows\System32\LogFiles\log-evt.log
+                                    # Suppression du fichier temporaire local après l'ajout
+                                    Remove-Item C:\Windows\Temp\log-remote.log
+                                    # Suppression du log et du script sur le client après transfert
                                     ssh -t $user1 "powershell.exe -Command $Delete_Logiciel" 
                                 }
                                 "7" { 
+                                    # Exécution du script distant
                                     WriteLog "Navigation dans le menu de Gestion Parefeu"
                                     scp C:\script_action\GestionParefeu.ps1 ${user1}:/C:/Windows/Temp/GestionParefeu.ps1
                                     ssh -t $user1 "powershell.exe -Command $Exe_script_Parefeu"
+                                    # Récupération du log du client
+                                    scp ${user1}:/C:/Windows/Temp/log-remote.log C:\Windows\Temp\log-remote.log
+                                    # Ajouter le contenu du fichier temporaire dans le fichier principal log-evt.log
+                                    Get-Content C:\Windows\Temp\log-remote.log | Add-Content C:\Windows\System32\LogFiles\log-evt.log
+                                    # Suppression du fichier temporaire local après l'ajout
+                                    Remove-Item C:\Windows\Temp\log-remote.log
+                                    # Suppression du log et du script sur le client après transfert
                                     ssh -t $user1 "powershell.exe -Command $Delete_Parefeu"
                                 }
 
@@ -184,21 +232,45 @@ while ($true) {
 
                             switch ($information) {
                                 "1" { 
+                                    # Exécution du script distant
                                     WriteLog "Navigation dans le menu des Infomations Utilisateur"
                                     scp C:\script_information\InfoUtilisateur.ps1 ${user1}:/C:/Windows/Temp/InfoUtilisateur.ps1
-                                    ssh -t $user1 "powershell.exe -Command $Exe_script_InfoUser "
+                                    ssh -t $user1 "powershell.exe -Command $Exe_script_InfoUser"
+                                    # Récupération du log du client
+                                    scp ${user1}:/C:/Windows/Temp/log-remote.log C:\Windows\Temp\log-remote.log
+                                    # Ajouter le contenu du fichier temporaire dans le fichier principal log-evt.log
+                                    Get-Content C:\Windows\Temp\log-remote.log | Add-Content C:\Windows\System32\LogFiles\log-evt.log
+                                    # Suppression du fichier temporaire local après l'ajout
+                                    Remove-Item C:\Windows\Temp\log-remote.log
+                                    # Suppression du log et du script sur le client après transfert
                                     ssh -t $user1 "powershell.exe -Command $Delete_InfoUser"
                                 }
                                 "2" { 
+                                    # Exécution du script distant
                                     WriteLog "Navigation dans le menu des Informations Systeme Software"
                                     scp C:\script_information\InfoDuSystemeSoftware.ps1 ${user1}:/C:/Windows/Temp/InfoDuSystemeSoftware.ps1
                                     ssh -t $user1 "powershell.exe -Command $Exe_script_InfoSoftware"
+                                    # Récupération du log du client
+                                    scp ${user1}:/C:/Windows/Temp/log-remote.log C:\Windows\Temp\log-remote.log
+                                    # Ajouter le contenu du fichier temporaire dans le fichier principal log-evt.log
+                                    Get-Content C:\Windows\Temp\log-remote.log | Add-Content C:\Windows\System32\LogFiles\log-evt.log
+                                    # Suppression du fichier temporaire local après l'ajout
+                                    Remove-Item C:\Windows\Temp\log-remote.log
+                                    # Suppression du log et du script sur le client après transfert
                                     ssh -t $user1 "powershell.exe -Command $Delete_InfoSoftware"
                                 }
                                 "3" { 
+                                    # Exécution du script distant
                                     WriteLog "Navigation dans le menu des Informations Systeme Hardware"
                                     scp C:\script_information\InfoDuSystemeHardware.ps1 ${user1}:/C:/Windows/Temp/InfoDuSystemeHardware.ps1
                                     ssh -t $user1 "powershell.exe -Command $Exe_script_InfoHardware"
+                                    # Récupération du log du client
+                                    scp ${user1}:/C:/Windows/Temp/log-remote.log C:\Windows\Temp\log-remote.log
+                                    # Ajouter le contenu du fichier temporaire dans le fichier principal log-evt.log
+                                    Get-Content C:\Windows\Temp\log-remote.log | Add-Content C:\Windows\System32\LogFiles\log-evt.log
+                                    # Suppression du fichier temporaire local après l'ajout
+                                    Remove-Item C:\Windows\Temp\log-remote.log
+                                    # Suppression du log et du script sur le client après transfert
                                     ssh -t $user1 "powershell.exe -Command $Delete_InfoHardware"
                                 }
                                 "4" { 
@@ -270,44 +342,92 @@ while ($true) {
 
                             switch ($gestion) {
                                 "1" { 
+                                    # Exécution du script distant
                                     WriteLog "Navigation dans le menu de Gestion uilisateurs"
-                                    scp C:\script_action\UserControl.ps1 ${user1}:/C:/Windows/Temp/UserControl.ps1
-                                    ssh -t $user1 "powershell.exe -Command $Exe_script_User"
-                                    ssh -t $user1 "powershell.exe -Command $Delete_User"
+                                    scp C:\script_action\UserControl.ps1 ${user2}:/C:/Windows/Temp/UserControl.ps1
+                                    ssh -t $user2 "powershell.exe -Command $Exe_script_User"
+                                    # Récupération du log du client
+                                    scp ${user2}:/C:/Windows/Temp/log-remote.log C:\Windows\Temp\log-remote.log
+                                    # Ajouter le contenu du fichier temporaire dans le fichier principal log-evt.log
+                                    Get-Content C:\Windows\Temp\log-remote.log | Add-Content C:\Windows\System32\LogFiles\log-evt.log
+                                    # Suppression du fichier temporaire local après l'ajout
+                                    Remove-Item C:\Windows\Temp\log-remote.log
+                                    # Suppression du log et du script sur le client après transfert
+                                    ssh -t $user2 "powershell.exe -Command $Delete_User"
                                 }
                                 "2" { 
+                                    # Exécution du script distant
                                     WriteLog "Navigation dans le menu de Gestion des groupes"
-                                    scp C:\script_action\GroupControl.ps1 ${user1}:/C:/Windows/Temp/GroupControl.ps1
-                                    ssh -t $user1 "powershell.exe -Command $Exe_script_Group"
-                                    ssh -t $user1 "powershell.exe -Command $Delete_Group"
+                                    scp C:\script_action\GroupControl.ps1 ${user2}:/C:/Windows/Temp/GroupControl.ps1
+                                    ssh -t $user2 "powershell.exe -Command $Exe_script_Group"
+                                    # Récupération du log du client
+                                    scp ${user2}:/C:/Windows/Temp/log-remote.log C:\Windows\Temp\log-remote.log
+                                    # Ajouter le contenu du fichier temporaire dans le fichier principal log-evt.log
+                                    Get-Content C:\Windows\Temp\log-remote.log | Add-Content C:\Windows\System32\LogFiles\log-evt.log
+                                    # Suppression du fichier temporaire local après l'ajout
+                                    Remove-Item C:\Windows\Temp\log-remote.log
+                                    # Suppression du log et du script sur le client après transfert
+                                    ssh -t $user2 "powershell.exe -Command $Delete_Group"
                                 }
                                 "3" { 
+                                    # Exécution du script distant
                                     WriteLog "Navigation dans le menu de Gestion du systeme"
-                                    scp C:\script_action\GestionDuSysteme.ps1 ${user1}:/C:/Windows/Temp/GestionDuSysteme.ps1
-                                    ssh -t $user1 "powershell.exe -Command $Exe_script_System "
-                                    ssh -t $user1 "powershell.exe -Command $Delete_System"
+                                    scp C:\script_action\GestionDuSysteme.ps1 ${user2}:/C:/Windows/Temp/GestionDuSysteme.ps1
+                                    ssh -t $user2 "powershell.exe -Command $Exe_script_System "
+                                    # Récupération du log du client
+                                    scp ${user2}:/C:/Windows/Temp/log-remote.log C:\Windows\Temp\log-remote.log
+                                    # Ajouter le contenu du fichier temporaire dans le fichier principal log-evt.log
+                                    Get-Content C:\Windows\Temp\log-remote.log | Add-Content C:\Windows\System32\LogFiles\log-evt.log
+                                    # Suppression du fichier temporaire local après l'ajout
+                                    Remove-Item C:\Windows\Temp\log-remote.log
+                                    # Suppression du log et du script sur le client après transfert
+                                    ssh -t $user2 "powershell.exe -Command $Delete_System"
                                 }
                                 "4" { 
+                                    # Exécution du script distant
                                     WriteLog "Navigation dans le menu de Gestion des repertoires"
-                                    scp C:\script_action\GestionDesRepertoires.ps1 ${user1}:/C:/Windows/Temp/GestionDesRepertoires.ps1
-                                    ssh -t $user1 "powershell.exe -Command $Exe_script_Repertoire"
-                                    ssh -t $user1 "powershell.exe -Command $Delete_Repertoire"
+                                    scp C:\script_action\GestionDesRepertoires.ps1 ${user2}:/C:/Windows/Temp/GestionDesRepertoires.ps1
+                                    ssh -t $user2 "powershell.exe -Command $Exe_script_Repertoire"
+                                    # Récupération du log du client
+                                    scp ${user2}:/C:/Windows/Temp/log-remote.log C:\Windows\Temp\log-remote.log
+                                    # Ajouter le contenu du fichier temporaire dans le fichier principal log-evt.log
+                                    Get-Content C:\Windows\Temp\log-remote.log | Add-Content C:\Windows\System32\LogFiles\log-evt.log
+                                    # Suppression du fichier temporaire local après l'ajout
+                                    Remove-Item C:\Windows\Temp\log-remote.log
+                                    # Suppression du log et du script sur le client après transfert
+                                    ssh -t $user2 "powershell.exe -Command $Delete_Repertoire"
                                 }
                                 "5" { 
                                     WriteLog "Prise de main à distance (CLI) du client CLIWIN02"
                                     ssh -t $user2 
                                 }
                                 "6" { 
+                                    # Exécution du script distant
                                     WriteLog "Navigation dans le menu de Gestion Logiciel"
-                                    scp C:\script_action\GestionLogiciel.ps1 ${user1}:/C:/Windows/Temp/GestionLogiciel.ps1
-                                    ssh -t $user1 "powershell.exe -Command $Exe_script_Logiciel"
-                                    ssh -t $user1 "powershell.exe -Command $Delete_Logiciel"
+                                    scp C:\script_action\GestionLogiciel.ps1 ${user2}:/C:/Windows/Temp/GestionLogiciel.ps1
+                                    ssh -t $user2 "powershell.exe -Command $Exe_script_Logiciel"
+                                    # Récupération du log du client
+                                    scp ${user2}:/C:/Windows/Temp/log-remote.log C:\Windows\Temp\log-remote.log
+                                    # Ajouter le contenu du fichier temporaire dans le fichier principal log-evt.log
+                                    Get-Content C:\Windows\Temp\log-remote.log | Add-Content C:\Windows\System32\LogFiles\log-evt.log
+                                    # Suppression du fichier temporaire local après l'ajout
+                                    Remove-Item C:\Windows\Temp\log-remote.log
+                                    # Suppression du log et du script sur le client après transfert
+                                    ssh -t $user2 "powershell.exe -Command $Delete_Logiciel"
                                 }
                                 "7" { 
+                                    # Exécution du script distant
                                     WriteLog "Navigation dans le menu de Gestion Parefeu"
-                                    scp C:\script_action\GestionParefeu.ps1 ${user1}:/C:/Windows/Temp/GestionParefeu.ps1
-                                    ssh -t $user1 "powershell.exe -Command $Exe_script_Parefeu"
-                                    ssh -t $user1 "powershell.exe -Command $Delete_Parefeu"
+                                    scp C:\script_action\GestionParefeu.ps1 ${user2}:/C:/Windows/Temp/GestionParefeu.ps1
+                                    ssh -t $user2 "powershell.exe -Command $Exe_script_Parefeu"
+                                    # Récupération du log du client
+                                    scp ${user2}:/C:/Windows/Temp/log-remote.log C:\Windows\Temp\log-remote.log
+                                    # Ajouter le contenu du fichier temporaire dans le fichier principal log-evt.log
+                                    Get-Content C:\Windows\Temp\log-remote.log | Add-Content C:\Windows\System32\LogFiles\log-evt.log
+                                    # Suppression du fichier temporaire local après l'ajout
+                                    Remove-Item C:\Windows\Temp\log-remote.log
+                                    # Suppression du log et du script sur le client après transfert
+                                    ssh -t $user2 "powershell.exe -Command $Delete_Parefeu"
                                 }
 
                                 "8" { 
@@ -343,22 +463,46 @@ while ($true) {
 
                             switch ($information) {
                                 "1" { 
+                                    # Exécution du script distant
                                     WriteLog "Navigation dans le menu des Infomations Utilisateur"
-                                    scp C:\script_information\InfoUtilisateur.ps1 ${user1}:/C:/Windows/Temp/InfoUtilisateur.ps1
-                                    ssh -t $user1 "powershell.exe -Command $Exe_script_InfoUser "
-                                    ssh -t $user1 "powershell.exe -Command $Delete_InfoUser"
+                                    scp C:\script_information\InfoUtilisateur.ps1 ${user2}:/C:/Windows/Temp/InfoUtilisateur.ps1
+                                    ssh -t $user2 "powershell.exe -Command $Exe_script_InfoUser"
+                                    # Récupération du log du client
+                                    scp ${user2}:/C:/Windows/Temp/log-remote.log C:\Windows\Temp\log-remote.log
+                                    # Ajouter le contenu du fichier temporaire dans le fichier principal log-evt.log
+                                    Get-Content C:\Windows\Temp\log-remote.log | Add-Content C:\Windows\System32\LogFiles\log-evt.log
+                                    # Suppression du fichier temporaire local après l'ajout
+                                    Remove-Item C:\Windows\Temp\log-remote.log
+                                    # Suppression du log et du script sur le client après transfert
+                                    ssh -t $user2 "powershell.exe -Command $Delete_InfoUser"
                                 }
                                 "2" {
+                                    # Exécution du script distant
                                     WriteLog "Navigation dans le menu des Informations Systeme Software"
-                                    scp C:\script_information\InfoDuSystemeSoftware.ps1 ${user1}:/C:/Windows/Temp/InfoDuSystemeSoftware.ps1
-                                    ssh -t $user1 "powershell.exe -Command $Exe_script_InfoSoftware"
-                                    ssh -t $user1 "powershell.exe -Command $Delete_InfoSoftware" 
+                                    scp C:\script_information\InfoDuSystemeSoftware.ps1 ${user2}:/C:/Windows/Temp/InfoDuSystemeSoftware.ps1
+                                    ssh -t $user2 "powershell.exe -Command $Exe_script_InfoSoftware"
+                                    # Récupération du log du client
+                                    scp ${user2}:/C:/Windows/Temp/log-remote.log C:\Windows\Temp\log-remote.log
+                                    # Ajouter le contenu du fichier temporaire dans le fichier principal log-evt.log
+                                    Get-Content C:\Windows\Temp\log-remote.log | Add-Content C:\Windows\System32\LogFiles\log-evt.log
+                                    # Suppression du fichier temporaire local après l'ajout
+                                    Remove-Item C:\Windows\Temp\log-remote.log
+                                    # Suppression du log et du script sur le client après transfert
+                                    ssh -t $user2 "powershell.exe -Command $Delete_InfoSoftware" 
                                 }
                                 "3" { 
+                                    # Exécution du script distant
                                     WriteLog "Navigation dans le menu des Informations Systeme Hardware"
-                                    scp C:\script_information\InfoDuSystemeHardware.ps1 ${user1}:/C:/Windows/Temp/InfoDuSystemeHardware.ps1
-                                    ssh -t $user1 "powershell.exe -Command $Exe_script_InfoHardware"
-                                    ssh -t $user1 "powershell.exe -Command $Delete_InfoHardware"
+                                    scp C:\script_information\InfoDuSystemeHardware.ps1 ${user2}:/C:/Windows/Temp/InfoDuSystemeHardware.ps1
+                                    ssh -t $user2 "powershell.exe -Command $Exe_script_InfoHardware"
+                                    # Récupération du log du client
+                                    scp ${user2}:/C:/Windows/Temp/log-remote.log C:\Windows\Temp\log-remote.log
+                                    # Ajouter le contenu du fichier temporaire dans le fichier principal log-evt.log
+                                    Get-Content C:\Windows\Temp\log-remote.log | Add-Content C:\Windows\System32\LogFiles\log-evt.log
+                                    # Suppression du fichier temporaire local après l'ajout
+                                    Remove-Item C:\Windows\Temp\log-remote.log
+                                    # Suppression du log et du script sur le client après transfert
+                                    ssh -t $user2 "powershell.exe -Command $Delete_InfoHardware"
                                 }
                                 "4" { 
                                     $continueInformations = $false
