@@ -5,6 +5,20 @@ $CYAN = "Yellow"
 $CYAN = "Cyan"
 $NC = "White" # Aucune couleur
 
+# Fonction log
+$Logfile = "C:\Windows\Temp\log-remote.log"
+function WriteLog
+{
+Param ([string]$LogString)
+$Stamp = (Get-Date).toString("yyyy/MM/dd HH:mm:ss")
+$User = $env:USERNAME
+$LogMessage = "$Stamp-$User-$LogString"
+Add-content $LogFile -value $LogMessage
+}
+
+# log lancement du script
+WriteLog "********StartScriptInfoDuSystemeHardware********"
+
 # Boucle while true pour le menu information système
 while ($true) {
     Write-Host "`n------ MENU INFORMATION SYSTEME ------`n" -f $GREEN
@@ -24,12 +38,14 @@ while ($true) {
             Write-Host ""
             Get-WmiObject -Class Win32_Processor | Select-Object -Property Name, NumberOfCores, NumberOfEnableCore, NumberOfLogicalProcessors, Manufacturer
             Write-Host ""
+            WriteLog "Consultation du Type de CPU, nombre de coeurs, etc.."
             }
 
         # Mémoire totale de la RAM
         "2" {
             $ramTotal = (Get-CimInstance -ClassName Win32_ComputerSystem).TotalPhysicalMemory / 1GB
             "`nLa mémoire totale de la RAM est de {0:N1} Go`n" -f $ramTotal
+            WriteLog "Consultation de la memoire totale de la RAM"
             }
 
         # Utilisation de la RAM
@@ -38,6 +54,7 @@ while ($true) {
              $usedMemory = ($_.TotalVisibleMemorySize - $_.FreePhysicalMemory) / 1MB
              $totalMemory = $_.TotalVisibleMemorySize / 1MB
              "`nUtilisation de la mémoire : {0:N1} Go sur {1:N1} Go`n" -f $usedMemory, $totalMemory
+             WriteLog "Consultation de l'utilisation de la RAM"
              }
              }
             
@@ -45,17 +62,20 @@ while ($true) {
         "4" {
             Get-WmiObject Win32_LogicalDisk
             Write-Host ""
+            WriteLog "Consultation de l'utilisation du disque"
             }
             
         # Utilisation du processeur
         "5" {
              Get-CimInstance -ClassName Win32_Processor | ForEach-Object {
              "`nUtilisation du processeur : {0}%`n" -f $_.LoadPercentage
+             WriteLog "Consultation de l'utilisation du processeur"
             }
             }
             
         # Retour au menu principal
         "6" {
+            WriteLog "********EndScriptInfoDuSystemeHardware********"
             break
             }
 
