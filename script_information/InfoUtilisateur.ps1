@@ -15,11 +15,25 @@ if (-not $user)
     exit
 }
 
+# Fonction log
+$Logfile = "C:\Windows\Temp\log-remote.log"
+function WriteLog
+{
+Param ([string]$LogString)
+$Stamp = (Get-Date).toString("yyyy/MM/dd HH:mm:ss")
+$User = $env:USERNAME
+$LogMessage = "$Stamp-$User-$LogString"
+Add-content $LogFile -value $LogMessage
+}
+
+# log lancement du script
+WriteLog "********StartScriptInfoUtilisateur********"
 
 $statut = $true
 
 while ($statut) 
 {
+    WriteLog "Navigation dans le menu informations de $User"
     Write-Host "`nMENU INFORMATIONS UTILISATEUR`n" -f $Green
     Write-Host "[1]" -f $Cyan -NoNewline ; Write-Host " Date de derniere connexion" -f $White;
     Write-Host "[2]" -f $Cyan -NoNewline ; Write-Host " Date de derniere modification du mot de passe" -f $White;
@@ -36,6 +50,7 @@ while ($statut)
         
 	1" 
 	{
+ 	    WriteLog "Consultation de la date de dernier connexion de $User"
 	    Write-Host "`nDate de derniere connexion :"	
 	    $lastLogin = (Get-LocalUser -Name $user).LastLogon
             if ($lastLogin) 
@@ -44,12 +59,13 @@ while ($statut)
             } 
 	    else
 	    {
-                Write-Host "Aucune connexion enregistrée pour cet utilisateur."
+                Write-Host "Aucune connexion enregistrée pour cet utilisateur"
             }
 	}
 		
         "2" 
 	{
+ 	    WriteLog "Consultation de la date de derniere modification du mot de passe de $User"
 	    Write-Host "`nDate de derniere modification du mot de passe :"
 	    $passwordLastSet = (Get-LocalUser -Name $user).PasswordLastSet
             if ($passwordLastSet) 
@@ -58,12 +74,13 @@ while ($statut)
             } 
 	    else
 	    {
-                Write-Host "Date de dernière modification du mot de passe non disponible."
+                Write-Host "`nDate de dernière modification du mot de passe non disponible"
             }
 	}
 		
 	"3" 
 	{
+ 	    WriteLog "Consultation des sessions ouvertes par $User"
 	    Write-Host "`nSessions ouvertes par l'utilisateur :"
 	    $sessions = query user | Select-String $user
             if ($sessions) 
@@ -72,57 +89,64 @@ while ($statut)
             } 
 	    else 
 	    {
-                Write-Host "Aucune session ouverte pour cet utilisateur."
+                Write-Host "`nAucune session ouverte pour cet utilisateur"
             }
 	}
 
 	"4"
 	{
-		Write-Host "`nGroupes d'appartenance :"
-		$groups = Get-LocalGroup | Where-Object {(Get-LocalGroupMember -Group $_.Name -ErrorAction SilentlyContinue) -contains $user} | Select-Object -ExpandProperty Name
-
-		if ($groups) 
+		WriteLog "Consultation des groupes d'appartenance de $User"
+		Write-Host "`nListe des groupes locaux :" -f $Yellow
+		Get-LocalGroup | Select-Object -ExpandProperty Name
+		$Group = Read-Host "`nVeuillez choisir un Groupe"
+		$GroupMember = Get-LocalGroupMember -Group $Group| Where-Object { $_.Name -Like "*$User" }
+		if ($GroupMember) 
 		{
-			$groups -join ", " | Write-Host
+			Write-Host "`n$User appartient au groupe $Group"
 		} 
 		else 
 		{
-			Write-Host "Aucun groupe trouve pour cet utilisateur."	
+			Write-Host "`n$User n'appartient pas au groupe $Group"
 		}
 	}
 
 	"5" 
 	{
-		Write-Host "`nHistorique des commandes :"
+ 		WriteLog "Consultation de l'historique des commandes de $User"
+		Write-Host "`nHistorique des commandes hors script:"
 		#L'historique des commandes est stocké dans un fichier, par exemple : C:\Users\<NomUtilisateur>\AppData\Roaming\Microsoft\Windows\PowerShell\PSReadline\ConsoleHost_history.txt
 		$historyPath = "C:\Users\$user\AppData\Roaming\Microsoft\Windows\PowerShell\PSReadline\ConsoleHost_history.txt"
 		if (Test-Path $historyPath) 
 		{
             		Get-Content $historyPath 
+	      		Write-Host "`nEn cours de developpement: Historique Complete des commandes" -f $Yellow
 		} 
 		else 
 		{
-         		Write-Host "Aucun historique des commandes trouve pour l'utilisateur."
+         		Write-Host "`nAucun historique des commandes trouve pour l'utilisateur"
 		}
 	}
 		
 	6" 
 	{
-		Write-Host "`nDroits sur le dossier :"
-		$folderPath = Read-Host "Entrez le chemin du dossier"
+		$folderPath = Read-Host "`nEntrez le chemin du dossier"
+		Write-Host "`nDroits sur le dossier :`n"
 		Get-Acl -Path $folderPath | ForEach-Object { $_.Access | Where-Object { $_.IdentityReference -match $user } }
+		WriteLog "Consultation des Droits de $User sur le dossier $folderPath"
 	}
 		
 	"7" 
 	{
-		Write-Host "`nDroits sur le fichier :"
-		$filePath = Read-Host "Entrez le chemin du fichier"
+		$filePath = Read-Host "`nEntrez le chemin du fichier"
+		Write-Host "`nDroits sur le fichier :`n"
 		Get-Acl -Path $filePath | ForEach-Object { $_.Access | Where-Object { $_.IdentityReference -match $user } }
+		WriteLog "Consultation des Droits de $User sur le fichier $filePath"
 	}
 		
 	"8" 
 	{
-		$statut = $false
+		WriteLog "********EndScriptInfoUtilisateur********"
+  		$statut = $false
 	}
-}
+    }	
 }		
