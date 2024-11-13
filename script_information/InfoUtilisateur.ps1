@@ -95,18 +95,19 @@ while ($statut)
 
 	"4"
 	{
-		WriteLog "Consultation des groupes d'appartenance de $User"
-		Write-Host "`nListe des groupes locaux :" -f $Yellow
-		Get-LocalGroup | Select-Object -ExpandProperty Name
-		$Group = Read-Host "`nVeuillez choisir un Groupe"
-		$GroupMember = Get-LocalGroupMember -Group $Group| Where-Object { $_.Name -Like "*$User" }
-		if ($GroupMember) 
+		WriteLog "Consultation des groupes d'appartenance de $user"
+		Write-Host "`nGroupes d'appartenance de $user :"
+		$groups = Get-LocalGroup | Where-Object {
+   		(Get-LocalGroupMember -Group $_.Name | Where-Object { $_.Name -like "*$user" })
+		} | Select-Object -ExpandProperty Name
+
+		if ($groups) 
 		{
-			Write-Host "`n$User appartient au groupe $Group"
+			$groups -join ", " | Write-Host
 		} 
 		else 
 		{
-			Write-Host "`n$User n'appartient pas au groupe $Group"
+			Write-Host "Aucun groupe trouvé pour l'utilisateur $user"
 		}
 	}
 
