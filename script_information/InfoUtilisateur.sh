@@ -132,6 +132,8 @@ do
 				# Vérification des droits d'exécution
 				e_permission=$(sudo -u "$Utilisateur" [ -x "$CHEMIN_DOSSIER" ] && echo -e "\nExécution : Oui\n" || echo -e "\nExécution : Non\n")
 				commandLine="$commandLine$e_permission"  # Ajoute/concatène le résultat de l'exécution
+
+    				echo -e "$commandLine" 
 				
 				# Passer l'ensemble de la sortie à gatherInfo
 				gatherInfo "infoFolderPermissions" 1 "$(date +%Y-%m-%d)" "$commandLine"
@@ -158,6 +160,9 @@ do
 				
 				# Vérification des droits d'exécution
 				e_permission=$(sudo -u "$Utilisateur" [ -x "$CHEMIN_FICHIER" ] && echo -e "\nExécution : Oui\n" || echo -e "\nExécution : Non\n")
+
+    				echo -e "$commandLine" 
+	
 				commandLine="$commandLine$e_permission"  # Ajoute/concatène le résultat de l'exécution
 				
 				# Passer l'ensemble de la sortie à gatherInfo
