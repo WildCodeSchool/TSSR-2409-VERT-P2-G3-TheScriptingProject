@@ -115,5 +115,9 @@ while ($statut)
             WriteLog "********EndScriptGestionDuSysteme********"
 	    $statut = $false
         }
+	default 
+ 	{
+        	Write-Host "Choix invalide, veuillez recommencer"
+        }
     }
 }
