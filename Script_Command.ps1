@@ -92,6 +92,7 @@ $statut = $true
 
                     # Executer la commande de redemarrage du systeme
                     ssh wilder@172.16.10.20 "powershell -Command Restart-Computer -Force"
+		    return
                 } 
                 else 
                 {
