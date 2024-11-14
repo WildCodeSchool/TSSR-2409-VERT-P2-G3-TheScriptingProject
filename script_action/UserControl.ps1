@@ -21,6 +21,7 @@ Add-content $LogFile -value $LogMessage
 
 # log lancement du script
 WriteLog "********StartScriptUserControl********"
+WriteLog "Navigation dans le menu de gestion des utilisateurs"
 
 # Fonction pour lister les utilisateurs locaux
 function UsersList {
