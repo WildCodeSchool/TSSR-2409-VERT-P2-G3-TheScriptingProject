@@ -21,6 +21,7 @@ Add-content $LogFile -value $LogMessage
 
 # log lancement du script
 WriteLog "********StartScriptGroupControl********"
+WriteLog "Navigation dans le menu de gestion des groupes"
 
 # Fonction pour lister les groupes
 function GroupsList {
