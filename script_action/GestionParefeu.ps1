@@ -5,11 +5,27 @@ $CYAN = "Yellow"
 $CYAN = "Cyan"
 $NC = "White" # Aucune couleur
 
+# Fonction log
+$Logfile = "C:\Windows\Temp\log-remote.log"
+function WriteLog
+{
+Param ([string]$LogString)
+$Stamp = (Get-Date).toString("yyyy/MM/dd HH:mm:ss")
+$User = $env:USERNAME
+$LogMessage = "$Stamp-$User-$LogString"
+Add-content $LogFile -value $LogMessage
+}
+
+# log lancement du script
+WriteLog "********StartScriptGestionParefeu********"
+WriteLog "Navigation dans le menu de gestion du pare-feu"
+
 # Fonction pour menu et choix des règles du pare-feu
 function Menu-ReglesPareFeu {
 
     # Boucle while pour le menu des règles pare-feu
     while ($true) {
+        WriteLog "Navigation dans le menu des regles Pare-feu"
         Write-Host "`n------ MENU DES RÈGLES PARE-FEU ------`n" -f $GREEN
         Write-Host "[1] " -ForegroundColor $CYAN -NoNewline; Write-Host "Ajouter une règle" -f $NC
         Write-Host "[2] " -ForegroundColor $CYAN -NoNewline; Write-Host "Supprimer une règle" -f $NC
@@ -41,6 +57,7 @@ function Menu-ReglesPareFeu {
                 # Créer la règle avec la direction valide
                 New-NetFirewallRule -DisplayName $ruleName -Description $ruleDescription -Direction $direction -Protocol $protocol -LocalPort $port -Action Allow
                 Write-Host "Règle de pare-feu ajoutée : $ruleName" -f $GREEN
+                WriteLog "Regle de pare-feu $ruleName a ete ajoutee"
 
                 # Afficher les détails de la règle, y compris les ports
                 Get-NetFirewallRule -DisplayName $ruleName | Format-List *
@@ -50,6 +67,7 @@ function Menu-ReglesPareFeu {
             "2" {
                 $regle = Read-Host "`nEntrer la règle à supprimer"
                 Write-Host "`nRègle supprimée : $regle`n" -f $GREEN
+                WriteLog "Regle de parfeu $regle a ete supprime"
 
                 $ruleName = "$regle"
                 Remove-NetFirewallRule -DisplayName $ruleName
@@ -58,6 +76,7 @@ function Menu-ReglesPareFeu {
             "3" {
                 Write-Host "Règles de pare-feu actuelles :`n" -f $GREEN
                 Get-NetFirewallRule | Format-Table -Property DisplayName, Enabled, Action, Direction
+                WriteLog "Consultation des regles de parfeu actuelles"
             }
 
             # Retour au menu principal
@@ -102,6 +121,7 @@ while ($true) {
             if ($oui -eq "oui") {
                 Set-NetFirewallProfile -Profile * -Enabled True
                 Write-Host "`nLe pare-feu a bien été activé.`n" -f $GREEN
+                WriteLog "Le pare-feu a ete active"
             } else {
                 Write-Host "`nLe pare-feu n'a pas été activé.`n" -f $RED
             }
@@ -121,6 +141,7 @@ while ($true) {
             if ($oui -eq "oui") {
                 Set-NetFirewallProfile -Profile * -Enabled False
                 Write-Host "`nLe pare-feu a bien été désactivé.`n" -f $GREEN
+                WriteLog "Le pare-feu a ete desactive"
             } else {
                 Write-Host "`nLe pare-feu n'a pas été désactivé.`n" -f $RED
             }
@@ -128,6 +149,7 @@ while ($true) {
 
         # Retour au menu principal
         "4" {
+            WriteLog "********StartScriptGestionParefeu********"
             break
             }
 

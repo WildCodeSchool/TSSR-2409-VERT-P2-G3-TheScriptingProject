@@ -28,12 +28,12 @@ Add-content $LogFile -value $LogMessage
 
 # log lancement du script
 WriteLog "********StartScriptInfoUtilisateur********"
+WriteLog "Navigation dans le menu informations de $User"
 
 $statut = $true
 
 while ($statut) 
 {
-    WriteLog "Navigation dans le menu informations de $User"
     Write-Host "`nMENU INFORMATIONS UTILISATEUR`n" -f $Green
     Write-Host "[1]" -f $Cyan -NoNewline ; Write-Host " Date de derniere connexion" -f $White;
     Write-Host "[2]" -f $Cyan -NoNewline ; Write-Host " Date de derniere modification du mot de passe" -f $White;
@@ -47,8 +47,9 @@ while ($statut)
 
  switch ($choix_option) 
  {	
-        
-	1" 
+
+	# Date de derniere connexion
+	"1" 
 	{
  	    WriteLog "Consultation de la date de dernier connexion de $User"
 	    Write-Host "`nDate de derniere connexion :"	
@@ -62,7 +63,8 @@ while ($statut)
                 Write-Host "Aucune connexion enregistrée pour cet utilisateur"
             }
 	}
-		
+
+  	#  Date de derniere modification du mot de passe
         "2" 
 	{
  	    WriteLog "Consultation de la date de derniere modification du mot de passe de $User"
@@ -77,7 +79,8 @@ while ($statut)
                 Write-Host "`nDate de dernière modification du mot de passe non disponible"
             }
 	}
-		
+
+  	# Liste des sessions ouvertes
 	"3" 
 	{
  	    WriteLog "Consultation des sessions ouvertes par $User"
@@ -93,6 +96,7 @@ while ($statut)
             }
 	}
 
+	# Groupes d'appartenance
 	"4"
 	{
 		WriteLog "Consultation des groupes d'appartenance de $user"
@@ -111,6 +115,7 @@ while ($statut)
 		}
 	}
 
+	# Historique des commandes
 	"5" 
 	{
  		WriteLog "Consultation de l'historique des commandes de $User"
@@ -127,15 +132,17 @@ while ($statut)
          		Write-Host "`nAucun historique des commandes trouve pour l'utilisateur"
 		}
 	}
-		
-	6" 
+
+  	# Droits sur un dossier
+	"6" 
 	{
 		$folderPath = Read-Host "`nEntrez le chemin du dossier"
 		Write-Host "`nDroits sur le dossier :`n"
 		Get-Acl -Path $folderPath | ForEach-Object { $_.Access | Where-Object { $_.IdentityReference -match $user } }
 		WriteLog "Consultation des Droits de $User sur le dossier $folderPath"
 	}
-		
+
+  	# Droits sur un fichier
 	"7" 
 	{
 		$filePath = Read-Host "`nEntrez le chemin du fichier"
@@ -143,11 +150,17 @@ while ($statut)
 		Get-Acl -Path $filePath | ForEach-Object { $_.Access | Where-Object { $_.IdentityReference -match $user } }
 		WriteLog "Consultation des Droits de $User sur le fichier $filePath"
 	}
-		
+
+  	# Retour au menu principal 
 	"8" 
 	{
 		WriteLog "********EndScriptInfoUtilisateur********"
   		$statut = $false
+	}
+ 
+         # Indique si erreur de saisie et relance le script    
+        default {
+            Write-Host "[ERREUR]! Option invalide, veuillez reessayer !`n" -f $RED
 	}
     }	
 }		

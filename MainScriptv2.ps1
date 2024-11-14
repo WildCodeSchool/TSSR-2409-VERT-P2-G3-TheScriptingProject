@@ -238,7 +238,8 @@ while ($true) {
                             Write-Host "[1] " -f $YELLOW -NoNewline; Write-Host "Informations Utilisateur" -f $NC
                             Write-Host "[2] " -f $YELLOW -NoNewline; Write-Host "Informations Systeme Software" -f $NC
                             Write-Host "[3] " -f $YELLOW -NoNewline; Write-Host "Informations Systeme Hardware" -f $NC
-                            Write-Host "[4] " -f $YELLOW -NoNewline; Write-Host "Retour au menu precedent" -f $NC
+			    Write-Host "[4] " -f $YELLOW -NoNewline; Write-Host "Recherche des evenement dans le fichier des logs" -f $NC
+                            Write-Host "[5] " -f $YELLOW -NoNewline; Write-Host "Retour au menu precedent" -f $NC
                             Write-Host "[x] " -f $YELLOW -NoNewline; Write-Host "Fin du script`n" -f $NC
                             $information = Read-Host "Votre choix "
 			    Write-Host ""
@@ -288,8 +289,13 @@ while ($true) {
                                     # Suppression du log et du script sur le client après transfert
                                     ssh -t $user1 "powershell.exe -Command $Delete_InfoHardware"
                                 }
-                                
-                                "4" { 
+
+    				"4" {
+					WriteLog "Consultation des logs"
+     					Get-Content C:\Windows\System32\LogFiles\log-evt.log
+     				}
+    
+                                "5" { 
                                     $continueInformations = $false
                                 }
                                 
@@ -486,7 +492,8 @@ while ($true) {
                             Write-Host "[1] " -f $YELLOW -NoNewline; Write-Host "Informations Utilisateur" -f $NC
                             Write-Host "[2] " -f $YELLOW -NoNewline; Write-Host "Informations Systeme Software" -f $NC
                             Write-Host "[3] " -f $YELLOW -NoNewline; Write-Host "Informations Systeme Hardware" -f $NC
-                            Write-Host "[4] " -f $YELLOW -NoNewline; Write-Host "Retour au menu precedent" -f $NC
+                            Write-Host "[4] " -f $YELLOW -NoNewline; Write-Host "Recherche des evenement dans le fichier des logs" -f $NC
+                            Write-Host "[5] " -f $YELLOW -NoNewline; Write-Host "Retour au menu precedent" -f $NC
                             Write-Host "[x] " -f $YELLOW -NoNewline; Write-Host "Fin du script`n" -f $NC
                             $information = Read-Host "Votre choix "
 			    Write-Host ""
@@ -537,7 +544,12 @@ while ($true) {
                                     ssh -t $user2 "powershell.exe -Command $Delete_InfoHardware"
                                 }
                                 
-                                "4" { 
+                                "4" {
+					WriteLog "Consultation des logs"
+     					Get-Content C:\Windows\System32\LogFiles\log-evt.log
+     				}	
+    
+                                "5" { 
                                     $continueInformations = $false
                                 }
                                 
