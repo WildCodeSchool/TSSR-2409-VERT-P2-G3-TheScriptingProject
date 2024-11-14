@@ -49,7 +49,7 @@ while ($statut)
  {	
 
 	# Date de derniere connexion
-	1" 
+	"1" 
 	{
  	    WriteLog "Consultation de la date de dernier connexion de $User"
 	    Write-Host "`nDate de derniere connexion :"	
