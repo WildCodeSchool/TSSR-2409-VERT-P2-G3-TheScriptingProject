@@ -33,7 +33,7 @@ function gatherInfo {
 
     # récupérer la sortie et l'insérer dans le fichier texte
     echo "$commandLine" > "$fileName"
-    echo -e "\n${YELLOW}Les informations concernant ${GREY}$infoType${NC}${YELLOW} ont été enregistrées dans ${GREY}$fileName${NC}"
+    echo -e "\n${YELLOW}Les informations concernant ${NC}$infoType${YELLOW} ont été enregistrées dans ${NC}$fileName$"
 }
 
 
