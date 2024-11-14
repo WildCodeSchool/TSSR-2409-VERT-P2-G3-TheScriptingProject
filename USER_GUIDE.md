@@ -13,7 +13,10 @@
 
 
 - **Windows** :
-  
+
+![MENU GESTION USERS](https://github.com/user-attachments/assets/ac490165-a49f-4765-a15a-93cae0e26038)<br>
+![CREER USER](https://github.com/user-attachments/assets/9c86d67b-ff32-4ff4-8258-af14ec534412)
+
 ---
 
 ### 1.2 Changement de mot de passe
@@ -26,6 +29,9 @@
 ![USER3](https://github.com/user-attachments/assets/ec96729f-5545-4c00-9ca8-8323764b7d86)
 
 - **Windows** : 
+
+![MENU GESTION USERS](https://github.com/user-attachments/assets/15527b45-8eb5-4e95-ac83-2ade224925ac)<br>
+![MODIF MDP USER](https://github.com/user-attachments/assets/d0903aa7-ef16-4048-99a5-312303212b78)
 
 ---
 
@@ -40,6 +46,9 @@
 
 - **Windows** :
 
+![MENU GESTION USERS](https://github.com/user-attachments/assets/dff00cfb-4523-4555-8bbe-cafff004ae93)<br>
+![DELETE USER](https://github.com/user-attachments/assets/cba32a27-eaa4-4a46-9ef5-a9bfc4cd813f)
+
 ---
 
 ### 1.4 Désactivation de compte utilisateur local
@@ -51,7 +60,11 @@
 ![USER CONTROL](https://github.com/user-attachments/assets/b143e3e2-bb0d-4606-9245-c10dc0351313)<br>
 ![USER5](https://github.com/user-attachments/assets/7083c59b-f5bd-40b8-b2f3-74ed668d55ec)
 
-- **Windows** : 
+- **Windows** :
+
+![MENU GESTION USERS](https://github.com/user-attachments/assets/fff9415c-78cc-4f66-b206-4363d3769328)<br>
+![DESACTIVE USER](https://github.com/user-attachments/assets/b8e01d95-1386-4887-830e-ddd8a4efbd7b)
+
 ---
 
 ### 1.5 Ajout à un groupe local
@@ -65,6 +78,7 @@
 
 
 - **Windows** : 
+
 
 ---
 
@@ -158,6 +172,9 @@
 
 - **Windows** : 
 
+![MENU CREATION DOSSIER](https://github.com/user-attachments/assets/07b1bf39-26b5-4b10-b894-8442a9a730e1)<br>
+![CREATION DOSSIER](https://github.com/user-attachments/assets/1b990a72-f2f3-4e38-bdb6-10ff5e0f8c53)
+
 ---
 
 ### 2.5 Modification de répertoire
@@ -170,8 +187,12 @@
 ![MODIF DOSSIER](https://github.com/user-attachments/assets/9b24d2f6-d91f-45f9-8fdc-faad0739db28)
 
 
-- **Ubuntu/Debian** :
-  
+- **Windows** :
+
+![MENU CREATION DOSSIER](https://github.com/user-attachments/assets/4ccfa47b-a12a-4a67-8f0f-e273eca26de1)<br>
+![MODIF DOSSIER](https://github.com/user-attachments/assets/f7d704c3-bcbf-4d1f-a9da-3bd505887147)
+
+
 ---
 
 ### 2.6 Suppression de répertoire
@@ -186,6 +207,10 @@
 
 
 - **Windows** : 
+
+![MENU CREATION DOSSIER](https://github.com/user-attachments/assets/35a0d10e-5302-4c5d-9719-624da0f52523)<br>
+![DELETE DOSSIER](https://github.com/user-attachments/assets/0cde04b4-142e-44a2-a193-4c1a37def484)
+
 
 ---
 
@@ -298,6 +323,10 @@
 
 - **Windows** : 
 
+![MENU INFO USER](https://github.com/user-attachments/assets/23e74e1a-690b-401d-8cab-581feba9bdae)<br>
+![DATE CO USER](https://github.com/user-attachments/assets/377d0f9e-540b-4f61-9e89-a19cf694c9e3)
+
+
 ---
 
 ## 2. Date de dernière modification du mot de passe
@@ -309,7 +338,12 @@
 ![LAST MDP](https://github.com/user-attachments/assets/f72e8282-ae19-439d-9c9d-11f58d1d74e9)
 
 
-- **Windows** : 
+- **Windows** :
+
+![MENU INFO USER](https://github.com/user-attachments/assets/81503817-3227-4f9d-92f7-05f10818cb09)<br>
+![DATE USER MDP](https://github.com/user-attachments/assets/4b0bc04c-78a6-4574-b17f-5a49a2e50376)
+
+
 ---
 
 ## 3. Liste des sessions ouvertes par l'utilisateur
@@ -323,6 +357,11 @@
 
 - **Windows** :
 
+![MENU INFO USER](https://github.com/user-attachments/assets/52c39d91-9b1a-4994-9958-443a639a6751)<br>
+![SESSION USER](https://github.com/user-attachments/assets/67590417-1097-4a1e-837a-28c2d2c35e52)
+
+
+
 ---
 
 ## 4. Groupe d’appartenance d’un utilisateur
@@ -334,7 +373,12 @@
 ![GROUP](https://github.com/user-attachments/assets/af5eed7f-ff91-4a86-a2ff-406a9c3a59bd)
 
 
-- **Windows** : 
+- **Windows** :
+
+![MENU INFO USER](https://github.com/user-attachments/assets/230f8270-4be0-4780-938b-51f38860e48a)<br>
+![GROUPE APPARTENANCE](https://github.com/user-attachments/assets/f80b6613-eb4f-45f0-8507-235c13b7a5ed)
+
+
 ---
 
 ## 5. Historique des commandes exécutées par l'utilisateur
@@ -348,6 +392,10 @@
 
 - **Windows** :
 
+![MENU INFO USER](https://github.com/user-attachments/assets/45656833-40a8-4b05-9de6-e287125db6bc)<br>
+![HISTORY COMMANDE](https://github.com/user-attachments/assets/a86294c7-e782-4481-b1ef-f7028da534e9)
+
+
 ---
 
 ## 6. Droits/permissions de l’utilisateur sur un dossier
@@ -359,7 +407,11 @@
 ![DROITS DOSSIER](https://github.com/user-attachments/assets/c773c1c1-1331-4bc7-9cc5-548cfa933698)
 
 
-- **Windows** : 
+- **Windows** :
+
+![MENU INFO USER](https://github.com/user-attachments/assets/5f06d5f5-d040-4057-81d3-5dad51b2a724)<br>
+![DROIT DOSSIER](https://github.com/user-attachments/assets/26e5eb0b-49b1-4302-89bb-190b7e280fb2)
+
 
 ---
 
@@ -373,7 +425,11 @@
 
 
 
-- **Windows** : 
+- **Windows** :
+
+![MENU INFO USER](https://github.com/user-attachments/assets/537b2f58-5c3c-4e8c-9d4d-18be9ec6d78f)<br>
+![DROIT FILE](https://github.com/user-attachments/assets/3ef8196b-dcf5-41c4-add2-9fa4bc12f5fc)
+
 
 ---
 
@@ -388,7 +444,11 @@
 ![VERSION OS](https://github.com/user-attachments/assets/d5c62bfa-21e1-4503-9e57-cdec27c052e8)
 
 
-- **Windows** : 
+- **Windows** :
+
+![MENU INFO SOFT](https://github.com/user-attachments/assets/9f7a637a-14fd-4d80-a95d-84602b8d73b1)<br>
+![OS VERSION](https://github.com/user-attachments/assets/2e744460-4668-4952-af91-9534965e470a)
+
 
 ---
 
@@ -401,7 +461,12 @@
 ![NOMBRE DISQUE](https://github.com/user-attachments/assets/8035722e-b6e0-4126-9ac1-7be237d9186e)
 
 
-- **Windows** : 
+- **Windows** :
+
+![MENU INFO SOFT](https://github.com/user-attachments/assets/88195d26-7a86-498a-bb2b-48f3af76dab9)<br>
+![NOMBRES DISKS](https://github.com/user-attachments/assets/422ca168-c149-4652-85a3-ff3bd1442902)
+
+
 ---
 
 ## 3. Partition (nombre, nom, système de fichiers, taille) par disque
@@ -413,7 +478,10 @@
 ![PARTITIONS](https://github.com/user-attachments/assets/b21068d7-1851-4632-9488-60aa3adcdbd1)
 
 
-- **Windows** : 
+- **Windows** :
+
+![MENU INFO SOFT](https://github.com/user-attachments/assets/77d96ba3-6ace-4eac-850c-e2da969d81d3)<br>
+![PARTITIONS](https://github.com/user-attachments/assets/4ed14884-5f8a-455d-9ea4-bcb6a1f45203)
 
 ---
 
@@ -429,6 +497,8 @@
 
 - **Windows** : 
 
+![MENU INFO SOFT](https://github.com/user-attachments/assets/00b89e12-4ea8-495d-bd4b-8f907e5d157a)<br>
+
 ---
 
 ## 5. Liste des services en cours d'exécution
@@ -440,7 +510,11 @@
 ![SERVICES EN COURS](https://github.com/user-attachments/assets/02316c7a-655c-4665-87cc-7f14430614cd)
 
 
-- **Windows** : 
+- **Windows** :
+
+![MENU INFO SOFT](https://github.com/user-attachments/assets/06150f55-a533-471f-925c-04e3263baebd)<br>
+![SERVICES EN COURS](https://github.com/user-attachments/assets/4ed851f0-4e15-4681-b5df-c96ecdf3ddef)
+
 
 ---
 
@@ -454,6 +528,10 @@
 
 
 - **Windows** : 
+
+![MENU INFO SOFT](https://github.com/user-attachments/assets/57765113-6b5c-4e2f-a8f0-a49cc57a7c2d)<br>
+![USER LOCAUX](https://github.com/user-attachments/assets/afbadd48-57c5-41d1-a225-329edb76548c)
+
 
 ---
 
