@@ -70,6 +70,7 @@ $statut = $true
 
                     # Executer la commande d'arret du systeme
                      ssh wilder@172.16.10.20 "powershell -Command Stop-Computer -Force"
+		     return
                 } 
                 else 
                 {
