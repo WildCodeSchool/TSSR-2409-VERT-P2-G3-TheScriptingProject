@@ -20,6 +20,7 @@ Add-content $LogFile -value $LogMessage
 
 # log lancement du script
 WriteLog "********StartScriptInfoDuSystemeSoftware********"
+WriteLog "Navigation dans le menu informations software du systeme"
 
 # fonction récupération de la version du système d'exploitation
 function showOsVersion {
