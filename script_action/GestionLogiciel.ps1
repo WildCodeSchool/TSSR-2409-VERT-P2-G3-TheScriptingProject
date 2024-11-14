@@ -18,6 +18,7 @@ Add-content $LogFile -value $LogMessage
 
 # log lancement du script
 WriteLog "********StartScriptGestionLogiciel********"
+WriteLog "Navigation dans le menu de gestion de logiciel"
 
 # Boucle while true pour le menu gestion de logiciel
 while ($true) {
