@@ -20,6 +20,7 @@ Add-content $LogFile -value $LogMessage
 
 # log lancement du script
 WriteLog "********StartScriptGestionDesRepertoires********"
+WriteLog "Navigation dans le menu de gestion des repertoires"
 
 # fonction de création de répertoires
 function dirCreation {
