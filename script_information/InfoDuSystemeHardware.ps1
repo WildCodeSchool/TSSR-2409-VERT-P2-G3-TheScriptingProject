@@ -18,6 +18,7 @@ Add-content $LogFile -value $LogMessage
 
 # log lancement du script
 WriteLog "********StartScriptInfoDuSystemeHardware********"
+WriteLog "Navigation dans le menu informations hardware du systeme"
 
 # Boucle while true pour le menu information système
 while ($true) {
