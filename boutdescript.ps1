@@ -1,28 +1,37 @@
-# Fonction pour ajouter un utilisateur à un groupe
-function GroupAdd {
-    # Demander le nom du groupe
-    $group = Read-Host "Dans quel groupe voulez-vous ajouter l'utilisateur ?"
+function GroupRemove {
+    # Obtenir l'utilisateur actuel
+    $currentUser = [System.Security.Principal.WindowsIdentity]::GetCurrent().Name
     
-    # Vérifier si le groupe existe
-    if (Get-LocalGroup -Name $group -ErrorAction SilentlyContinue) {
-        # Obtenir le nom de l'utilisateur actuel
-        $username = [System.Security.Principal.WindowsIdentity]::GetCurrent().Name
+    # Vérifier les groupes auxquels appartient l'utilisateur actuel
+    $currentGroups = Get-LocalGroup | ForEach-Object {
+        if (Get-LocalGroupMember -Group $_.Name -Member $currentUser -ErrorAction SilentlyContinue) {
+            $_.Name
+        }
+    }
+    
+    # Sélectionner le premier groupe (ou spécifier le groupe cible si nécessaire)
+    $currentGroup = $currentGroups | Select-Object -First 1
+
+    if (-not $currentGroup) {
+        Write-Host "Vous n'appartenez à aucun groupe local."
+        return
+    }
+
+    # Demander confirmation à l'utilisateur pour quitter le groupe
+    $response = Read-Host "Voulez-vous quitter votre groupe actuel ($currentGroup)? (oui ou non)"
+    
+    if ($response -eq "oui") {
+        # Retirer l'utilisateur du groupe
+        Remove-LocalGroupMember -Group $currentGroup -Member $currentUser
+        Write-Host "Vous avez bien quitté votre groupe"
         
-        # Ajouter l'utilisateur au groupe
-        try {
-            Add-LocalGroupMember -Group $group -Member $username
-            Write-Host "Ajout de $username au groupe $group réussi."
-            
-            # Vérifier si la fonction WriteLog est définie, puis appeler WriteLog si elle existe
-            if (Get-Command -Name WriteLog -ErrorAction SilentlyContinue) {
-                WriteLog "Ajout de $username au groupe $group"
-            } else {
-                Write-Host "Log non enregistré : la fonction WriteLog est introuvable."
-            }
-        } catch {
-            Write-Host "Erreur lors de l'ajout de l'utilisateur au groupe : $_"
+        # Vérifier si WriteLog est défini avant de l'appeler
+        if (Get-Command -Name WriteLog -ErrorAction SilentlyContinue) {
+            WriteLog "L'utilisateur $currentUser a quitté le groupe $currentGroup"
+        } else {
+            Write-Host "Log non enregistré : la fonction WriteLog est introuvable."
         }
     } else {
-        Write-Host "Le groupe '$group' n'existe pas."
+        Write-Host "Vous restez dans votre groupe actuel"
     }
 }
