@@ -20,6 +20,7 @@ $statut = $true
 
 # log lancement du script
 WriteLog "********StartScriptGestionDuSysteme********"
+WriteLog "Navigation dans le menu de gestion du systeme"
 
 while ($statut) 
 {
