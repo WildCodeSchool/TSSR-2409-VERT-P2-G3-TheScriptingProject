@@ -291,8 +291,8 @@ while ($true) {
                                 }
 
     				"4" {
-					WriteLog "Consulation des logs"
-     					notepad C:\Windows\System32\LogFiles\log-evt.log
+					WriteLog "Consultation des logs"
+     					Get-Content C:\Windows\System32\LogFiles\log-evt.log
      				}
     
                                 "5" { 
@@ -545,8 +545,8 @@ while ($true) {
                                 }
                                 
                                 "4" {
-					WriteLog "Consulation des logs"
-     					notepad C:\Windows\System32\LogFiles\log-evt.log
+					WriteLog "Consultation des logs"
+     					Get-Content C:\Windows\System32\LogFiles\log-evt.log
      				}	
     
                                 "5" { 
