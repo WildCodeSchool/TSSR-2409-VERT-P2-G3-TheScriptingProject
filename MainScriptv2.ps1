@@ -290,7 +290,7 @@ while ($true) {
                                     ssh -t $user1 "powershell.exe -Command $Delete_InfoHardware"
                                 }
 
-    				"4" (
+    				"4" {
 					WriteLog "Consulation des logs"
      					notepad C:\Windows\System32\LogFiles\log-evt.log
      				}
@@ -544,7 +544,7 @@ while ($true) {
                                     ssh -t $user2 "powershell.exe -Command $Delete_InfoHardware"
                                 }
                                 
-                                "4" (
+                                "4" {
 					WriteLog "Consulation des logs"
      					notepad C:\Windows\System32\LogFiles\log-evt.log
      				}	
