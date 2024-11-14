@@ -18,6 +18,7 @@ Add-content $LogFile -value $LogMessage
 
 # log lancement du script
 WriteLog "********StartScriptGestionParefeu********"
+WriteLog "Navigation dans le menu de gestion du pare-feu"
 
 # Fonction pour menu et choix des règles du pare-feu
 function Menu-ReglesPareFeu {
