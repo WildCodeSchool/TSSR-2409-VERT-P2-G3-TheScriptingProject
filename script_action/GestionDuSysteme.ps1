@@ -91,8 +91,19 @@ while ($statut)
             WriteLog "Demande de recherche de mises a jour"
 	    Write-Host "`nRecherche des mises a jour disponibles..."
 	    Install-Module PSWindowsUpdate -Force -Scope CurrentUser
+     
+     	    $misesAJour = Get-WindowsUpdate
+      	    # Afficher les mises à jour disponibles
 	    Write-Host "`nListe des mises a jour disponibles:"
-            Get-WindowsUpdate
+            $misesAJour
+                
+            # Vérifie si la liste des mises à jour est vide
+            if ($misesAJour.Count -eq 0) 
+            {
+           	Write-Host "`nAucune mise a jour disponible. Retour au menu precedent."
+            	break  # Retourner au menu précédent
+            }
+     
             $reponse = Read-Host "`nVoulez-vous installer les mises a jour? (oui/non)"
             while ($reponse -ne "non" -and $reponse -ne "n") 
             {
