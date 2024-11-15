@@ -1,7 +1,7 @@
 # Définir les couleurs des variables
 $RED = "Red"
 $GREEN = "Green"
-$CYAN = "Yellow"
+$YELLOW = "Yellow"
 $CYAN = "Cyan"
 $NC = "White" # Aucune couleur
 
@@ -26,7 +26,7 @@ function Menu-ReglesPareFeu {
     # Boucle while pour le menu des règles pare-feu
     while ($true) {
         WriteLog "Navigation dans le menu des regles Pare-feu"
-        Write-Host "`n------ MENU DES RÈGLES PARE-FEU ------`n" -f $GREEN
+        Write-Host "`n<=== MENU DES RÈGLES DU PARE-FEU ===>`n" -f $GREEN
         Write-Host "[1] " -ForegroundColor $CYAN -NoNewline; Write-Host "Ajouter une règle" -f $NC
         Write-Host "[2] " -ForegroundColor $CYAN -NoNewline; Write-Host "Supprimer une règle" -f $NC
         Write-Host "[3] " -ForegroundColor $CYAN -NoNewline; Write-Host "Afficher les règles actuelles" -f $NC
@@ -56,17 +56,18 @@ function Menu-ReglesPareFeu {
 
                 # Créer la règle avec la direction valide
                 New-NetFirewallRule -DisplayName $ruleName -Description $ruleDescription -Direction $direction -Protocol $protocol -LocalPort $port -Action Allow
-                Write-Host "Règle de pare-feu ajoutée : $ruleName" -f $GREEN
-                WriteLog "Regle de pare-feu $ruleName a ete ajoutee"
 
                 # Afficher les détails de la règle, y compris les ports
                 Get-NetFirewallRule -DisplayName $ruleName | Format-List *
+
+                Write-Host "La règle de pare-feu '$ruleName' à bien été ajoutée`n" -f $YELLOW
+                WriteLog "Regle de pare-feu $ruleName a ete ajoutee"
             }
 
             # Supprimer une règle de pare-feu
             "2" {
-                $regle = Read-Host "`nEntrer la règle à supprimer"
-                Write-Host "`nRègle supprimée : $regle`n" -f $GREEN
+                $regle = Read-Host "`nEntrer la règle à supprimer "
+                Write-Host "`nLa règle '$regle' à bien été supprimée`n" -f $YELLOW
                 WriteLog "Regle de parfeu $regle a ete supprime"
 
                 $ruleName = "$regle"
@@ -74,7 +75,7 @@ function Menu-ReglesPareFeu {
             }
             # Affiche les règles pare-feu actuelles
             "3" {
-                Write-Host "Règles de pare-feu actuelles :`n" -f $GREEN
+                Write-Host "`nRègles de pare-feu actuelles :`n" -f $YELLOW
                 Get-NetFirewallRule | Format-Table -Property DisplayName, Enabled, Action, Direction
                 WriteLog "Consultation des regles de parfeu actuelles"
             }
@@ -94,7 +95,7 @@ function Menu-ReglesPareFeu {
 
 # Boucle while pour le menu gestion pare-feu
 while ($true) {
-    Write-Host "`n------ MENU GESTION PARE-FEU ------`n" -f $GREEN
+    Write-Host "`n<=== MENU GESTION DU PARE-FEU ===>`n" -f $GREEN
     Write-Host "[1] " -ForegroundColor $CYAN -NoNewline; Write-Host "Définir les règles de pare-feu" -f $NC
     Write-Host "[2] " -ForegroundColor $CYAN -NoNewline; Write-Host "Activer le pare-feu" -f $NC
     Write-Host "[3] " -ForegroundColor $CYAN -NoNewline; Write-Host "Désactiver le pare-feu" -f $NC
@@ -109,6 +110,7 @@ while ($true) {
 
         # Activation du pare-feu
         "2" {
+            write-Host ""
             $oui = Read-Host "Voulez-vous activer le pare-feu ? (oui/non) "
 
             # Boucle pour que tant que l'entrée n'est pas "oui" ou "non", on redemande une saisie valide
@@ -120,7 +122,7 @@ while ($true) {
             # Si la valeur saisie est "oui" alors le pare-feu s'active sinon si la saisie est "non" alors rien ne se passe
             if ($oui -eq "oui") {
                 Set-NetFirewallProfile -Profile * -Enabled True
-                Write-Host "`nLe pare-feu a bien été activé.`n" -f $GREEN
+                Write-Host "`nLe pare-feu a bien été activé.`n" -f $YELLOW
                 WriteLog "Le pare-feu a ete active"
             } else {
                 Write-Host "`nLe pare-feu n'a pas été activé.`n" -f $RED
@@ -129,6 +131,7 @@ while ($true) {
 
         # Désactivation du pare-feu
         "3" {
+            write-Host ""
             $oui = Read-Host "Voulez-vous désactiver le pare-feu ? (oui/non) "
 
             # Boucle pour que tant que l'entrée n'est pas "oui" ou "non", on redemande une saisie valide
@@ -140,7 +143,7 @@ while ($true) {
             # Si la valeur saisie est "oui" alors le pare-feu se désactive sinon si la saisie est "non" alors rien ne se passe
             if ($oui -eq "oui") {
                 Set-NetFirewallProfile -Profile * -Enabled False
-                Write-Host "`nLe pare-feu a bien été désactivé.`n" -f $GREEN
+                Write-Host "`nLe pare-feu a bien été désactivé.`n" -f $YELLOW
                 WriteLog "Le pare-feu a ete desactive"
             } else {
                 Write-Host "`nLe pare-feu n'a pas été désactivé.`n" -f $RED
@@ -150,7 +153,7 @@ while ($true) {
         # Retour au menu principal
         "4" {
             WriteLog "********StartScriptGestionParefeu********"
-            break
+            return
             }
 
         # Inique si erreur de saisie et relance le script
