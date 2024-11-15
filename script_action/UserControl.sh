@@ -49,7 +49,7 @@ while true; do
     echo -e "${CYAN}[3]${NC} Supprimer un compte utilisateur"
     echo -e "${CYAN}[4]${NC} Désactiver un compte utilisateur"
     echo -e "${CYAN}[5]${NC} Retour au menu précédent\n"
-    echo -e "Choisissez une option: "
+    echo -e Veuillez choisir le chiffre correspondant à l'option:"
     read choix
     
     # A chaque choix correspond une commande qui exécute l'action demandée et boucle tant que l'utilisateur ne choisit pas quitter
