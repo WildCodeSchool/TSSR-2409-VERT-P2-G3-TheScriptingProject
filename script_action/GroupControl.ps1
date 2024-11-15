@@ -31,23 +31,68 @@ function GroupsList {
 
 # Fonction pour ajouter un utilisateur à un groupe
 function GroupAdd {
-    $group = Read-Host "Dans quel groupe voulez-vous ajouter l'utilisateur?"
-    $username = [System.Security.Principal.WindowsIdentity]::GetCurrent().Name
-    Add-LocalGroupMember -Group $group -Member $username
-    WriteLog "Ajout de $username au groupe $group"
+    # Demander le nom du groupe
+    write-Host ""
+    $group = Read-Host "Dans quel groupe voulez-vous ajouter l'utilisateur ? "
+    
+    # Vérifier si le groupe existe
+    if (Get-LocalGroup -Name $group -ErrorAction SilentlyContinue) {
+        # Obtenir le nom de l'utilisateur actuel
+        $username = [System.Security.Principal.WindowsIdentity]::GetCurrent().Name
+        
+        # Ajouter l'utilisateur au groupe
+        try {
+            Add-LocalGroupMember -Group $group -Member $username
+            Write-Host "Ajout de $username au groupe $group réussi."
+            
+            # Vérifier si la fonction WriteLog est définie, puis appeler WriteLog si elle existe
+            if (Get-Command -Name WriteLog -ErrorAction SilentlyContinue) {
+                WriteLog "Ajout de $username au groupe $group"
+            } else {
+                Write-Host "Log non enregistré : la fonction WriteLog est introuvable."
+            }
+        } catch {
+            Write-Host "Erreur lors de l'ajout de l'utilisateur au groupe : $_"
+        }
+    } else {
+        Write-Host "Le groupe '$group' n'existe pas."
+    }
 }
 
 # Fonction pour quitter un groupe
 function GroupRemove {
+    # Obtenir l'utilisateur actuel
     $currentUser = [System.Security.Principal.WindowsIdentity]::GetCurrent().Name
-    $currentGroup = (Get-LocalUser $currentUser).Group | Select-Object -First 1
+    
+    # Vérifier les groupes auxquels appartient l'utilisateur actuel
+    $currentGroups = Get-LocalGroup | ForEach-Object {
+        if (Get-LocalGroupMember -Group $_.Name -Member $currentUser -ErrorAction SilentlyContinue) {
+            $_.Name
+        }
+    }
+    
+    # Sélectionner le premier groupe (ou spécifier le groupe cible si nécessaire)
+    $currentGroup = $currentGroups | Select-Object -First 1
 
+    if (-not $currentGroup) {
+        Write-Host "Vous n'appartenez à aucun groupe local."
+        return
+    }
+
+    # Demander confirmation à l'utilisateur pour quitter le groupe
     $response = Read-Host "Voulez-vous quitter votre groupe actuel ($currentGroup)? (oui ou non)"
     
     if ($response -eq "oui") {
+        # Retirer l'utilisateur du groupe
         Remove-LocalGroupMember -Group $currentGroup -Member $currentUser
         Write-Host "Vous avez bien quitté votre groupe"
-        WriteLog " L'utilisateur $currentUser a quitté le groupe $currentGroup"
+        
+        # Vérifier si WriteLog est défini avant de l'appeler
+        if (Get-Command -Name WriteLog -ErrorAction SilentlyContinue) {
+            WriteLog "L'utilisateur $currentUser a quitté le groupe $currentGroup"
+        } else {
+            Write-Host "Log non enregistré : la fonction WriteLog est introuvable."
+        }
     } else {
         Write-Host "Vous restez dans votre groupe actuel"
     }
@@ -55,17 +100,15 @@ function GroupRemove {
 
 # Boucle du menu
 while ($true) {
-    Write-Host "Menu:"
-    Write-Host "[1] Ajouter à un groupe"
-    Write-Host "[2] Quitter le groupe"
-    Write-Host "[3] Retour au menu précédent"
-    Write-Host "[x] Fin du script"
-    
-    $choix = Read-Host "Choisissez une option"
+    Write-Host "`n<=== MENU GESTION DES GROUPES ===>`n" -f $Green
+    Write-Host "[1] " -ForegroundColor $CYAN -NoNewline; Write-Host "Ajouter à un groupe"
+    Write-Host "[2] " -ForegroundColor $CYAN -NoNewline; Write-Host "Quitter le groupe"
+    Write-Host "[3] " -ForegroundColor $CYAN -NoNewline; Write-Host "Retour au menu précédent`n"
+    $choix = Read-Host "Veuillez choisir une option "
 
     switch ($choix) {
         "1" {
-            Write-Host "Liste des groupes :"
+            Write-Host "`nListe des groupes :`n" -f $Yellow
             GroupsList
             GroupAdd
         }
@@ -75,13 +118,9 @@ while ($true) {
         "3" {
             Write-Host "Retour au menu précédent"
             WriteLog "********EndScriptGroupControl********"
-            break
+            return
         }
-        "x" {
-            Write-Host "Fin du script"
-            WriteLog "********EndScriptGroupControl********"
-            exit
-        }
+
         default {
             Write-Host "Choix invalide, veuillez recommencer"
         }
