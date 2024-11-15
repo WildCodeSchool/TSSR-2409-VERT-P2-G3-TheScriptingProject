@@ -81,7 +81,7 @@ while ($true) {
             $continueCLIWIN01 = $true
             while ($continueCLIWIN01) {
 
-                Write-Host "`n=== Menu Client CLIWIN01 : ===`n" -f $GREEN
+                Write-Host "`n<=== MENU CLIENT CLIWIN01 ===>`n" -f $GREEN
                 Write-Host "[1] " -f $YELLOW -NoNewline; Write-Host "Actions" -f $NC
                 Write-Host "[2] " -f $YELLOW -NoNewline; Write-Host "Informations" -f $NC
                 Write-Host "[3] " -f $YELLOW -NoNewline; Write-Host "Retour au menu principal" -f $NC
@@ -99,15 +99,15 @@ while ($true) {
                         $continueActions = $true
                         while ($continueActions) {
 
-                            Write-Host "`n=== Menu action Client CLIWIN01 : ===`n" -f $GREEN
-                            Write-Host "[1] " -f $YELLOW -NoNewline; Write-Host "Gestion utilisateurs" -f $NC
+                            Write-Host "`n<=== MENU ACTIONS CLIENT CLIWIN01 ===>`n" -f $GREEN
+                            Write-Host "[1] " -f $YELLOW -NoNewline; Write-Host "Gestion des utilisateurs" -f $NC
                             Write-Host "[2] " -f $YELLOW -NoNewline; Write-Host "Gestion des groupes" -f $NC
-                            Write-Host "[3] " -f $YELLOW -NoNewline; Write-Host "Gestion du systeme" -f $NC
-                            Write-Host "[4] " -f $YELLOW -NoNewline; Write-Host "Gestion des Repertoires" -f $NC
+                            Write-Host "[3] " -f $YELLOW -NoNewline; Write-Host "Gestion du système" -f $NC
+                            Write-Host "[4] " -f $YELLOW -NoNewline; Write-Host "Gestion des répertoires" -f $NC
                             Write-Host "[5] " -f $YELLOW -NoNewline; Write-Host "Prise en main CLI" -f $NC
-                            Write-Host "[6] " -f $YELLOW -NoNewline; Write-Host "Gestion Logiciel" -f $NC
-                            Write-Host "[7] " -f $YELLOW -NoNewline; Write-Host "Gestion du Parefeu" -f $NC
-                            Write-Host "[8] " -f $YELLOW -NoNewline; Write-Host "Retour au menu precedent" -f $NC
+                            Write-Host "[6] " -f $YELLOW -NoNewline; Write-Host "Gestion du logiciel" -f $NC
+                            Write-Host "[7] " -f $YELLOW -NoNewline; Write-Host "Gestion du pare-feu" -f $NC
+                            Write-Host "[8] " -f $YELLOW -NoNewline; Write-Host "Retour au menu précédent" -f $NC
                             Write-Host "[x] " -f $YELLOW -NoNewline; Write-Host "Fin du script`n" -f $NC
                             $gestion = Read-Host "Veuillez choisir une option "
 			    Write-Host ""
@@ -234,14 +234,14 @@ while ($true) {
                         $continueInformations = $true
                         while ($continueInformations) {
 
-                            Write-Host "`n=== Menu informations Client CLIWIN01 : ===`n" -f $GREEN
-                            Write-Host "[1] " -f $YELLOW -NoNewline; Write-Host "Informations Utilisateur" -f $NC
-                            Write-Host "[2] " -f $YELLOW -NoNewline; Write-Host "Informations Systeme Software" -f $NC
-                            Write-Host "[3] " -f $YELLOW -NoNewline; Write-Host "Informations Systeme Hardware" -f $NC
-			    Write-Host "[4] " -f $YELLOW -NoNewline; Write-Host "Recherche des evenement dans le fichier des logs" -f $NC
-                            Write-Host "[5] " -f $YELLOW -NoNewline; Write-Host "Retour au menu precedent" -f $NC
+                            Write-Host "`n<=== MENU INFORMATIONS CLIENT CLIWIN01 ===>`n" -f $GREEN
+                            Write-Host "[1] " -f $YELLOW -NoNewline; Write-Host "Informations des utilisateurs" -f $NC
+                            Write-Host "[2] " -f $YELLOW -NoNewline; Write-Host "Informations du système (software)" -f $NC
+                            Write-Host "[3] " -f $YELLOW -NoNewline; Write-Host "Informations du système (hardware)" -f $NC
+                            Write-Host "[4] " -f $YELLOW -NoNewline; Write-Host "Recherche des evenement dans le fichier des logs" -f $NC
+                            Write-Host "[5] " -f $YELLOW -NoNewline; Write-Host "Retour au menu précédent" -f $NC
                             Write-Host "[x] " -f $YELLOW -NoNewline; Write-Host "Fin du script`n" -f $NC
-                            $information = Read-Host "Votre choix "
+                            $information = Read-Host "Veuillez choisir une option "
 			    Write-Host ""
 
                             switch ($information) {
@@ -289,12 +289,12 @@ while ($true) {
                                     # Suppression du log et du script sur le client après transfert
                                     ssh -t $user1 "powershell.exe -Command $Delete_InfoHardware"
                                 }
+                                
+                                 "4" { 
+                                    WriteLog "Consultation des logs"
+     					            Get-Content C:\Windows\System32\LogFiles\log-evt.log
+                                }
 
-    				"4" {
-					WriteLog "Consultation des logs"
-     					Get-Content C:\Windows\System32\LogFiles\log-evt.log
-     				}
-    
                                 "5" { 
                                     $continueInformations = $false
                                 }
@@ -335,12 +335,12 @@ while ($true) {
             $continueCLIWIN02 = $true
             while ($continueCLIWIN02) {
 
-                Write-Host "`n=== Menu Client CLIWIN02 : ===`n" -f $GREEN
+                Write-Host "`n<=== MENU CLIENT CLIWIN02 ===>`n" -f $GREEN
                 Write-Host "[1] " -f $YELLOW -NoNewline; Write-Host "Actions" -f $NC
                 Write-Host "[2] " -f $YELLOW -NoNewline; Write-Host "Informations" -f $NC
                 Write-Host "[3] " -f $YELLOW -NoNewline; Write-Host "Retour au menu principal" -f $NC
                 Write-Host "[x] " -f $YELLOW -NoNewline; Write-Host "Quitter le script`n" -f $NC
-                $action = Read-Host "Choisissez une option "
+                $action = Read-Host "Veuillez choisir une option "
 		Write-Host ""
 
                 switch ($action) {
@@ -353,17 +353,17 @@ while ($true) {
                         $continueActions = $true
                         while ($continueActions) {
 
-                            Write-Host "`n=== Menu action Client CLIWIN02 : ===`n" -f $GREEN
-                            Write-Host "[1] " -f $YELLOW -NoNewline; Write-Host "Gestion utilisateurs" -f $NC
+                            Write-Host "`n<=== MENU ACTIONS CLIENT CLIWIN02 ===>`n" -f $GREEN
+                            Write-Host "[1] " -f $YELLOW -NoNewline; Write-Host "Gestion des utilisateurs" -f $NC
                             Write-Host "[2] " -f $YELLOW -NoNewline; Write-Host "Gestion des groupes" -f $NC
-                            Write-Host "[3] " -f $YELLOW -NoNewline; Write-Host "Gestion du systeme" -f $NC
-                            Write-Host "[4] " -f $YELLOW -NoNewline; Write-Host "Gestion des Répertoires" -f $NC
+                            Write-Host "[3] " -f $YELLOW -NoNewline; Write-Host "Gestion du système" -f $NC
+                            Write-Host "[4] " -f $YELLOW -NoNewline; Write-Host "Gestion des répertoires" -f $NC
                             Write-Host "[5] " -f $YELLOW -NoNewline; Write-Host "Prise en main CLI" -f $NC
-                            Write-Host "[6] " -f $YELLOW -NoNewline; Write-Host "Gestion Logiciel" -f $NC
-                            Write-Host "[7] " -f $YELLOW -NoNewline; Write-Host "Gestion du Parefeu" -f $NC
-                            Write-Host "[8] " -f $YELLOW -NoNewline; Write-Host "Retour au menu precedent" -f $NC
+                            Write-Host "[6] " -f $YELLOW -NoNewline; Write-Host "Gestion du logiciel" -f $NC
+                            Write-Host "[7] " -f $YELLOW -NoNewline; Write-Host "Gestion du pare-feu" -f $NC
+                            Write-Host "[8] " -f $YELLOW -NoNewline; Write-Host "Retour au menu précédent" -f $NC
                             Write-Host "[x] " -f $YELLOW -NoNewline; Write-Host "Fin du script`n" -f $NC
-                            $gestion = Read-Host "Votre choix "
+                            $gestion = Read-Host "Veuillez choisir une option "
 			    Write-Host ""
 
                             switch ($gestion) {
@@ -488,14 +488,13 @@ while ($true) {
                         $continueInformations = $true
                         while ($continueInformations) {
 
-                            Write-Host "`n=== Menu informations Client CLIWIN02 : ===`n" -f $GREEN
-                            Write-Host "[1] " -f $YELLOW -NoNewline; Write-Host "Informations Utilisateur" -f $NC
-                            Write-Host "[2] " -f $YELLOW -NoNewline; Write-Host "Informations Systeme Software" -f $NC
-                            Write-Host "[3] " -f $YELLOW -NoNewline; Write-Host "Informations Systeme Hardware" -f $NC
-                            Write-Host "[4] " -f $YELLOW -NoNewline; Write-Host "Recherche des evenement dans le fichier des logs" -f $NC
-                            Write-Host "[5] " -f $YELLOW -NoNewline; Write-Host "Retour au menu precedent" -f $NC
+                            Write-Host "`n<=== MENU INFORMATIONS CLIENT CLIWIN02 ===>`n" -f $GREEN
+                            Write-Host "[1] " -f $YELLOW -NoNewline; Write-Host "Informations des utilisateurs" -f $NC
+                            Write-Host "[2] " -f $YELLOW -NoNewline; Write-Host "Informations du système (software)" -f $NC
+                            Write-Host "[3] " -f $YELLOW -NoNewline; Write-Host "Informations du système (hardware)" -f $NC
+                            Write-Host "[4] " -f $YELLOW -NoNewline; Write-Host "Retour au menu précédent" -f $NC
                             Write-Host "[x] " -f $YELLOW -NoNewline; Write-Host "Fin du script`n" -f $NC
-                            $information = Read-Host "Votre choix "
+                            $information = Read-Host "Veuillez choisir une option "
 			    Write-Host ""
 
                             switch ($information) {
@@ -544,12 +543,7 @@ while ($true) {
                                     ssh -t $user2 "powershell.exe -Command $Delete_InfoHardware"
                                 }
                                 
-                                "4" {
-					WriteLog "Consultation des logs"
-     					Get-Content C:\Windows\System32\LogFiles\log-evt.log
-     				}	
-    
-                                "5" { 
+                                "4" { 
                                     $continueInformations = $false
                                 }
                                 
