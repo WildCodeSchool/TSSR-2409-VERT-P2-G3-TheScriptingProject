@@ -25,13 +25,14 @@ WriteLog "Navigation dans le menu informations software du systeme"
 # fonction récupération de la version du système d'exploitation
 function showOsVersion {
 
-    Get-CimInstance -ClassName Win32_OperatingSystem | Select-Object -Property Caption, Version, BuildNumber
+    Get-CimInstance -ClassName Win32_OperatingSystem
      WriteLog "Consultation de la version du systeme d'exploitation"
 }
 # fonction de récupération du nombre de disques présents
 function showNbDisks {
 
-    Get-PhysicalDisk | Measure-Object | Select-Object -ExpandProperty Count
+    $disk = Get-PhysicalDisk | Measure-Object | Select-Object -ExpandProperty Count
+    Write-Host "`nLe nombres de disques présent : $disk" -f $YELLOW
     WriteLog "Consultation du nombre de disques presents"
 
 }
@@ -47,17 +48,15 @@ function showPartsByDisks {
 function showInstalledAppPackages {
 
     WriteLog "Navigation dans le menu d'affichage des executables"
-    Write-Host "<< AFFICHER DES EXECUTABLES >>" -f $GREEN
-    Write-Host "`nSouhaitez-vous afficher les paquets installes ou les applications installees" -f $GREEN
+    Write-Host "=== AFFICHER DES EXECUTABLES ===" -f $GREEN
+    Write-Host "`nSouhaitez-vous afficher les paquets installés ou les applications installées" -f $YELLOW
     
-    Write-Host "[1]" -f $CYAN -NoNewline; Write-Host "Paquets installes" -f $NC
-    Write-Host "[2]" -f $CYAN -NoNewline; Write-Host "Applications installees" -f $NC
-    Write-Host "[3]" -f $CYAN -NoNewline; Write-Host "Retour au menu precedent" -f $NC
-    Write-Host "Choisir le chiffre correspondant à l'option:" -f $GREEN
-    
-    $userChoiceInfoApp = Read-Host
+    Write-Host "[1] " -f $CYAN -NoNewline; Write-Host "Paquets installés" -f $NC
+    Write-Host "[2] " -f $CYAN -NoNewline; Write-Host "Applications installées" -f $NC
+    Write-Host "[3] " -f $CYAN -NoNewline; Write-Host "Retour au menu précédent" -f $NC
+    $userChoiceInfoApp = Read-Host "Veuillez choisir une option "
 
-    while ($userChoiceInfoApp -ne "x") {
+    while ($userChoiceInfoApp -ne "3") {
         
         if ($userChoiceInfoApp -eq "1") {
             # Liste uniquement les paquets installés
@@ -79,8 +78,7 @@ function showInstalledAppPackages {
         Write-Host "[1]" -f $CYAN -NoNewline; Write-Host "Paquets installes" -f $NC
         Write-Host "[2]" -f $CYAN -NoNewline; Write-Host "Applications installees" -f $NC
         Write-Host "[3]" -f $CYAN -NoNewline; Write-Host "Retour au menu precedent" -f $NC
-        
-        $userChoiceInfoApp = Read-Host
+        $userChoiceInfoApp = Read-Host "Veuillez choisir une option "
     }
 
     Write-Host "Retour au menu precedent"
@@ -89,7 +87,9 @@ function showInstalledAppPackages {
 # fonction de récupération des services en cours
 function showRunningServices {
 
+    write-Host ""
     Get-Service | Where-Object { $_.Status -eq 'Running' } | Select-Object Name
+    write-Host ""
     WriteLog "Consultation de la liste des services en cours d'execution"
 }
 
@@ -105,17 +105,16 @@ function showLocalUsers {
 
 $userChoiceDir = ""
 
-while ($userChoiceDir -ne "x") {
-    Write-Host "`n------INFORMATIONS OS , DISKS, APP & LOCALUSERS------" -f $GREEN
-    Write-Host "[1]" -f $CYAN -NoNewline; Write-Host "Afficher la version de l'OS" -f $NC
-    Write-Host "[2]" -f $CYAN -NoNewline; Write-Host "Afficher le nombre de disques" -f $NC
-    Write-Host "[3]" -f $CYAN -NoNewline; Write-Host "Afficher les partitions par disque" -f $NC
-    Write-Host "[4]" -f $CYAN -NoNewline; Write-Host "Afficher la liste des applications/paquets installes" -f $NC
-    Write-Host "[5]" -f $CYAN -NoNewline; Write-Host "Afficher la liste des services en cours d'execution" -f $NC
-    Write-Host "[6]" -f $CYAN -NoNewline; Write-Host "Afficher la liste des utilisateurs locaux" -f $NC
-    Write-Host "[7]" -f $CYAN -NoNewline; Write-Host "Retour au menu precedent" -f $NC
-    Write-Host "Choisir le chiffre correspondant a l'option:" -f $GREEN
-    $userChoiceDir = Read-Host
+while ($userChoiceDir -ne "7") {
+    Write-Host "`n<=== MENU INFORMATIONS SYSTEME SOFTWARE ===>`n" -f $GREEN
+    Write-Host "[1] " -f $CYAN -NoNewline; Write-Host "Afficher la version de l'OS" -f $NC
+    Write-Host "[2] " -f $CYAN -NoNewline; Write-Host "Afficher le nombre de disques" -f $NC
+    Write-Host "[3] " -f $CYAN -NoNewline; Write-Host "Afficher les partitions par disque" -f $NC
+    Write-Host "[4] " -f $CYAN -NoNewline; Write-Host "Afficher la liste des applications/paquets installés" -f $NC
+    Write-Host "[5] " -f $CYAN -NoNewline; Write-Host "Afficher la liste des services en cours d'execution" -f $NC
+    Write-Host "[6] " -f $CYAN -NoNewline; Write-Host "Afficher la liste des utilisateurs locaux" -f $NC
+    Write-Host "[7] " -f $CYAN -NoNewline; Write-Host "Retour au menu precedent`n" -f $NC
+    $userChoiceDir = Read-Host "Veuillez choisir une option "
 
     switch ($userChoiceDir) {
         "1" { showOsVersion }
