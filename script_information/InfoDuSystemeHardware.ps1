@@ -1,7 +1,7 @@
 # Définir les couleurs des variables
 $RED = "Red"
 $GREEN = "Green"
-$CYAN = "Yellow"
+$YELLOW = "Yellow"
 $CYAN = "Cyan"
 $NC = "White" # Aucune couleur
 
@@ -22,7 +22,7 @@ WriteLog "Navigation dans le menu informations hardware du systeme"
 
 # Boucle while true pour le menu information système
 while ($true) {
-    Write-Host "`n------ MENU INFORMATION SYSTEME ------`n" -f $GREEN
+    Write-Host "`n<=== MENU INFORMATION SYSTEME HARDWARE ===>`n" -f $GREEN
     Write-Host "[1] " -f $CYAN -nonewline; Write-Host "Type de CPU, nombre de coeurs, etc.." -f $NC
     Write-Host "[2] " -f $CYAN -nonewline; Write-Host "Mémoire RAM totale" -f $NC
     Write-Host "[3] " -f $CYAN -nonewline; Write-Host "Utilisation de la RAM" -f $NC
@@ -45,7 +45,7 @@ while ($true) {
         # Mémoire totale de la RAM
         "2" {
             $ramTotal = (Get-CimInstance -ClassName Win32_ComputerSystem).TotalPhysicalMemory / 1GB
-            "`nLa mémoire totale de la RAM est de {0:N1} Go`n" -f $ramTotal
+            Write-Host ("`nLa mémoire totale de la RAM est de {0:N1} Go`n" -f $ramTotal) -ForegroundColor $YELLOW
             WriteLog "Consultation de la memoire totale de la RAM"
             }
 
@@ -54,14 +54,17 @@ while ($true) {
              Get-CimInstance -ClassName Win32_OperatingSystem | ForEach-Object {
              $usedMemory = ($_.TotalVisibleMemorySize - $_.FreePhysicalMemory) / 1MB
              $totalMemory = $_.TotalVisibleMemorySize / 1MB
-             "`nUtilisation de la mémoire : {0:N1} Go sur {1:N1} Go`n" -f $usedMemory, $totalMemory
+             Write-Host ("`nUtilisation de la mémoire : {0:N1} Go sur {1:N1} Go`n" -f $usedMemory, $totalMemory) -f $YELLOW
              WriteLog "Consultation de l'utilisation de la RAM"
              }
              }
             
         # Utilisation du disque
         "4" {
-            Get-WmiObject Win32_LogicalDisk
+            Write-Host ""
+            Get-WmiObject Win32_LogicalDisk | ForEach-Object {
+            "$($_.DeviceID) - FreeSpace: $([math]::Round($_.FreeSpace / 1GB, 2)) GB, Size: $([math]::Round($_.Size / 1GB, 2)) GB, VolumeName: $($_.VolumeName)"
+            }
             Write-Host ""
             WriteLog "Consultation de l'utilisation du disque"
             }
@@ -69,15 +72,15 @@ while ($true) {
         # Utilisation du processeur
         "5" {
              Get-CimInstance -ClassName Win32_Processor | ForEach-Object {
-             "`nUtilisation du processeur : {0}%`n" -f $_.LoadPercentage
+             Write-Host ("`nUtilisation du processeur : {0}%`n" -f $_.LoadPercentage) -f $YELLOW
              WriteLog "Consultation de l'utilisation du processeur"
             }
             }
-            
+
         # Retour au menu principal
         "6" {
             WriteLog "********EndScriptInfoDuSystemeHardware********"
-            break
+            return
             }
 
         # Inique si erreur de saisie et relance le script
