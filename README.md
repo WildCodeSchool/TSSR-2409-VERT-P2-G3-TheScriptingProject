@@ -38,6 +38,8 @@ Ce projet a pour but de créer un script d'automatisation multi-plateformes, cap
 | **Semaine 3** | Product Owner    | Technicien      | Technicien       | SCRUM MASTER    |
 | **Semaine 4** | Technicienne     | SCRUM MASTER    | Product Owner    | Technicien      |
 
+[Organisation de l'équipe sur les différents sprints](https://miro.com/app/board/uXjVLQa42Rk=/?share_link_id=616550808913)
+
 ---
 
 ## Fonctionnalités
