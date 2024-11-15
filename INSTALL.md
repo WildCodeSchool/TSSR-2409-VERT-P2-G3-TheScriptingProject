@@ -123,6 +123,32 @@ Modifier les paramètres IP en ajoutant :
 `address 172.16.10.x` # Remplacer x par l'IP de la machine<br> 
 `netmask 255.255.255.0`
 
+---
+
+## Étape 3 : Configuration d'une IP Statique sous Windows
+
+1. Ouvrir les paramètres de la carte réseau :
+   - Cliquez sur le menu Démarrer, tapez "Panneau de configuration" et ouvrez-le.
+   - Allez dans "Réseau et Internet" > "Centre Réseau et partage".
+   - Cliquez sur "Modifier les paramètres de la carte" à gauche.
+
+2. Choisir la carte réseau :
+   - Faites un clic droit sur la carte réseau (ex : Ethernet) et sélectionnez "Propriétés".
+
+3. Configurer IPv4 :
+   - Sélectionnez "Protocole Internet version 4 (TCP/IPv4)" et cliquez sur "Propriétés".
+   - Cochez "Utiliser l'adresse IP suivante".
+   - Renseignez les champs :
+     - Adresse IP : 172.16.10.x (remplacez `x` par l'IP de la machine, ex : 172.16.10.20).
+     - Masque de sous-réseau : 255.255.255.0.
+
+4. Appliquer et tester :
+   - Cliquez sur "OK", puis "Fermer".
+   - Ouvrez l'invite de commandes (Win + R, tapez `cmd`).
+   - Tapez `ipconfig` pour vérifier l'adresse IP.
+   - Testez la connectivité : `ping 172.16.10.x`.
+
+Votre IP statique est maintenant configurée.
 
 ---
 
