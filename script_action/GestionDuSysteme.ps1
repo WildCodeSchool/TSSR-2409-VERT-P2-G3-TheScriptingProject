@@ -24,20 +24,20 @@ WriteLog "Navigation dans le menu de gestion du systeme"
 
 while ($statut) 
 {
-    Write-Host "`nMENU GESTION DU SYSTEME`n" -f $Green
-    Write-Host "[1]" -f $Cyan -NoNewline ; Write-Host " Arreter le systeme" -f $White;
-    Write-Host "[2]" -f $Cyan -NoNewline ; Write-Host " Redemarrer le systeme" -f $White;
-    Write-Host "[3]" -f $Cyan -NoNewline ; Write-Host " Verrouiller le systeme" -f $White;
-    Write-Host "[4]" -f $Cyan -NoNewline ; Write-Host " Mettre a jour le systeme" -f $White;
+    Write-Host "`n<=== MENU GESTION DU SYSTEME ===>`n" -f $Green
+    Write-Host "[1]" -f $Cyan -NoNewline ; Write-Host " Arrêter le système" -f $White;
+    Write-Host "[2]" -f $Cyan -NoNewline ; Write-Host " Redémarrer le système" -f $White;
+    Write-Host "[3]" -f $Cyan -NoNewline ; Write-Host " Vérrouiller le système" -f $White;
+    Write-Host "[4]" -f $Cyan -NoNewline ; Write-Host " Mettre à jour le système" -f $White;
     Write-Host "[5]" -f $Cyan -NoNewline ; Write-Host " Retourner au menu principal`n" -f $White;
-    $choix_option = Read-Host "Veuillez choisir une option"
+    $choix_option = Read-Host "Veuillez choisir une option "
 
     switch ($choix_option) 
 	{
         
 	"1" 
 	{
-	    $reponse = Read-Host "`nVoulez-vous vraiment arreter le systeme? (oui/non)"
+	    $reponse = Read-Host "`nVoulez-vous vraiment arreter le systeme ? (oui/non) "
             while ($reponse -ne "non" -and $reponse -ne "n") 
             {
                 if ($reponse -eq "oui" -or $reponse -eq "o") 
@@ -50,7 +50,7 @@ while ($statut)
                 else 
                 {
                     Write-Host -f $Red "`nErreur lors de la saisie"
-                    $reponse = Read-Host "`nVoulez-vous vraiment arreter le systeme? (oui/non)"
+                    $reponse = Read-Host "`nVoulez-vous vraiment arreter le systeme ? (oui/non) "
                 }
             }
             Write-Host "`nRetour au menu des options du systeme"
@@ -58,7 +58,7 @@ while ($statut)
 		
         "2" 
 	{
-	    $reponse = Read-Host "`nVoulez-vous vraiment redemarrer le systeme? (oui/non)"
+	    $reponse = Read-Host "`nVoulez-vous vraiment redemarrer le systeme ? (oui/non) "
             while ($reponse -ne "non" -and $reponse -ne "n") 
             {
                 if ($reponse -eq "oui" -or $reponse -eq "o") 
@@ -71,7 +71,7 @@ while ($statut)
                 else 
                 {
                     Write-Host -f $Red "`nErreur lors de la saisie"
-                    $reponse = Read-Host "`nVoulez-vous vraiment redemarrer le systeme? (oui/non)"
+                    $reponse = Read-Host "`nVoulez-vous vraiment redemarrer le systeme ? (oui/non) "
                 }
             }
             Write-Host "`nRetour au menu des options du systeme"
@@ -83,7 +83,8 @@ while ($statut)
             Write-Host "`nFonctionnalite en cours de developpement" -f $Yellow
             #Write-Host "`nVerrouillage du systeme en cours..."
             # Utiliser psshutdown.exe pour verrouiller la session           
-            #psshutdown /accepteula -l
+            # psshutdown /accepteula -l
+            rundll32.exe user32.dll,LockWorkStation
         }
 		
         "4" 
@@ -91,19 +92,18 @@ while ($statut)
             WriteLog "Demande de recherche de mises a jour"
 	    Write-Host "`nRecherche des mises a jour disponibles..."
 	    Install-Module PSWindowsUpdate -Force -Scope CurrentUser
-     
-     	    $misesAJour = Get-WindowsUpdate
-      	    # Afficher les mises à jour disponibles
+        $misesAJour = Get-WindowsUpdate
+        # Afficher les mises à jour disponibles
 	    Write-Host "`nListe des mises a jour disponibles:"
-            $misesAJour
+        $misesAJour
                 
-            # Vérifie si la liste des mises à jour est vide
-            if ($misesAJour.Count -eq 0) 
-            {
-           	Write-Host "`nAucune mise a jour disponible. Retour au menu precedent."
-            	break  # Retourner au menu précédent
-            }
-     
+    # Vérifie si la liste des mises à jour est vide
+    if ($misesAJour.Count -eq 0) {
+        Write-Host "`nAucune mise a jour disponible. Retour au menu precedent."
+        break  # Retourner au menu précédent
+    }
+	    Write-Host "`nListe des mises a jour disponibles : "
+            Get-WindowsUpdate
             $reponse = Read-Host "`nVoulez-vous installer les mises a jour? (oui/non)"
             while ($reponse -ne "non" -and $reponse -ne "n") 
             {
@@ -116,7 +116,7 @@ while ($statut)
                 else 
                 {
                     Write-Host -f $Red "`nErreur lors de la saisie"
-                    $reponse = Read-Host "`nVoulez-vous installer les mises a jour? (oui/non)"
+                    $reponse = Read-Host "`nVoulez-vous installer les mises a jour ? (oui/non) "
                 }
             }
             Write-Host "`nRetour au menu des options du systeme"
