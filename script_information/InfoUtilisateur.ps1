@@ -6,7 +6,7 @@ $Red = "Red"
 $Cyan= "Cyan"
 
 # Demande le nom de l'utilisateur
-$user = Read-Host -Prompt "Entrez le nom de l'utilisateur"
+$user = Read-Host -Prompt "Entrez le nom de l'utilisateur "
 
 # Vérifie qu'un nom d'utilisateur a été fourni
 if (-not $user) 
@@ -34,16 +34,16 @@ $statut = $true
 
 while ($statut) 
 {
-    Write-Host "`nMENU INFORMATIONS UTILISATEUR`n" -f $Green
-    Write-Host "[1]" -f $Cyan -NoNewline ; Write-Host " Date de derniere connexion" -f $White;
-    Write-Host "[2]" -f $Cyan -NoNewline ; Write-Host " Date de derniere modification du mot de passe" -f $White;
+    Write-Host "`n<=== MENU INFORMATIONS UTILISATEUR ===>`n" -f $Green
+    Write-Host "[1]" -f $Cyan -NoNewline ; Write-Host " Date de dernière connexion" -f $White;
+    Write-Host "[2]" -f $Cyan -NoNewline ; Write-Host " Date de dernière modification du mot de passe" -f $White;
     Write-Host "[3]" -f $Cyan -NoNewline ; Write-Host " Liste des sessions ouvertes" -f $White;
     Write-Host "[4]" -f $Cyan -NoNewline ; Write-Host " Groupes d'appartenance" -f $White;
     Write-Host "[5]" -f $Cyan -NoNewline ; Write-Host " Historique des commandes" -f $White;
     Write-Host "[6]" -f $Cyan -NoNewline ; Write-Host " Droits sur un dossier" -f $White;
     Write-Host "[7]" -f $Cyan -NoNewline ; Write-Host " Droits sur un fichier" -f $White;
-    Write-Host "[8]" -f $Cyan -NoNewline ; Write-Host " Retour au menu precedent`n" -f $White;
-    $choix_option = Read-Host "Veuillez choisir une option"
+    Write-Host "[8]" -f $Cyan -NoNewline ; Write-Host " Retour au menu précédent`n" -f $White;
+    $choix_option = Read-Host "Veuillez choisir une option "
 
  switch ($choix_option) 
  {	
@@ -52,7 +52,7 @@ while ($statut)
 	"1" 
 	{
  	    WriteLog "Consultation de la date de dernier connexion de $User"
-	    Write-Host "`nDate de derniere connexion :"	
+	    Write-Host "`nDate de dernière connexion :`n" -f $YELLOW
 	    $lastLogin = (Get-LocalUser -Name $user).LastLogon
             if ($lastLogin) 
 	    {
@@ -67,8 +67,8 @@ while ($statut)
   	#  Date de derniere modification du mot de passe
         "2" 
 	{
- 	    WriteLog "Consultation de la date de derniere modification du mot de passe de $User"
-	    Write-Host "`nDate de derniere modification du mot de passe :"
+ 	    WriteLog "Consultation de la date de dernière modification du mot de passe de $User"
+	    Write-Host "`nDate de derniere modification du mot de passe :`n" -f $YELLOW
 	    $passwordLastSet = (Get-LocalUser -Name $user).PasswordLastSet
             if ($passwordLastSet) 
 	    {
@@ -84,7 +84,7 @@ while ($statut)
 	"3" 
 	{
  	    WriteLog "Consultation des sessions ouvertes par $User"
-	    Write-Host "`nSessions ouvertes par l'utilisateur :"
+	    Write-Host "`nSessions ouvertes par l'utilisateur :`n" -f $YELLOW
 	    $sessions = query user | Select-String $user
             if ($sessions) 
 	    {
@@ -100,7 +100,7 @@ while ($statut)
 	"4"
 	{
 		WriteLog "Consultation des groupes d'appartenance de $user"
-		Write-Host "`nGroupes d'appartenance de $user :"
+		Write-Host "`nGroupes d'appartenance de $user :`n" -f $YELLOW
 		$groups = Get-LocalGroup | Where-Object {
    		(Get-LocalGroupMember -Group $_.Name | Where-Object { $_.Name -like "*$user" })
 		} | Select-Object -ExpandProperty Name
@@ -119,7 +119,7 @@ while ($statut)
 	"5" 
 	{
  		WriteLog "Consultation de l'historique des commandes de $User"
-		Write-Host "`nHistorique des commandes hors script:"
+		Write-Host "`nHistorique des commandes hors script :`n" -F $YELLOW
 		#L'historique des commandes est stocké dans un fichier, par exemple : C:\Users\<NomUtilisateur>\AppData\Roaming\Microsoft\Windows\PowerShell\PSReadline\ConsoleHost_history.txt
 		$historyPath = "C:\Users\$user\AppData\Roaming\Microsoft\Windows\PowerShell\PSReadline\ConsoleHost_history.txt"
 		if (Test-Path $historyPath) 
@@ -136,8 +136,8 @@ while ($statut)
   	# Droits sur un dossier
 	"6" 
 	{
-		$folderPath = Read-Host "`nEntrez le chemin du dossier"
-		Write-Host "`nDroits sur le dossier :`n"
+		$folderPath = Read-Host "`nEntrez le chemin du dossier "
+		Write-Host "`nDroits sur le dossier :`n" -f $Yellow
 		Get-Acl -Path $folderPath | ForEach-Object { $_.Access | Where-Object { $_.IdentityReference -match $user } }
 		WriteLog "Consultation des Droits de $User sur le dossier $folderPath"
 	}
@@ -145,8 +145,8 @@ while ($statut)
   	# Droits sur un fichier
 	"7" 
 	{
-		$filePath = Read-Host "`nEntrez le chemin du fichier"
-		Write-Host "`nDroits sur le fichier :`n"
+		$filePath = Read-Host "`nEntrez le chemin du fichier "
+		Write-Host "`nDroits sur le fichier :`n" -f $Yellow
 		Get-Acl -Path $filePath | ForEach-Object { $_.Access | Where-Object { $_.IdentityReference -match $user } }
 		WriteLog "Consultation des Droits de $User sur le fichier $filePath"
 	}
