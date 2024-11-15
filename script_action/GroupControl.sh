@@ -53,15 +53,21 @@ while true; do
             ;;
 
         2)      # Quitter un groupe
+            echo -e "\nListe des groupes :"
+            groups
             echo ""
-            read -p "Voulez-vous quitter votre groupe actuel ? (oui ou non) " reponse
-            if [[ "$reponse" == "oui" ]]; then
-                sudo gpasswd -d $USER $(id -gn)
-                echo -e "\nVous avez bien quitté votre groupe"
-                enregistrer_log "L'utilisateur $USER a quitté son groupe $(id -gn)"
-                envoyer_logs_distants  # Envoi des logs au serveur distant
+            read -p "Quel groupe voulez-vous quitter ? (choisissez parmi la liste ci-dessus) " groupe_a_quitter
+
+            # Vérifier si l'utilisateur fait partie de ce groupe
+            if groups "$USER" | grep -qw "$groupe_a_quitter"; then
+                sudo gpasswd -d $USER "$groupe_a_quitter"
+                echo -e "\nvous avez bien quitté le groupe $groupe_a_quitter\n"
+                # Enregistrer l'action dans les logs
+                enregistrer_log "L'utilisateur $USER a quitté le groupe $groupe_a_quitter"
+                # Envoyer les logs au serveur distant
+                envoyer_logs_distants
             else
-                echo -e "\nVous restez dans votre groupe actuel"
+                echo -e "\nVous n'êtes pas membre du groupe $groupe_a_quitter ou ce groupe n'existe pas."
             fi
             ;;
 
